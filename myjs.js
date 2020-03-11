@@ -2,7 +2,7 @@
 const electron = require('electron')
 const {app, BrowserWindow, Menu, MenuItem} = electron
 const {remote, shell} = require('electron')
-
+const updater = require('./updater')
 //Get the app name to use accents here - rather than in package.json
 app.setName("Kàddug Yàlla Gi");
 
@@ -10,7 +10,7 @@ let mainMenu
 
 // Create app menu - alt with other things by cg
 // Here we have separate menus for Mac (darwin) vs Win&Linux. To gain some consistency across the operating systems, we show the menu only in Mac.
-// If Win or Linux returning null below makes the menu empty, and thus hidden, and all functions are available from context menu. 
+// If Win or Linux, it returns null below, which makes the menu empty, and thus hidden, and all functions are available from context menu. 
 if (process.platform === 'darwin') {
 mainMenu = Menu.buildFromTemplate([
 	{label: 'Menu',
@@ -127,9 +127,6 @@ let myContexMenu = {
 			label: 'Copyright && license', 
 			click() {openAboutWindow()}
 		},
-		{	label: "Version",
-			role: "about"
-		},
 		{
 			type: "separator"
 		},
@@ -156,9 +153,6 @@ let myContexMenu = {
 		},
 		{
 			type: "separator"
-		},
-		{	label: "Version",
-			role: "about"
 		},
 		{
 			label: "Quitter",
