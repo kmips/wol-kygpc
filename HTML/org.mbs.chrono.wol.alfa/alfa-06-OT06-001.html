@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6. Musaa gane na àddina 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+// Audio
+$(window).load(function() {
+
+var pop = Popcorn("#audio");
+
+var timings = [
+    { label: "s1", start: 0, end: 3.27 },
+    { label: "1a", start: 3.52, end: 6.03 },
+    { label: "1b", start: 6.28, end: 7.79 },
+    { label: "1c", start: 8.04, end: 9.31 },
+    { label: "1d", start: 9.56, end: 10.29 },
+    { label: "1e", start: 10.54, end: 12.81 },
+    { label: "1f", start: 13.06, end: 14.63 },
+    { label: "2", start: 14.88, end: 20.21 },
+    { label: "3a", start: 20.46, end: 23.03 },
+    { label: "3b", start: 23.28, end: 26.47 },
+    { label: "4", start: 26.72, end: 31.25 },
+    { label: "5a", start: 31.5, end: 36.15 },
+    { label: "5b", start: 36.4, end: 37.75 },
+    { label: "5c", start: 38, end: 39.33 },
+    { label: "5d", start: 39.58, end: 41.81 },
+    { label: "6a", start: 42.06, end: 46.13 },
+    { label: "6b", start: 46.38, end: 48.83 },
+    { label: "7a", start: 49.08, end: 51.43 },
+    { label: "7b", start: 51.68, end: 52.55 },
+    { label: "7c", start: 52.8, end: 53.83 },
+    { label: "7d", start: 54.08, end: 54.81 },
+    { label: "7e", start: 55.06, end: 56.79 },
+    { label: "s2", start: 57.04, end: 61.95 },
+    { label: "8a", start: 62.2, end: 63.39 },
+    { label: "8b", start: 63.64, end: 67.63 },
+    { label: "9a", start: 67.88, end: 69.75 },
+    { label: "9b", start: 70, end: 70.87 },
+    { label: "9c", start: 71.12, end: 74.49 },
+    { label: "9d", start: 74.74, end: 76.37 },
+    { label: "10a", start: 76.62, end: 78.13 },
+    { label: "10b", start: 78.38, end: 80.21 },
+    { label: "10c", start: 80.46, end: 82.21 },
+    { label: "10d", start: 82.46, end: 84.23 },
+    { label: "10e", start: 84.48, end: 85.65 },
+    { label: "10f", start: 85.9, end: 87.53 },
+    { label: "11a", start: 87.78, end: 92.67 },
+    { label: "11b", start: 92.92, end: 94.99 },
+    { label: "11c", start: 95.24, end: 99.45 },
+    { label: "11d", start: 99.7, end: 102.61 },
+    { label: "11e", start: 102.86, end: 105.31 },
+    { label: "12a", start: 105.56, end: 108.09 },
+    { label: "12b", start: 108.34, end: 110.01 },
+    { label: "12c", start: 110.26, end: 111.07 },
+    { label: "12d", start: 111.32, end: 115.47 },
+    { label: "13", start: 115.72, end: 118.93 },
+    { label: "14a", start: 119.18, end: 123.23 },
+    { label: "14b", start: 123.48, end: 124.81 },
+    { label: "14c", start: 125.06, end: 126.05 },
+    { label: "14d", start: 126.3, end: 130.31 },
+    { label: "14e", start: 130.56, end: 136.27 },
+    { label: "15a", start: 136.52, end: 140.73 },
+    { label: "15b", start: 140.98, end: 142.97 },
+    { label: "15c", start: 143.22, end: 144.87 },
+    { label: "16a", start: 145.12, end: 146.31 },
+    { label: "16b", start: 146.56, end: 148.89 },
+    { label: "16c", start: 149.14, end: 151.19 },
+    { label: "16d", start: 151.44, end: 152.45 },
+    { label: "16e", start: 152.7, end: 153.33 },
+    { label: "16f", start: 153.58, end: 154.49 },
+    { label: "16g", start: 154.74, end: 154.99 },
+    { label: "16h", start: 155.24, end: 156.57 },
+    { label: "17a", start: 156.82, end: 159.59 },
+    { label: "17b", start: 159.84, end: 162.01 },
+    { label: "17c", start: 162.26, end: 164.33 },
+    { label: "17d", start: 164.58, end: 165.51 },
+    { label: "18a", start: 165.76, end: 168.11 },
+    { label: "18b", start: 168.36, end: 169.07 },
+    { label: "18c", start: 169.32, end: 171.11 },
+    { label: "18d", start: 171.36, end: 172.67 },
+    { label: "18e", start: 172.92, end: 173.85 },
+    { label: "19a", start: 174.1, end: 176.01 },
+    { label: "19b", start: 176.26, end: 177.43 },
+    { label: "19c", start: 177.68, end: 180.75 },
+    { label: "19d", start: 181, end: 182.31 },
+    { label: "19e", start: 182.56, end: 184.59 },
+    { label: "19f", start: 184.84, end: 186.99 },
+    { label: "20a", start: 187.24, end: 189.85 },
+    { label: "20b", start: 190.1, end: 191.11 },
+    { label: "20c", start: 191.36, end: 193.79 },
+    { label: "21", start: 194.04, end: 197.93 },
+    { label: "22a", start: 198.18, end: 201.27 },
+    { label: "22b", start: 201.52, end: 202.23 },
+    { label: "22c", start: 202.48, end: 204.63 },
+    { label: "22d", start: 204.88, end: 205.45 },
+    { label: "22e", start: 205.7, end: 207.13 },
+    { label: "22f", start: 207.38, end: 208.73 },
+    { label: "22g", start: 208.98, end: 209.43 },
+    { label: "22h", start: 209.68, end: 211.49 },
+    { label: "s3", start: 211.74, end: 215.83 },
+    { label: "23", start: 216.08, end: 221.97 },
+    { label: "24a", start: 222.22, end: 223.57 },
+    { label: "24b", start: 223.82, end: 225.73 },
+    { label: "24c", start: 225.98, end: 227.41 },
+    { label: "24d", start: 227.66, end: 228.65 },
+    { label: "24e", start: 228.9, end: 231.41 },
+    { label: "25a", start: 231.66, end: 232.53 },
+    { label: "25b", start: 232.78, end: 234.03 },
+    { label: "25c", start: 234.28, end: 236.89 },
+    { label: "25d", start: 237.14, end: 239.21 },
+    { label: "25e", start: 239.46, end: 240.67 },
+    { label: "25f", start: 240.92, end: 241.87 },
+    { label: "25g", start: 242.12, end: 243.51 },
+    { label: "25h", start: 243.76, end: 244.63 },
+    { label: "25i", start: 244.88, end: 246.25 },
+    { label: "26a", start: 246.5, end: 251.45 },
+    { label: "26b", start: 251.7, end: 252.67 },
+    { label: "26c", start: 252.92, end: 254.91 },
+    { label: "27a", start: 255.16, end: 258.77 },
+    { label: "27b", start: 259.02, end: 260.85 },
+    { label: "27c", start: 261.1, end: 264.25 },
+    { label: "27d", start: 264.5, end: 267.95 },
+    { label: "27e", start: 268.2, end: 269.79 },
+    { label: "27f", start: 270.04, end: 271.43 },
+    { label: "28a", start: 271.68, end: 273.63 },
+    { label: "28b", start: 273.88, end: 275.25 },
+    { label: "28c", start: 275.5, end: 276.89 },
+    { label: "28d", start: 277.14, end: 278.45 },
+    { label: "28e", start: 278.7, end: 279.45 },
+    { label: "28f", start: 279.7, end: 280.27 },
+    { label: "28g", start: 280.52, end: 281.79 },
+    { label: "28h", start: 282.04, end: 283.89 },
+    { label: "29a", start: 284.14, end: 287.11 },
+    { label: "29b", start: 287.36, end: 288.23 },
+    { label: "29c", start: 288.48, end: 292.21 },
+    { label: "30a", start: 292.46, end: 294.17 },
+    { label: "30b", start: 294.42, end: 294.63 },
+    { label: "30c", start: 294.88, end: 295.45 },
+    { label: "30d", start: 295.7, end: 296.91 },
+    { label: "30e", start: 297.16, end: 299.03 },
+    { label: "31a", start: 299.28, end: 300.87 },
+    { label: "31b", start: 301.12, end: 303.27 },
+    { label: "31c", start: 303.52, end: 304.57 },
+    { label: "31d", start: 304.82, end: 306.37 },
+    { label: "31e", start: 306.62, end: 308.13 },
+    { label: "32a", start: 308.38, end: 310.37 },
+    { label: "32b", start: 310.62, end: 312.29 },
+    { label: "32c", start: 312.54, end: 313.85 },
+    { label: "32d", start: 314.1, end: 317.43 },
+    { label: "32e", start: 317.68, end: 320.95 },
+    { label: "s4", start: 321.2, end: 325.29 },
+    { label: "33a", start: 325.54, end: 327.81 },
+    { label: "33b", start: 328.06, end: 329.11 },
+    { label: "33c", start: 329.36, end: 330.67 },
+    { label: "33d", start: 330.92, end: 332.85 },
+    { label: "33e", start: 333.1, end: 334.31 },
+    { label: "33f", start: 334.56, end: 339.23 },
+    { label: "34a", start: 339.48, end: 341.55 },
+    { label: "34b", start: 341.8, end: 342.63 },
+    { label: "34c", start: 342.88, end: 344.27 },
+    { label: "34d", start: 344.52, end: 345.55 },
+    { label: "34e", start: 345.8, end: 347.01 },
+    { label: "35a", start: 347.26, end: 349.73 },
+    { label: "35b", start: 349.98, end: 352.29 },
+    { label: "35c", start: 352.54, end: 354.33 },
+    { label: "35d", start: 354.58, end: 354.99 },
+    { label: "35e", start: 355.24, end: 357.21 },
+    { label: "36a", start: 357.46, end: 358.55 },
+    { label: "36b", start: 358.8, end: 361.65 },
+    { label: "36c", start: 361.9, end: 363.71 },
+    { label: "36d", start: 363.96, end: 366.11 },
+    { label: "36e", start: 366.36, end: 367.99 },
+    { label: "36f", start: 368.24, end: 369.25 },
+    { label: "36g", start: 369.5, end: 372.11 },
+    { label: "37a", start: 372.36, end: 376.01 },
+    { label: "37b", start: 376.26, end: 377.91 },
+    { label: "37c", start: 378.16, end: 379.13 },
+    { label: "37d", start: 379.38, end: 380.41 },
+    { label: "37e", start: 380.66, end: 382.31 },
+    { label: "37f", start: 382.56, end: 384.51 },
+    { label: "38a", start: 384.76, end: 386.23 },
+    { label: "38b", start: 386.48, end: 388.11 },
+    { label: "38c", start: 388.36, end: 391.11 },
+    { label: "38d", start: 391.36, end: 393.17 },
+    { label: "38e", start: 393.42, end: 394.35 },
+    { label: "38f", start: 394.6, end: 396.55 },
+    { label: "39a", start: 396.8, end: 398.25 },
+    { label: "39b", start: 398.5, end: 399.43 },
+    { label: "39c", start: 399.68, end: 401.51 },
+    { label: "39d", start: 401.76, end: 402.79 },
+    { label: "40a", start: 403.04, end: 406.81 },
+    { label: "40b", start: 407.06, end: 408.67 },
+    { label: "40c", start: 408.92, end: 411.35 },
+    { label: "41a", start: 411.6, end: 412.45 },
+    { label: "41b", start: 412.7, end: 413.79 },
+    { label: "41c", start: 414.04, end: 415.71 },
+    { label: "41d", start: 415.96, end: 417.03 },
+    { label: "41e", start: 417.28, end: 418.37 },
+    { label: "42a", start: 418.62, end: 419.75 },
+    { label: "42b", start: 420, end: 420.93 },
+    { label: "42c", start: 421.18, end: 422.75 },
+    { label: "42d", start: 423, end: 423.67 },
+    { label: "42e", start: 423.92, end: 425.59 },
+    { label: "43a", start: 425.84, end: 428.91 },
+    { label: "43b", start: 429.16, end: 432.33 },
+    { label: "44a", start: 432.58, end: 434.27 },
+    { label: "44b", start: 434.52, end: 438.71 },
+    { label: "44c", start: 438.96, end: 440.13 },
+    { label: "44d", start: 440.38, end: 441.63 }
+];
+
+initAudioTimings(pop, timings);
+});
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1.11 </span><span class=\"fk\">Firawna </span><span class=\"ft\">turu pal la, ñeel bépp buuri Misra.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">1.11 </span><span class=\"fk\">Misra </span><span class=\"ft\">mooy réew mi ñuy wax Esibtë ba tey.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">1.15 </span><span class=\"fk\">Ebrë </span><span class=\"ft\">tur la wu niti jamono jooja daan wooye xeet, ya bànni Israyil bokk.</span></div>",
+    "F-3": "<div class=\"footnote-p\"><span class=\"fr\">2.2 </span><span class=\"ft\">Seetal ci Mucc ga 6.20</span></div>",
+    "F-4": "<div class=\"footnote-p\"><span class=\"fr\">2.10 </span><span class=\"fk\">Mose </span><span class=\"ft\">baatu làkku Misra la bu neexoo ak masa, di baat biy tekki «génne» ci làkku ebrë.</span></div>",
+    "F-5": "<div class=\"footnote-p\"><span class=\"fr\">2.18 </span><span class=\"fk\">Ruwel </span><span class=\"ft\">mooy Yettro ba tey.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 1 }];
+var hasIntro = false;
+var baseRef  = "alfa-06-OT06-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='alfa-05-OT05-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='alfa-05-OT05-001.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;6. Musaa gane na àddina&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='alfa-07-OT07-001.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='alfa-07-OT07-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="b"></div>
+<div class="b"></div>
+<div class="ms">Musaa gane na àddina</div>
+<div class="ms2">ñu jukkee ko ci Tawreetu Musaa</div>
+<div class="ms2">Mucc ga, saar 1.1-2.22</div>
+
+<div class="s"><div id="Ts1" class="txs">Bànni Israyil dem na réewum Misra</div></div><a id="v1"></a>
+<div class="m"><div id="T1a" class="txs"><span class="v">1</span><span class="vsp">&nbsp;</span><span class="myc">1 </span> <span class="myv">1 </span> Góor ñi seen baay di Yanqóoba,</div> <div id="T1b" class="txs">mi ñu dippee Israyil,</div> <div id="T1c" class="txs">ñu àndoon ak moom,</div> <div id="T1d" class="txs">dem Misra,</div> <div id="T1e" class="txs">te ku nekk yóbbaale waa këram,</div> <div id="T1f" class="txs">seeni tur a di:</div><span id="bookmarks1"></span> <a id="v2"></a><div id="T2" class="txs"><span class="v">2</span><span class="vsp">&nbsp;</span><span class="myv">2 </span> Ruben ak Simeyon ak Lewi ak Yuda</div><span id="bookmarks2"></span> <a id="v3"></a><div id="T3a" class="txs"><span class="v">3</span><span class="vsp">&nbsp;</span><span class="myv">3 </span> ak Isakaar ak Sabulon,</div> <div id="T3b" class="txs">ak itam Beñamin;</div><span id="bookmarks3"></span> <a id="v4"></a><div id="T4" class="txs"><span class="v">4</span><span class="vsp">&nbsp;</span><span class="myv">4 </span> ak Dan ak Neftali ak Gàdd ak Aser.</div><span id="bookmarks4"></span> <a id="v5"></a><div id="T5a" class="txs"><span class="v">5</span><span class="vsp">&nbsp;</span><span class="myv">5 </span> Góor ñi soqikoo ci Yanqóoba ñépp juróom ñaar fukk lañu (70),</div> <div id="T5b" class="txs">bu ñu ci boolee doomam,</div> <div id="T5c" class="txs">ji ñuy wax Yuusufa,</div> <div id="T5d" class="txs">moom ma ñu fekk Misra.</div><span id="bookmarks5"></span> <a id="v6"></a><div id="T6a" class="txs"><span class="v">6</span><span class="vsp">&nbsp;</span><span class="myv">6 </span> Gannaaw ga Yuusufaak i doomi baayam yu góor yépp nelaw,</div> <div id="T6b" class="txs">ñook maas googu gépp.</div><span id="bookmarks6"></span> <a id="v7"></a><div id="T7a" class="txs"><span class="v">7</span><span class="vsp">&nbsp;</span><span class="myv">7 </span> Bànni Israyil nag giir fa,</div> <div id="T7b" class="txs">law,</div> <div id="T7c" class="txs">di fulandiwu,</div> <div id="T7d" class="txs">ba yokku lool,</div> <div id="T7e" class="txs">fees réew ma.</div><span id="bookmarks7"></span></div>
+
+<div class="s"><div id="Ts2" class="txs">Firawna not na bànni Israyil</div></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><div id="T8a" class="txs"><span class="v">8</span><span class="vsp">&nbsp;</span><span class="myv">8 </span> Ñu dem ba jëmmi jamono,</div> <div id="T8b" class="txs">beneen buur bu xamul Yuusufa falu ca Misra.</div><span id="bookmarks8"></span> <a id="v9"></a><div id="T9a" class="txs"><span class="v">9</span><span class="vsp">&nbsp;</span><span class="myv">9 </span> Mu wax ak waa réewam,</div> <div id="T9b" class="txs">ne leen:</div> <div id="T9c" class="txs">«Giiru bànni Israyil kat ñu ngi nuy gëna bare,</div> <div id="T9d" class="txs">ba ëpp nu doole.</div><span id="bookmarks9"></span> <a id="v10"></a><div id="T10a" class="txs"><span class="v">10</span><span class="vsp">&nbsp;</span><span class="myv">10 </span> Nanu ci sàkk pexe,</div> <div id="T10b" class="txs">ngir ñu bañatee yokku.</div> <div id="T10c" class="txs">Lu ko moy bu xare amee,</div> <div id="T10d" class="txs">man nañoo far ak sunuy noon,</div> <div id="T10e" class="txs">xeex ak nun,</div> <div id="T10f" class="txs">ba génn réew mi.»</div><span id="bookmarks10"></span> <a id="v11"></a><div id="T11a" class="txs"><span class="v">11</span><span class="vsp">&nbsp;</span><span class="myv">11 </span> Ba loolu amee ñu fal ay nit ñu leen di ga ca seeni sas,</div> <div id="T11b" class="txs">di leen ca fitnaal lool.</div> <div id="T11c" class="txs">Noonu la bànni Israyil tabaxale Firawna<span class="footnote selectable" id="F-0"><sup>a</sup></span> buuru Misra<span class="footnote selectable" id="F-1"><sup>b</sup></span> dëkk,</div> <div id="T11d" class="txs">ya ñu naa Pitom ak Ramses,</div> <div id="T11e" class="txs">mu def ko ay dencukaayi dund.</div><span id="bookmarks11"></span> <a id="v12"></a><div id="T12a" class="txs"><span class="v">12</span><span class="vsp">&nbsp;</span><span class="myv">12 </span> Terewul lu ñu leen gëna fitnaal,</div> <div id="T12b" class="txs">ñuy gën di fulandiwu,</div> <div id="T12c" class="txs">yokku,</div> <div id="T12d" class="txs">ba waa Misra am njàqare ca bànni Israyil.</div><span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><div id="T13" class="txs"><span class="v">13</span><span class="vsp">&nbsp;</span><span class="myv">13 </span> Waa Misra dañoo mujj di jaamloo bànni Israyil bu metti,</div><span id="bookmarks13"></span> <a id="v14"></a><div id="T14a" class="txs"><span class="v">14</span><span class="vsp">&nbsp;</span><span class="myv">14 </span> yen leen toskarey àddina ndax liggéey yu metti.</div> <div id="T14b" class="txs">Ñuy móol ban,</div> <div id="T14c" class="txs">di tabax,</div> <div id="T14d" class="txs">waa Misra teg ca sëf leen mboolem liggéeyu tool ya.</div> <div id="T14e" class="txs">Néegoon nañu ca ñoom lool ca mboolem liggéeyu njaam bu ñu leen sas.</div><span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><div id="T15a" class="txs"><span class="v">15</span><span class="vsp">&nbsp;</span><span class="myv">15 </span> Firawna buuru Misra teg ca wax ak rewlikati Ebrë ya<span class="footnote selectable" id="F-2"><sup>c</sup></span>,</div> <div id="T15b" class="txs">te kenn ka tuddoon Sifra,</div> <div id="T15c" class="txs">ka ca des di Puwa.</div><span id="bookmarks15"></span> <a id="v16"></a><div id="T16a" class="txs"><span class="v">16</span><span class="vsp">&nbsp;</span><span class="myv">16 </span> Mu ne leen:</div> <div id="T16b" class="txs">«Bu ngeen dee rewli jigéeni Ebrë yi,</div> <div id="T16c" class="txs">nangeen xool lu xale bi doon.</div> <div id="T16d" class="txs">Su dee góor,</div> <div id="T16e" class="txs">reyleen,</div> <div id="T16f" class="txs">su dee jigéen,</div> <div id="T16g" class="txs">bàyyileen,</div> <div id="T16h" class="txs">mu dund.»</div><span id="bookmarks16"></span> <a id="v17"></a><div id="T17a" class="txs"><span class="v">17</span><span class="vsp">&nbsp;</span><span class="myv">17 </span> Teewul rewlikat ya ragal Yàlla,</div> <div id="T17b" class="txs">ba defuñu la leen buur ba sant;</div> <div id="T17c" class="txs">xanaa ñu bàyyi liir yu góor ya,</div> <div id="T17d" class="txs">ñu dund.</div><span id="bookmarks17"></span> <a id="v18"></a><div id="T18a" class="txs"><span class="v">18</span><span class="vsp">&nbsp;</span><span class="myv">18 </span> Buuru Misra woolu rewlikat ya,</div> <div id="T18b" class="txs">ne leen:</div> <div id="T18c" class="txs">«Ana lu tax ngeen def lii,</div> <div id="T18d" class="txs">di bàyyi liir yu góor yi,</div> <div id="T18e" class="txs">ñu dund?»</div><span id="bookmarks18"></span> <a id="v19"></a><div id="T19a" class="txs"><span class="v">19</span><span class="vsp">&nbsp;</span><span class="myv">19 </span> Rewlikat ya ne ko:</div> <div id="T19b" class="txs">«Li tax kay mooy,</div> <div id="T19c" class="txs">jigéeni Ebrë yi dañoo niroowul ak jigéeni waa Misra;</div> <div id="T19d" class="txs">ndax dañoo njaxlaf,</div> <div id="T19e" class="txs">ba bu rewlikat yiy laata agsi,</div> <div id="T19f" class="txs">fekk ñu mucc ba noppi.»</div><span id="bookmarks19"></span> <a id="v20"></a><div id="T20a" class="txs"><span class="v">20</span><span class="vsp">&nbsp;</span><span class="myv">20 </span> Bànni Israyil nag di fulandiwu,</div> <div id="T20b" class="txs">gëna yokku,</div> <div id="T20c" class="txs">Yàlla defal rewlikat ya aw yiw,</div><span id="bookmarks20"></span> <a id="v21"></a><div id="T21" class="txs"><span class="v">21</span><span class="vsp">&nbsp;</span><span class="myv">21 </span> may leen giir ndax seen ug ragal Yàlla.</div><span id="bookmarks21"></span> <a id="v22"></a><div id="T22a" class="txs"><span class="v">22</span><span class="vsp">&nbsp;</span><span class="myv">22 </span> Gannaaw loolu Firawna sant waa réew ma yépp,</div> <div id="T22b" class="txs">ne leen:</div> <div id="T22c" class="txs">«Mboolem doom ju juddu ci Ebrë yi,</div> <div id="T22d" class="txs">di góor,</div> <div id="T22e" class="txs">sànnileen ca dex ga,</div> <div id="T22f" class="txs">waaye lu ciy jigéen,</div> <div id="T22g" class="txs">bàyyileen,</div> <div id="T22h" class="txs">mu dund.»</div><span id="bookmarks22"></span></div>
+
+<div class="s"><div id="Ts3" class="txs">Musaa gane na àddina</div></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="m"><div id="T23" class="txs"><span class="v">23</span><span class="vsp">&nbsp;</span><span class="myc">2 </span> <span class="myv">1 </span> Jenn waay ju bokk ci giiru Lewi nag moo jëloon janq bu mu bokkal giir.</div><span id="bookmarks23"></span> <a id="v24"></a><div id="T24a" class="txs"><span class="v">24</span><span class="vsp">&nbsp;</span><span class="myv">2 </span> Ndaw sa ëmb,</div> <div id="T24b" class="txs">ba mujj am doom ju góor<span class="footnote selectable" id="F-3"><sup>d</sup></span>.</div> <div id="T24c" class="txs">Ba mu gisee taar,</div> <div id="T24d" class="txs">ba liir ba àndal,</div> <div id="T24e" class="txs">nëbb na ko lu mat ñetti weer.</div><span id="bookmarks24"></span> <a id="v25"></a><div id="T25a" class="txs"><span class="v">25</span><span class="vsp">&nbsp;</span><span class="myv">3 </span> Mu dem nag,</div> <div id="T25b" class="txs">ba manatu koo nëbb.</div> <div id="T25c" class="txs">Mu wut pañe bu ñu ràbbe barax,</div> <div id="T25d" class="txs">fatte ko godoroŋ ak ndàbb,</div> <div id="T25e" class="txs">yeb ca liir ba,</div> <div id="T25f" class="txs">daldi dem,</div> <div id="T25g" class="txs">teg ko ca biir barax,</div> <div id="T25h" class="txs">ba ca tàkkal dex,</div> <div id="T25i" class="txs">ga ñu naan Niil.</div><span id="bookmarks25"></span> <a id="v26"></a><div id="T26a" class="txs"><span class="v">26</span><span class="vsp">&nbsp;</span><span class="myv">4 </span> Xale bu jigéen bay magu liir ba ma nga taxaw fu soreyaatoo ak liir ba,</div> <div id="T26b" class="txs">di xool,</div> <div id="T26c" class="txs">ba xam nu muy mujje.</div><span id="bookmarks26"></span></div><span id="bookmarks26"></span><a id="v27"></a>
+<div class="p"><div id="T27a" class="txs"><span class="v">27</span><span class="vsp">&nbsp;</span><span class="myv">5 </span> Ba mu ko defee doomu Firawna ju jigéen dikk,</div> <div id="T27b" class="txs">di sangusi ca dexu Niil ga,</div> <div id="T27c" class="txs">surgaam yu jigéen yay doxantu ca tàkk ga.</div> <div id="T27d" class="txs">Ba loolu amee mu séen pañe ba ca biir barax ba,</div> <div id="T27e" class="txs">daldi yónni jaamam,</div> <div id="T27f" class="txs">mu yót ko ko.</div><span id="bookmarks27"></span> <a id="v28"></a><div id="T28a" class="txs"><span class="v">28</span><span class="vsp">&nbsp;</span><span class="myv">6 </span> Naka la ko ne ubbet,</div> <div id="T28b" class="txs">yem ca xale ba,</div> <div id="T28c" class="txs">muy liir bu góor,</div> <div id="T28d" class="txs">xale bay jooy,</div> <div id="T28e" class="txs">yaram wa daw,</div> <div id="T28f" class="txs">mu ne:</div> <div id="T28g" class="txs">«Kii de ndeysaan,</div> <div id="T28h" class="txs">ci doomi Ebrë yi la!»</div><span id="bookmarks28"></span> <a id="v29"></a><div id="T29a" class="txs"><span class="v">29</span><span class="vsp">&nbsp;</span><span class="myv">7 </span> Magu liir ba daldi wax doomu Firawna ja,</div> <div id="T29b" class="txs">ne ko:</div> <div id="T29c" class="txs">«Ndax ma dem wutali la ku koy nàmpal ci Ebrë yi?»</div><span id="bookmarks29"></span> <a id="v30"></a><div id="T30a" class="txs"><span class="v">30</span><span class="vsp">&nbsp;</span><span class="myv">8 </span> Doomu Firawna ne ko:</div> <div id="T30b" class="txs">«Waaw,</div> <div id="T30c" class="txs">demal.»</div> <div id="T30d" class="txs">Xale ba dem,</div> <div id="T30e" class="txs">indil ko yaayu liir ba.</div><span id="bookmarks30"></span> <a id="v31"></a><div id="T31a" class="txs"><span class="v">31</span><span class="vsp">&nbsp;</span><span class="myv">9 </span> Doomu Firawna ne ko:</div> <div id="T31b" class="txs">«Yóbbul xale bii te nàmpalal ma ko,</div> <div id="T31c" class="txs">maa lay fey.»</div> <div id="T31d" class="txs">Ndaw sa jël liir ba,</div> <div id="T31e" class="txs">di ko nàmpal.</div><span id="bookmarks31"></span> <a id="v32"></a><div id="T32a" class="txs"><span class="v">32</span><span class="vsp">&nbsp;</span><span class="myv">10 </span> Ba xale ba màggee,</div> <div id="T32b" class="txs">mu yót ko doomu Firawna,</div> <div id="T32c" class="txs">mu def ko muy doomam,</div> <div id="T32d" class="txs">tudde ko Musaa (mu firi Ki ñu génne),</div> <div id="T32e" class="txs">ndax la mu ko génnee ca ndox ma<span class="footnote selectable" id="F-4"><sup>e</sup></span>.</div><span id="bookmarks32"></span></div>
+
+<div class="s"><div id="Ts4" class="txs">Musaa gàddaayi na réewum Majan</div></div><span id="bookmarks32"></span><a id="v33"></a>
+<div class="p"><div id="T33a" class="txs"><span class="v">33</span><span class="vsp">&nbsp;</span><span class="myv">11 </span> Ba ñu demee ba Musaa màgg,</div> <div id="T33b" class="txs">dafa am bés,</div> <div id="T33c" class="txs">mu seeti bokkam ya,</div> <div id="T33d" class="txs">gis leen ca liggéey yu metti,</div> <div id="T33e" class="txs">ya ñu leen sas.</div> <div id="T33f" class="txs">Mu gis jenn waayu Misra di dóor kenn ca bokki Ebrë ya.</div><span id="bookmarks33"></span> <a id="v34"></a><div id="T34a" class="txs"><span class="v">34</span><span class="vsp">&nbsp;</span><span class="myv">12 </span> Musaa geestu wet gu nekk,</div> <div id="T34b" class="txs">gisul kenn,</div> <div id="T34c" class="txs">mu rey waa Misra ja,</div> <div id="T34d" class="txs">daldi gas,</div> <div id="T34e" class="txs">suul ko.</div><span id="bookmarks34"></span></div><span id="bookmarks34"></span><a id="v35"></a>
+<div class="p"><div id="T35a" class="txs"><span class="v">35</span><span class="vsp">&nbsp;</span><span class="myv">13 </span> Ca ëllëg sa mu dellu génn,</div> <div id="T35b" class="txs">yem ci ñaari Ebrë yuy xeex.</div> <div id="T35c" class="txs">Musaa wax ak ka tooñ,</div> <div id="T35d" class="txs">ne ko:</div> <div id="T35e" class="txs">«Lu tax ngay dóor sa moroom mii?»</div><span id="bookmarks35"></span> <a id="v36"></a><div id="T36a" class="txs"><span class="v">36</span><span class="vsp">&nbsp;</span><span class="myv">14 </span> Waa ja ne ko:</div> <div id="T36b" class="txs">«Ku la def sunu njiit mbaa sunu àttekat?</div> <div id="T36c" class="txs">Xanaa danga maa nara rey,</div> <div id="T36d" class="txs">na nga reye woon waa Misra ja?»</div> <div id="T36e" class="txs">Musaa nag tiit,</div> <div id="T36f" class="txs">naan ca xelam:</div> <div id="T36g" class="txs">«Ndeke mbir mi kay siiw na.»</div><span id="bookmarks36"></span></div><span id="bookmarks36"></span><a id="v37"></a>
+<div class="p"><div id="T37a" class="txs"><span class="v">37</span><span class="vsp">&nbsp;</span><span class="myv">15 </span> Ba loolu amee Firawna dégg mbir ma,</div> <div id="T37b" class="txs">di wuta reylu Musaa.</div> <div id="T37c" class="txs">Musaa daw,</div> <div id="T37d" class="txs">ba sore Firawna,</div> <div id="T37e" class="txs">dem dali ca réewu Majan,</div> <div id="T37f" class="txs">fu dend ak ab teen.</div><span id="bookmarks37"></span> <a id="v38"></a><div id="T38a" class="txs"><span class="v">38</span><span class="vsp">&nbsp;</span><span class="myv">16 </span> Yettro,</div> <div id="T38b" class="txs">sarxalkatu Majan ba nag,</div> <div id="T38c" class="txs">amoon na juróom ñaari doom yu jigéen.</div> <div id="T38d" class="txs">Ñu ñëw di rootsi,</div> <div id="T38e" class="txs">di duy mbalka,</div> <div id="T38f" class="txs">ya ñuy wëgge seen juru baay.</div><span id="bookmarks38"></span> <a id="v39"></a><div id="T39a" class="txs"><span class="v">39</span><span class="vsp">&nbsp;</span><span class="myv">17 </span> Ay sàmm agsi,</div> <div id="T39b" class="txs">dàq leen.</div> <div id="T39c" class="txs">Musaa wallu jigéen ña,</div> <div id="T39d" class="txs">wëggal leen seen jur.</div><span id="bookmarks39"></span></div><span id="bookmarks39"></span><a id="v40"></a>
+<div class="p"><div id="T40a" class="txs"><span class="v">40</span><span class="vsp">&nbsp;</span><span class="myv">18 </span> Ba ñu delloo ca seen baay Ruwel<span class="footnote selectable" id="F-5"><sup>f</sup></span>,</div> <div id="T40b" class="txs">mu laaj leen ne leen:</div> <div id="T40c" class="txs">«Lu tax ngeen teela ñibbsi tey?»</div><span id="bookmarks40"></span> <a id="v41"></a><div id="T41a" class="txs"><span class="v">41</span><span class="vsp">&nbsp;</span><span class="myv">19 </span> Ñu ne ko:</div> <div id="T41b" class="txs">«Ab waa Misra daal,</div> <div id="T41c" class="txs">moo nu xettli ca sàmm ya;</div> <div id="T41d" class="txs">rootal na nu sax,</div> <div id="T41e" class="txs">ba wëgg jur gi.»</div><span id="bookmarks41"></span> <a id="v42"></a><div id="T42a" class="txs"><span class="v">42</span><span class="vsp">&nbsp;</span><span class="myv">20 </span> Ruwel ne leen:</div> <div id="T42b" class="txs">«Ana waa ja?</div> <div id="T42c" class="txs">Lu tax ngeen bàyyi ko fa?</div> <div id="T42d" class="txs">Wooyileen ko,</div> <div id="T42e" class="txs">mu añsi kay!»</div><span id="bookmarks42"></span></div><span id="bookmarks42"></span><a id="v43"></a>
+<div class="p"><div id="T43a" class="txs"><span class="v">43</span><span class="vsp">&nbsp;</span><span class="myv">21 </span> Musaa far dal ca kër waa ja.</div> <div id="T43b" class="txs">Mu mujj ko may doomam ju ñuy wax Sipora.</div><span id="bookmarks43"></span> <a id="v44"></a><div id="T44a" class="txs"><span class="v">44</span><span class="vsp">&nbsp;</span><span class="myv">22 </span> Mu am doom ju góor,</div> <div id="T44b" class="txs">Musaa tudde ko Gersom (mu firi Doxandéem fii),</div> <div id="T44c" class="txs">ndaxte dafa ne:</div> <div id="T44d" class="txs">«Doxandéem laa fii.»</div><span id="bookmarks44"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010, 2018 AES et MBS  (NINEA MBS: 20215410C9).</span></div></div>
+</div>
+
+<div id="toolbar-bottom">
+<div class="audio-player">
+  <audio id="audio" controls>
+    <source id="audio1" src="../mp3//OT06.mp3" />
+  </audio>
+</div>
+</div>
+
+</body>
+</html>

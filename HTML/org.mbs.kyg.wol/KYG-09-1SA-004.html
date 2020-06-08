@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Samiyel 4</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">4.4 </span><span class=\"fk\">serub ya: </span><span class=\"ft\">baatu ebrë la. Ay malaaka lañu yu bokk ak Yàlla jataay. Gaalu kóllëre gu sell ga, ñaari serub yu ñu tëgge wurus lañu teg ca kawam, ñu tiim ko, seeni laaf tàllalu, di saamandaay ngàngunem buur. Loolu di wone ne Yàlla Aji Sax jaa nga fa teew, na mu teewe ca kaw asamaan, serub ya yéew ko. Yàlla ci boppam nag kenn jëmmalu ko fa, na ñu jëmmale serub ya ñu tëgg.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-30": "<div><span class=\"k\">gaalu kóllëre g-:</span> Mooy waxande wa ñu dencoon àlluway doj ya Yàlla joxoon Musaa. Àlluwa yooyu la lale kóllëre ga mu fas ak bànni Israyil. Li waral ñu tudde ko <span class=\"bd\">gaal ga seede sa dence</span>, mbaa <span class=\"bd\">gaal ga àlluway seede sa dence</span> moo di àlluwa yooyu, seede la woon ca la Yàlla santaane. Bu gaal ga masaana teew bérab, loolu day firndeel ne Yàllaa fa teewal ag leeram ngir ñoñam.</div>",
+    "G-67": "<div><span class=\"k\">serub y-:</span> Baatu ebrë la. Ay bindeef lañu yu bokk ak Yàlla jataay. Ñooy wattu dénd ba ngànguney Yàlla nekk, ba foofa dëkke sell. Jaamookaayu Yàlla ga amoon na gaal gu ñuy wooye gaalu kóllëre ga. Ñaari serub yu ñu tëgge wurus lañu tegoon ca kawam, ñu tiim ko, seeni laaf firiku, di saamandaay ngàngunem buur. Loolu di wone ne Yàlla Aji Sax jaa nga fa teew, na mu teewe ca kaw asamaan, serub ya yéew ko. Yàlla ci boppam nag kenn jëmmalu ko fa, na ñu jëmmale serub ya ñu tëgg.</div>",
+    "G-25": "<div><span class=\"k\">Ebrë:</span> Ebrë, am na ñu koy wax Ibraan ba tey. Yonent Yàlla Ibraayma ab Ebrë la woon. Xeet wi soqikoo ci moom te sëtoo ci Yanqóoba, moom lañuy wooye Ebrë. Seen làkk mooy ebrë mbaa ibraan. Wax nañu ne, Ebrë ci seen turu maam Eber la jóge (<span class=\"bk\">Njàlbéen ga</span> 10.21).</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 31 }];
+var hasIntro = false;
+var baseRef  = "KYG-09-1SA-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-08-RUT-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-09-1SA-003.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Samiyel&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;4&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-09-1SA-005.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Nangu nañu gaalu Yàlla ga</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">4</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Kàddug Samiyel nag di dikkal Israyil gépp.</div>
+<div class="p">Ci biir loolu <span class="footnote selectable" id="G-13">bànni Israyil</span> dem, dajeek waa Filisti ngir xare. Ña nga dal fa feggook Eben Eser, waa Filisti dal ca Afeg.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Waa Filisti làng-déral Israyil, xare ba jib. Israyil daanu fa kanam waa Filisti, waa Filisti rey ca seeni làng lu jege ñeenti junni ca toolub xare ba.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Ba mbooloo ma ñibbee ca dal ba, magi Israyil ña ne: «Lu waral <span class="footnote selectable" id="G-3">Aji Sax</span> ji dumalu nu tey fi kanam waa Filisti? Nan jëleji <span class="footnote selectable" id="G-30">gaalu kóllërey Aji Sax</span> ji fa Silo; na dikk ci sunu biir, ba musal nu ci sunuy noon.»<span id="bookmarks3"></span></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="p"><span class="v">4</span><span class="vsp">&nbsp;</span>Ci kaw loolu mbooloo ma yónnee ca Silo, ñu jëli gaalu kóllërey Aji Sax ji Boroom gàngoori xare yi, Ki toog fi tiim ñaari malaakay <span class="footnote selectable" id="G-67">serub</span> yi<span class="footnote selectable" id="F-0"><sup>a</sup></span>. Foofa ca Silo la Ofni ak Fineyas, ñaari doomi Eli yu góor ya, nekkoon ak gaalu kóllërey Aji Sax ja.<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="p"><span class="v">5</span><span class="vsp">&nbsp;</span>Ba gaalu kóllërey Aji Sax ji duggsee ca dal ba, Israyil gépp a xaacoondoo, ba suuf say riir.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Waa Filisti dégg coow la, ne: «Waaw, coow lu réy loolu ca dalub <span class="footnote selectable" id="G-25">Ebrë</span> ya, lu mu doon?»</div>
+<div class="p">Ba waa Filisti yégee ne gaalu kóllërey Aji Sax ja dugg na ca biir dal ba,<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>tiitaangee leen jàpp, ñu ne: «Am na yàlla ju dugg ca biir dal ba! Wóoy, ngalla nun! Nde guléet tey lu mel nii am!<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Wóoy ngalla nun! Ku nuy musal ci jii yàlla ju bare doole. Yàlla jii moo dumaa woon waa Misra xeeti mbugal yu nekk, ca màndiŋ ma.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Dëgërluleen déy te diy góor, yeen waa Filisti, nde lu ko moy ngeen doon jaami Ebrë yi, na ñu nekke woon sunuy jaam. Góor-góorluleen boog te xeex.»<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><span class="v">10</span><span class="vsp">&nbsp;</span>Waa Filisti nag di xare, ba bànni Israyil daanu: ku nekk daw jëm xaymaam. Jéll ba réy na lool; fanweeri junniy xarekat yuy deme tànk.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Gaalu Yàlla ga, ñu jël; Ofni ak Fineyas, ñaari doomi Eli yu góor ya, dee.<span id="bookmarks11"></span></div>
+
+<div class="s"><div id="s2">Mbugal ma topp na waa kër Eli</div></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="p"><span class="v">12</span><span class="vsp">&nbsp;</span>Ba mu ko defee jenn waay ju bokk ci giirug Beñamin, dawe ca làngu xare ba ca Silo ci benn bés bi. Mu agsee yére yu xottiku ak bopp bu fees ak suuf, di ko tiisloo.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Naka la agsi, yem ca Eli, mu toog ca toogoom ca peggu yoon wa, di séentu, ndax booba naw gaa ngay rëcc, ngir tiitaange ca <span class="footnote selectable" id="G-30">gaalu Yàlla</span> ga. Naka la waa ja duggsi ca dëkk ba, ba wax la xew, dëkk ba bépp yuuxoondoo.<span id="bookmarks13"></span></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="p"><span class="v">14</span><span class="vsp">&nbsp;</span>Eli dégg coow la, ne: «Riir moomu lu mu?» Waa ja gaaw dikk, wax ko Eli.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Booba Elee ngi ci juróom ñeent fukki at ak juróom ñett (98), bët yi ne xóll te gisatul dara.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Waa ja ne ko: «Man mii maa jóge ca toolub xare ba. Maa dawe làng ga tey jii.» Eli ne ko: «Doom, lu xew?»<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Ndaw la ne ko: «<span class="footnote selectable" id="G-13">Bànni Israyil</span> a daw, won waa Filisti gannaaw. Jéll bu réy la sunu mbooloo ma daanu, sa ñaari doom ya, Ofni ak Fineyas dee nañu, te it gaalu Yàlla ga, jël nañu ko.»<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Naka la tudd gaalu Yàlla ga rekk, Eli xàwwikoo ca toogu ba, daanoo njaaxaanaay, dal ca bunt dëkk ba, loos wa damm, mu dee, ndax booba day mag mu ànd ak yaramam. Eli jiite na Israyil ñeent fukki at.<span id="bookmarks18"></span></div><span id="bookmarks18"></span><a id="v19"></a>
+<div class="p"><span class="v">19</span><span class="vsp">&nbsp;</span>Goroom, jabaru Fineyas nag jigéenu wérul la woon te booba mu ngi waaja wasin. Naka la dégg ne jël nañu gaalu Yàlla ga, te baayu jëkkëram ak jëkkëram dee nañu, mu daldi sukk wasin. Waaye fekk na mititu matam jeexal dooleem.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Ba loolu amee muy waaja dee, jigéen ña ko doon taxawu ne ko: «Na sa xel dal, ndax doom ju góor nga am.» Waaye àdduwul, teewluwul.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Ndaw sa nag tudde gone gi Ikabot (mu firi Ana leer ga?) te naan: «Leer ga dëddu na Israyil, dem ngàllo.» Ndax la ñu nangu gaalu Yàlla ga ak la goroom ak jëkkëram dee.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Mu ne: «Leer ga kay dëddu na Israyil, dem ngàllo, ndegam jëlees na gaalu Yàlla ga kay!»<span id="bookmarks22"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

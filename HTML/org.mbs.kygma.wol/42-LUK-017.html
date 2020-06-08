@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لُوگْ 17</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Glossary entries
+var glossary = {
+    "G-86": "<div><span class=\"k\">يࣹرُسَلࣹمْ:‏</span> مࣷويْ ݒࣺييُ رࣺيوُمْ يَوُتْ، تࣹ فَ لَ ڪࣴرْ يࣵلَّ گَ نࣹڪّࣷونْ. فࣷوفَ رࣹڪّ لَݧُ مَنࣷونَ رࣹنْدِ اَيْ سَرَخِ مَلَ يُ ݧُ جࣺبَّلْ يࣵلَّ. </div>",
+    "G-60": "<div><span class=\"k\">سَمَرِ:‏</span> مࣷويْ دِيوَانْ بَ نࣹڪّࣷونْ دِگَّنْتࣹ يُدࣹ اَڪْ گَلِلࣹ. ݧُ بَرࣹ ݖِ وَا سَمَرِ اَيْ لࣵڪّ-ڪَتِ يࣺيفَرْ لَ لࣹينْ يَوُتْ يِ جࣵݒّࣹ وࣷونْ، تࣹ اَيْ نࣷونْ لَݧُ وࣷونْ. </div>",
+    "G-31": "<div><span class=\"k\">گَانَ:‏</span> بَاتْ بِ مَنْ نَا اࣴمبّ يࣹنࣹينْ جࣵنگࣷرࣷيْ دࣹرْ، يُ دُلْ نگَانَ ڪࣹسࣹ. </div>",
+    "G-62": "<div><span class=\"k\">سَرْخَلْڪَتْ ب-:‏</span> اَبْ سَرْخَلْڪَتْ نجِيتُ دِينࣹ لَ بُ سَسࣷو دِ رࣹنْدِلْ جَامُڪَتْ يِ سࣹينِ سَرَخْ. مُيْ يࣺيفَرْ يِ دِ بࣵنِّ إِسْرَاءِيلْ، ڪُ ݖِ نࣹڪّ اَمࣷونْ نَ اَيْ سَرْخَلْڪَتَمْ يُ لࣹينْ دِ تَخَوَلْ ݖَ ڪَنَمْ ڪَ ݧُ گࣴمْ، مُ دِمْ تُورْ سُ دࣹي يࣺيفَرْ يِ، مبَا مُيْ اَجِ سَخْ جِ، سُ دࣹي بࣵنِّ إِسْرَاءِيلْ. يࣵلَّ مࣷو تَامُ ݧِ بࣷڪّ ݖِ گِيرُگْ لࣹوِ، دࣷومُ يَعْقُوبَ، ݧُيْ هَـٰرُونَ اَڪْ ݧِ اَسْڪَنࣷو ݖِ مࣷومْ، نگِرْ ݧُ تَخَوَلْ بࣵنِّ إِسْرَاءِيلْ فَ ڪَنَمَمْ. سَرْخَلْڪَتِ بࣵنِّ إِسْرَاءِيلْ اَيْ گٗورْ لَݧُ يُ ݧُ سࣹلَّلَلْ يࣵلَّ، ݧُ فࣺيتࣹوࣷو لِگّࣺييَمْ. ݧࣷو سَسࣷو لِگّࣺييْ بِيْ جُبَلࣹ مبࣷولࣷو مࣹيڪْ يࣵلَّ. ݧࣷو لࣹينْ دِ سَرْخَلَلْ تࣹ ݧࣷو يࣷرࣹ لِگّࣺييُ جَامُ يࣵلَّ بِ. <span class=\"bd\">سَرْخَلْڪَتْ بُ مَگْ بِ</span> مࣷو دࣷونْ ڪِلِفَيْ سَرْخَلْڪَتْ يِ، تࣹ مࣷويْ مِسَالْ اَلْمَسِ عِيسَىٰ، مِ نُيْ اࣵگّࣹ فَ يࣵلَّ. </div>",
+    "G-29": "<div><span class=\"k\">فَرِسࣹنْ ي-:‏</span> تَرِيخَ لَݧُ وࣷونْ ݖِ بِيرْ يَوُتْ يِ. ݧُ خࣺرْ لَݧُ وࣷونْ ݖِ سࣵمّ يࣷونُ مُوسَىٰ، وَايࣹ جࣴفْ جُ تࣹگُ بَ مُ اࣴݒّ ݖِ ندِگَلْ مࣷومْ لَݧُ جِيتَلْ، بَ سࣹينْ جَامُ يࣵلَّ مُجّ نࣹڪّ نگِسْتَلْ، اَڪْ خࣹيبࣹيلْ سࣹينْ دِگّ اَڪْ ڪࣺݒّ ڪُ بࣷڪُّلْ ݖِ ݧࣷومْ. </div>",
+    "G-24": "<div><span class=\"k\">دࣷومُ نِتْ ڪ-:‏</span> مࣷويْ تُرْ وِ يࣷنࣹنتّ يࣵلَّ دَݧࣹيلْ وࣷويࣹ وࣷونْ اَلْمَسِ ݖِ اَيْ بِنْدَمْ، لُ جِيتُ جُدُّبْ اَلْمَسِ. لࣹنّ ݖِ لِ تُرْ وࣷووُ وࣷنࣹ مࣷويْ نِ اَلْمَسِ تࣷرࣷخْلࣷو، بَ بࣷڪّ اَڪْ نُنْ سُنُ بِنْدُ دࣷومْ آدَمَ. تُرْ لَ وُ عِيسَىٰ ݖِ بࣷݒَّمْ جَگࣷو وࣷونْ. </div>",
+    "G-72": "<div><span class=\"k\">سࣷدࣷمْ اَڪْ گࣷمࣷرْ:‏</span> دࣴڪّ يُ سِيوْ لَ وࣷونْ ݖَ جَمࣷنࣷيْ إِبْرَاهِيمَ. وَا سࣷدࣷمْ اَڪْ گࣷمࣷرْ لَ سࣹينِ بࣵڪَّارْ رࣺيࣷونْ، بَ يࣵلَّ تَسْ دࣴڪّ يَ. لࣹيگْ-لࣹيگْ تُرِ دࣴڪّ يࣷويُ دࣹيسْ نَ ڪࣷ مِسَالࣹ خࣹيتِ يࣵقُتࣹ، يِ وَا دࣴڪّ يَ دَانْ دࣹفْ. </div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 24 }];
+var hasIntro = true;
+var baseRef  = "42-LUK-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="ltr" lang="wol">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='19-PSA-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='42-LUK-016.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;لُوگْ&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;17&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='42-LUK-018.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='44-ACT-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">بࣵڪَّارْلࣷو نِتْ آيْ نَ </div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">17</div> <span class="v">&#x200f;1</span><span class="vsp">&nbsp;</span>عِيسَىٰ نࣹيتِ اَيْ تَالِبࣹيمْ:‏ «اَگْ فِيرْ گُيْ بࣵڪَّارْلࣷو مَنُلَ ݧࣵڪّ، وَايࣹ وٗويْ نگَلَّ ڪَ ڪࣷيْ لَلْ؞ <span id="bookmarks1"></span> <a id="v2"></a><span class="v">&#x200f;2</span><span class="vsp">&nbsp;</span>ݧُ تَڪّࣷونْ دࣷجْ وُ رࣺيْ ݖِ بَاتَمْ، سࣵنِّ ڪࣷ بِيرْ گࣺيجْ مࣷو گࣴنْ ݖِ مࣷومْ مُيْ يٗبّࣹ بࣵڪَّارْ ڪࣹنّ ݖِ خَلࣹ يِي؞ <span id="bookmarks2"></span> <a id="v3"></a><span class="v">&#x200f;3</span><span class="vsp">&nbsp;</span>وَتُّلࣹينْ سࣹينْ بࣷݒّ؞ <span id="bookmarks3"></span></div>
+
+<div class="s"><div id="s2">جࣺگَّلْ-لࣹينْ ڪُ لࣹينْ تُوبَلْ </div></div>
+<div class="p">«بُ لَ سَ مبࣷڪّ تࣷوݧࣹي، يࣹدّ ڪࣷ؞ بُ تُوبࣹي، بَالْ ڪࣷ؞  <a id="v4"></a><span class="v">&#x200f;4</span><span class="vsp">&nbsp;</span>سُ لَ تࣷوݧࣷونْ جُرٗومْ ݧَارِ يࣷونْ ݖِ بࣺسْ بِ، تࣹ وَلْبَتِڪُ جُرٗومْ ݧَارِ يࣷونْ، نࣹ لَ:‏ ‹تُوبْ نَا ڪࣷ،› بَالْ ڪࣷ رࣹڪّ؞» <span id="bookmarks4"></span></div>
+
+<div class="s"><div id="s3">نگࣴمْ مَيࣹ نَ ڪࣺيمْتَانْ </div></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="p"><span class="v">&#x200f;5</span><span class="vsp">&nbsp;</span>ݖِ ڪَوْ لࣷولُ ندَوْ يَ نࣹ سَنگّ بِ:‏ «يࣷڪّ نُ نگࣴمْ؞» <span id="bookmarks5"></span> <a id="v6"></a><span class="v">&#x200f;6</span><span class="vsp">&nbsp;</span>سَنگّ بِ نࣹ لࣹينْ:‏ «سُ نگࣹينْ اَمࣷونْ ݖِ نگࣴمْ، لُ تࣷلُّ نِ ݒࣹݒُّ فُدّࣴنْ سَخْ، بَ نࣹ گَرَبْ گِي:‏ ‹بُدّࣹيڪُلْ، دࣹمْ جࣴمْبَتࣹ ݖَ گࣺيجْ گَ،› سُ بࣷوبَا گَرَبْ گِ دࣺگَّلْ لࣹينْ؞ <span id="bookmarks6"></span></div>
+
+<div class="s"><div id="s4">اَبْ جَامْ دُ سࣵڪُّ جَاجࣴفْ </div></div><span id="bookmarks6"></span><a id="v7"></a>
+<div class="p"><span class="v">&#x200f;7</span><span class="vsp">&nbsp;</span>«ڪَنْ ݖِ يࣹينْ لَ اَبْ جَامَمْ دِ بࣹيِ مبَا مُ سࣵمِّ بَ جٗگࣹ تࣷولْ، دِڪّ، مُ نࣹ ڪࣷ:‏ ‹ڪَايْ، نُ لࣹڪّ›؟ <span id="bookmarks7"></span> <a id="v8"></a><span class="v">&#x200f;8</span><span class="vsp">&nbsp;</span>خَنَا ڪَيْ دَ ڪࣷيْ وَخْ نࣹ ڪࣷ:‏ ‹دࣹفَرَلْ سَمَ رࣹيرْ، تࣹ تَڪُّ، تَاجَلْ مَ، بَ مَ لࣹڪّ، نَانْ، نگَ دࣷورَ لࣹڪّ، نَانْ؞› <span id="bookmarks8"></span> <a id="v9"></a><span class="v">&#x200f;9</span><span class="vsp">&nbsp;</span>لَ جَامْ بَ جࣴفࣹ ندِگَلْ تَخْ نَ سَنگَمْ سَنتّ ڪࣷ؟ دࣺيدࣺيتْ ڪَيْ؞ <span id="bookmarks9"></span> <a id="v10"></a><span class="v">&#x200f;10</span><span class="vsp">&nbsp;</span>يࣹينْ اِتَمْ نࣷونُ؞ بُ نگࣹينْ دࣹفࣹي لِ ݧُ لࣹينْ سَنتّ لࣺݒّ بَ نࣷݒِّ، دَنگࣹينَ وَرْ نࣹ:‏ ‹اَيْ جَامْ رࣹڪّ لَنُ؞ سُنُ وَرُگَرْ لَنُ دࣹفْ؞›» <span id="bookmarks10"></span></div>
+
+<div class="s"><div id="s5">عِيسَىٰ فَجْ نَ فُڪِّ گَانَ </div></div><span id="bookmarks10"></span><a id="v11"></a>
+<div class="p"><span class="v">&#x200f;11</span><span class="vsp">&nbsp;</span>ݖِ بِيرْ يࣷونْ وࣷووُ عِيسَىٰ جࣴمࣷونْ <span class="footnote selectable" id="G-86">يࣹرُسَلࣹمْ</span>، مَ نگَ جَارࣹ فَ <span class="footnote selectable" id="G-60">سَمَرِ</span> اَڪْ گَلِلࣹ دِگَلࣷو؞ <span id="bookmarks11"></span> <a id="v12"></a><span class="v">&#x200f;12</span><span class="vsp">&nbsp;</span>مُ دࣹمْ بَيْ دُگّسِ ݖِبْ دࣴڪّ، فُڪِّ <span class="footnote selectable" id="G-31">گَانَ</span> دِڪّ، دَجࣹيڪْ مࣷومْ، بَ دࣵندّ ڪࣷ، دَلْدِ تَخَوْ؞ ݧُ خَاݖُ نࣹ:‏ <span id="bookmarks12"></span> <a id="v13"></a><span class="v">&#x200f;13</span><span class="vsp">&nbsp;</span>«عِيسَىٰ، نجَاتِگࣹ، يࣴرࣴمْ نُ!‏» <span id="bookmarks13"></span> <a id="v14"></a><span class="v">&#x200f;14</span><span class="vsp">&nbsp;</span>عِيسَىٰ نَگْ گِسْ لࣹينْ، نࣹ لࣹينْ:‏ «دࣹمْلࣹينْ سࣹيتْلُجِ سࣹينْ يَرَمْ ݖَ <span class="footnote selectable" id="G-62">سَرْخَلْڪَتْ</span> يَ؞» </div>
+<div class="p">بَ ݧُيْ دࣹمْ ݖَ سَرْخَلْڪَتْ يَ لَݧُ وࣺرْ، سࣹينْ يَرَمْ سࣹتْ؞ <span id="bookmarks14"></span> <a id="v15"></a><span class="v">&#x200f;15</span><span class="vsp">&nbsp;</span>ڪࣹنّ ݖِ ݧࣷومْ گِسْ نࣹ وࣺرْ نَ، دَلْدِ وَلْبَتِڪُ، دِ خَاݖُيْ سࣵبَّالْ يࣵلَّ؞ <span id="bookmarks15"></span> <a id="v16"></a><span class="v">&#x200f;16</span><span class="vsp">&nbsp;</span>مُ دِڪّ، نࣹ گُرُبْ، دࣴݒّ جࣴعࣴمْ فَ تࣵنڪِ عِيسَىٰ، سَنتّ ڪࣷ؞ وَا جَ نَگْ نِتُ <span class="footnote selectable" id="G-60">سَمَرِ</span> لَ وࣷونْ؞ <span id="bookmarks16"></span> <a id="v17"></a><span class="v">&#x200f;17</span><span class="vsp">&nbsp;</span>بَ لࣷولُ اَمࣹي عِيسَىٰ نࣹ:‏ «خَنَا دُ فُڪَّ وࣺرْ؟ جُرٗومْ ݧࣹينتّ ݧَ نَگْ، اَنَ ݧُ؟ <span id="bookmarks17"></span> <a id="v18"></a><span class="v">&#x200f;18</span><span class="vsp">&nbsp;</span>اَمُ ݖِ ڪࣹنّ ڪُ ݧࣴوْ، دࣹلّࣷو يࣵلَّ نجُڪَّلْ ڪُ دُلْ دࣷخَنْدࣺيمْ بِي!‏» <span id="bookmarks18"></span> <a id="v19"></a><span class="v">&#x200f;19</span><span class="vsp">&nbsp;</span>عِيسَىٰ نَگْ نࣹ ڪࣷ:‏ «جٗگَلْ دࣹمْ؛ سَ نگࣴمْ فَجْ نَ لَ؞» <span id="bookmarks19"></span></div>
+
+<div class="s"><div id="s6">نگُورُگْ يࣵلَّ دࣷورْ نَ بَ نࣷݒِّ </div></div><span id="bookmarks19"></span><a id="v20"></a>
+<div class="p"><span class="v">&#x200f;20</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-29">فَرِسࣹنْ</span> يِ ݧࣷو لاَجࣷونْ عِيسَىٰ، نࣹ ڪࣷ:‏ «ڪَݧْ لَ نگُورُگْ يࣵلَّ دِ دِڪّ؟» مُ نࣹ لࣹينْ:‏ «دِڪُّگْ نگُورُگْ يࣵلَّ دُ اࣵندّ اَڪُمْ ݖࣹيتَانْ؞ <span id="bookmarks20"></span> <a id="v21"></a><span class="v">&#x200f;21</span><span class="vsp">&nbsp;</span>دࣹيسُلْ نࣹ اِتْ:‏ ‹خࣷولْ-لࣹينْ، مُ نگِ› مبَا:‏ ‹مَ نگࣹي،› ندَخْ ڪَتْ نگُورُگْ يࣵلَّ مُ نگِ ݖِ سࣹينْ بِيرْ؞» <span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">&#x200f;22</span><span class="vsp">&nbsp;</span>مُ نࣹ تَالِبࣹ يَ:‏ «اَيْ جَنْتَ نگِ ݧࣴوْ يُ نگࣹينْ نَا نگࣺيجࣷو فࣹڪّࣹ بࣹنّ بࣺسْ ݖِ بࣺسِ <span class="footnote selectable" id="G-24">دࣷومُ نِتْ ڪِ</span>، تࣹ دُنگࣹينْ ڪࣷ فࣹڪّࣹ؞ <span id="bookmarks22"></span> <a id="v23"></a><span class="v">&#x200f;23</span><span class="vsp">&nbsp;</span>تࣹ اِتْ، دࣹيسْ نَ لࣹينْ نࣹ:‏ ‹مَ نگࣹي!‏› مبَا:‏ ‹مُ نگِي!‏› بُلࣹينْ دࣹمْ، بُلࣹينْ ݖَ تࣷݒّ؞ <span id="bookmarks23"></span> <a id="v24"></a><span class="v">&#x200f;24</span><span class="vsp">&nbsp;</span>ندَخْ نِ مࣹلَخْ دِ خُيّࣹ گِي وࣹتُ اَسَمَانْ، بَ نࣹ رࣵݧّ ݖَ گࣹي، نࣷونُ لَ دࣷومُ نِتْ ڪِيْ دࣹفْ ڪࣹرࣷوگْ بࣺسَمْ؞ <span id="bookmarks24"></span> <a id="v25"></a><span class="v">&#x200f;25</span><span class="vsp">&nbsp;</span>وَايࣹ بَلاَ بࣷوبَ فࣵوّ دࣷومُ نِتْ ڪِ اَمْ ݖࣷونࣷ يُ بَرࣹ، جࣵنڪࣷونْتࣹيڪْ دِيݝَتُ نِتِ تࣹيْ جِي؞ <span id="bookmarks25"></span></div><span id="bookmarks25"></span><a id="v26"></a>
+<div class="p"><span class="v">&#x200f;26</span><span class="vsp">&nbsp;</span>«نࣷونࣹي مُ دࣹمࣹ وࣷونْ ݖَ جَنْتِ نُوحٍ، نِ لَيْ دࣹمࣹ ݖَ جَنْتِ دࣷومُ نِتْ ڪِ؞ <span id="bookmarks26"></span> <a id="v27"></a><span class="v">&#x200f;27</span><span class="vsp">&nbsp;</span>نِتْ ݧَا نگَ دࣷونْ لࣹڪّ اَڪَ نَانْ، دِ جࣴلْ جَبَرْ اَڪَ سࣺيِ، بَ ڪࣹرࣷوگْ بࣺسْ بَ نُوحٍ دُگّࣹي ݖَ گَالْ گَ، مبࣴنّ مَ دِڪّ، سࣵنڪّ ݧࣺݒّ؞ <span id="bookmarks27"></span></div><span id="bookmarks27"></span><a id="v28"></a>
+<div class="p"><span class="v">&#x200f;28</span><span class="vsp">&nbsp;</span>«نࣷونࣹي اِتَمْ لَ دࣹمࣹ وࣷونْ ݖَ جَنْتِ لٗوتْ؞ نِتْ ݧَا نگَ دࣷونْ لࣹڪّ اَڪَ نَانْ، دِ جࣴندّ اَڪَ جَايْ، دِ جࣴمْبَتْ اَڪَ تَبَخْ؞ <span id="bookmarks28"></span> <a id="v29"></a><span class="v">&#x200f;29</span><span class="vsp">&nbsp;</span>وَايࣹ بࣺسْ بَ لٗوتْ گࣺنّࣹي <span class="footnote selectable" id="G-72">سࣷدࣷمْ</span>، لَ تَوُبْ سَوَرَ اَڪْ تَمَرَخْ وࣵݖّࣹ اَسَمَانْ، سࣵنڪّ ݧࣺݒّ؞ <span id="bookmarks29"></span> <a id="v30"></a><span class="v">&#x200f;30</span><span class="vsp">&nbsp;</span>نࣷونُ دࣷݝّ لَيْ دࣹمࣹ، بࣺسْ بُ دࣷومُ نِتْ ڪِيْ فࣹيݧْ؞ <span id="bookmarks30"></span></div><span id="bookmarks30"></span><a id="v31"></a>
+<div class="p"><span class="v">&#x200f;31</span><span class="vsp">&nbsp;</span>«بࣺسُبْ ڪࣹرࣷوگْ بࣷوبࣹي، ڪُ مُ فࣹڪّ ݖِ ڪَوْ اَمْ تَاخْ، تࣹ سَيْ يࣴفْ نࣹ ݖَ بِيرْ ڪࣴرْ گَ، بُلْ وࣵݖّ، دِ ڪࣷ جࣴلِ؞ تࣹ ڪُ مُ فࣹڪّ تࣷولْ بَ اِتَمْ، بُلْ دࣹلُّ؞ <span id="bookmarks31"></span> <a id="v32"></a><span class="v">&#x200f;32</span><span class="vsp">&nbsp;</span>فࣵتّلِڪُلࣹينْ جَبَرُ لٗوتْ جَ!‏ <span id="bookmarks32"></span> <a id="v33"></a><span class="v">&#x200f;33</span><span class="vsp">&nbsp;</span>ڪࣺݒّ ڪُيْ وُتَ رَوَلࣹ سَ بَڪَّنْ، يَايْ ݧࣵڪّ سَ بَڪَّنْ، وَايࣹ ڪࣺݒّ ڪُ ݧࣵڪّ سَ بَڪَّنْ، يَايْ دُندّ؞ <span id="bookmarks33"></span> <a id="v34"></a><span class="v">&#x200f;34</span><span class="vsp">&nbsp;</span>مَا لࣹينْ ڪࣷ وَخْ:‏ گُدِّگْ ڪࣹرࣷوگْ ݧَارْ اَيْ بࣷڪّ بࣹنّ لَلْ، ڪࣹنّ ڪِ، ݧُ يٗبُّ ڪࣷ، ڪَ ݖَ دࣹسْ، ݧُ بَ ڪࣷ؞ <span id="bookmarks34"></span> <a id="v35"></a><span class="v">&#x200f;35&#x200f;-36</span><span class="vsp">&nbsp;</span>ݧَارْ دِ وࣷلَنْدࣷو، ڪࣹنّ ڪِ، ݧُ يٗبُّ ڪࣷ، ڪَ ݖَ دࣹسْ، ݧُ بَ ڪࣷ؞» <span id="bookmarks35-36"></span></div><span id="bookmarks35-36"></span><a id="v37"></a>
+<div class="p"><span class="v">&#x200f;37</span><span class="vsp">&nbsp;</span>تَالِبࣹ يِ نࣹ عِيسَىٰ:‏ «لࣷولُ فَنْ لَ، سَنگّ بِ؟» مُ نࣹ لࣹينْ:‏ «فُ مࣺدّ نࣹڪّ، فَ لَ تَنْ يَيْ دَجࣹ؞» <span id="bookmarks37"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

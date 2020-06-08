@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dañeel 11</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">11.5 </span><span class=\"fk\">buur bëj-saalum: </span><span class=\"ft\">réewum bëj-saalum bii ñuy wax buuram, Misra la. Réewum bëj-gànnaar di Siri.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">11.16 </span><span class=\"fk\">réew mu taaru ma: </span><span class=\"ft\">Israyil la. Seetal it ci 11.41.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">11.28 </span><span class=\"fk\">mbooloom kóllëre gu sell gi </span><span class=\"ft\">bànni Israyil la.</span></div>",
+    "F-3": "<div class=\"footnote-p\"><span class=\"fr\">11.31 </span><span class=\"fk\">lu siblu: </span><span class=\"ft\">seetal ci 9.27.</span></div>",
+    "F-4": "<div class=\"footnote-p\"><span class=\"fr\">11.37 </span><span class=\"fk\">tuur </span><span class=\"ft\">moomu lañu gëmoon ne man naa nangul am njur.</span></div>",
+    "F-5": "<div class=\"footnote-p\"><span class=\"fr\">11.45 </span><span class=\"fk\">tund </span><span class=\"ft\">woowu Yerusalem la.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-40": "<div><span class=\"k\">kóllëre g-:</span> Ci Mbind mu sell mi, digoo la bu ëmb ay dige. Man nañu koo tëral, mu dib digoo diggante nit ak moroom ma, mu mel ni la Ibraayma digoo woon ak Abimeleg (<span class=\"bk\">Njàlbéen ga</span> 21.27), mbaa diggante kilifa ak surgaam. Kóllëre gu ni mel la Yàlla taamu woona fasook nit, mu mel ni la Yàlla digoo woon ak àddina, jaare ko ci Nóoyin (6.18), mbaa diggante Yàllaak Ibraayma (15.18), mbaa Yàllaak Isaaxa (17.19). Ñetti yoon yu mujj yooyu ñu lim, Yàlla rekk a dige; moom ci wàllu boppam moo fas kóllëre ak ñooñu. Ñoom defuñu dara lu dul gëm ko. Waaye Ibraaymaak Abimeleg dañoo digoo, maanaam dañoo fasoo kóllëre, ku nekk am lu ko war. Noonu lañu dégge li xàjjale fas kóllëre ak fasoo kóllëre.</div>",
+    "G-66": "<div><span class=\"k\">sell:</span> Lu sell, ni ko yoonu Tawreet dégge, mooy lu ñu beral Yàlla; man naa doon nit, mbaa ab jumtukaay. Mboolem lu set te sellaluñu ko, su laalantee ak lu sell, lu sell loola day daldi teqlikoo ak sellngaam. Waaye du tee lu sell la set, li feek sobe laalu ko. Lu sell nag, bu taqee sobe rekk, sobewu na. Day daldi doon lu setul. Moo tax lu sell warul dajeek sobe fenn. Ku taq sobe, su masaana lekk lu sell lu mel ni yàppu jur gu ñu sarxal Yàlla, dees koy dagge ci askanu bànni Israyil, rey ko. Ci yoonu Tawreet, su ñu nee Yàlla ku sell la, ni mu beroo ak ni mu wéete ci sellngay jikkoom moo tax ñuy wax, ndax Yàlla moo matale mboolem mbaax, moo mucc ci gépp sikkaange, te lenn ci sellaayu jikkoom mooy ngoram gu bare, ak kóllëreem gu sax.</div>",
+    "G-42": "<div><span class=\"k\">Kuus:</span> Réew la mu nekkoon ca bëj-saalumu Misra te ëmboon réewum Sudan ak Ecopi ga woon ak Nubi.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 12 }];
+var hasIntro = false;
+var baseRef  = "KYG-27-DAN-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-26-EZK-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-27-DAN-010.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Dañeel&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;11&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-27-DAN-012.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-28-HOS-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+<a id="v1"></a>
+<div class="c-drop">11</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Man ci sama wàllu bopp nag, maa nga woon ca wetam, di ko aar ak a jàpple, ca at ma jëkk ca nguurug Daryus waa Medd ba.<span id="bookmarks1"></span>
+
+<div class="s"><div id="s1">Buur bëj-gànnaar ak buur bëj-saalum a ngi jote</div></div><span id="bookmarks1"></span><a id="v2"></a>
+<div class="p"><span class="v">2</span><span class="vsp">&nbsp;</span>«Léegi, maa ngi lay xamal lu wér. Dama ne, dina amaat ñetti buur yuy falu ci réewum Pers, ñeenteel ba dikk, dajale alal ju bare, ba ëpple leen ñoom ñépp. Bu demee ba alalam may ko doole, dina def lépp lu mu man ngir xabtal ñépp ci kaw nguuru Geres.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Waaye buur bu jàmbaare dina falu, di boroom kilifteef gu yaatu, di def lu ko soob.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Naka lay jóg rekk, nguuram daldi foq, tas, ñeenti ngelawi asamaan tasaare, yóbbu. Aw askanam du moom nguur ga, te nguur ga dootu am doole ja mu amoon. Nguuram day foq, tàbbi ci loxoy ñeneen ñu dul askanam.<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="p"><span class="v">5</span><span class="vsp">&nbsp;</span>«Buur bëj-saalum<span class="footnote selectable" id="F-0"><sup>a</sup></span> dina am doole, waaye kenn ca ña mu jiital a koy ëpp doole, te kilifteefam mooy gëna yaatu.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>«Gannaaw ay at, buur bëj-saalum ak buur bëj-gànnaar dinañu mànkoo. Doomu buur bëj-saalum mooy séysi kër buur bëj-gànnaar, ngir dëgëral diggante bi. Waaye nguurug doom ja du yàgg, boroom këram it du dundaat lu yàgg mook seen doom. Doomu buur bëj-saalum day dee, mook toppam ak baayam ak boroom këram.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Kenn ci waa këram mooy wuutu baayam, dikk, dal ca mbooloom xarem buur bëj-gànnaar, jàll ba ca wàllaa tatay buur bëj-gànnaar, jëflanteek ñoom, duma leen, ba daan.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Dinañu lël sax seen jëmmi tuur yu ñu móol, yóbbu Misra, boole kook seen gànjaru xaalis ak wurus. Gannaaw loolu dina toog ay at te du laaleek buur bëj-gànnaar.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Gannaaw gi buur bëj-gànnaar dina dem réewum bëj-saalum, doora dellu réewam.<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><span class="v">10</span><span class="vsp">&nbsp;</span>«Ay doomam yu góor nag dinañu waajal xare, dajale gàngoor yu takku. Ñu jubal, bëtt, jàll nim wal, daldi ñoqli, songi noon ba ca dëkk ba ñu wëralee tata.<span id="bookmarks10"></span></div><span id="bookmarks10"></span><a id="v11"></a>
+<div class="p"><span class="v">11</span><span class="vsp">&nbsp;</span>«Buur bëj-saalum dina sigiñu, songi buur bëj-gànnaar. Kooku waajal mbooloom xare mu mag, waaye mbooloo moomu dees na leen teg ci seen loxoy noon.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Mbooloo moomu dees na leen faagaagal, buur bëj-saalum di ca réy-réylu. Dina rey ay junniy nit nag, waaye du ko taxa am ndam.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Li ko waral mooy buur bëj-gànnaar day dellu waajalaat mbooloo mu ëpp ma jiitu. Bu amee ay at dina dikkaat, ànd ak mbooloom xare mu mag ak ngànnaay lu takku.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Jamono yooyu ñu bare dinañu jógal buur bëj-saalum, te ay nit ñu soxor ñu bokk ci saw xeet dinañu fippu, ni ko peeñu indee, waaye duñu ko man.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Buur bëj-gànnaar dina ñëw yékkati ay jal, gaw dëkk bu ñu wërale tata, nangu ko. Mbooloom xarey bëj-saalum ak seen ñeyi xare duñu leen mana të. Duñu am doole ju ñu leen tëwe.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Ki leen di song dina leen def li ko soob, ndax kenn du ko të. Dina toog ci réew mu taaru ma<span class="footnote selectable" id="F-1"><sup>b</sup></span>, te am dooley tas ko.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Dina fas yéenee dikk ak dooley nguuram gépp, ba dëgëral digganteem ak buur bëj-saalum. Da koy may doomam soxna, ngir di ko fexee sànk. Waaye loolu du sotti, ndax pexe ma du joy.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Gannaaw loolu dina wuta moom fa féeteek dun ya, ba nangu ca ay réew, waaye dina am njiitu xare lu dakkal jëfi réy-réyloom ji muy torxale, ba fey ko añam.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Bu loolu weesee dina walbatiku dal ci dëkk yi ñu wëralee tata ci biir réewu boppam, waaye du sotti. Day daanu, ne mes.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Ki koy wuutu dina yebal kuy foqati ay galag yu ñuy yokke puukarey nguur gi, waaye du yàgg dara, ñu faagaagal ko ci sutura, te du doon ci xare.»<span id="bookmarks20"></span></div>
+
+<div class="s"><div id="s2">Buur bëj-gànnaar ëpp nay loxo</div></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>«Ku siblu moo koy wuutu, ku yelloowul darajay nguur. Day duggsi ndànk, lal ay pexeem, ba nangu nguur gi.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Mboolooy xare yi dinañu def um wal nig dex, dal ci kawam, waaye dees na leen rajaxe, ñook genn kilifay mbooloom <span class="footnote selectable" id="G-40">kóllëreg</span> Yàlla gi.<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>Gannaaw bu ñu wóllëranteek moom, dina wor. Dina gëna am doole, te amul mbooloo mu bare.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Day dugg ndànk ba ca biir gox ya gëna woomle ca diiwaan ba. Dina fa def lu ay baayam aki maamam masula def. Dina lël ay réew, séddale ay farandoom alal jaak koom ga. Dina lal pexe yu mu songe ay tata, waaye loolu ab diir lay doon.<span id="bookmarks24"></span></div><span id="bookmarks24"></span><a id="v25"></a>
+<div class="p"><span class="v">25</span><span class="vsp">&nbsp;</span>«Bu loolu weesee dina ànd ak mbooloo mu bare, daldi yebook doole ak pastéef ci kaw buur bëj-saalum. Buur bëj-saalum waajal xare, ànd ak mbooloo mu réy te bare doole lool, waaye sottiwul ndax pexe yu ñu koy lalal.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Ci biir loolu ay nit ñuy bokk ak buur bëj-saalum ndab ñooy sànk buur bëj-saalum, ba mbooloom jóoru, ñu bare tëdd.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Ñaari buur yi dinañu nas lu bon ci seen xol; di bokk ndab tey waxantey fen. Waaye seeni pexe du mujj fenn, ndax du fekk muj ga jot.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Gannaaw gi buur bëj-gànnaar dina dellu réewam, yóbbaale alal ju takku. Dina fexeel mbooloom kóllëre gu <span class="footnote selectable" id="G-66">sell</span> gi<span class="footnote selectable" id="F-2"><sup>c</sup></span>, doora ñibbi réewam.<span id="bookmarks28"></span></div><span id="bookmarks28"></span><a id="v29"></a>
+<div class="p"><span class="v">29</span><span class="vsp">&nbsp;</span>«Bu àpp bi jotee, buur bëj-gànnaar dina dal ci kaw réewum bëj-saalum. Waaye boobu yoon du deme na woon.<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>Ay boroom gaal yu mag dinañu jóge sowu, songsi ko, ba tax mu xàddi, ba dëpp. Mu daldi mer lool, sippi ko mbooloom kóllëre gu sell gi, tey ànd ak ñi dëddu kóllëre gu sell gi.<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Ay xarekat yu mu yebal dinañu dem teddadil jaamookaay, bi ci tata ji; dinañu dakkal sarax si ñu fa saxal fàww, ba noppi teg fa lu siblu<span class="footnote selectable" id="F-3"><sup>d</sup></span> luy jur yàqute.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Ñi sàmmul kóllëreg Yàlla ay nax la leen di fàbbee, waaye askan wi ràññee seen Yàlla, pastéef lañuy jëfeji.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Te it boroom xel yu rafet yi ci mbooloo mi dinañu gindi ñu bare. Nattu dina leen dikkal ab diir; ñii saamar jaar ci seen kaw, ñii ñu lakk leen, ñee ñu nangu seen alal, tëj leen.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Te bu leen nattu dikkalee, ndimbal lu néew lañuy am, ndax ñu bare naaféq lañuy fareek ñoom.<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Ñenn ci boroom xel yu rafet yi dinanu jaare ci nattu yu leen di sellal, fóot leen ba ñu set wecc, ba keroog mujug jamono. Àpp ba nag des na.<span id="bookmarks35"></span></div><span id="bookmarks35"></span><a id="v36"></a>
+<div class="p"><span class="v">36</span><span class="vsp">&nbsp;</span>«Buur bi dina def lu ko soob. Dina réy-réylook a damu, ba weesale boppam tuur yépp, te dina wax gilaawaali jëme ci Yàlla ji sut lépp. Dina am ndam nag ba keroog sànjum Yàlla ñoral ko. Li ñu dogal déy dina am.<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>Buur bi du faale tuuri maamam, du faale tuur mi jigéen ñi sopp<span class="footnote selectable" id="F-4"><sup>e</sup></span>. Du faale menn tuur, ndax day damu ba weesale boppam lépp.<span id="bookmarks37"></span> <a id="v38"></a><span class="v">38</span><span class="vsp">&nbsp;</span>Xanaa kay tuur mi yor kaaraangey tata yi lay jaamu, muy tuur mu ay maamam xamul woon. Dina ko jaamoo wurus ak xaalis ak xeer yu jafe ak yeneen gànjar.<span id="bookmarks38"></span> <a id="v39"></a><span class="v">39</span><span class="vsp">&nbsp;</span>Tuuri jaambur yooyu lay doolewoo, di song dëkk yi ñu wëralee ay tata. Ku ko nangul, mu teral la, def la kilifag ñu bare, ba noppi yoole la ay suuf.<span id="bookmarks39"></span> <a id="v40"></a><span class="v">40</span><span class="vsp">&nbsp;</span>Ca mujug jamono buur bëj-saalum dina fenqoo ak buur bëj-gànnaar. Te itam buur bëj-gànnaar dina mel ni ngëlaani, ne milib ci kawam, ànd ak watiiri xare aki gawar ak gaal yu mag yu bare. Dina dugg ci ay réew, bëtt, jàll nim wal.<span id="bookmarks40"></span> <a id="v41"></a><span class="v">41</span><span class="vsp">&nbsp;</span>Gannaaw loolu dina dugg ci réew mu taaru ma, te ñu bareey daanu. Waaye Edomeen ñaak Mowabeen ñaak njiiti Amoneen ñi dinañu rëcc.<span id="bookmarks41"></span> <a id="v42"></a><span class="v">42</span><span class="vsp">&nbsp;</span>Dina teg loxoom yeneen réew, te réewum Misra sax du ca mucc.<span id="bookmarks42"></span> <a id="v43"></a><span class="v">43</span><span class="vsp">&nbsp;</span>Dina aakimoo alali Misra, muy wurus, di xaalis ak mboolem gànjar. Waa Libi ak waa <span class="footnote selectable" id="G-42">Kuus</span> it dinañu ko nangul.<span id="bookmarks43"></span> <a id="v44"></a><span class="v">44</span><span class="vsp">&nbsp;</span>Waaye nag xibaar dina bawoo penku ak bëj-gànnaar, tiital ko lool. Noonu mu jóg ak xadar, rey ñu baree bare, faagaagal leen.<span id="bookmarks44"></span> <a id="v45"></a><span class="v">45</span><span class="vsp">&nbsp;</span>Dina samp xaymay kër buur ci diggante géej geek tund wu taaru wu sell wa<span class="footnote selectable" id="F-5"><sup>f</sup></span>. Waaye dina dee, te kenn du ko taxawu.»</div>
+<div class="b">&nbsp;</div><span id="bookmarks45"></span><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

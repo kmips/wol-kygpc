@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2.Buur ya 11</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-40": "<div><span class=\"k\">kóllëre g-:</span> Ci Mbind mu sell mi, digoo la bu ëmb ay dige. Man nañu koo tëral, mu dib digoo diggante nit ak moroom ma, mu mel ni la Ibraayma digoo woon ak Abimeleg (<span class=\"bk\">Njàlbéen ga</span> 21.27), mbaa diggante kilifa ak surgaam. Kóllëre gu ni mel la Yàlla taamu woona fasook nit, mu mel ni la Yàlla digoo woon ak àddina, jaare ko ci Nóoyin (6.18), mbaa diggante Yàllaak Ibraayma (15.18), mbaa Yàllaak Isaaxa (17.19). Ñetti yoon yu mujj yooyu ñu lim, Yàlla rekk a dige; moom ci wàllu boppam moo fas kóllëre ak ñooñu. Ñoom defuñu dara lu dul gëm ko. Waaye Ibraaymaak Abimeleg dañoo digoo, maanaam dañoo fasoo kóllëre, ku nekk am lu ko war. Noonu lañu dégge li xàjjale fas kóllëre ak fasoo kóllëre.</div>",
+    "G-19": "<div><span class=\"k\">bésub Noflaay b-:</span> Moo doon juróom ñaareelu bés ci ayu bésu bànni Israyil. Bés la woon bu ñu jagleel Yàlla, ñu aaye ci bépp liggéey. Bésub Noflaay boobu Yàllaa ko séddoo, ba muy sàkk lépp. Gannaaw gi la tànn bésub Noflaay, firndeele ko kóllëre gi mu fasoo ak bànni Israyil.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-63": "<div><span class=\"k\">sarxalukaay b-:</span> Waa penku baaxoo woon nañoo yékkatil seeni yàlla, ay sarxalukaay ci yenn bérab, ngir njukkale ko seeni yàlla. Sarxalukaay yooyu, ban lees ko daan tabaxe mbaa ay xeer, mu taxawe ni waxande, te jur gi ñuy def sarax di tege ca kaw.</div><div class=\"p\">Niti Aji Sax ji ci seen wallu bopp, naka jekk, daan nañu yékkatil Aji Sax ji ay sarxalukaay yu ñu koy njukkale. Ba kërug jaamookaayu Aji Sax ji taxawee itam, noonu la bànni Israyil ame woon ñaari sarxalukaay ca biir kër Yàlla ga, benn bi ñuy lakke jur gu ñu rendi, bi ci des, ñu di ci taal cuuraayu sarax. Sarxalukaayu jur gi amul woon kubeer ca kaw, waaye ab caaxam la àndaloon, ñu di ci teg matt mi ñuy lakke jur gi. Ay béjjén lañu sàkkaloon boobu sarxalukaay ca ñeenti koñam ya ca kaw.</div>",
+    "G-10": "<div><span class=\"k\">Baal:</span> Moo doon tuur mi gëna màgg ci tuuri waa Filisti. Waa dëkk bu mag bu nekk amoon nañu seenum Baal. Moo tax Baal yu baree amoon. Tur wi di firi «sang bi». Ñu jàppoon ne moo moom lépp lu ñu sàkk, te mooy tax jur geek tool yi nangu. Diiney Baal daa laajoon ay nit ñuy jaay seen bopp fa ñuy jaamoo Baal, muy lu Aji Sax ji ñaawlu lool.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 25 }];
+var hasIntro = false;
+var baseRef  = "KYG-12-2KI-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-11-1KI-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-010.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;2.Buur ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;11&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-012.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-15-EZR-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Lingeer Atalyaa falu na Yuda</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">11</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ci kaw loolu Atalyaa yaayu Akasiya xam ne doomam ju góor dee na, mu daldi faagaagal mboolem ku bokk ci askanu buur.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Teewul jigéenub Akasiya, Yoseba doomu Buur Yoram, jàpp Yowas doomu Akasiya ju góor, jële ko ca biir doomi buur ya ñuy fexee rey, ba rawale ko. Ci biir loolu mu boole kook nàmpalkatam, tëj cib néeg ngir làq ko Atalyaa, ba kenn reyu ko.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Yowas nekk naak Yoseba fa kër Yàlla ga, làqu fa juróom benni at, te Atalyaa di nguuru fa réew ma.<span id="bookmarks3"></span></div>
+
+<div class="s"><div id="s2">Yuda bañ na</div></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="p"><span class="v">4</span><span class="vsp">&nbsp;</span>Ca atum juróom ñaareel ma, Yoyada moo woolu waa Keret ya jiite kuréli téeméeri nit, ak yeneen dag ya, ñu wuysi ko ca kër <span class="footnote selectable" id="G-3">Aji Sax</span> ji. Mu fasook ñoom <span class="footnote selectable" id="G-40">kóllëre</span>, giñloo leen ca kër Aji Sax ji, ba noppi nuyole leen ak doomu Buur.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Ci kaw loolu mu sant leen ne leen: «Li ngeen di def mooy lii: Yeen ñi aye liggéey <span class="footnote selectable" id="G-19">bésub Noflaay</span>, na seen xaajub ñetteel dénkoo dénkaaney kër Buur,<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>beneen xaajub ñetteel ba wattu buntu Sur ba, xaajub ñetteel ba ca des féeteek bunt ba ca gannaaw dawkat ya. Noonu ngeen di ay-ayloo wattub kër Buur.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Seen yeneen ñaari kurél yi ayewul bésub Noflaay, nañu wattusi kër Aji Sax ji, ngir aar buur bi.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Yeen ñiy dar Buur, fegleen ko wet gu nekk, ku nekk ŋàbb ngànnaayam. Képp ku jëm ci seenug làng, dees koy rey, te àndleen ak buur bi buy dugg ak buy génn.»<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Ci kaw loolu njiiti kuréli téeméer ya def mboolem la leen Yoyada <span class="footnote selectable" id="G-62">sarxalkat</span> ba sant. Ku nekk ànd ak say nit, ña aye bésub Noflaay ak ña ayewul bésub Noflaay, ñu bokk dikk ca Yoyada, sarxalkat ba.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Ba loolu amee, sarxalkat ba jox njiiti kuréli téeméer ya, xeej yaak pakki Buur Daawuda ya nekkoon ca biir kër Aji Sax ji.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Dag ya nag dar buur ba, ku nekk ŋàbb ay gànnaayam, ñu dare kër Yàlla ga ak <span class="footnote selectable" id="G-63">sarxalukaay</span> ba, wetu ndijoor ba wetu càmmoñ, ngir yéew buur ba.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Yoyada génne doomu buur ba, solal ko mbaxanam buur, jox ko kayitu doxalinu nguur ga; ñu fal ko nag buur, diw ko diwug pal. Ba loolu amee ñu tàccu, ne: «Guddalu fan, Buur!»<span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>Ba Atalyaa déggee coowal dag yaak mbooloo ma, daa àgg ca mbooloo ma, fa kër Aji Sax ji.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Mu xool, yem ci buur ba taxaw fa kenu ga, na ñu ko baaxoo, kilifay xarekat yaak boroom liit ya dar Buur, waa réew ma mépp di bànneexook a wal liit ya. Atalya ne tareet ay yéreem ndax naqar, daldi yuuxu ne: «Wor am naay, wor am na!»<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Ci kaw loolu Yoyada sarxalkat ba sant njiiti kuréli téeméer ya, kilifay gàngoor ga, ne leen: «Génneleen ko làng gi, te ku ko topp, jamleen ko, mu dee.» Fekk na Yoyada ne buñu ko rey ci biir kër Aji Sax ji.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Ba mu ko defee ñu teg ko loxo. Ba mu demee ba àgg kër Buur, bay tollook fa fas yay dugge, foofa lañu ko reye.<span id="bookmarks16"></span></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="p"><span class="v">17</span><span class="vsp">&nbsp;</span>Ba loolu amee Yoyada digoo kóllëre diggante Aji Sax ji, ak buur baak askan wa, ngir ñu doon ñoñi Aji Sax ji. Mu digoo ko itam diggante Buur ak askan wa.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Ci kaw loolu waa réew ma mépp ànd dem ca kër <span class="footnote selectable" id="G-10">Baal</span>. Ñu màbb ko, ay sarxalukaayam ak jëmmi nataalam, ñu tas tasar, Matan sarxalkatu Baal ba, ñu rey ko ca kanam sarxalukaay ya. Ci biir loolu Yoyada sarxalkat ba teg ay wattukat ca kër Aji Sax ji.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Mu dellu nag woo njiiti téeméeri nit yaak waa Keret ñaak yeneen dag yaak mboolem waa réew ma, ñu jële Buur kër Aji Sax ji, jaare ca buntu dag ya, yóbbu ko kër Buur. Yowas daldi toog ca ngànguney buur ya.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Waa réew mépp di bànneexu, péey ba ne tekk. Atalya moom, fekk na ñu jam ko saamar ba mu dee ca kër Buur.<span id="bookmarks20"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

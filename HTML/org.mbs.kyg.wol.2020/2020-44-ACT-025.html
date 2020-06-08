@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jëf ya 25</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Glossary entries
+var glossary = {
+    "G-86": "<div><span class=\"k\">Yerusalem:</span> Mooy péeyu réewum Yawut, te fa la kër Yàlla ga nekkoon. Foofa rekk lañu manoona rendi ay saraxi mala yu ñu jébbal Yàlla.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-68": "<div><span class=\"k\">Sesaar:</span> Sesaar, buuru Room, réew yu bare la yilifoon, ba ca réewum Yawut ya. Lim nanu buuri Room, yi ñu tudd seen tur ci Mbind mi.</div><div class=\"pi\">Ogust: 30 at lu jiitu Almasi, ba 14 gannaaw juddub Almasi (<span class=\"bk\">Luug</span> 2.1)</div><div class=\"pi\">Tibeer: 14 g.A.—37 g.A. (<span class=\"bk\">Luug</span> 3.1)</div><div class=\"pi\">Këlódd: 41 g.A.—54 g.A. (<span class=\"bk\">Jëf ya</span> 11.28)</div><div class=\"pi\">Neron: 54 g.A.—68 g.A. (<span class=\"bk\">Jëf ya</span> 25.10-12; 27.24)</div><div class=\"pi\">Domikan: 81 g.A.—96 g.A. (<span class=\"bk\">Peeñu ma</span> 1.9).</div>",
+    "G-26": "<div><span class=\"k\">Erodd:</span> Amoon na juróomi buur yu tudd Erodd:</div><div class=\"pi\">1. Ki ñuy wax Erodd mu mag ma, moo doon buurub Israyil ba Yeesu juddoo (<span class=\"bk\">Luug</span> 1.5).</div><div class=\"pi\">2. Doomam ji tudd Arkelawus; moo falu woon ci diiwaanu Yude (<span class=\"bk\">Macë</span> 2.22).</div><div class=\"pi\">3. Jeneen doomam ji ñuy wax Antipas; moo yilifoon diiwaani Galile ak Pere (<span class=\"bk\">Luug</span> 3.1; 23.7; <span class=\"bk\">Jëf ya</span> 4.27).</div><div class=\"pi\">4. Àggripa sëtub Erodd mu mag ma, moo falu woon ci diiwaani Israyil yu bare (<span class=\"bk\">Jëf ya</span> 12.1; 23.35).</div><div class=\"pi\">5. Àggripa doomu Àggripa moo falu woon ci ay gox yu féete bëj-gànnaar (<span class=\"bk\">Jëf ya</span> 25.13).</div>",
+    "G-52": "<div><span class=\"k\">njiitu gàngoor g-:</span> Mbooloom juróom benni téeméeri (600) xarekat la daan yilif.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 28 }];
+var hasIntro = false;
+var baseRef  = "2020-44-ACT-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='2020-42-LUK-000.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='2020-44-ACT-024.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Jëf ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;25&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-44-ACT-026.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-45-ROM-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Póol layoo na ca kanam Festus</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">25</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Festus nag toogsi diiwaanam ba am fa ñetti fan. Gannaaw loolu mu dem <span class="footnote selectable" id="G-86">Yerusalem</span>.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-62">Sarxalkat</span> yu mag yi, ak njiiti Yawut yi boole ko ak Póol. Ñu dagaan ko,<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>tinu ko ngir mu woolu Póol Yerusalem, ndax fekk na leen lal pexem rey ko ca yoon wa.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Festus itam ne leen Póol a nga ñu tëj kaso ca Sesare, te moom ci boppam, fa la nara gaaw, dellu.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Mu ne leen: «Kon nag, na nit ñu am baat ñu bokk ci yeen, ànd ak man, tuumaali waa ji, ndegam am na fenn fu mu tooñe.»<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Festus toogaatul ak ñoom lu wees juróom ñett ba fukki fan, doora dellu Sesare. Ba mu agsee ba ca ëllëg sa la toog ca àttekaay ba, joxe ndigal, ñu indi Póol.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Ba Póol dikkee, Yawut ya jóge Yerusalem yéew ko, teg ko tuuma yu bare te réy, te manuñu cee firndeel lenn.<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>Ci kaw loolu Póol weddi tuuma yi, ne: «Muy yoonu Yawut yi, di kër Yàlla gi, di Buur bu mag bi <span class="footnote selectable" id="G-68">Sesaar</span>, tooñuma ci kenn.»<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Festus nag bëgg lu neex Yawut yi, tax mu ne Póol: «Ndax nangu ngaa dem Yerusalem, ñu àttee la foofa ci mii mbir ci sama kanam?»<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><span class="v">10</span><span class="vsp">&nbsp;</span>Póol itam ne ko: «Maa ngi nii taxaw ci kanam àttekaayu Buur Sesaar; te fii lañu ma wara àttee. Yawut ñi nag, defuma leen dara, te yaw ci sa bopp, wóor na la.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Su ma tooñee, su ma defee lenn lu dee di àtteem, tinuwma ngir baña dee. Waaye su lenn amul ci li ma ñii di jiiñ, kenn amul sañ-sañu jébbal ma leen. Buur Sesaar nag laa dénk sama bopp!»<span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="p"><span class="v">12</span><span class="vsp">&nbsp;</span>Ci kaw loolu, Festus gise ak waa kurél ga, ba noppi ne ko: «Sesaar nga dénk sa bopp, ca Sesaar nga jëm.»<span id="bookmarks12"></span></div>
+
+<div class="s"><div id="s2">Festus diisoo na ak buur Àggripa</div></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>Gannaaw ab diir buur <span class="footnote selectable" id="G-26">Àggripa</span> ànd ak jigéenam Berenis ganesi Sesare, ngir nuysi Festus.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Ba ñu fa amee ab diir, Festus diis Buur Àggripa mbirum Póol, ne ko: «Jenn waay ju ñu tëj kaso la nu Feligsë bàyyee.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Ba ma demee <span class="footnote selectable" id="G-86">Yerusalem</span>, moom la ma <span class="footnote selectable" id="G-62">sarxalkat</span> yu mag yeek njiiti Yawut yi booleeloon, di sàkku ci moom ab daan.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Ma ne leen: “Aaday Room daal nanguwul ñu jébbale nit, ngir ñu rey ko, te jëkkula jàkkaarloo ak ñi ko tuumaal, ba mana layal boppam ci mbir mi ñu ko tuumaal.”<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Ba ñu dikkee fekk ma fii itam, yàggaluma ci dara, ca ëllëg sa sax laa toog ca àttekaay ba, daldi joxe ndigal, ñu indi waa ji.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Ba tuumaalkat ya taxawee nag, feeñaluñu jenn tuuma ju bokk ci yu bon, yi ma foogoon,<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>xanaa seen yenn yëfi diiney bopp yu ñu juboowul, ak mbirum ku ñuy wax Yeesu mu dee woon, te Póol moomu di dëggal ne mu ngi dund ba tey.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Loolu nag jaaxal ma, ba ma laaj ko ndax nangu naa dem Yerusalem, ñu àttee ko fa ci moomu mbir.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Póol itam sàkku ñu dencagum ko kaso, tey sàkku ci mbiram, àtteb buur bu tedd bi. Ma daldi joxe ndigal, ngir ñu dencagum ko kaso, ba ma yebal ko ca <span class="footnote selectable" id="G-68">Sesaar</span>.»<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Ci kaw loolu Àggripa ne Festus: «Kooku de, man sax bëgg naa koo déglu.» Festus ne ko: «Bu ëllëgee dinga ko dégg.»<span id="bookmarks22"></span></div>
+
+<div class="s"><div id="s3">Póol teew na ci kanam Àggripa</div></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Ca ëllëg sa <span class="footnote selectable" id="G-26">Àggripa</span> ak Berenis ànd ak topp mu ràññiku, duggsi ca ëttub àttekaay ba, feggook <span class="footnote selectable" id="G-52">njiiti gàngoor</span> ya, ak kàngami dëkk ba. Festus joxe ndigal, ñu indi Póol.<span id="bookmarks23"></span></div><span id="bookmarks23"></span><a id="v24"></a>
+<div class="p"><span class="v">24</span><span class="vsp">&nbsp;</span>Ba mu dikkee, Festus ne: «Buur Àggripa, yeen mboolem ñi fi bokk ak nun teew, gis ngeen kii, moom la ma askanu Yawut wépp booleel, muy ca <span class="footnote selectable" id="G-86">Yerusalem</span> ak fii itam, ñuy xaacu naan: “Kii yelloowula dundati.”<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Man nag damaa gis ne deful dara lu jar àtteb dee. Waaye gannaaw moo dénk boppam buur bu tedd bi, man dogu naa ko koo yónnee.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Mbiram nag laa amul dara lu ma wóor, ngir ma bind ko sang bi. Moo tax ma indi ko ci seen kanam, rawatina ci sa kanam, Buur Àggripa, ngir gannaaw bu ñu ko dégloo, ma mana am lu ma bind.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Ndaxte jàllale ku ñu jàpp te tudduloo tuuma yi ñu koy topp daal, lu juunu la ci man.»<span id="bookmarks27"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2020 MBS.</span></div></div>
+</div>
+</body>
+</html>

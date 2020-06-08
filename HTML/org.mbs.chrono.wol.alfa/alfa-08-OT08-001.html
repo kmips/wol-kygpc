@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8. Musaa ak Aaróona ca Firawna 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+// Audio
+$(window).load(function() {
+
+var pop = Popcorn("#audio");
+
+var timings = [
+    { label: "s1", start: 0, end: 2.53 },
+    { label: "1a", start: 2.78, end: 4.99 },
+    { label: "1b", start: 5.24, end: 5.77 },
+    { label: "1c", start: 6.02, end: 6.55 },
+    { label: "1d", start: 6.8, end: 7.55 },
+    { label: "1e", start: 7.8, end: 9.11 },
+    { label: "1f", start: 9.36, end: 10.69 },
+    { label: "1g", start: 10.94, end: 11.69 },
+    { label: "1h", start: 11.94, end: 13.13 },
+    { label: "2a", start: 13.38, end: 16.07 },
+    { label: "2b", start: 16.32, end: 17.17 },
+    { label: "2c", start: 17.42, end: 18.91 },
+    { label: "2d", start: 19.16, end: 21.93 },
+    { label: "3a", start: 22.18, end: 25.65 },
+    { label: "3b", start: 25.9, end: 27.29 },
+    { label: "3c", start: 27.54, end: 29.01 },
+    { label: "3d", start: 29.26, end: 31.13 },
+    { label: "3e", start: 31.38, end: 32.17 },
+    { label: "4a", start: 32.42, end: 33.79 },
+    { label: "4b", start: 34.04, end: 35.63 },
+    { label: "4c", start: 35.88, end: 37.13 },
+    { label: "4d", start: 37.38, end: 39.37 },
+    { label: "4e", start: 39.62, end: 41.39 },
+    { label: "4f", start: 41.64, end: 43.53 },
+    { label: "4g", start: 43.78, end: 44.71 },
+    { label: "4h", start: 44.96, end: 45.69 },
+    { label: "5a", start: 45.94, end: 47.99 },
+    { label: "5b", start: 48.24, end: 48.65 },
+    { label: "5c", start: 48.9, end: 50.55 },
+    { label: "5d", start: 50.8, end: 53.29 },
+    { label: "6a", start: 53.54, end: 54.89 },
+    { label: "6b", start: 55.14, end: 56.37 },
+    { label: "6c", start: 56.62, end: 57.95 },
+    { label: "6d", start: 58.2, end: 58.77 },
+    { label: "6e", start: 59.02, end: 62.27 },
+    { label: "7a", start: 62.52, end: 65.55 },
+    { label: "7b", start: 65.8, end: 67.75 },
+    { label: "7c", start: 68, end: 69.07 },
+    { label: "8a", start: 69.32, end: 72.75 },
+    { label: "8b", start: 73, end: 75.19 },
+    { label: "8c", start: 75.44, end: 76.31 },
+    { label: "8d", start: 76.56, end: 76.95 },
+    { label: "8e", start: 77.2, end: 80.37 },
+    { label: "9a", start: 80.62, end: 84.73 },
+    { label: "9b", start: 84.98, end: 89.47 },
+    { label: "9c", start: 89.72, end: 92.29 },
+    { label: "10a", start: 92.54, end: 96.35 },
+    { label: "10b", start: 96.6, end: 99.69 },
+    { label: "10c", start: 99.94, end: 103.59 },
+    { label: "10d", start: 103.84, end: 104.73 },
+    { label: "10e", start: 104.98, end: 106.19 },
+    { label: "11a", start: 106.44, end: 109.69 },
+    { label: "11b", start: 109.94, end: 111.35 },
+    { label: "11c", start: 111.6, end: 113.35 },
+    { label: "12a", start: 113.6, end: 117.85 },
+    { label: "12b", start: 118.1, end: 120.27 },
+    { label: "12c", start: 120.52, end: 120.63 },
+    { label: "13a", start: 120.88, end: 125.97 },
+    { label: "13b", start: 126.22, end: 129.45 },
+    { label: "14a", start: 129.7, end: 131.85 },
+    { label: "14b", start: 132.1, end: 138.91 },
+    { label: "14c", start: 139.16, end: 139.81 },
+    { label: "14d", start: 140.06, end: 141.09 },
+    { label: "14e", start: 141.34, end: 144.41 },
+    { label: "s2", start: 144.66, end: 150.63 },
+    { label: "15", start: 150.88, end: 155.53 },
+    { label: "16a", start: 155.78, end: 156.47 },
+    { label: "16b", start: 156.72, end: 157.25 },
+    { label: "16c", start: 157.5, end: 159.27 },
+    { label: "16d", start: 159.52, end: 160.55 },
+    { label: "16e", start: 160.8, end: 161.45 },
+    { label: "16f", start: 161.7, end: 163.05 },
+    { label: "17a", start: 163.3, end: 165.47 },
+    { label: "17b", start: 165.72, end: 166.17 },
+    { label: "17c", start: 166.42, end: 166.79 },
+    { label: "17d", start: 167.04, end: 167.55 },
+    { label: "17e", start: 167.8, end: 168.95 },
+    { label: "17f", start: 169.2, end: 171.55 },
+    { label: "18a", start: 171.8, end: 173.51 },
+    { label: "18b", start: 173.76, end: 174.47 },
+    { label: "18c", start: 174.72, end: 177.91 },
+    { label: "18d", start: 178.16, end: 180.43 },
+    { label: "19a", start: 180.68, end: 184.07 },
+    { label: "19b", start: 184.32, end: 186.59 },
+    { label: "19c", start: 186.84, end: 188.63 },
+    { label: "19d", start: 188.88, end: 190.27 },
+    { label: "20a", start: 190.52, end: 193.29 },
+    { label: "20b", start: 193.54, end: 198.57 },
+    { label: "21a", start: 198.82, end: 200.97 },
+    { label: "21b", start: 201.22, end: 204.39 },
+    { label: "21c", start: 204.64, end: 205.91 },
+    { label: "21d", start: 206.16, end: 208.79 },
+    { label: "21e", start: 209.04, end: 210.43 },
+    { label: "21f", start: 210.68, end: 211.25 },
+    { label: "21g", start: 211.5, end: 212.55 },
+    { label: "21h", start: 212.8, end: 214.23 },
+    { label: "22a", start: 214.48, end: 216.89 },
+    { label: "22b", start: 217.14, end: 218.49 },
+    { label: "22c", start: 218.74, end: 221.33 },
+    { label: "22d", start: 221.58, end: 224.99 },
+    { label: "23a", start: 225.24, end: 228.87 },
+    { label: "23b", start: 229.12, end: 231.37 },
+    { label: "24a", start: 231.62, end: 236.43 },
+    { label: "24b", start: 236.68, end: 239.13 },
+    { label: "24c", start: 239.38, end: 240.03 },
+    { label: "24d", start: 240.28, end: 242.99 },
+    { label: "s3", start: 243.24, end: 246.57 },
+    { label: "25", start: 246.82, end: 250.77 },
+    { label: "26a", start: 251.02, end: 253.15 },
+    { label: "26b", start: 253.4, end: 255.37 },
+    { label: "26c", start: 255.62, end: 256.97 },
+    { label: "26d", start: 257.22, end: 258.09 },
+    { label: "26e", start: 258.34, end: 260.49 },
+    { label: "26f", start: 260.74, end: 263.93 },
+    { label: "27a", start: 264.18, end: 269.09 },
+    { label: "27b", start: 269.34, end: 272.01 },
+    { label: "27c", start: 272.26, end: 273.97 },
+    { label: "27d", start: 274.22, end: 277.07 },
+    { label: "27e", start: 277.32, end: 279.41 },
+    { label: "28a", start: 279.66, end: 285.17 },
+    { label: "28b", start: 285.42, end: 290.27 },
+    { label: "28c", start: 290.52, end: 292.17 },
+    { label: "29a", start: 292.42, end: 294.41 },
+    { label: "29b", start: 294.66, end: 295.99 },
+    { label: "29c", start: 296.24, end: 299.37 },
+    { label: "30a", start: 299.62, end: 301.47 },
+    { label: "30b", start: 301.72, end: 302.63 },
+    { label: "30c", start: 302.88, end: 305.37 },
+    { label: "s4", start: 305.62, end: 310.89 },
+    { label: "31a", start: 311.14, end: 314.75 },
+    { label: "31b", start: 315, end: 316.97 },
+    { label: "31c", start: 317.22, end: 318.49 },
+    { label: "31d", start: 318.74, end: 320.27 },
+    { label: "32a", start: 320.52, end: 322.07 },
+    { label: "32b", start: 322.32, end: 324.05 },
+    { label: "32c", start: 324.3, end: 326.61 },
+    { label: "32d", start: 326.86, end: 327.85 },
+    { label: "32e", start: 328.1, end: 330.17 },
+    { label: "33a", start: 330.42, end: 332.13 },
+    { label: "33b", start: 332.38, end: 333.99 },
+    { label: "33c", start: 334.24, end: 335.61 },
+    { label: "33d", start: 335.86, end: 336.95 },
+    { label: "33e", start: 337.2, end: 337.67 },
+    { label: "33f", start: 337.92, end: 339.19 },
+    { label: "33g", start: 339.44, end: 341.45 },
+    { label: "33h", start: 341.7, end: 344.77 },
+    { label: "34a", start: 345.02, end: 347.07 },
+    { label: "34b", start: 347.32, end: 351.03 },
+    { label: "34c", start: 351.28, end: 352.01 },
+    { label: "34d", start: 352.26, end: 354.21 },
+    { label: "34e", start: 354.46, end: 355.59 },
+    { label: "34f", start: 355.84, end: 357.75 },
+    { label: "35a", start: 358, end: 360.69 },
+    { label: "35b", start: 360.94, end: 362.89 },
+    { label: "35c", start: 363.14, end: 366.67 },
+    { label: "36a", start: 366.92, end: 370.15 },
+    { label: "36b", start: 370.4, end: 372.33 },
+    { label: "36c", start: 372.58, end: 373.57 },
+    { label: "36d", start: 373.82, end: 376.65 },
+    { label: "36e", start: 376.9, end: 383.37 },
+    { label: "36f", start: 383.62, end: 385.65 },
+    { label: "36g", start: 385.9, end: 388.89 },
+    { label: "36h", start: 389.14, end: 391.39 },
+    { label: "37a", start: 391.64, end: 394.57 },
+    { label: "37b", start: 394.82, end: 396.63 },
+    { label: "37c", start: 396.88, end: 399.01 },
+    { label: "37d", start: 399.26, end: 401.11 },
+    { label: "37e", start: 401.36, end: 403.09 },
+    { label: "37f", start: 403.34, end: 405.95 },
+    { label: "38a", start: 406.2, end: 408.83 },
+    { label: "38b", start: 409.08, end: 410.73 },
+    { label: "38c", start: 410.98, end: 413.59 },
+    { label: "38d", start: 413.84, end: 415.03 },
+    { label: "39a", start: 415.28, end: 421.01 },
+    { label: "39b", start: 421.26, end: 423.07 },
+    { label: "39c", start: 423.32, end: 424.85 },
+    { label: "39d", start: 425.1, end: 426.51 },
+    { label: "39e", start: 426.76, end: 428.85 },
+    { label: "40a", start: 429.1, end: 431.71 },
+    { label: "40b", start: 431.96, end: 432.75 },
+    { label: "40c", start: 433, end: 434.81 },
+    { label: "41a", start: 435.06, end: 438.01 },
+    { label: "41b", start: 438.26, end: 439.45 },
+    { label: "41c", start: 439.7, end: 443.05 },
+    { label: "s5", start: 443.3, end: 447.11 },
+    { label: "42a", start: 447.36, end: 452.35 },
+    { label: "42b", start: 452.6, end: 454.55 },
+    { label: "43a", start: 454.8, end: 456.71 },
+    { label: "43b", start: 456.96, end: 458.03 },
+    { label: "43c", start: 458.28, end: 458.71 },
+    { label: "43d", start: 458.96, end: 460.99 },
+    { label: "43e", start: 461.24, end: 462.69 },
+    { label: "43f", start: 462.94, end: 464.23 },
+    { label: "44a", start: 464.48, end: 465.63 },
+    { label: "44b", start: 465.88, end: 466.51 },
+    { label: "44c", start: 466.76, end: 470.39 },
+    { label: "45a", start: 470.64, end: 473.83 },
+    { label: "45b", start: 474.08, end: 475.11 },
+    { label: "45c", start: 475.36, end: 476.75 },
+    { label: "45d", start: 477, end: 478.39 },
+    { label: "45e", start: 478.64, end: 479.81 },
+    { label: "45f", start: 480.06, end: 481.23 },
+    { label: "45g", start: 481.48, end: 482.49 },
+    { label: "45h", start: 482.74, end: 485.71 },
+    { label: "46a", start: 485.96, end: 488.43 },
+    { label: "46b", start: 488.68, end: 490.43 },
+    { label: "46c", start: 490.68, end: 492.53 },
+    { label: "47a", start: 492.78, end: 496.01 },
+    { label: "47b", start: 496.26, end: 497.51 },
+    { label: "47c", start: 497.76, end: 499.15 },
+    { label: "47d", start: 499.4, end: 500.43 },
+    { label: "47e", start: 500.68, end: 501.59 },
+    { label: "47f", start: 501.84, end: 504.01 },
+    { label: "47g", start: 504.26, end: 507.03 },
+    { label: "48a", start: 507.28, end: 509.07 },
+    { label: "48b", start: 509.32, end: 510.93 },
+    { label: "48c", start: 511.18, end: 512.15 },
+    { label: "48d", start: 512.4, end: 514.27 },
+    { label: "49a", start: 514.52, end: 518.21 },
+    { label: "49b", start: 518.46, end: 521.01 },
+    { label: "50a", start: 521.26, end: 524.73 },
+    { label: "50b", start: 524.98, end: 525.65 },
+    { label: "50c", start: 525.9, end: 527.35 },
+    { label: "50d", start: 527.6, end: 529.21 },
+    { label: "50e", start: 529.46, end: 531.23 },
+    { label: "50f", start: 531.48, end: 533.43 },
+    { label: "50g", start: 533.68, end: 536.43 },
+    { label: "51a", start: 536.68, end: 538.67 },
+    { label: "51b", start: 538.92, end: 539.99 },
+    { label: "51c", start: 540.24, end: 540.67 },
+    { label: "51d", start: 540.92, end: 542.23 },
+    { label: "51e", start: 542.48, end: 544.97 },
+    { label: "51f", start: 545.22, end: 546.29 },
+    { label: "51g", start: 546.54, end: 547.43 },
+    { label: "51h", start: 547.68, end: 548.87 },
+    { label: "51i", start: 549.12, end: 551.35 },
+    { label: "52a", start: 551.6, end: 552.59 },
+    { label: "52b", start: 552.84, end: 553.99 },
+    { label: "52c", start: 554.24, end: 555.43 },
+    { label: "52d", start: 555.68, end: 556.17 },
+    { label: "52e", start: 556.42, end: 560.09 },
+    { label: "53a", start: 560.34, end: 562.93 },
+    { label: "53b", start: 563.18, end: 564.33 },
+    { label: "53c", start: 564.58, end: 566.77 },
+    { label: "53d", start: 567.02, end: 569.59 },
+    { label: "54a", start: 569.84, end: 573.25 },
+    { label: "54b", start: 573.5, end: 578.05 },
+    { label: "55a", start: 578.3, end: 581.23 },
+    { label: "55b", start: 581.48, end: 582.63 },
+    { label: "55c", start: 582.88, end: 585.69 },
+    { label: "56a", start: 585.94, end: 587.45 },
+    { label: "56b", start: 587.7, end: 589.89 },
+    { label: "57a", start: 590.14, end: 591.15 },
+    { label: "57b", start: 591.4, end: 593.29 },
+    { label: "57c", start: 593.54, end: 594.81 },
+    { label: "57d", start: 595.06, end: 596.15 },
+    { label: "57e", start: 596.4, end: 599.01 },
+    { label: "s6", start: 599.26, end: 605.25 },
+    { label: "58a", start: 605.5, end: 609.15 },
+    { label: "58b", start: 609.4, end: 612.35 },
+    { label: "58c", start: 612.6, end: 614.09 },
+    { label: "58d", start: 614.34, end: 617.65 },
+    { label: "59a", start: 617.9, end: 618.93 },
+    { label: "59b", start: 619.18, end: 620.69 },
+    { label: "59c", start: 620.94, end: 622.11 },
+    { label: "59d", start: 622.36, end: 623.31 },
+    { label: "59e", start: 623.56, end: 626.43 },
+    { label: "59f", start: 626.68, end: 630.87 },
+    { label: "60a", start: 631.12, end: 634.43 },
+    { label: "60b", start: 634.68, end: 636.23 },
+    { label: "60c", start: 636.48, end: 637.73 },
+    { label: "60d", start: 637.98, end: 640.47 },
+    { label: "61a", start: 640.72, end: 643.17 },
+    { label: "61b", start: 643.42, end: 645.81 },
+    { label: "61c", start: 646.06, end: 648.23 },
+    { label: "61d", start: 648.48, end: 649.51 },
+    { label: "61e", start: 649.76, end: 652.23 },
+    { label: "s7", start: 652.48, end: 656.99 },
+    { label: "62a", start: 657.24, end: 659.43 },
+    { label: "62b", start: 659.68, end: 660.27 },
+    { label: "62c", start: 660.52, end: 662.87 },
+    { label: "62d", start: 663.12, end: 664.59 },
+    { label: "62e", start: 664.84, end: 666.07 },
+    { label: "62f", start: 666.32, end: 668.15 },
+    { label: "62g", start: 668.4, end: 669.63 },
+    { label: "62h", start: 669.88, end: 670.97 },
+    { label: "63a", start: 671.22, end: 673.13 },
+    { label: "63b", start: 673.38, end: 674.05 },
+    { label: "63c", start: 674.3, end: 678.27 },
+    { label: "63d", start: 678.52, end: 680.87 },
+    { label: "63e", start: 681.12, end: 683.39 },
+    { label: "63f", start: 683.64, end: 686.93 },
+    { label: "63g", start: 687.18, end: 687.83 },
+    { label: "63h", start: 688.08, end: 689.17 },
+    { label: "63i", start: 689.42, end: 691.33 },
+    { label: "64a", start: 691.58, end: 695.35 },
+    { label: "64b", start: 695.6, end: 696.97 },
+    { label: "64c", start: 697.22, end: 699.15 },
+    { label: "64d", start: 699.4, end: 700.71 },
+    { label: "64e", start: 700.96, end: 704.25 },
+    { label: "65a", start: 704.5, end: 708.83 },
+    { label: "65b", start: 709.08, end: 711.83 },
+    { label: "66a", start: 712.08, end: 714.25 },
+    { label: "66b", start: 714.5, end: 716.53 },
+    { label: "66c", start: 716.78, end: 719.87 },
+    { label: "66d", start: 720.12, end: 721.69 },
+    { label: "66e", start: 721.94, end: 725.25 },
+    { label: "67a", start: 725.5, end: 728.27 },
+    { label: "67b", start: 728.52, end: 729.11 },
+    { label: "67c", start: 729.36, end: 731.59 },
+    { label: "67d", start: 731.84, end: 733.77 },
+    { label: "68a", start: 734.02, end: 735.47 },
+    { label: "68b", start: 735.72, end: 736.81 },
+    { label: "68c", start: 737.06, end: 739.65 },
+    { label: "68d", start: 739.9, end: 741.83 },
+    { label: "68e", start: 742.08, end: 744.67 },
+    { label: "68f", start: 744.92, end: 745.63 },
+    { label: "68g", start: 745.88, end: 747.13 },
+    { label: "68h", start: 747.38, end: 748.11 },
+    { label: "69a", start: 748.36, end: 750.45 },
+    { label: "69b", start: 750.7, end: 752.77 },
+    { label: "69c", start: 753.02, end: 755.31 },
+    { label: "69d", start: 755.56, end: 757.17 },
+    { label: "70a", start: 757.42, end: 759.45 },
+    { label: "70b", start: 759.7, end: 760.63 },
+    { label: "70c", start: 760.88, end: 762.03 },
+    { label: "70d", start: 762.28, end: 764.55 },
+    { label: "70e", start: 764.8, end: 766.43 },
+    { label: "70f", start: 766.68, end: 768.45 },
+    { label: "71a", start: 768.7, end: 770.31 },
+    { label: "71b", start: 770.56, end: 772.75 },
+    { label: "71c", start: 773, end: 774.79 },
+    { label: "71d", start: 775.04, end: 777.69 },
+    { label: "71e", start: 777.94, end: 779.95 },
+    { label: "71f", start: 780.2, end: 781.37 },
+    { label: "71g", start: 781.62, end: 782.49 },
+    { label: "71h", start: 782.74, end: 784.29 },
+    { label: "71i", start: 784.54, end: 787.05 },
+    { label: "72a", start: 787.3, end: 790.15 },
+    { label: "72b", start: 790.4, end: 792.39 },
+    { label: "73a", start: 792.64, end: 795.57 },
+    { label: "73b", start: 795.82, end: 799.99 },
+    { label: "73c", start: 800.24, end: 802.21 },
+    { label: "74a", start: 802.46, end: 804.59 },
+    { label: "74b", start: 804.84, end: 805.71 },
+    { label: "74c", start: 805.96, end: 807.81 },
+    { label: "s8", start: 808.06, end: 813.29 },
+    { label: "75a", start: 813.54, end: 816.77 },
+    { label: "75b", start: 817.02, end: 818.35 },
+    { label: "75c", start: 818.6, end: 819.27 },
+    { label: "75d", start: 819.52, end: 822.15 },
+    { label: "75e", start: 822.4, end: 823.35 },
+    { label: "75f", start: 823.6, end: 824.19 },
+    { label: "76a", start: 824.44, end: 827.57 },
+    { label: "76b", start: 827.82, end: 829.75 },
+    { label: "76c", start: 830, end: 834.43 },
+    { label: "76d", start: 834.68, end: 836.93 },
+    { label: "76e", start: 837.18, end: 839.07 },
+    { label: "76f", start: 839.32, end: 842.09 },
+    { label: "77a", start: 842.34, end: 848.19 },
+    { label: "77b", start: 848.44, end: 852.19 },
+    { label: "78a", start: 852.44, end: 855.47 },
+    { label: "78b", start: 855.72, end: 856.55 },
+    { label: "78c", start: 856.8, end: 859.41 },
+    { label: "79a", start: 859.66, end: 862.31 },
+    { label: "79b", start: 862.56, end: 864.65 },
+    { label: "79c", start: 864.9, end: 866.43 },
+    { label: "79d", start: 866.68, end: 868.29 },
+    { label: "80a", start: 868.54, end: 870.15 },
+    { label: "80b", start: 870.4, end: 871.45 },
+    { label: "80c", start: 871.7, end: 874.63 },
+    { label: "80d", start: 874.88, end: 876.75 },
+    { label: "80e", start: 877, end: 878.19 },
+    { label: "80f", start: 878.44, end: 880.67 }
+];
+
+initAudioTimings(pop, timings);
+});
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">4.20 </span><span class=\"fk\">yetu Yàlla wa </span><span class=\"ft\">mooy yetu Musaa, wa Yàlla defe kéemaan ya.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">7.12 </span><span class=\"ft\">Manees naa jàpp ne jaan, ja yetu Aaróona soppliku woon, moo wann jaan, ya seen yet soppliku.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">8.12 </span><span class=\"fk\">rayentaan: </span><span class=\"ft\">li ñuy wax rayentaan fii, kenn xamul lan la dëgg. Waaye luy naaw lu tuut la, di same aka màtte.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 1 }];
+var hasIntro = false;
+var baseRef  = "alfa-08-OT08-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='alfa-07-OT07-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='alfa-07-OT07-001.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;8. Musaa ak Aaróona ca Firawna&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='alfa-09-OT09-001.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='alfa-09-OT09-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="b"></div>
+<div class="b"></div>
+<div class="ms">Musaa ak Aaróona ca Firawna</div>
+<div class="ms2">ñu jukkee ko ci Tawreetu Musaa</div>
+<div class="ms2">Mucc ga, saar 4.18-4.31</div>
+
+<div class="s"><div id="Ts1" class="txs">Musaa dellu na Misra</div></div><a id="v1"></a>
+<div class="m"><div id="T1a" class="txs"><span class="v">1</span><span class="vsp">&nbsp;</span><span class="myv">18 </span> Musaa nag dellu ca goroom Yettro,</div> <div id="T1b" class="txs">ne ko:</div> <div id="T1c" class="txs">«May ma,</div> <div id="T1d" class="txs">ma dellu Misra,</div> <div id="T1e" class="txs">seeti samay bokk,</div> <div id="T1f" class="txs">ba xam nu ñu def.»</div> <div id="T1g" class="txs">Yettro ne ko:</div> <div id="T1h" class="txs">«Demal ak jàmm.»</div><span id="bookmarks1"></span> <a id="v2"></a><div id="T2a" class="txs"><span class="v">2</span><span class="vsp">&nbsp;</span><span class="myv">19 </span> Ci biir loolu Aji Sax ji wax ak Musaa ca Majan,</div> <div id="T2b" class="txs">ne ko:</div> <div id="T2c" class="txs">«Dellul Misra,</div> <div id="T2d" class="txs">ndaxte ña la doon wuta rey ñépp dee nañu.»</div><span id="bookmarks2"></span> <a id="v3"></a><div id="T3a" class="txs"><span class="v">3</span><span class="vsp">&nbsp;</span><span class="myv">20 </span> Musaa ànd ak soxnaam ak doomam yu góor,</div> <div id="T3b" class="txs">waral leen mbaam.</div> <div id="T3c" class="txs">Ma ngay dellu Misra,</div> <div id="T3d" class="txs">jàpp yetu Yàlla wa<span class="footnote selectable" id="F-0"><sup>a</sup></span> ca loxo ba,</div> <div id="T3e" class="txs">yóbbaale.</div><span id="bookmarks3"></span> <a id="v4"></a><div id="T4a" class="txs"><span class="v">4</span><span class="vsp">&nbsp;</span><span class="myv">21 </span> Aji Sax ji ne ko:</div> <div id="T4b" class="txs">«Keroog boo delloo Misra,</div> <div id="T4c" class="txs">nanga taxaw temm,</div> <div id="T4d" class="txs">te def ca kanam Firawna kéemaan,</div> <div id="T4e" class="txs">yi ma teg ci sa loxo yépp.</div> <div id="T4f" class="txs">Man maay dëgëral boppam,</div> <div id="T4g" class="txs">mu të ba du bàyyi mbooloo mi,</div> <div id="T4h" class="txs">ñu dem.</div><span id="bookmarks4"></span> <a id="v5"></a><div id="T5a" class="txs"><span class="v">5</span><span class="vsp">&nbsp;</span><span class="myv">22 </span> Su ko defee nga wax Firawna,</div> <div id="T5b" class="txs">ne ko:</div> <div id="T5c" class="txs">“Aji Sax ji dafa wax ne:</div> <div id="T5d" class="txs">‘Israyil mooy sama taaw bu góor.</div><span id="bookmarks5"></span> <a id="v6"></a><div id="T6a" class="txs"><span class="v">6</span><span class="vsp">&nbsp;</span><span class="myv">23 </span> Te wax naa la ne la,</div> <div id="T6b" class="txs">nga bàyyi sama doom,</div> <div id="T6c" class="txs">ndax mu man maa jaamu,</div> <div id="T6d" class="txs">nga bañ.</div> <div id="T6e" class="txs">Kon nag dinaa rey sa taaw bu góor.’ ”»</div><span id="bookmarks6"></span></div><span id="bookmarks6"></span><a id="v7"></a>
+<div class="p"><div id="T7a" class="txs"><span class="v">7</span><span class="vsp">&nbsp;</span><span class="myv">24 </span> Ba ñu lalee panaan ca yoon wa,</div> <div id="T7b" class="txs">Aji Sax ji dafa dogale Musaa,</div> <div id="T7c" class="txs">nar koo rey.</div><span id="bookmarks7"></span> <a id="v8"></a><div id="T8a" class="txs"><span class="v">8</span><span class="vsp">&nbsp;</span><span class="myv">25 </span> Soxnaam Sipora jël paaka bu ñu yette doj,</div> <div id="T8b" class="txs">dog mbuñukam doomam,</div> <div id="T8c" class="txs">laalale ko ca tànkam,</div> <div id="T8d" class="txs">ne ko:</div> <div id="T8e" class="txs">«Jëkkër ju ñuy jote deret de laa am.»</div><span id="bookmarks8"></span> <a id="v9"></a><div id="T9a" class="txs"><span class="v">9</span><span class="vsp">&nbsp;</span><span class="myv">26 </span> Ba loolu amee Aji Sax ji bàyyi Musaa.</div> <div id="T9b" class="txs">Ba Sipora di wax lu jëm ci jëkkër ju ñuy jote deret,</div> <div id="T9c" class="txs">aaday xarfal gaa taxoon.</div><span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><div id="T10a" class="txs"><span class="v">10</span><span class="vsp">&nbsp;</span><span class="myv">27 </span> Ci biir loolu Aji Sax ji wax Aaróona ne ko:</div> <div id="T10b" class="txs">«Demal gatanduji Musaa ca màndiŋ ma.»</div> <div id="T10c" class="txs">Aaróona dem seeti ko ca tundu Yàlla wa,</div> <div id="T10d" class="txs">fekk ko fa,</div> <div id="T10e" class="txs">taf ko ca kawam.</div><span id="bookmarks10"></span> <a id="v11"></a><div id="T11a" class="txs"><span class="v">11</span><span class="vsp">&nbsp;</span><span class="myv">28 </span> Musaa xamal ko la ko Aji Sax ji dénk lépp,</div> <div id="T11b" class="txs">ak mboolem firnde,</div> <div id="T11c" class="txs">ya mu ko sant mu def ko.</div><span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="p"><div id="T12a" class="txs"><span class="v">12</span><span class="vsp">&nbsp;</span><span class="myv">29 </span> Ci kaw loolu Musaa ak Aaróona agsi Misra.</div> <div id="T12b" class="txs">Ñu woo magi bànni Israyil yépp,</div> <div id="T12c" class="txs">ñu daje.</div><span id="bookmarks12"></span> <a id="v13"></a><div id="T13a" class="txs"><span class="v">13</span><span class="vsp">&nbsp;</span><span class="myv">30 </span> Aaróona jottli leen kàddu ya Aji Sax ji wax Musaa yépp,</div> <div id="T13b" class="txs">ba noppi Musaa wone firnde ya ca kanam mbooloo ma,</div><span id="bookmarks13"></span> <a id="v14"></a><div id="T14a" class="txs"><span class="v">14</span><span class="vsp">&nbsp;</span><span class="myv">31 </span> ba mbooloo ma gëm.</div> <div id="T14b" class="txs">Ba magi Israyil déggee ne Aji Sax ji nemmiku na bànni Israyil te gis na notaange,</div> <div id="T14c" class="txs">gi ñu nekke,</div> <div id="T14d" class="txs">dañoo sujjóot,</div> <div id="T14e" class="txs">màggal Aji Sax ji.</div><span id="bookmarks14"></span></div>
+<div class="ms2">Mucc ga 6.28-9.7</div>
+
+<div class="s"><div id="Ts2" class="txs">Yàlla feddli na digeem baak Musaa</div></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><div id="T15" class="txs"><span class="v">15</span><span class="vsp">&nbsp;</span><span class="myv">28 </span> Keroog ba Aji Sax ji waxee ak Musaa ca réewum Misra,</div><span id="bookmarks15"></span> <a id="v16"></a><div id="T16a" class="txs"><span class="v">16</span><span class="vsp">&nbsp;</span><span class="myv">29 </span> da koo wax,</div> <div id="T16b" class="txs">ne ko:</div> <div id="T16c" class="txs">«Man maay Aji Sax ji.</div> <div id="T16d" class="txs">Nanga wax Firawna,</div> <div id="T16e" class="txs">buuru Misra,</div> <div id="T16f" class="txs">li ma lay wax lépp.»</div><span id="bookmarks16"></span> <a id="v17"></a><div id="T17a" class="txs"><span class="v">17</span><span class="vsp">&nbsp;</span><span class="myv">30 </span> Teewul Musaa tinu Aji Sax ji,</div> <div id="T17b" class="txs">ne ko:</div> <div id="T17c" class="txs">«Waaw,</div> <div id="T17d" class="txs">waaye man,</div> <div id="T17e" class="txs">damaa tëlee wax.</div> <div id="T17f" class="txs">Mbaa Firawna dina ma déggal yee?»</div><span id="bookmarks17"></span></div><span id="bookmarks17"></span><a id="v18"></a>
+<div class="m"><div id="T18a" class="txs"><span class="v">18</span><span class="vsp">&nbsp;</span><span class="myc">7 </span> <span class="myv">1 </span> Aji Sax ji ne Musaa:</div> <div id="T18b" class="txs">«Dama ne,</div> <div id="T18c" class="txs">def naa nga féete Firawna fi ko Yàlla féete,</div> <div id="T18d" class="txs">sa mag Aaróona di sa yonent.</div><span id="bookmarks18"></span> <a id="v19"></a><div id="T19a" class="txs"><span class="v">19</span><span class="vsp">&nbsp;</span><span class="myv">2 </span> Su ko defee yaw nga wax ko li ma la sant lépp,</div> <div id="T19b" class="txs">sa mag Aaróona wax ko Firawna,</div> <div id="T19c" class="txs">ngir mu bàyyi bànni Israyil,</div> <div id="T19d" class="txs">ñu génn réewam.</div><span id="bookmarks19"></span> <a id="v20"></a><div id="T20a" class="txs"><span class="v">20</span><span class="vsp">&nbsp;</span><span class="myv">3 </span> Waaye man maay dëgëral boppu Firawna,</div> <div id="T20b" class="txs">ba fulandi samay firnde ak samay kéemaan ci biir réewum Misra.</div><span id="bookmarks20"></span> <a id="v21"></a><div id="T21a" class="txs"><span class="v">21</span><span class="vsp">&nbsp;</span><span class="myv">4 </span> Firawna du leen déggal.</div> <div id="T21b" class="txs">Su ko defee nag maay tàllal sama loxo,</div> <div id="T21c" class="txs">tiimale Misra,</div> <div id="T21d" class="txs">te maay dogal mbugal yu kéemaane,</div> <div id="T21e" class="txs">ba goreel bànni Israyil,</div> <div id="T21f" class="txs">sama ñoñ,</div> <div id="T21g" class="txs">ñu génn Misra,</div> <div id="T21h" class="txs">kurél ci kaw kurél.</div><span id="bookmarks21"></span> <a id="v22"></a><div id="T22a" class="txs"><span class="v">22</span><span class="vsp">&nbsp;</span><span class="myv">5 </span> Keroog bu ma tàllalee sama loxo,</div> <div id="T22b" class="txs">tiimale ko Misra,</div> <div id="T22c" class="txs">ba génnee bànni Israyil ca seen biir,</div> <div id="T22d" class="txs">waa Misra dinañu xam ne maay Aji Sax ji.»</div><span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><div id="T23a" class="txs"><span class="v">23</span><span class="vsp">&nbsp;</span><span class="myv">6 </span> La Aji Sax ji santoon Musaak Aaróona,</div> <div id="T23b" class="txs">noonu rekk lañu ko defe.</div><span id="bookmarks23"></span> <a id="v24"></a><div id="T24a" class="txs"><span class="v">24</span><span class="vsp">&nbsp;</span><span class="myv">7 </span> Musaa nga tollu woon ci juróom ñett fukki at (80);</div> <div id="T24b" class="txs">Aaróona moom am juróom ñett fukki at ak ñett (83);</div> <div id="T24c" class="txs">ca jamono,</div> <div id="T24d" class="txs">ya ñuy wax ak Firawna.</div><span id="bookmarks24"></span></div>
+
+<div class="s"><div id="Ts3" class="txs">Firawna gàntu na</div></div><span id="bookmarks24"></span><a id="v25"></a>
+<div class="p"><div id="T25" class="txs"><span class="v">25</span><span class="vsp">&nbsp;</span><span class="myv">8 </span> Aji Sax ji dafa wax Musaa ak Aaróona ne leen:</div><span id="bookmarks25"></span> <a id="v26"></a><div id="T26a" class="txs"><span class="v">26</span><span class="vsp">&nbsp;</span><span class="myv">9 </span> «Bu leen Firawna waxee ne leen:</div> <div id="T26b" class="txs">“Defleen seeni kéemaan boog!”</div> <div id="T26c" class="txs">danga naan Aaróona:</div> <div id="T26d" class="txs">“Jëlal yet wi,</div> <div id="T26e" class="txs">sànni ci suuf ci kanam Firawna.”</div> <div id="T26f" class="txs">Su ko defee yet wi dina soppliku jaan.»</div><span id="bookmarks26"></span></div><span id="bookmarks26"></span><a id="v27"></a>
+<div class="p"><div id="T27a" class="txs"><span class="v">27</span><span class="vsp">&nbsp;</span><span class="myv">10 </span> Ci kaw loolu Musaa ak Aaróona àgg ba ca Firawna.</div> <div id="T27b" class="txs">Ñu def la leen Aji Sax ji santoon.</div> <div id="T27c" class="txs">Aaróona jël yetam,</div> <div id="T27d" class="txs">sànni ca suuf ca kanam Firawnaak i dagam;</div> <div id="T27e" class="txs">yet wa soppliku jaan.</div><span id="bookmarks27"></span> <a id="v28"></a><div id="T28a" class="txs"><span class="v">28</span><span class="vsp">&nbsp;</span><span class="myv">11 </span> Ba mu ko defee Firawna moom itam woo boroom xam-xam yaak jibar ya.</div> <div id="T28b" class="txs">Ñeengokati Misra ya ñoom it fexe ca seeni xargafuufa,</div> <div id="T28c" class="txs">ba def lu mel noona.</div><span id="bookmarks28"></span> <a id="v29"></a><div id="T29a" class="txs"><span class="v">29</span><span class="vsp">&nbsp;</span><span class="myv">12 </span> Ku nekk ca ñoom sànni yetam,</div> <div id="T29b" class="txs">mu soppliku jaan,</div> <div id="T29c" class="txs">yetu Aaróona nag wann seeni yet<span class="footnote selectable" id="F-1"><sup>b</sup></span>.</div><span id="bookmarks29"></span> <a id="v30"></a><div id="T30a" class="txs"><span class="v">30</span><span class="vsp">&nbsp;</span><span class="myv">13 </span> Terewul Firawna të,</div> <div id="T30b" class="txs">faalewu leen,</div> <div id="T30c" class="txs">muy la Aji Sax ji waxoon.</div><span id="bookmarks30"></span></div>
+
+<div class="s"><div id="Ts4" class="txs">Yar bu jëkk ba: ndox mu soppliku deret</div></div><span id="bookmarks30"></span><a id="v31"></a>
+<div class="p"><div id="T31a" class="txs"><span class="v">31</span><span class="vsp">&nbsp;</span><span class="myv">14 </span> Gannaaw loolu Aji Sax ji wax na Musaa ne ko:</div> <div id="T31b" class="txs">«Firawna daa dëgër bopp.</div> <div id="T31c" class="txs">Bañ naa bàyyi mbooloo mi,</div> <div id="T31d" class="txs">ñu dem.</div><span id="bookmarks31"></span> <a id="v32"></a><div id="T32a" class="txs"><span class="v">32</span><span class="vsp">&nbsp;</span><span class="myv">15 </span> Dangay teela xëy ca Firawna ëllëg,</div> <div id="T32b" class="txs">buy génn jëm ca ndox ma,</div> <div id="T32c" class="txs">nga dogale ko ca tàkkal dexu Niil,</div> <div id="T32d" class="txs">te yóbbaale yet,</div> <div id="T32e" class="txs">wa soppliku woon jaan.</div><span id="bookmarks32"></span> <a id="v33"></a><div id="T33a" class="txs"><span class="v">33</span><span class="vsp">&nbsp;</span><span class="myv">16 </span> Wax ko ne ko:</div> <div id="T33b" class="txs">“Aji Sax ji Yàllay Ebrë yi,</div> <div id="T33c" class="txs">moo ma yónni ci yaw.</div> <div id="T33d" class="txs">Mu di la wax,</div> <div id="T33e" class="txs">ne la:</div> <div id="T33f" class="txs">‘Bàyyil sama ñoñ,</div> <div id="T33g" class="txs">ñu jaamuji ma ca màndiŋ ma.’</div> <div id="T33h" class="txs">Yaw nag booba ba tey yaa ngi tanqamlu.</div><span id="bookmarks33"></span> <a id="v34"></a><div id="T34a" class="txs"><span class="v">34</span><span class="vsp">&nbsp;</span><span class="myv">17 </span> Aji Sax ji dafa wax ne:</div> <div id="T34b" class="txs">‘Ni ngay xame ne man maay Aji Sax ji nii la:</div> <div id="T34c" class="txs">Dama ne,</div> <div id="T34d" class="txs">dinaa dóor ci ndoxum Niil mi yet,</div> <div id="T34e" class="txs">wi ci sama loxo,</div> <div id="T34f" class="txs">ndox mi soppliku deret;</div><span id="bookmarks34"></span> <a id="v35"></a><div id="T35a" class="txs"><span class="v">35</span><span class="vsp">&nbsp;</span><span class="myv">18 </span> su ko defee jën yi ci dex gi dee,</div> <div id="T35b" class="txs">dexu Niil gi mujj xasaw,</div> <div id="T35c" class="txs">ba waa Misra dootuñu mana naan ci ndoxum Niil.’ ”»</div><span id="bookmarks35"></span></div><span id="bookmarks35"></span><a id="v36"></a>
+<div class="p"><div id="T36a" class="txs"><span class="v">36</span><span class="vsp">&nbsp;</span><span class="myv">19 </span> Ci kaw loolu Aji Sax ji ne Musaa:</div> <div id="T36b" class="txs">«Waxal Aaróona ne ko:</div> <div id="T36c" class="txs">“Jëlal saw yet,</div> <div id="T36d" class="txs">te tàllal sa loxo tiimale ko ndoxi Misra,</div> <div id="T36e" class="txs">muy seeni dex ak seen yooni ndox ak seeni déeg ak fépp fu ndox taa,</div> <div id="T36f" class="txs">mu ànd soppliku deret.”</div> <div id="T36g" class="txs">Deret ja dina daj Misra gépp,</div> <div id="T36h" class="txs">ba ca këll yaak njaq ya.»</div><span id="bookmarks36"></span> <a id="v37"></a><div id="T37a" class="txs"><span class="v">37</span><span class="vsp">&nbsp;</span><span class="myv">20 </span> Musaa ak Aaróona def loolu lépp,</div> <div id="T37b" class="txs">na leen ko Aji Sax ji sante.</div> <div id="T37c" class="txs">Naka la ne xaas yet wa,</div> <div id="T37d" class="txs">ne ko tàrr ca ndoxum Niil ma,</div> <div id="T37e" class="txs">ca kanam Firawnaak i dagam,</div> <div id="T37f" class="txs">ndoxum Niil ma mépp di deret,</div><span id="bookmarks37"></span> <a id="v38"></a><div id="T38a" class="txs"><span class="v">38</span><span class="vsp">&nbsp;</span><span class="myv">21 </span> jën ya ca dexu Niil ga dee,</div> <div id="T38b" class="txs">dexu Niil ga xasaw,</div> <div id="T38c" class="txs">ba waa Misra manatuñoo caa naan.</div> <div id="T38d" class="txs">Misra gépp di deret.</div><span id="bookmarks38"></span> <a id="v39"></a><div id="T39a" class="txs"><span class="v">39</span><span class="vsp">&nbsp;</span><span class="myv">22 </span> Ñeengokati Misra itam fexe ca seeni xargafuufa,</div> <div id="T39b" class="txs">ba def lu mel noona.</div> <div id="T39c" class="txs">Firawna të rekk,</div> <div id="T39d" class="txs">tanqamlu Musaak Aaróona,</div> <div id="T39e" class="txs">muy la Aji Sax ji waxoon.</div><span id="bookmarks39"></span> <a id="v40"></a><div id="T40a" class="txs"><span class="v">40</span><span class="vsp">&nbsp;</span><span class="myv">23 </span> Ba loolu amee Firawna ne wërëñ,</div> <div id="T40b" class="txs">dellu këram,</div> <div id="T40c" class="txs">te bàyyiwul xel ca mbir ma.</div><span id="bookmarks40"></span> <a id="v41"></a><div id="T41a" class="txs"><span class="v">41</span><span class="vsp">&nbsp;</span><span class="myv">24 </span> Waa Misra gépp di gas la wër dexu Niil,</div> <div id="T41b" class="txs">ngir am ndoxum naan,</div> <div id="T41c" class="txs">ndax manuñu woona naan ca dex ga.</div><span id="bookmarks41"></span></div>
+
+<div class="s"><div id="Ts5" class="txs">Yarub ñaareel ba: mbott yu daj réew ma</div></div><span id="bookmarks41"></span><a id="v42"></a>
+<div class="p"><div id="T42a" class="txs"><span class="v">42</span><span class="vsp">&nbsp;</span><span class="myv">25 </span> Ba Aji Sax ji dalee ca kaw dexu Niil,</div> <div id="T42b" class="txs">ba ñu teg ca juróom ñaari fan,</div><span id="bookmarks42"></span> <a id="v43"></a><div id="T43a" class="txs"><span class="v">43</span><span class="vsp">&nbsp;</span><span class="myv">26 </span> Aji Sax ji da ne Musaa:</div> <div id="T43b" class="txs">«Demal ca Firawna,</div> <div id="T43c" class="txs">ne ko:</div> <div id="T43d" class="txs">“Aji Sax ji dafa wax ne:</div> <div id="T43e" class="txs">Bàyyil sama ñoñ,</div> <div id="T43f" class="txs">ñu dem jaamuji ma.</div><span id="bookmarks43"></span> <a id="v44"></a><div id="T44a" class="txs"><span class="v">44</span><span class="vsp">&nbsp;</span><span class="myv">27 </span> Soo leen bañee bàyyi,</div> <div id="T44b" class="txs">ñu dem kat,</div> <div id="T44c" class="txs">maa leen di mbugale ay mbott yu daj sam réew.</div><span id="bookmarks44"></span> <a id="v45"></a><div id="T45a" class="txs"><span class="v">45</span><span class="vsp">&nbsp;</span><span class="myv">28 </span> Dexu Niil gi day ramm-rammeek i mbott,</div> <div id="T45b" class="txs">te dinañu ñëw,</div> <div id="T45c" class="txs">duggsi sa biir kër,</div> <div id="T45d" class="txs">ak sa néegu biir,</div> <div id="T45e" class="txs">ak sa kaw lal,</div> <div id="T45f" class="txs">ak sa këri dag,</div> <div id="T45g" class="txs">ak sa waa réew,</div> <div id="T45h" class="txs">ba ca lakkukaay yaak notukaayi mburu ya.</div><span id="bookmarks45"></span> <a id="v46"></a><div id="T46a" class="txs"><span class="v">46</span><span class="vsp">&nbsp;</span><span class="myv">29 </span> Mbott yi dinañu yéeg ci sa kaw,</div> <div id="T46b" class="txs">yéeg ci kaw waa réew mi,</div> <div id="T46c" class="txs">ak sa dag yépp.”»</div><span id="bookmarks46"></span></div><span id="bookmarks46"></span><span id="bookmarks46"></span><a id="v47"></a>
+<div class="p"></div>
+<div class="m"><div id="T47a" class="txs"><span class="v">47</span><span class="vsp">&nbsp;</span><span class="myc">8 </span> <span class="myv">1 </span> Ba loolu weesoo Aji Sax ji ne Musaa:</div> <div id="T47b" class="txs">«Waxal Aaróona,</div> <div id="T47c" class="txs">ne ko mu ŋàbb yet wi,</div> <div id="T47d" class="txs">tàllal loxoom,</div> <div id="T47e" class="txs">tiimale ko dex yi,</div> <div id="T47f" class="txs">ak yooni ndox yeek déeg yi,</div> <div id="T47g" class="txs">ngir indi mbott yi ci biir réewum Misra.»</div><span id="bookmarks47"></span> <a id="v48"></a><div id="T48a" class="txs"><span class="v">48</span><span class="vsp">&nbsp;</span><span class="myv">2 </span> Aaróona tàllal loxoom,</div> <div id="T48b" class="txs">mu tiim ndoxi Misra,</div> <div id="T48c" class="txs">mbott ya jóg,</div> <div id="T48d" class="txs">lal réewum Misra.</div><span id="bookmarks48"></span> <a id="v49"></a><div id="T49a" class="txs"><span class="v">49</span><span class="vsp">&nbsp;</span><span class="myv">3 </span> Ñeengokat ya it fexe ca seeni xargafuufa,</div> <div id="T49b" class="txs">ba indi ay mbott ca réewum Misra.</div><span id="bookmarks49"></span></div><span id="bookmarks49"></span><a id="v50"></a>
+<div class="p"><div id="T50a" class="txs"><span class="v">50</span><span class="vsp">&nbsp;</span><span class="myv">4 </span> Ba mu ko defee Firawna woo Musaak Aaróona,</div> <div id="T50b" class="txs">ne leen:</div> <div id="T50c" class="txs">«Ñaanleen Aji Sax ji,</div> <div id="T50d" class="txs">ngir mu teqale nook mbott yi,</div> <div id="T50e" class="txs">man ak sama waa réew.</div> <div id="T50f" class="txs">Kon dinaa bàyyi mbooloo mi,</div> <div id="T50g" class="txs">ñu dem rendili Aji Sax ji sarax.»</div><span id="bookmarks50"></span> <a id="v51"></a><div id="T51a" class="txs"><span class="v">51</span><span class="vsp">&nbsp;</span><span class="myv">5 </span> Musaa ne Firawna:</div> <div id="T51b" class="txs">«Saa yu la neexee rekk,</div> <div id="T51c" class="txs">sang bi.</div> <div id="T51d" class="txs">Wax ma kañ laa lay ñaanal,</div> <div id="T51e" class="txs">yaw ak say dag ak sa waa réew,</div> <div id="T51f" class="txs">ngir jële fi mbott yi,</div> <div id="T51g" class="txs">ñu tàggook yéen,</div> <div id="T51h" class="txs">génn seeni kër,</div> <div id="T51i" class="txs">ca dexu Niil ga doŋŋ lañuy des.»</div><span id="bookmarks51"></span> <a id="v52"></a><div id="T52a" class="txs"><span class="v">52</span><span class="vsp">&nbsp;</span><span class="myv">6 </span> Mu ne ko:</div> <div id="T52b" class="txs">«Nay ëllëg.»</div> <div id="T52c" class="txs">Musaa ne ko:</div> <div id="T52d" class="txs">«Baax na,</div> <div id="T52e" class="txs">ndax nga xam ne sunu Yàlla Aji Sax ji amul moroom.</div><span id="bookmarks52"></span> <a id="v53"></a><div id="T53a" class="txs"><span class="v">53</span><span class="vsp">&nbsp;</span><span class="myv">7 </span> Mbott yi dinañu jóge sa kër,</div> <div id="T53b" class="txs">teqlikook yéen,</div> <div id="T53c" class="txs">yaak say dag ak sa waa réew,</div> <div id="T53d" class="txs">ca dexu Niil ga doŋŋ lañuy des.»</div><span id="bookmarks53"></span> <a id="v54"></a><div id="T54a" class="txs"><span class="v">54</span><span class="vsp">&nbsp;</span><span class="myv">8 </span> Musaa ak Aaróona nag jóge ca Firawna,</div> <div id="T54b" class="txs">Musaa tinu Aji Sax ji ca mbirum mbott ya mu yare Firawna.</div><span id="bookmarks54"></span> <a id="v55"></a><div id="T55a" class="txs"><span class="v">55</span><span class="vsp">&nbsp;</span><span class="myv">9 </span> Aji Sax ji def la ko Musaa ñaan,</div> <div id="T55b" class="txs">mbott ya dee,</div> <div id="T55c" class="txs">ba jeex ca kër yaak ca ëtt yaak tool ya.</div><span id="bookmarks55"></span> <a id="v56"></a><div id="T56a" class="txs"><span class="v">56</span><span class="vsp">&nbsp;</span><span class="myv">10 </span> Ñu jal koo jal,</div> <div id="T56b" class="txs">ba xet ga ubale ca réew ma.</div><span id="bookmarks56"></span> <a id="v57"></a><div id="T57a" class="txs"><span class="v">57</span><span class="vsp">&nbsp;</span><span class="myv">11 </span> Teewul,</div> <div id="T57b" class="txs">ba Firawna gisee ca mbir ma tan,</div> <div id="T57c" class="txs">daa wéye të,</div> <div id="T57d" class="txs">tanqamlu leen,</div> <div id="T57e" class="txs">muy la Aji Sax ji waxoon.</div><span id="bookmarks57"></span></div>
+
+<div class="s"><div id="Ts6" class="txs">Yarub ñetteel ba: rayentaan yu daj réew ma</div></div><span id="bookmarks57"></span><a id="v58"></a>
+<div class="p"><div id="T58a" class="txs"><span class="v">58</span><span class="vsp">&nbsp;</span><span class="myv">12 </span> Ba loolu amee Aji Sax ji ne Musaa:</div> <div id="T58b" class="txs">«Waxal Aaróona ne ko mu tàllal yetam,</div> <div id="T58c" class="txs">dóor ci pëndub suuf si,</div> <div id="T58d" class="txs">mu doon ay rayentaan<span class="footnote selectable" id="F-2"><sup>c</sup></span> ci réewum Misra gépp.»</div><span id="bookmarks58"></span> <a id="v59"></a><div id="T59a" class="txs"><span class="v">59</span><span class="vsp">&nbsp;</span><span class="myv">13 </span> Ñu def loola,</div> <div id="T59b" class="txs">Aaróona tàllal loxoom,</div> <div id="T59c" class="txs">ba mu ŋàbbe yet wa,</div> <div id="T59d" class="txs">dóor ca pënd ba,</div> <div id="T59e" class="txs">mu doon ay rayentaan yu song nit ak rab;</div> <div id="T59f" class="txs">pëndu suuf sépp a def i rayentaan ca réewum Misra gépp.</div><span id="bookmarks59"></span> <a id="v60"></a><div id="T60a" class="txs"><span class="v">60</span><span class="vsp">&nbsp;</span><span class="myv">14 </span> Ñeengokat ya fexe ca seeni xargafuufa,</div> <div id="T60b" class="txs">nu ñu defe ay rayentaan,</div> <div id="T60c" class="txs">waaye manuñu.</div> <div id="T60d" class="txs">Rayentaan ya nag song nit ñaak rab ya.</div><span id="bookmarks60"></span> <a id="v61"></a><div id="T61a" class="txs"><span class="v">61</span><span class="vsp">&nbsp;</span><span class="myv">15 </span> Ñeengokat ya ne Firawna:</div> <div id="T61b" class="txs">«Lii de Yàlla rekk a ko man!»</div> <div id="T61c" class="txs">Teewul Firawna wéye të rekk,</div> <div id="T61d" class="txs">tanqamlu leen,</div> <div id="T61e" class="txs">muy la Aji Sax ji waxoon.</div><span id="bookmarks61"></span></div>
+
+<div class="s"><div id="Ts7" class="txs">Yarub ñeenteel ba: weñ yuy màtte</div></div><span id="bookmarks61"></span><a id="v62"></a>
+<div class="p"><div id="T62a" class="txs"><span class="v">62</span><span class="vsp">&nbsp;</span><span class="myv">16 </span> Aji Sax ji waxati Musaa,</div> <div id="T62b" class="txs">ne ko:</div> <div id="T62c" class="txs">«Teelala xëy ëllëg ca Firawna,</div> <div id="T62d" class="txs">buy génn jëm ca ndox ma,</div> <div id="T62e" class="txs">nga wax ko ne ko:</div> <div id="T62f" class="txs">“Aji Sax ji dafa wax ne:</div> <div id="T62g" class="txs">‘Bàyyil sama ñoñ,</div> <div id="T62h" class="txs">ñu dem jaamuji ma.</div><span id="bookmarks62"></span> <a id="v63"></a><div id="T63a" class="txs"><span class="v">63</span><span class="vsp">&nbsp;</span><span class="myv">17 </span> Ndaxte soo bàyyiwul sama ñoñ,</div> <div id="T63b" class="txs">ñu dem kat,</div> <div id="T63c" class="txs">dinaa yuri ay ndiiraani weñ yuy màtte ci seen kaw,</div> <div id="T63d" class="txs">yaak say dag ak sa waa réew,</div> <div id="T63e" class="txs">te dinañu àgg ci sa biir kër.</div> <div id="T63f" class="txs">Këri waa Misra dina fees ak weñ yuy màtte,</div> <div id="T63g" class="txs">ba suuf,</div> <div id="T63h" class="txs">si ñu taxaw sax,</div> <div id="T63i" class="txs">weñ yee koy muur.</div><span id="bookmarks63"></span> <a id="v64"></a><div id="T64a" class="txs"><span class="v">64</span><span class="vsp">&nbsp;</span><span class="myv">18 </span> Waaye bu keroogee dinaa ci musal diiwaanu Gosen,</div> <div id="T64b" class="txs">ga sama ñoñ dëkke,</div> <div id="T64c" class="txs">ba ay weñ du fa same,</div> <div id="T64d" class="txs">ndax nga xam ne,</div> <div id="T64e" class="txs">man Aji Sax ji maa ngi ci digg réew mii,</div><span id="bookmarks64"></span> <a id="v65"></a><div id="T65a" class="txs"><span class="v">65</span><span class="vsp">&nbsp;</span><span class="myv">19 </span> te maay musal sama ñoñ ci musiba moomuy dal saw askan.</div> <div id="T65b" class="txs">Ëllëg firnde jooju dina am.’ ”»</div><span id="bookmarks65"></span> <a id="v66"></a><div id="T66a" class="txs"><span class="v">66</span><span class="vsp">&nbsp;</span><span class="myv">20 </span> Aji Sax ji def loola,</div> <div id="T66b" class="txs">weñ yi def ndiiraan yu réy,</div> <div id="T66c" class="txs">song kër Firawna ak kër dagam ya,</div> <div id="T66d" class="txs">dajal réewum Misra,</div> <div id="T66e" class="txs">ba réew ma yàqu ndax ndiiraani weñ ya.</div><span id="bookmarks66"></span></div><span id="bookmarks66"></span><a id="v67"></a>
+<div class="p"><div id="T67a" class="txs"><span class="v">67</span><span class="vsp">&nbsp;</span><span class="myv">21 </span> Firawna daldi woolu Musaak Aaróona,</div> <div id="T67b" class="txs">ne leen:</div> <div id="T67c" class="txs">«Demleen rendili seen Yàlla sarax,</div> <div id="T67d" class="txs">te nay ci biir réew mi nag.»</div><span id="bookmarks67"></span> <a id="v68"></a><div id="T68a" class="txs"><span class="v">68</span><span class="vsp">&nbsp;</span><span class="myv">22 </span> Musaa ne ko:</div> <div id="T68b" class="txs">«Loolu du yoon,</div> <div id="T68c" class="txs">ndax li nuy rendil sunu Yàlla Aji Sax ji,</div> <div id="T68d" class="txs">waa Misra dañu koy xof.</div> <div id="T68e" class="txs">Te bu nu sarxalee lenn lu waa Misra xof,</div> <div id="T68f" class="txs">ñuy gis,</div> <div id="T68g" class="txs">dinañu nu dóor ay doj,</div> <div id="T68h" class="txs">ba nu dee.</div><span id="bookmarks68"></span> <a id="v69"></a><div id="T69a" class="txs"><span class="v">69</span><span class="vsp">&nbsp;</span><span class="myv">23 </span> Kon kay danoo wara génn,</div> <div id="T69b" class="txs">topp màndiŋ mi lu mat doxub ñetti fan,</div> <div id="T69c" class="txs">rendili fa sunu Yàlla Aji Sax ji sarax,</div> <div id="T69d" class="txs">ni mu nu ko sante.»</div><span id="bookmarks69"></span> <a id="v70"></a><div id="T70a" class="txs"><span class="v">70</span><span class="vsp">&nbsp;</span><span class="myv">24 </span> Firawna àddu ne:</div> <div id="T70b" class="txs">«Dinaa leen may,</div> <div id="T70c" class="txs">ngeen dem ca màndiŋ ma,</div> <div id="T70d" class="txs">rendili seen Yàlla Aji Sax ji sarax,</div> <div id="T70e" class="txs">waaye buleen sore lool.</div> <div id="T70f" class="txs">Ñaanal-leen ma nag.»</div><span id="bookmarks70"></span> <a id="v71"></a><div id="T71a" class="txs"><span class="v">71</span><span class="vsp">&nbsp;</span><span class="myv">25 </span> Musaa ne ko:</div> <div id="T71b" class="txs">«Bu ma bàyyikoo ci yaw rekk Firawna,</div> <div id="T71c" class="txs">dinaa tinu Aji Sax ji,</div> <div id="T71d" class="txs">ngir ëllëg ndiiraani weñ yi teqlikook yaw,</div> <div id="T71e" class="txs">ak say dag ak sa waa réew,</div> <div id="T71f" class="txs">waaye kat Firawna,</div> <div id="T71g" class="txs">bu nu naxati,</div> <div id="T71h" class="txs">di baña bàyyi mbooloo mi,</div> <div id="T71i" class="txs">ñu rendili Aji Sax ji sarax.»</div><span id="bookmarks71"></span></div><span id="bookmarks71"></span><a id="v72"></a>
+<div class="p"><div id="T72a" class="txs"><span class="v">72</span><span class="vsp">&nbsp;</span><span class="myv">26 </span> Musaa bàyyikoo fa Firawna,</div> <div id="T72b" class="txs">daldi tinu Aji Sax ji.</div><span id="bookmarks72"></span> <a id="v73"></a><div id="T73a" class="txs"><span class="v">73</span><span class="vsp">&nbsp;</span><span class="myv">27 </span> Aji Sax ji defal Musaa la mu ñaan,</div> <div id="T73b" class="txs">jële ndiiraani weñ ya ca Firawnaak i dagam ak waa réewam,</div> <div id="T73c" class="txs">ba weñ desatu fa.</div><span id="bookmarks73"></span> <a id="v74"></a><div id="T74a" class="txs"><span class="v">74</span><span class="vsp">&nbsp;</span><span class="myv">28 </span> Teewul Firawna të rekk,</div> <div id="T74b" class="txs">baña bàyyi mbooloo ma,</div> <div id="T74c" class="txs">ñu dem.</div><span id="bookmarks74"></span></div>
+
+<div class="s"><div id="Ts8" class="txs">Yarub juróomeel ba: Deewug jur ga</div></div><span id="bookmarks74"></span><a id="v75"></a>
+<div class="m"><div id="T75a" class="txs"><span class="v">75</span><span class="vsp">&nbsp;</span><span class="myc">9 </span> <span class="myv">1 </span> Ba loolu wéyee Aji Sax ji da ne Musaa:</div> <div id="T75b" class="txs">«Demal ca Firawna,</div> <div id="T75c" class="txs">nga ne ko:</div> <div id="T75d" class="txs">Aji Sax ji Yàllay Ebrë yi dafa wax ne:</div> <div id="T75e" class="txs">“Bàyyil sama ñoñ,</div> <div id="T75f" class="txs">ñu dem màggali ma.</div><span id="bookmarks75"></span> <a id="v76"></a><div id="T76a" class="txs"><span class="v">76</span><span class="vsp">&nbsp;</span><span class="myv">2-3 </span> Ndax boo leen bañee bàyyi kat,</div> <div id="T76b" class="txs">xanaa di leen téye ba tey,</div> <div id="T76c" class="txs">loxol Aji Sax ji dina dal ci sa kaw jur gi ci tool yi,</div> <div id="T76d" class="txs">muy fas ak mbaam ak giléem,</div> <div id="T76e" class="txs">jur gu gudd ak gu gàtt,</div> <div id="T76f" class="txs">te jàngoro ju aaytal lool lay doon.</div><span id="bookmarks76"></span> <a id="v77"></a><div id="T77a" class="txs"><span class="v">77</span><span class="vsp">&nbsp;</span><span class="myv">4 </span> Waaye man Aji Sax ji maay ràññaatle juru bànni Israyil ak juru waa Misra,</div> <div id="T77b" class="txs">ba lenn du dee ci mboolem lu bànni Israyil moom.”»</div><span id="bookmarks77"></span></div><span id="bookmarks77"></span><a id="v78"></a>
+<div class="p"><div id="T78a" class="txs"><span class="v">78</span><span class="vsp">&nbsp;</span><span class="myv">5 </span> Aji Sax ji nag jàpp na bés,</div> <div id="T78b" class="txs">nee na:</div> <div id="T78c" class="txs">«Ëllëg maay def loolu ci réew mi.»</div><span id="bookmarks78"></span> <a id="v79"></a><div id="T79a" class="txs"><span class="v">79</span><span class="vsp">&nbsp;</span><span class="myv">6 </span> Ca ëllëg sa Aji Sax ji def ko:</div> <div id="T79b" class="txs">jurug waa Misra gépp dee,</div> <div id="T79c" class="txs">te jurug bànni Israyil,</div> <div id="T79d" class="txs">lenn deewu ca.</div><span id="bookmarks79"></span> <a id="v80"></a><div id="T80a" class="txs"><span class="v">80</span><span class="vsp">&nbsp;</span><span class="myv">7 </span> Ba Firawna yónnee,</div> <div id="T80b" class="txs">ba nemmiku mbir ma,</div> <div id="T80c" class="txs">xam na ne lenn deewul ca juru bànni Israyil.</div> <div id="T80d" class="txs">Teewul mu të ticc ba tey,</div> <div id="T80e" class="txs">baña bàyyi mbooloo ma,</div> <div id="T80f" class="txs">ñu dem.</div><span id="bookmarks80"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010, 2018 AES et MBS  (NINEA MBS: 20215410C9).</span></div></div>
+</div>
+
+<div id="toolbar-bottom">
+<div class="audio-player">
+  <audio id="audio" controls>
+    <source id="audio1" src="../mp3//OT08.mp3" />
+  </audio>
+</div>
+</div>
+
+</body>
+</html>

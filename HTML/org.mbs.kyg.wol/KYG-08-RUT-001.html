@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruut 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1.1 </span><span class=\"ft\">Booba buur amagul woon ca Israyil.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">1.1 </span><span class=\"fk\">réewum Mowab </span><span class=\"ft\">ak réewum Israyil ñoo feggoo woon, waaye seen diggante neexul woon.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 4 }];
+var hasIntro = false;
+var baseRef  = "KYG-08-RUT-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-05-DEU-000.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-05-DEU-034.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Ruut&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-08-RUT-002.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-09-1SA-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt"><span class="mt">Ruut</span></div>
+<div class="b"></div>
+<div class="b"></div>
+
+<div class="s"><div id="s1">Musiba dikkal na kër Elimeleg</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ba njiit ya daan àtte faloo ca Israyil<span class="footnote selectable" id="F-0"><sup>a</sup></span>, jamono jooju dafa amoon xiif ca réew ma. Jenn waay bàyyikoo Betleyem ca diiwaanu Yuda, ànd ak soxnaam ak ñaari doomam yu góor, ñu toxuji ca réewum Mowab<span class="footnote selectable" id="F-1"><sup>b</sup></span>.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Waa ja Elimeleg la tuddoon, soxnaam di Nawmi, ñaari doomam yu góor ya di Malon ak Kilyon. Ay Efrateen lañu, cosaanoo Betleyem ca Yuda. Ñu agsi ca réewum Mowab, daldi sanc foofa.<span id="bookmarks2"></span></div><span id="bookmarks2"></span><a id="v3"></a>
+<div class="p"><span class="v">3</span><span class="vsp">&nbsp;</span>Gannaaw gi Elimeleg jëkkëri Nawmi faatu, Nawmi des ak ñaari doomam yu góor.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Ñooñu mujj jël ay jigéeni Mowab soxna; kenn ka di Orpa, ka ca des di Ruut. Ba ñu nekkee foofa lu tollu ci fukki at,<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>ñoom ñaar ñooñu di Malon ak Kilyon faatu ñoom it, jigéen ja ñàkk noonu ñaari doomam ak jëkkëram. Mu des moom kenn.<span id="bookmarks5"></span></div>
+
+<div class="s"><div id="s2">Ruut topp na Nawmi</div></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Ba loolu amee Nawmi fabu, mook goroom ya, ngir jóge réew ma. Booba fekk na mu dégge ca Mowab ne <span class="footnote selectable" id="G-3">Aji Sax</span> ji xettli na ñoñam, ba may leen ab dund.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Ma ngay jóge fa mu dëkkoon, ànd ak ñaari goroom ya, ñu tegu ca yoon wa, jëm Yuda.<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>Ci biir loolu mu wax ak ñaari goroom, ne leen: «Demleen kay, ñibbileen, ku nekk sa kër yaay. Yal na leen Aji Sax ji baaxe, na ngeen baaxe woon ñi wuutu, te baaxe ma, man itam.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Yal na Aji Sax ji may ku nekk ci yeen jàmm ca kër jëkkër ja muy amaat.» Ci kaw loolu mu fóon leen, ñu ne yikkét jooyoo.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Ñu ne ko: «Déet, yaw kay lanuy àndal dem ca say bokk.»<span id="bookmarks10"></span></div><span id="bookmarks10"></span><a id="v11"></a>
+<div class="p"><span class="v">11</span><span class="vsp">&nbsp;</span>Mu ne leen: «Ñibbileen ngalla, doom, lu ngeen di ànd ak man doye? Ndax dama leena manatee jural ay jëkkër ci sama biir bii?<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Ñibbileen rikk doom, demleen, ngir man damay mag, ba wees séy; te su ma ci dese woon yaakaar it, guddig tey jii sax su ma ci séyoon, jur ciy doom,<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>mbaa dingeen leen mana xaar, ba ñu màgg? Xanaa dungeen toog, baña séy ndax ñoom? Déedéet, doom. Maa leen ëpp naqar, man mi Aji Sax ji nattoo nii.»<span id="bookmarks13"></span></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="p"><span class="v">14</span><span class="vsp">&nbsp;</span>Ñu dellu ne yikkét, di jooyoo. Orpa fóon goroom, tàggtook moom, Ruut nag moom langaamu ko rekk.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Mu ne ko: «Gis nga sa wujju peccorgo waa ngay ñibbi cay bokkam aki yàllaam. Àndal ak moom ñibbi kay!»<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Mu ne ko: «Bu ma soññ mukk ci loolu, duma la wacc, duma la dëddu. Foo jëm, fa laa jëm; foo dal, fa laay dal; say bokk di saay bokk; sa Yàlla di sama Yàlla.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Foo deeye it, ma deeye fa, ñu denc ma fa. Yal na ma Aji Sax ji teg mbugal mu gëna tar, ndegam lenn lu moy dee tàggale na maak yaw.»<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Nawmi nag gis ni Ruut dogoo ci ànd ak moom, ba tax soññatu ko.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Ba mu ko defee ñu ànd ñoom ñaar, ba àgg Betleyem.</div>
+<div class="p">Naka lañu àgg Betleyem, dëkk ba bépp ne kër-kër, ne këpp ndax ñoom. Jigéen ña naa: «Xanaa kii kay du Nawmi?»<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Mu ne leen: «Buleen ma ne Nawmi (mu firi Boroom mbégte mi), neleen ma Mara (mu firi Boroom naqar wi), ndax Aji Man ji da maa teg naqar wu réya réy.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Maa demoon ak loxo yu ne gadd, Aji Sax ji délloosi maak loxoy neen. Kon lu ngeen may wooye Nawmi doye, te Aji Sax ji àtte ma ñàkkal? Ndax kat Aji Man ji ci njàqare la ma tàbbal!»<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Noonu la Nawmi jógee Mowab, ñibbsi, ànd ak Ruut, gorob Mowabeenam ba. Ñu agsi Betleyem, fekk ngóobum lors ma di tàmbali.<span id="bookmarks22"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

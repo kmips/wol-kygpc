@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esteer 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1.1 </span><span class=\"fk\">Aserus </span><span class=\"ft\">dees na ko wooye Serses itam.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">1.2 </span><span class=\"fk\">Sus, péey ba, </span><span class=\"ft\">walla </span><span class=\"fqa\">Sus dëkk ba ñu dàbbli.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">1.10 </span><span class=\"fk\">bëkk-néeg </span><span class=\"ft\">yooyu, ay jaam yu ñu tàpp lañuy doon.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-42": "<div><span class=\"k\">Kuus:</span> Réew la mu nekkoon ca bëj-saalumu Misra te ëmboon réewum Sudan ak Ecopi ga woon ak Nubi.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 10 }];
+var hasIntro = false;
+var baseRef  = "KYG-17-EST-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-16-NEH-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-16-NEH-013.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Esteer&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-17-EST-002.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-18-JOB-000.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt"><span class="mt">Esteer</span></div>
+<div class="b"></div>
+<div class="b"></div>
+
+<div class="s"><div id="s1">Buur Aserus a ngi xawaare</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Lii mu ngi amoon ci jamonoy Aserus<span class="footnote selectable" id="F-0"><sup>a</sup></span>. Mooy Aserus ma falu woon, jiite téeméeri diiwaan ak ñaar fukk ak juróom ñaar, dale ko ca End ga woon, ba ca réewum <span class="footnote selectable" id="G-42">Kuus</span>.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Jamono yooyu Buur Aserus moo toogoon ca jal ba ca Sus, péey ba<span class="footnote selectable" id="F-1"><sup>b</sup></span>.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Ci ñetteelu atu nguuram mu maye bernde, ñeel kàngamam yépp ak jawriñam yépp, di njiiti xarey diiwaanu Pers ak diiwaanu Medd, garmi yeek kàngami dëkk yi bokk teew.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Ci diir bu takku, tollook téeméeri fan ak juróom ñett fukk (180), mu di leen won alalu nguuram ju yéeme ak dayoom ak darajaam ju réy.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Ba fan yooyu matee, buur ba maye berndey juróom ñaari fan ci biir tóokëram, ñeel mboolem ña nekkoon ca Sus, péey ba, ka gëna màgg ba ca ka gëna tuut.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Ay ndimoy wëñ gu ëccu gu weex ak gu baxaa nga wékke ca buumi lẽe yu weex ak yu xonq curr, takke ci ay jaaroy xaalis yu wewe ci ay jën yu ñu tabaxe doju màrb. Ay lali wurus ak xaalis a nga tege fa suuf, sa ñu dëre doj yu gànjare: yu màrb ak yu pere ak yu ñuul.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Ña ngay maye naan ci ay kaasi wurus, bu ci nekk wuuteek moroom ma na mu bindoo. Biiñu buur di walangaan ni loxol Buur.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Kenn gawuloon kenn nag ci naan gi, ndax Buur joxoon na ndigal farbay këram yépp, ne leen ñu topp ku nekk ci coobareem.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Ci biir loolu Lingeer Wasti moom it maye bernde ñeel jigéeni kër Buur Aserus.<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><span class="v">10</span><span class="vsp">&nbsp;</span>Keroog bésub juróom ñaareel ba Buur Aserus naan biiñ, ba xolam sedd, mu sant juróom ñaari bëkk-néegam<span class="footnote selectable" id="F-2"><sup>c</sup></span>: Meyuman ak Bista ak Arbona ak Bigta ak Abagta ak Setar ak Karkas, ne leen<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>ñu indil ko Lingeer Wasti, mu sol mbaxanam lingeeram, ngir won taaram ba nit ñaak kàngam ya, ndax jigéen ju rafetoon la.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Teewul ba bëkk-néeg ya yeggee Lingeer Wasti ndigalal Buur, mu lànk, ne du ñëw. Buur nag mer lool, ba xol bay bax.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Booba mboolem mbirum buur, xamkati jamono ya ci wàllu yoon ak àtteb yoon lees koy diis.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Ña ca gënoona jege Buur di Karsena ak Setar ak Admata ak Tarsis ak Meres ak Marsena ak Memukan, ñuy juróom ñaari kàngami diiwaani Pers ak Medd, di bokk ak Buur jataay te gëna kawe ca nguur ga.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Mu ne leen: «Ci yoon, ana lu war ci Lingeer Wasti, gannaaw déggul ndigal li ma joxe, man, Buur Aserus, samay bëkk-néeg jottli ko ko?»<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>Memukan wax ca kanam Buur ak kàngam ya, ne leen: «Du Buur doŋŋ la Lingeer Wasti tooñ. Waaye tooñ na mboolem kàngam yi ak mboolem baadoolo yi ci mboolem diiwaan yi.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Nde jëfi lingeer jii dina yegg ci noppi jigéen ñépp, ba tax ñuy sofental seen jëkkër. Ndax dañu naan: “Xanaa Buur Aserus woowul Lingeer Wasti, mu lànk, ne du ñëw”?<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Li ko dale bésub tey, kuy garmi bu jigéen ci Pers ak Medd, bu déggee jëfi lingeer jii, noonu lay waxeek mboolem kàngami buur, mu indi yabeel ak réeroo bu dul jeex.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Kon nag Buur, ndegam soob na la, na ab dogal tukkee fi yaw, ñu bind ko ci ndigali yooni Pers ak Medd, yi dul toxu, di xamle ne Wasti dootu jàkkaarlooteek Buur Aserus. Te Buur, dangay nangu céru lingeeram, jox ko moroomam mu ko gën.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Su ko defee bu ñu yéenee dogalu buur bi ci mboolem déndu buur bu yaatu bii, jigéen ñépp dinañu weg seen jëkkër, boroom daraja ba ci baadoolo bi.»<span id="bookmarks20"></span></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>Loola nag neex Buur ak kàngam ya. Buur nag def la ko Memukan wax.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Ba mu ko defee mu yónnee ay bataaxal fépp ca réew ma, diiwaan bu nekk ak mbindum boppam, waaso wu nekk it ci làkku boppam. Mu biralal waaso wu nekk ci làkku boppam, ne leen na góor gu nekk doon kilifay këram.<span id="bookmarks22"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

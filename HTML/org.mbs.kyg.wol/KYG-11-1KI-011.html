@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Buur ya 11</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">11.5 </span><span class=\"fk\">Astàrt </span><span class=\"ft\">tuur mu jigéen la woon bu ay xeeti penku daan jaamu. Ñu yaakaaroon ne dina leen may, ñu jur doom yu bare, seeni jur ak seeni tool it, lépp nangu ba bare. Ñu jàppoon ne Astàrt mooy jabaru tuur ma ñu naan Baal.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">11.7 </span><span class=\"fk\">Moleg </span><span class=\"ft\">ak Milkom jàpp nañu ne benn la.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">11.27 </span><span class=\"fk\">Milo </span><span class=\"ft\">xur la wu doxoon diggante kër Yàlla ga ak gox ba ñu naan Kër Daawuda. Suleymaan sëkklu ko.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-9": "<div><span class=\"k\">Astàrt:</span> Moo doon tuur mu jigéen mi gënoona màgg ci tuuri Kanaaneen ñi. Ñu yaakaaroon ne moo jagoo wàllu séy, te mooy giiral. Moo doon jabaru tuur mi ñuy wax Baal.</div>",
+    "G-16": "<div><span class=\"k\">bérabi jaamookaay y-:</span> Bérabi jaamookaay yi ay bérab la yu nit ñi taamu woona màggale, muy yéefar yi, di bànni Israyil. Lu ci ëpp ay bérab yu kawe la daan doon, waaye man naa baña kawe itam. Su dee yéefar yi, ñu di ca jaamu seeni xërëm; su dee bànni Israyil ñoom, ñu di ca jaamu seen Yàlla Aji Sax ji. Gannaaw ba Suleymaan tabaxee ca Yerusalem kër Yàlla gu ñuy màggale Aji Sax ji, bérabi jaamookaay yooya ay tuurukaay rekk lañu mujj doon.</div>",
+    "G-40": "<div><span class=\"k\">kóllëre g-:</span> Ci Mbind mu sell mi, digoo la bu ëmb ay dige. Man nañu koo tëral, mu dib digoo diggante nit ak moroom ma, mu mel ni la Ibraayma digoo woon ak Abimeleg (<span class=\"bk\">Njàlbéen ga</span> 21.27), mbaa diggante kilifa ak surgaam. Kóllëre gu ni mel la Yàlla taamu woona fasook nit, mu mel ni la Yàlla digoo woon ak àddina, jaare ko ci Nóoyin (6.18), mbaa diggante Yàllaak Ibraayma (15.18), mbaa Yàllaak Isaaxa (17.19). Ñetti yoon yu mujj yooyu ñu lim, Yàlla rekk a dige; moom ci wàllu boppam moo fas kóllëre ak ñooñu. Ñoom defuñu dara lu dul gëm ko. Waaye Ibraaymaak Abimeleg dañoo digoo, maanaam dañoo fasoo kóllëre, ku nekk am lu ko war. Noonu lañu dégge li xàjjale fas kóllëre ak fasoo kóllëre.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 22 }];
+var hasIntro = false;
+var baseRef  = "KYG-11-1KI-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-010.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Buur ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;11&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-012.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Suleymaan moy na</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">11</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ci biir loolu Buur Suleymaan bëggoon na jigéeni yeneen xeet yu bare te bokkul ak doomu Firawna ji mu jëloon: ñuy ay jigéeni Mowabeen ak jigéeni Amoneen ak jigéeni Edomeen ak jigéeni waa Sidon ak jigéeni Etteen.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Ñooñu bokk ci xeet, yi <span class="footnote selectable" id="G-3">Aji Sax</span> ji waxoon <span class="footnote selectable" id="G-13">bànni Israyil</span> ne leen: «Buleen jëli jabar ci ñoom, ñoom it buñu takksi ci yeen, ndax kon dinañu leen dëpp, ngeen topp seeni tuur.» Teewul Suleymaan bëgg leen, taq leen.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Mu denc ca juróom ñaar téeméeri lingeer (700) ak ñetti téeméeri (300) nekkaale. Soxnaam ya nag dëpp ko.<span id="bookmarks3"></span></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="p"><span class="v">4</span><span class="vsp">&nbsp;</span>Ba Suleymaan demee ba màggat, ay soxnaam xiir ko ci topp yeneen yàlla, ba wéetalul Yàllaam Aji Sax ji, na ko Daawuda, baayam wéetale woon.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Ba loolu amee Suleymaan di topp tuur ya ñuy wax <span class="footnote selectable" id="G-9">Astàrt</span><span class="footnote selectable" id="F-0"><sup>a</sup></span> di tuuri waa Sidon, ak Milkom, tuuru Amoneen mu siblu ma.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Mu def lu ñaaw fi kanam Aji Sax ji. Suleymaan jeexul woon ci Aji Sax ji, na baayam Daawuda jeexe woon ci moom.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Ci biir loolu Suleymaan tabaxal Kemos, tuuru Mowab mu siblu ma, ab <span class="footnote selectable" id="G-16">bérabu jaamookaay</span> ca kaw tund wa féete Yerusalem penku. Mu tabaxaaleel ca Moleg<span class="footnote selectable" id="F-1"><sup>b</sup></span>, tuur mu siblu ma Amoneen ñay jaamu.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Mu defal noonu mboolem soxnaam ya xeetoo feneen, ñuy taalal seeni tuur cuuraay, di leen rendil ay sarax.<span id="bookmarks8"></span></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="p"><span class="v">9</span><span class="vsp">&nbsp;</span>Aji Sax ji nag mere Suleymaan ndax la mu ko dëddu, moom Aji Sax ji, Yàllay Israyil ji ko feeñu woon ñaari yoon.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Dafa santoon Suleymaan ci mbir moomu, ne ko bumu topp tuuri yeneen xeet yi. Waaye deful li ko Aji Sax ji santoon.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Aji Sax ji ne Suleymaan: «Gannaaw nii nga defe, sàmmoo sama <span class="footnote selectable" id="G-40">kóllëre</span>, sàmmoo sama dogal yi ma la tegoon, dinaa foqatee nguur gi ci say loxo, jox ko sab surga.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Waaye duma ko def ci sag dund ngir sa baay Daawuda. Ci sa loxol doom ju góor laa koy foqatee.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Te ba tey du nguur gépp laay foqati. Dinaa bàyyee sa doom genn giir ngir Daawuda sama jaam ba ak Yerusalem gi ma tànn.»<span id="bookmarks13"></span></div>
+
+<div class="s"><div id="s2">Ay noon jógal nañu Suleymaan</div></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="p"><span class="v">14</span><span class="vsp">&nbsp;</span>Ba mu ko defee <span class="footnote selectable" id="G-3">Aji Sax</span> ji gemb ab noon bu jógal Suleymaan. Muy Adàdd, Edomeen ba askanoo ca buurub Edom.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Ba Daawuda di xareek waa Edom te Yowab njiital xareem demoon di suuli néew ya, Daawuda daa reyoon góori Edomeen ña ñépp.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Yowab ak Israyil gépp toog fa juróom benni weer, ba keroog ñu rey góori Edomeen ñépp.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Ci biir loolu Adàdd ànd ak ay Edomeen ñu bokkoon ci dagi baayam, daldi daw jëm Misra. Booba Adàdd xale bu góor bu ndaw la woon.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Ñu jóge Majan, dem Paran, ànd ak ay waa Paran dem Misra, ca Firawna buuru Misra. Firawna jox Adàdd suuf, may ko kër akub dund.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Firawna dafa bëggoon Adàdd lool, ba may ko jabar rakki Lingeer Tapenes, jabari boppam.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Rakki Tapenes ja am ak Adàdd doom ju góor, di Genubat; Tapenes yor ko ca biir kër Firawna, Genubat nekk ak doomi Firawna, ca biir kër Firawna.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Ci kaw loolu Adàdd dégge fa mu nekk ca Misra ne Daawuda nelaw na, fekki ay maamam, te Yowab njiital xare la it dee na. Adàdd ne Firawna: «Yiwi ma, ma dellu sama réew.»<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Firawna ne ko: «Ana loo ñàkk fii ci man, ba bëgga dellu nii sam réew?» Adàdd ne ko: «Du dara sax de, xanaa bëgg rekk, nga yiwi ma, ma dem.»<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Yàlla dellu gemb ab noon bu jógal Suleymaan. Muy Reson doomu Eliyada ma dawe woon ca Adadeser buurub Soba, sangam ba.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Mu boole ay farandoom, ànd ak ñoom, jiite leen gannaaw ba Daawuda faagaagalee xarekati sangam. Ñu dem sanc Damaas, moom ko.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Reson nag moo noonoo woon Israyil diir ba Suleymaan di dund, dolli ca la leen Adàdd lëjal. Ci kaw loolu Reson falu ca Siri, di bañaaleb Israyil.<span id="bookmarks25"></span></div><span id="bookmarks25"></span><a id="v26"></a>
+<div class="p"><span class="v">26</span><span class="vsp">&nbsp;</span>Keneen ku jógal Buur Suleymaan di Yerbowam doomu Nebat, Efraymeen bu dëkk Cereda, ndeyam tudd Ceruya, dib jëtun. Ma nga bokkoon ca jawriñi Suleymaan.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Ni mu jógale Buur nii la: Suleymaan da doon yékkati sëkkub Milo ba<span class="footnote selectable" id="F-2"><sup>c</sup></span>, di fatt tatay gox ba ñu naan Kër Daawuda miy baayam.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Booba Yerbowam xalelu góor bu jàmbaare la woon. Suleymaan jot koo nemmiku ci biir liggéeyam, ba tax mu tabb ko ca kaw mboolem liggéeykati sañul-bañ, ya askanoo ca Yuusufa.<span id="bookmarks28"></span></div><span id="bookmarks28"></span><a id="v29"></a>
+<div class="p"><span class="v">29</span><span class="vsp">&nbsp;</span>Mu am bés Yerbowam doon génne Yerusalem. Axiya, yonent bu dëkk Silo ba, dajeek moom ca yoon wa. Ma nga sol mbubb mu bees. Ñoom ñaar rekk ci àll bi.<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>Axiya daldi jàpp ci mbubb mu bees mi mu sol, ne ko tareet, dagg ko fukki dog ak ñaar.<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Mu ne Yerbowam: «Jëlalal fii sa bopp fukki dog, ndax Aji Sax ji Yàllay Israyil da ne: “Gisal, maa ngi dagge nguur gi ci loxol Suleymaan, te dinaa la ci jox fukki giir.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Waaye genn giir gi Suleymaan a koy moom ngir Daawuda sama jaam ba, ak Yerusalem, dëkk ba ma tànne ci mboolem giiri Israyil.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Li ko waral mooy dañu maa dëddu, di jaamu <span class="footnote selectable" id="G-9">Astàrt</span>, tuur mu jigéen mu waa Sidon di jaamu, ak Kemos, tuuru Mowabeen ñi, ak Milkom, tuuru Amoneen ñi. Dañoo baña topp samay yoon, baña def li ma rafetlu, di sàmm samay dogal ak sama àttey yoon, na ko Daawuda baayu Suleymaan daa defe.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Waaye duma jële nguur gépp ci loxoom, ndaxte dama koo def njiit giiru dundam gépp ngir Daawuda sama jaam ba ma tànnal sama bopp, te mu doon jëfe samay santaane ak samay dogal.<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Du tee ma nangoo nguur gi ci loxol doomam ju góor, jox la ci fukki giir.<span id="bookmarks35"></span> <a id="v36"></a><span class="v">36</span><span class="vsp">&nbsp;</span>Doomam nag dinaa ko jox genn giir gi ci des, ngir askanu Daawuda, sama jaam ba, baña fey mukk sama kanam ci biir Yerusalem, dëkk bi ma tànnal sama bopp, dëël fa sama tur.<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>Yaw dinaa la jël, def la nga jiite fépp foo bëgg, di buurub Israyil.<span id="bookmarks37"></span> <a id="v38"></a><span class="v">38</span><span class="vsp">&nbsp;</span>Te soo defee mboolem li ma la sant, topp samay yoon, di def li ma rafetlu tey jëfe samay dogal ak samay santaane, na ko Daawuda sama jaam ba daa defe, su boobaa dinaa ànd ak yaw te dinaa la sampal kër gu sax, ni ma ko sampale woon Daawuda, te dinaa la jox Israyil.<span id="bookmarks38"></span> <a id="v39"></a><span class="v">39</span><span class="vsp">&nbsp;</span>Kon dinaa torxal askanu Daawuda waaye du doon ba fàww.”»<span id="bookmarks39"></span></div><span id="bookmarks39"></span><a id="v40"></a>
+<div class="p"><span class="v">40</span><span class="vsp">&nbsp;</span>Ba mu ko defee Suleymaan di fexee rey Yerbowam; Yerbowam daw ba Misra, fa Sisag buuru Misra. Mu toog foofa ca Misra, ba Suleymaan nelaw.<span id="bookmarks40"></span></div>
+
+<div class="s"><div id="s3">Suleymaan nelaw na</div></div><span id="bookmarks40"></span><a id="v41"></a>
+<div class="p"><span class="v">41</span><span class="vsp">&nbsp;</span>Li des ci mbiri Suleymaan ak mboolem lu mu def ak lu jëm ci xelam mu rafet, bindees na lépp moos ca téere ba ñu dippee Jaloorey Suleymaan.<span id="bookmarks41"></span> <a id="v42"></a><span class="v">42</span><span class="vsp">&nbsp;</span>Àpp bi Suleymaan nguuru fa Yerusalem, ci kaw Israyil gépp, ñeent fukki at la.<span id="bookmarks42"></span> <a id="v43"></a><span class="v">43</span><span class="vsp">&nbsp;</span>Gannaaw loolu Suleymaan tëdd, fekki ay maamam. Gox ba ñuy wax kër Daawuda baayam, fa lañu ko denc, doomam Robowam falu buur, wuutu ko.<span id="bookmarks43"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

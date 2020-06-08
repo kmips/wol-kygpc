@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esekiyel 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1.1 </span><span class=\"fk\">dexu Kebar </span><span class=\"ft\">a nga woon ca Babilon, ga buuram Nabukodonosor dencoon bànni Israyil, gannaaw ba mu leen jàppee ba yóbbu leen fa ngàllo. Yonent Yàlla Esekiyel ab sarxalkat la fa woon ca biir bokki bànni Israyilam.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">1.22 </span><span class=\"fk\">kiristaal </span><span class=\"ft\">daa mel ni weer bi ñuy defare ab kaas.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 48 }];
+var hasIntro = false;
+var baseRef  = "KYG-26-EZK-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-25-LAM-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-25-LAM-005.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Esekiyel&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-26-EZK-002.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-27-DAN-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt"><span class="mt">Esekiyel</span></div>
+<div class="b"></div>
+<div class="b"></div>
+
+<div class="s"><div id="s1">Esekiyel daje naak leeru Aji Sax ji</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Am na bés, mu yemook sama fanweereelu at, juróomi fan ca ñeenteelu weer wa, booba maa nga bokkoon ca ña ñu toxal ca tàkkal dexu Kebar<span class="footnote selectable" id="F-0"><sup>a</sup></span>. Asamaan daa ubbiku, ma daldi gis ay peeñuy Yàlla.<span id="bookmarks1"></span></div>
+
+<div class="s"><div id="s2">Bindkat a ngi joxe tegtal ca moomu peeñu</div></div><span id="bookmarks1"></span><a id="v2"></a>
+<div class="p"><span class="v">2</span><span class="vsp">&nbsp;</span>Juróomi fani weer wa moo yemook juróomi at gannaaw ba ñu toxalee Buur Yowakim.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Kàddug <span class="footnote selectable" id="G-3">Aji Sax</span> ji moo dikkal Esekiyel doomu Busi, <span class="footnote selectable" id="G-62">sarxalkat</span> ba fa réewum Kaldeen ña ca tàkkal dexu Kebar. Te foofa la loxol Aji Sax ji dikke fa kawam.<span id="bookmarks3"></span></div>
+
+<div class="s"><div id="s3">Nii la peeñu ma bindoo</div></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="p"><span class="v">4</span><span class="vsp">&nbsp;</span>Naka laa xool rekk, ngelaw lu réy jekki dikke bëj-gànnaar, ànd ak niir wu mag, sawara di ca fettaxe, ag leer gu ne ràññ wër ko; digg ba mel ni weñ guy tàkk.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Digg ba, jëmmi ñeenti bindeef a ca feeñ yu ame melokaanu nit.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Ku ci nekk am na ñeenti kanam ak ñeenti laaf.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Seeni tànk daa jub, téstën ya mel ni weyi sëllu di melax ni xànjar bu ñu jonj.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Seen laaf, loxoy nit a nga ca suufam ci seen ñeenti wet yépp, ñoom ñeent ñépp ak seeni kanam ak seeni laaf.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Seen ñeenti cati laaf a ngay laale, te ku nekk man naa jubal màkk fépp fu genn kanam jublu te du jar muy warangiku.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Seen melokaanu kanam nag nii la bindoo: ku ci nekk am nga kanamu nit fa féete kanam ak kanamu gaynde ci sa ndijoor. Ku ci nekk itam am nga kanamu yëkk fi sa càmmoñ ak kanamu jaxaay fa féete gannaaw.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Seeni kanam a ngoogu. Ku ci nekk sa ñaari laaf a jëm kaw, di laal sa laafi moroom. Sa ñaari laaf yi ci des sàng sa yaram.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Ku nekk man naa jubal màkk fépp fu genn kanam jublu. Fépp fu Noowug Yàlla jublu, ñu jublu fa te warangikuwuñu.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Jëmmi bindeef yaa nga am melow xali sawara yu yànj, mel niy jum, sawara way dem ak dikk ci seen biir. Sawara waa nga ne ràññ, ay melax di ca fettaxe.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Bindeef yaa ngay naaw, di dem ak a dikk, mel ni melax.<span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><span class="v">15</span><span class="vsp">&nbsp;</span>Naka laa xool, daldi gis ay mbege fi suuf, mbege mu ci nekk feggook menn mbindeef, mook ñeenti kanamam.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Mbege yaa ngay nirook peru kirsolit, ci melokaan ak ci bind. Ñoom ñépp a niroo. Seen melokaan ak seen bind daa mel ni, mbege mu ci nekk, mbegee nekk ca biiram,<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>mbege yay dawe ñeenti wet te warangikuwuñu.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Taxawaayu mbege ya daa réy ba raglu te mu ci nekk ay gët la sàngoo ba daj.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Bu bindeef ya dawee, mbege ya feggook ñoom daw; bu ñu naawee, mbege ya naaw.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Fu noo gi wale jublu fa rekk, fa lañu jëm, mbege ya jógandook ñoom, ànd ak noo gi. Noowal boroom bakkan yi daal moo nekk ci mbege yi.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Bu ñu dawee, ñu daw; bu ñu taxawee, ñu taxaw. Bu ñu jógee ci suuf, yékkatiku, ñu ànd ak ñoom yékkatiku. Noowal boroom bakkan yi daal moo nekk ci mbege yi.<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Lu mel nib dénd a tiim boppi bindeef ya, raglu, leer nàññ ni doju kiristaal<span class="footnote selectable" id="F-1"><sup>b</sup></span>.<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>Mbindeef mu ci nekk sa yenn ñaari laaf a ngi ci suufu dénd bi, tàlli, dékkarloo; ñaari laaf yi ci des sàng sa yaram.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Bu ñuy naaw, may dégg seen coowal laaf yi, mu mel ni géej mbàmbulaan, melati ni kàddug Aji Man ji, di saf riirum xare. Bu ñu taxawee, daldi wàcce seeni laaf.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Saa yu ñu taxawee ba wàcce seeni laaf nag, ag kàddu di jollee ca kaw dénd ba ca seen kaw bopp ya.<span id="bookmarks25"></span></div><span id="bookmarks25"></span><a id="v26"></a>
+<div class="p"><span class="v">26</span><span class="vsp">&nbsp;</span>Ca kaw dénd ba tiim seeni bopp, ba tey, am na luy nirook ngànguney peru safiir, te jëmmu nit nekk ca kawa kaw lay nirook ngàngune.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Ma gis nag lu mel ni weñ guy tàkk, wër ko; dale ca lay niru ndigg la, jëm kaw; daleeti ca lay niru ndigg la, jëm suuf. Ma gis lu mel ni sawara akug leer wër ko.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Mu mel ni xon ci biiri niir, bésub taw. Loolooy melokaanu leer ga ko wër. Muy melokaan muy jëmmal leeru <span class="footnote selectable" id="G-3">Aji Sax</span> ji. Naka laa ko gis, daldi ne gurub, dëpp sama kanam fi suuf. Ma dégg nag kàddu gu jib.<span id="bookmarks28"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

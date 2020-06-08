@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dañeel 9</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">9.20 </span><span class=\"fk\">tundu Yàlla wu sell wi </span><span class=\"ft\">Yerusalem la.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">9.27 </span><span class=\"fk\">lu siblu </span><span class=\"ft\">sarxalukaayu tuur la, bu ñu samp ca jaamookaayu Yàlla ba, di ko sobeel.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-40": "<div><span class=\"k\">kóllëre g-:</span> Ci Mbind mu sell mi, digoo la bu ëmb ay dige. Man nañu koo tëral, mu dib digoo diggante nit ak moroom ma, mu mel ni la Ibraayma digoo woon ak Abimeleg (<span class=\"bk\">Njàlbéen ga</span> 21.27), mbaa diggante kilifa ak surgaam. Kóllëre gu ni mel la Yàlla taamu woona fasook nit, mu mel ni la Yàlla digoo woon ak àddina, jaare ko ci Nóoyin (6.18), mbaa diggante Yàllaak Ibraayma (15.18), mbaa Yàllaak Isaaxa (17.19). Ñetti yoon yu mujj yooyu ñu lim, Yàlla rekk a dige; moom ci wàllu boppam moo fas kóllëre ak ñooñu. Ñoom defuñu dara lu dul gëm ko. Waaye Ibraaymaak Abimeleg dañoo digoo, maanaam dañoo fasoo kóllëre, ku nekk am lu ko war. Noonu lañu dégge li xàjjale fas kóllëre ak fasoo kóllëre.</div>",
+    "G-66": "<div><span class=\"k\">sell:</span> Lu sell, ni ko yoonu Tawreet dégge, mooy lu ñu beral Yàlla; man naa doon nit, mbaa ab jumtukaay. Mboolem lu set te sellaluñu ko, su laalantee ak lu sell, lu sell loola day daldi teqlikoo ak sellngaam. Waaye du tee lu sell la set, li feek sobe laalu ko. Lu sell nag, bu taqee sobe rekk, sobewu na. Day daldi doon lu setul. Moo tax lu sell warul dajeek sobe fenn. Ku taq sobe, su masaana lekk lu sell lu mel ni yàppu jur gu ñu sarxal Yàlla, dees koy dagge ci askanu bànni Israyil, rey ko. Ci yoonu Tawreet, su ñu nee Yàlla ku sell la, ni mu beroo ak ni mu wéete ci sellngay jikkoom moo tax ñuy wax, ndax Yàlla moo matale mboolem mbaax, moo mucc ci gépp sikkaange, te lenn ci sellaayu jikkoom mooy ngoram gu bare, ak kóllëreem gu sax.</div>",
+    "G-15": "<div><span class=\"k\">bérab bu sell b-:</span> Muy xaymab jaamookaay ba, di néeg Yàlla ba ñu mujje tabax, lu ci nekk ñaari wàll lees ko séddale woon. Wàll wu jëkk, wa ngay janook rido ba, moo doon bérab bu sell ba. Sarxalkat yépp a fa sañoona dugg. Néegu biir ba ca wàllaa rido ba lañu doon tudde bérab bu sell baa sell. Sarxalkat bu mag ba doŋŋ moo sañoona dugg benn yoon cim at ca bérab bu sell baa sell te deretu sarax lay duggaale. Taxawalinu xayma bi ak tabaxinu kër Yàlla gi ak li ci biiram, lépp, sellaayu Yàlla lay misaal.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 12 }];
+var hasIntro = false;
+var baseRef  = "KYG-27-DAN-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-26-EZK-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-27-DAN-008.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Dañeel&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;9&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-27-DAN-010.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-28-HOS-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Dañeel jàngat na waxyu bu Yeremi biral</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">9</div> <span class="v">1</span><span class="vsp">&nbsp;</span>At ma jëkk ca jamonoy Daryus, ma bokk ca waa Medd, di doomu Aserus te falu woon buurub waa Babilon,<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>ca at ma jëkk ca nguuram, man Dañeel damaa gis ci téere yi limu at yi kàddug <span class="footnote selectable" id="G-3">Aji Sax</span> ji xamal Yonent Yàlla Yeremi, muy àpp bi Yerusalem wara gental, di juróom ñaar fukki at.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Ma walbatiku jublook Boroom bi Yàlla. Maa ngi sol saaku, diwoo dóom boole kook koor, toroxloo ko, di ko ñaan ak a dagaan.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Ma ñaan sama Yàlla Aji Sax ji, tuubal ko samay bàkkaar, ne ko: «Yaw Boroom bi, Yàlla ju màgg ji mata ragal, yaw miy sàmm <span class="footnote selectable" id="G-40">kóllëre</span> ak ngor sa digganteek ñi la bëgg, di sàmm say santaane.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Bàkkaar nanu, ñaaw nanu, tooñ nanu, gàntal la, dëddu say santaane ak sa ndigali yoon.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Dégluwunu say jaam, di yonent yi jottli sa kàddu sunuy buur ak sunuy kilifa ak sunuy maam ak mbooloom réew mi mépp.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Yaw Boroom bi, njub ñeel na la, waaye nun gàcce ñeel na nu bésub tey jii, muy waa Yuda, muy waa Yerusalem, di waa Israyil gépp, ku jegeek ku sore, ci biir mboolem réew yi nga leen dàq, yóbbu, ndax li ñu la ñàkke kóllëre.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Aji Sax ji, nun kay gàcce ñeel na nu, nook sunuy buur ak sunuy kilifaak sunuy maam, ndax moy nanu la.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Boroom bi sunu Yàlla, yaay Boroom yërmandeek njéggal moos, ndax gàntal nanu la.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Noo baña déglu sunu kàddug Yàlla Aji Sax ji, di topp yoonam yi mu nu jox, yonent yiy jaamam jottli nu ko.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Israyil gépp a moy sa yoon, jàdd, baña déglu sa kàddu, ba këppoo sa alkàndey ngiñ, gi ñu bind ci yoonu Musaa, sa jaam ba, ndax danu laa tooñ.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Matal nga sa kàddu gi nga wax ci nun, nook sunu kilifa yi nu yilif, ba nga wàccee ci sunu kaw, ci Yerusalem, musiba mu réy mu masula am feneen fu mboolem asamaan tiim.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Ni ñu ko binde ci yoonu Musaa, ni la nu musiba moomu mépp dikkale, te tinuwunu la, yaw, sunu Yàlla Aji Sax ji. Dëdduwunu sunuy bàkkaar it te séddunu sa worma.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Aji Sax ji, looloo waral nga dogu ci wàcce musiba mi ci sunu kaw, ndax yaw sunu Yàlla Aji Sax ji, njekk nga jëfe lépp loo jëf, waaye noo dégluwul sa kàddu.<span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><span class="v">15</span><span class="vsp">&nbsp;</span>«Léegi nag yaw Boroom bi, sunu Yàlla ji nu génnee Misraak doole, nun sa mbooloo, nga siiwale ca sa tur ba sunu jonni yàllay tey, noo bàkkaar, noo tooñ.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Boroom bi, seetal ci sa gépp njekk, ba waññi sa mer ak sa xadar, mu moy Yerusalem, sab dëkk, saw tund wu <span class="footnote selectable" id="G-66">sell</span>. Ndax kat sunuy bàkkaar ak sunu ñaawtéefi maam tax na mboolem ñi ñu wër di sewal Yerusalem ak sa mbooloo.<span id="bookmarks16"></span></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="p"><span class="v">17</span><span class="vsp">&nbsp;</span>«Kon nag yaw sunu Yàlla, Sang bi, rikk nangul li ma lay ñaan, di la ko dagaan. Boroom bi, ngalla geesul ngir yaw ci sa bopp sa jaamookaay ba ñu gental.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Rikk sama Yàlla, teewlul, déglul te xippi, ba gis sunu gent yi ak sa dëkk ba ñuy tudd sa tur. Du sunu njekk lanu lay dagaane moos, waaye sa yërmande ju yaa rekk a tax.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Boroom bi, ngalla Boroom bi, déglu nu te baal nu! Rikk Boroom bi sama Yàlla, teewlul ngir yaw ci sa bopp, te bañ noo yeexe, ndax saw tur lañu tudde sa dëkk ak sa mbooloo.»<span id="bookmarks19"></span></div><span id="bookmarks19"></span><a id="v20"></a>
+<div class="p"><span class="v">20</span><span class="vsp">&nbsp;</span>Maa ngay wax ak a ñaan, di tuub sama bàkkaar ak a tuubloo Israyil sama ñoñ tey dagaanal sama tundu Yàlla wu sell wi<span class="footnote selectable" id="F-0"><sup>a</sup></span>, ci sama Yàlla Aji Sax ji.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Maa ngay wax ci ñaan gi, waa ja Jibril ma ma gisoon lu jiitu ci peeñu mi, daldi naawa naaw, dikk ba ci man, yemook waxtuw saraxu ngoon.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Mu xamal ma, ne ma: «Dañeel, léegi damaa ñëw ngir leeralal la.<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>Ba nga tàmbalee ñaan la kàddu dikk. Maa la ko yégalsi, ndax yaw ku ñu naw nga. Déggal kàddu gi te dégg peeñu mi.<span id="bookmarks23"></span></div><span id="bookmarks23"></span><a id="v24"></a>
+<div class="p"><span class="v">24</span><span class="vsp">&nbsp;</span>«Juróom ñaar fukki ayi bés lañu àppal sa mbooloo ak sab dëkk bu sell, ngir dakkal tooñ gi, jeexal moy gi, jotu ñaawtéef, saxal njubte ba fàww, matal peeñum yonent, ba delloo <span class="footnote selectable" id="G-15">bérab bu sella</span> sell ag sellngaam.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Nanga xam kon xéll ne: li ko dale keroog ba ñuy siiwtaane dogal ba jëm ci leqli Yerusalem, tabaxaat ko, ba keroog njiit li ñu fal di feeñ, juróom ñaari àppi juróom ñaar la. Te ci juróom benn fukk ak ñaar ci àppi juróom ñaar lañuy tabaxaat pénc ak kàmb gu ñu aare dëkk bi. Waaye jamono yu metti lay doon.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Bu juróom benn fukk yeek ñaar ciy àppi juróom ñaar weesee, dees na bóom ku ñu fal, te kenn du ànd ak moom. Gannaaw loolu kilifa dina ñëw, ànd ak gàngooram, yàqte dëkk beek jaamookaay bi. Waaye kilifa googu lu mel ni mbënn a koy mujje. Dogal nañu ne yàqte gi dina wéy ba keroog xare biy jeex.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Dina feddli kóllëre diggam ak ñu bare ci benn àppu juróom ñaar, te ci diggu àppu juróom ñaar ba lay dakkal sarax yi ñuy rendi ak yeneen sarax. Ci genn wetu sarxalukaay bi la yàqkat biy taxawal lu siblu<span class="footnote selectable" id="F-1"><sup>b</sup></span>, di sabab yàqute, ba keroog muj gi ñu ko dogalal ne milib ci kawam.»</div>
+<div class="b">&nbsp;</div><span id="bookmarks27"></span><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

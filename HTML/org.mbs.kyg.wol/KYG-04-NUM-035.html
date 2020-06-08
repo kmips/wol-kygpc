@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Màndiŋ ma 35</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">35.12 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Sarxalkat yi </span> 24.17-21.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-43": "<div><span class=\"k\">Leween b-:</span> Lewi kenn la woon ca ña sos bànni Israyil, di fukki doomi Yanqóoba yaak ñaar. Lewi mooy maamu Musaa ak Aaróona. Aaróona la Yàlla tànn muy sarxalkat bu mag ba. Ñenn ci ñi soqikoo ci moom ñoo daan donnante liggéeyu carxal bi. Ña ca des ñoo leen daan jàpple ca liggéeyu kër Yàlla ga.</div>",
+    "G-36": "<div><span class=\"k\">jotkat b-:</span> Wàllam moo doon fexe ba jotaat li giir gi ñàkk. Muy nit ku ñu bóom, jotkat bi wara topp ka ko bóom ba rey ko. Mbaa muy ku ñu xañ yoon ci giir gi, jotkat bi war koo jàpple ci wàllu yoon. Mbaa muy alal ju ku bokk ci giir gi ñàkk, jotkat bi war koo jotaat. Gannaaw Aji Sax ji moo dénkoon suuf si bànni Israyil, ñu yor ko, sañuñu ko woona jaay. Bu ñu ci tayle woon lenn lu ñu feye bor it, wareef la woon ci fexe ba loola dellu ci seeni loxo nu mu gëna gaawe. Su ko defee suuf si des ci bokk gi, di wone seenug bootu ci mbooloo mi kóllëreg Aji Sax ji lal.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-66": "<div><span class=\"k\">sell:</span> Lu sell, ni ko yoonu Tawreet dégge, mooy lu ñu beral Yàlla; man naa doon nit, mbaa ab jumtukaay. Mboolem lu set te sellaluñu ko, su laalantee ak lu sell, lu sell loola day daldi teqlikoo ak sellngaam. Waaye du tee lu sell la set, li feek sobe laalu ko. Lu sell nag, bu taqee sobe rekk, sobewu na. Day daldi doon lu setul. Moo tax lu sell warul dajeek sobe fenn. Ku taq sobe, su masaana lekk lu sell lu mel ni yàppu jur gu ñu sarxal Yàlla, dees koy dagge ci askanu bànni Israyil, rey ko. Ci yoonu Tawreet, su ñu nee Yàlla ku sell la, ni mu beroo ak ni mu wéete ci sellngay jikkoom moo tax ñuy wax, ndax Yàlla moo matale mboolem mbaax, moo mucc ci gépp sikkaange, te lenn ci sellaayu jikkoom mooy ngoram gu bare, ak kóllëreem gu sax.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 36 }];
+var hasIntro = true;
+var baseRef  = "KYG-04-NUM-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-03-LEV-000.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-04-NUM-034.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Màndiŋ ma&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;35&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-04-NUM-036.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-05-DEU-000.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Lu jëm ci céri suufi Leween ñi</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">35</div> <span class="v">1</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-3">Aji Sax</span> ji waxati ak Musaa ca joori Mowab, ca wetu dexu Yurdan, fa jàkkaarlook Yeriko. Mu ne ko:<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>«Santal <span class="footnote selectable" id="G-13">bànni Israyil</span> ñu sàkkal <span class="footnote selectable" id="G-43">Leween</span> ñi ci seen céru suuf, ay dëkk yu Leween ñi dëkke. Àllu parlu ya wër dëkk ya it, joxleen ko Leween ñi.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Su ko defee dëkk yooyu ñeel leen, ñu dëkke. Seen àlli parlu it ñeel seenug jur, ak seen alal, ak seen mboolem mala.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Parluy dëkk yi ngeen di jox Leween ñi, ci miiru dëkk ya lay dale, jëm biti lu day ni junniy xasab, yemook juróomi téeméeri meetar, ci wet gu nekk.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Su ko defee ngeen natte ca biti dig-digal bu gudde ñaari junniy xasab, yemook junniy meetar ci wetu penku; ñaari junniy xasab, yemook junniy meetar, wetu bëj-saalum; ñaari junniy xasab, yemook junniy meetar, wetu sowu; ñaari junniy xasab, yemook junniy meetar, wetu bëj-gànnaar, dëkk bi nekk ci digg bi. Dig-digal boobu day ñeel Leween ñi, di seen parluy dëkk.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Dëkk yi ngeen di jox Leween ñi, ñoo di juróom benni dëkki rawtu, yi ku rey nit mana raweji, ak yeneen ñeent fukki dëkk ak ñaar yu ngeen leen ciy dollil.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Kon mboolem dëkk yi ngeen di jox Leween ñi, ñeent fukk ak juróom ñett la, ak seen àlli parlu.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Dëkk yi ngeen leen di génneel ci céri suufi bànni Israyil nag, la cay génne ca ña ëpple suuf, réyal leen ko, te la cay génne ca ña néewle suuf, ngeen néewal ko. Giir gu nekk daal, dayob céru suufam si mu séddu, moom lay topp, ngir sàkke ci ay dëkkam, jox Leween ñi.»<span id="bookmarks8"></span></div>
+
+<div class="s"><div id="s2">Lu jëm ci dëkki rawtu yi</div></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="p"><span class="v">9</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-3">Aji Sax</span> ji waxati Musaa, ne ko:<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>«Waxal <span class="footnote selectable" id="G-13">bànni Israyil</span>, ne leen bu ñu jàllee dexu Yurdan ba dugg réewum Kanaan,<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>nañu sàkk ay dëkk yuy doon seen dëkki rawtu, ba ku rey nit te du teyeefam, man faa raweji.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Mooy doon seen dëkki rawtu yees di mucce ci mbokkum <span class="footnote selectable" id="G-36">jotkat</span> buy toppe<span class="footnote selectable" id="F-0"><sup>a</sup></span>, ba ki rey nit du dee, te taxawagul fa kanam mbooloo mi, ngir ñu àtte ko.<span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>«Kon dëkk yi ngeen di jox Leween ñi, juróom benn a ciy doon seen dëkki rawtu.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Ñetti dëkk yu ngeen di joxe ci wàllu dexu Yurdan wii, ak ñetti dëkk yu ngeen di joxe ca réewum Kanaan, lépp di ay dëkki rawtu.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Waaye muy bànni Israyil, muy doxandéem, muy gan gu nekk ci seen biir, na juróom benni dëkk yooyu doon seen rawtu yeen ñépp, ba képp ku rey nit te du teyeefam, man faa raweji.<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>«Su dee ag weñ la ko dóor, mu dee, moo ko rey, te dee rekk mooy àtteb ki rey.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Su dee aw doj wu mana rey la jël, dóor ko ko, mu dee, moo ko rey, te dee rekk mooy àtteb ki rey.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Su dee bant bu mana rey la jël, dóor ko ko, mu dee it, moo ko rey, te dee rekk mooy àtteb ki rey.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Jotkat biy toppe bakkan ba nag, mooy rey ka rey; fu mu dajeek moom, moo koy rey.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Su dee ci biir mbañeel la dale ci kawam, mbaa mu sànni ko aw saan wu mu ko waajal, ba mu dee,<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>mbaa ci biir mbañeel la ko dóore loxoom ba mu dee, su boobaa dee rekk mooy àtteb ka dóore. Moo ko bóom. Jotkat bay toppe bakkan ba nag, bu dajeek ka rey, da koy rey.<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>«Ndegam nag du caageenu mbañeel, xanaa mu jekki dal ci kawam, mbaa mu sànni ko këf ku mu mana doon, te du lu mu waajoon,<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>mbaa muy doj wu mana rey wu mu waddal ci kaw nit ki, ba nit ki dee, te gisul woon nit ki, te nit ka du woon ab noonam, te fekkul itam muy sàkku loraangey nit ka,<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>su boobaa la mbooloo may wéyal diggante ki rey, ak jotkat bay toppe, moo di àtte yii ci yoon tëral:<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Mbooloo mi day musal ki rey ci loxol jotkatu bakkanu ka dee, te mbooloo ma da koy delloo ca dëkkub rawtoom ba mu làquji woon. Fa lay toog, ba kera deewug <span class="footnote selectable" id="G-62">sarxalkat</span> bu mag ba ñu baaxoo fale diw gu <span class="footnote selectable" id="G-66">sell</span>.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Ndegam nag ka rey moo génna génn, ba wees kemu dëkkub rawtoom ba mu làquji woon,<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>ba jotkat bay toppe bakkan fekk ko fu wees kemu dëkkub rawtoom, su boobaa su ko jotkatu bakkan ba reyee, du tax mu gàddu bakkan.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Ndax kat ci biir dëkkub rawtoom la wara toog, ba kera deewug sarxalkat bu mag bi. Gannaaw bu sarxalkat bu mag bi deeyee nag, ki rey sañ naa dellu fa mu bokk.<span id="bookmarks28"></span></div><span id="bookmarks28"></span><a id="v29"></a>
+<div class="p"><span class="v">29</span><span class="vsp">&nbsp;</span>«Loolu mooy dogalu yoon bi leen ñeel, yeen ak seen askan, ci seen mboolemi dëkkuwaay.<span id="bookmarks29"></span></div><span id="bookmarks29"></span><a id="v30"></a>
+<div class="p"><span class="v">30</span><span class="vsp">&nbsp;</span>«Képp ku faat bakkan nag, ci kaw kàddu gu tukkee ci ay seede doŋŋ lees ko saña reye, moom ma rey, waaye bennub seede du seedeel nit, ngir ñu teg ko àtteb dee.<span id="bookmarks30"></span></div><span id="bookmarks30"></span><a id="v31"></a>
+<div class="p"><span class="v">31</span><span class="vsp">&nbsp;</span>«Te it buleen jël benn xaalisu njotug bakkanu kenn ku rey nit ku yelloo dee. Kooku dee rekk mooy àtteem.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Buleen jël it xaalisu njotug nit ku làquji ca dëkkub rawtoom, ngir may ko mu dellu fa mu dëkk, te sarxalkat bu mag bi deewul.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Buleen tilimal réew mi ngeen nekk. Deret kat mooy tilimal réew mi, te réew mi deesu ko jote lenn, ci deret ju ñu tuur ci biiram, lu moy deretu ka tuur deret.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Buleen sobeel réew mi ngeen dëkk, te man ma màkkaanoo ci biiram, ndax man Aji Sax ji maa màkkaanoo ci biir bànni Israyil.»<span id="bookmarks34"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yawut ya 4</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">4.3 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Sabóor</span> 95.11.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">4.4 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Njàlbéen ga</span> 2.2.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-21": "<div><span class=\"k\">Daawuda:</span> Buuru Israyil bu mag la woon te moo bind lu bare ci <span class=\"bk\">Sabóor</span>.</div>",
+    "G-88": "<div><span class=\"k\">Yosuwe:</span> Ba Musaa faatoo, Yosuwe moo ko wuutu, daldi jiite mbooloom Israyil, ba ñu dugg ca réew, ma leen Yàlla digoon.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 13 }];
+var hasIntro = false;
+var baseRef  = "2020-58-HEB-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='2020-57-PHM-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='2020-58-HEB-003.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Yawut ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;4&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-58-HEB-005.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-59-JAS-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+<a id="v1"></a>
+<div class="m">
+<div class="c-drop">4</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Kon nag gannaaw digeb tàbbi ci noflaayal Yàlla mu ngi sax ba tey, nanu ragal kenn ci yeen taxawe melokaanu ku ca jotul.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Ndax kat ni ñu nu àggee xibaaru jàmm bi, noonu lees leen ko àggee, waaye kàddu ga ñu dégg moo leen jariñul dara, ndax ña ko dégg ñoo ko déggewul ngëm.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Nun ñi gëm doŋŋ nooy tàbbi ci noflaayam, noonu mu ko waxe, ne:</div>
+<div class="q top-spacing">«Maa giñe sama biir mer, ne:</div>
+<div class="q">“Duñu tàbbi mukk ci samag noflaay<span class="footnote selectable" id="F-0"><sup>a</sup></span>.”&nbsp;»</div>
+<div class="m">Ndaxam ca cosaanu àddina la liggéeyi Yàlla sotti woon ba noppi,<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>nde waxees na lu jëm ci bésub juróom ñaareel ba, ne:</div>
+<div class="q top-spacing">«Bésub juróom ñaareel ba nag, Yàlla dal-lu</div>
+<div class="q">ci mboolem liggéeyam<span class="footnote selectable" id="F-1"><sup>b</sup></span>.»<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="m"><span class="v">5</span><span class="vsp">&nbsp;</span>Te moo wax itam ci lii nu jëkka jukki, ne:</div>
+<div class="q top-spacing">«Duñu tàbbi mukk ci samag noflaay.»<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="m"><span class="v">6</span><span class="vsp">&nbsp;</span>Kon nag am na ñenn ñu ci wara tàbbi ba tey. Te ñi ñu jëkkoona àgge xibaaru jàmm bi, tàbbiwuñu ca ndax seenug déggadi.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Looloo waral Yàlla jàppaat beneen bés bees di tàbbee ci noflaayam, bés bu mu tudde «tey jii», te mooy ba mu waxee lu yàgga yàgg, gannaaw gi, ci gémmiñug <span class="footnote selectable" id="G-21">Daawuda</span>, kàddu gii ñu jota jukki:</div>
+<div class="q top-spacing">«Bésub tey jii bu ngeen déggee baatub Yàlla,</div>
+<div class="q">buleen të.»<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="m"><span class="v">8</span><span class="vsp">&nbsp;</span>Su leen <span class="footnote selectable" id="G-88">Yosuwe</span> tàbbaloon ca googa noflaay, kon gannaaw gi Yàlla du wax lu jëm ci beneen bés.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Kon des na ba tey noflaayu bésub juróom ñaareel bu ñu waajalal ñoñu Yàlla.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Ndax ku tàbbi ci noflaayu Yàlla kat, na Yàlla dal-loo woon ca ay liggéeyam, ni ngay dal-loo ci say liggéey.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Nanu def sunu kem-kàttan boog, ngir tàbbi ci googu noflaay, bala kenn a daanu ndax déggadi gu mel ni gu maam ya.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Kàddug Yàlla de luy dund la, ànd ak doole, te moo gëna ñaw saamaru ñaari ñawka bu gëna ñaw. Day sar ba fa xel akug noo digaloo, ba fa yax ak yuq dajee, te man naa càmbar ay xalaat ak mébéti xol.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Te it amul mbindeef mu làqu fi kanam Yàlla. Lépp a ne duŋŋ, ne fàŋŋ, muy gis, te moom lanuy waxal bés-pénc.<span id="bookmarks13"></span></div>
+
+<div class="s"><div id="s1">Yeesu mooy sarxalkat bu mag bi</div></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="p"><span class="v">14</span><span class="vsp">&nbsp;</span>Gannaaw nag am nanu kilifag <span class="footnote selectable" id="G-62">sarxalkat</span> bu mag bu jàll ba biir asamaan, te mooy Yeesu Doomu Yàlla, nanu ŋoy ci yoonu ngëm wi.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Ndax sarxalkat bu mag bi nu am du ku tëlee yég sunuy néew doole, waaye ni nun rekk lees ko nattoo wet gu nekk, te taxul mu bàkkaar.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Kon nag nanu ñemee dikk ba ca ngàngunem yiw ma, ndax nu jot yërmande te dajeek aw yiw wu nu wallu fu nu ko soxlaa.<span id="bookmarks16"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2020 MBS.</span></div></div>
+</div>
+</body>
+</html>

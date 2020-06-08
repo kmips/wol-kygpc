@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Buur ya 10</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">10.28 </span><span class=\"fk\">Silisi </span><span class=\"ft\">mooy Kewe ba tey.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-61": "<div><span class=\"k\">Sarax yi:</span> Sarax yi ñuy wax fii, Yàlla lañu koy jagleel. Bànni Israyil amoon nañu xeeti sarax yu bare: ay saraxi yéene ak ay saraxi sañul-bañ ak sarax su ñuy tuural Yàlla ak saraxu xaalis ak saraxu pepp. Waaye li ci ëpp ay saraxi tuur deret la woon yu leen Yàlla tegoon, ngir seen njéggalug bàkkaar. Su ko defee ñu mana dëkke jokkook moom, Yàlla ju sell ji, ndax saraxu deret ja. Am na ci ay sarax, Yàlla da ciy xamal bànni Israyil ne peyug bàkkaar mooy dee, te deewu jur, gi ñuy sarxal, njot la ci boroom sarax bi. Bu loolu weesoo, deretu sarax dina fóot sobes bàkkaar itam, muy sobe suy topp nit mbaa lenn ci jumtukaayi jaamookaay ba.</div><div class=\"pi\"><span class=\"bd\">saraxu cant ci biir jàmm:</span> Mooy sarax, si ñu daan sante Yàlla jàmmam. Sarax boobu ag jur lay doon gu ñuy séddale ñetti cér. Benn bi, ñu lakkal ko Aji Sax ji ci sarxalukaay bi, ba mu jeex. Benn bi, sarxalkat yi féetewoo ko. Ñetteel bi, ki sarxe moo koy lekk, ak waa këram.</div><div class=\"pi\"><span class=\"bd\">saraxu dóomal:</span> Seetal ci <span class=\"bd\">saraxu rendi-dóomal</span>.</div><div class=\"pi\"><span class=\"bd\">saraxu ndoortel meññeef:</span> Meññeef mu jëkka ñor la bànni Israyil daa sarxalal Aji Sax ji, mu yemook seen màggalu Ngóobum at mu nekk. Muy la jëkka ñor, di lu góor lu nit ak jur taawloo, lépp lañu séddoon Aji Sax ji, muy moomeelu boppam.</div><div class=\"pi\"><span class=\"bd\">saraxu pepp m-:</span> Peppam bele la mu ñuy jagleel Yàlla. Lenn li, ñu jaxase kook cuuraay ak diwu oliw, taal ko. Li ci des sarxalkat bee ko moom. Sarax la su ñu daan defal Aji Sax ji, muy galag bu ñuy nangoo nguuram, nangoo ko moomeel gu mat sëkk gu mu moom bakkanu ki koy joxe. Nit ki daan ko yeesloo ngiñam ne dina sàmmonte ak kóllëreg Aji Sax ji.</div><div class=\"pi\"><span class=\"bd\">saraxu peyug tooñ:</span> Bu nit tooñee ci lenn lu sell lu mu teddadil, muy jumtukaay bu sell mbaa sarax, mbaa lu bokk ci bànni Israyil gi Yàlla sellal, mbaa mu sofental sellngay turu Yàlla; bu defee lenn ci yooyu, pey gu mat sëkk war na ko ci gépp tooñ gu ni mel, te war na caa teg daan bu tollook benn xaajub juróomeel, ñeel ka mu tooñ. Gannaaw loolu itam war na caa boole sarax bu muy defal Yàlla, doora am njéggal.</div><div class=\"pi\"><span class=\"bd\">saraxu póotum bàkkaar:</span> Ci misaal, sarax la suy dindi sobe, di far ag tooñ tey musal boroom ci mbugalu bàkkaar. Ag jur lay doon gu nit ki di rendil Yàlla, defal ko ko sarax. Bu ñu tuuree deret ji, bakkanu jur gi mooy wuutu bakkanu ki sarxe. Sarax boobu it dees koy lakk.</div><div class=\"pi\"><span class=\"bd\">saraxu rendi-dóomal:</span> Mooy tekki sarax su kenn dul lekk dara. Dañu koy lakk muy saxar, ba jeex, jagleel lépp Yàlla.</div><div class=\"pi\"><span class=\"bd\">sarax su ñuy tuural Aji Sax ji, saraxu tuuru:</span> Saraxu naan la bu ñu daan defal Yàlla, muy ànd ak saraxu rendi-dóomal mbaa saraxu pepp. Li ci ëpp biiñ la daan doon, ñu di ko sotti ca taatu sarxalukaay ba.</div><div class=\"pi\"><span class=\"bd\">saraxu yéene:</span> Xeetu saraxu cant la ci biir jàmm. Day neex boroom, mu def ko, waaye du wartéef.</div><div class=\"pi\"><span class=\"bd\">sarax bu ñuy yékkati, jébbal Aji Sax ji:</span> Turu sarax soosu day wone ne dañu ko daan yékkati, mel ni ku koy jox Aji Sax ji, door koo wàcce. Jombul ay yooni yoon lañu ko daan yékkati, wàcce.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 22 }];
+var hasIntro = false;
+var baseRef  = "KYG-11-1KI-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-009.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Buur ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;10&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-011.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Lingeer buurub Saba seetsi na Suleymaan</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">10</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ci kaw loolu Lingeeru Saba dégg riirum Suleymaan ma turu <span class="footnote selectable" id="G-3">Aji Sax</span> ji waral. Mu dikk di nattusi am xelam, di ko cax cax yu jafe.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Mu agsi Yerusalem, ànd ak topp mu takku lool ak giléem yu sëf ay ndàbb yu xeeñ ak wurus wu baree bare ak per yu gànjare. Ba mu dikkee ba ca Suleymaan, mboolem la mu jàppoon ca xelam la ko wax.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Suleymaan tontu ko ca mbir ya mu laaj yépp; amul menn mbir mu tiiñ Buur ba leeralalu ko ko.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Lingeer buurub Saba gis mboolem xelam Suleymaan mu rafet, ak kër ga mu tabax,<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>ak njëlu këram, ak jataayu dagam ya, ak taxawaayu surgaam ña, ak seen col ga, ak ña yor ay naanam, ak <span class="footnote selectable" id="G-61">saraxi rendi-dóomal</span> ya muy joxe ca kër Aji Sax ji. Mu daldi yéemu, ba ag noowam réer ko.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Mu ne Buur: «jëw ba ma déggoon ca sama réew ci say mbir ak sa xel mu rafet kay, dëgg la!<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Gëwma ko woon ba bi ma dikkee, ba teg ci samay bët. Ndeke genn-wàll gi sax waxeesu ma ko woon. Wees nga riir ma ma déggoon ci yaw, ci xel mu rafet ak alal.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Ndokklee say nit! Ndokklee sa jawriñ ñii dëkke taxaw ci sa kanam, di dégg sam xel!<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Cant ñeel na sa Yàlla Aji Sax ji, moom mi la bége, ba teg la ci jalub Israyil. Aji Sax ji daa sopp Israyil cofeel gu dul jeex, moo tax mu fal la buur, ndax nga saxal fi dëgg ak njekk.»<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><span class="v">10</span><span class="vsp">&nbsp;</span>Ba mu ko defee Lingeer buurub Saba may Suleymaan fanweeri barigoy wurus ak juróom, ak cuuraayu ndàbb lu ne gàññ, ak per yu jafe. Cuuraayu ndàbb loola Lingeer buurub Saba mayoon Buur Suleymaan, lu ni mel dikkatu fa ndax bare.<span id="bookmarks10"></span></div><span id="bookmarks10"></span><a id="v11"></a>
+<div class="p"><span class="v">11</span><span class="vsp">&nbsp;</span>Ci kaw loolu itam gaali Buur Iram ya daan jële wurus ca réewum Ofir, jële Ofir lu takkoo takku ci banti sàntaal ak per yu gànjare.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Buur sàkke ca banti sàntaal ya, ay sëppukaayi kaw taax ngir kër Aji Sax ji, ak kër Buur ak xeeti xalam ngir woykat yi. Banti sàntaal bu ni mel masu faa dikk, te giseesu ko fi ba tey jii.<span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>Buur Suleymaan itam may Lingeer buurub Saba mboolem lu mu sàkku, te bokkewul ak la ko Suleymaan joxal boppam ca loxoom bu tàlli ba buur yelloo. Ba loolu amee Lingeer buurub Saba walbatiku, ñibbim réewam, mooki surgaam.<span id="bookmarks13"></span></div>
+
+<div class="s"><div id="s2">Suleymaan bare woon na alal</div></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="p"><span class="v">14</span><span class="vsp">&nbsp;</span>Wurus wa daan dikkal Suleymaan cim at, diisaay ba ñaar téeméeri barigoy wurus la,<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>te limaaleesul galag ya jóge ca jaaykat ya ak jula yaak mboolem buuri Arabi, ak jaraafi réew ma.<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>Buur Suleymaan nag sàkklu ñaar téeméeri pakk yu mag yu wurus wu ñu tëgg ba mu jekk, benn bu ci nekk jël juróom benni kiloy wurus,<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>ak ñetti téeméeri pakk yu ndaw yu wurus wu ñu tëgg ba mu jekk, pakk bu ci nekk di kilo ak liibaru wurus. Buur boole ko denc ca këram ga ñuy wax Gottub Libaŋ.<span id="bookmarks17"></span></div><span id="bookmarks17"></span><a id="v18"></a>
+<div class="p"><span class="v">18</span><span class="vsp">&nbsp;</span>Buur teg ca sàkk ngàngune mu mag mu bëñi ñay, daldi koy xoob wurus wu set wecc.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Juróom benni dëggastal la ngàngune ma am, wéeruwaay ba ca kaw mërgalu. Mu am loxo wet gu nekk. Loxo yaa nga feggook ñaari jëmmi gaynde yu taxaw, wet gu nekk benn.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Mu am it fukki jëmmi gayndeek ñaar yu taxaw ca ñaari weti juróom benni dëggastal ya, ñaari gaynde séq ndëggastal lu nekk. Sàkkeesul lu ni mel ci mboolem nguur yi!<span id="bookmarks20"></span></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>Mboolem lu Buur Suleymaan daan naane wurus la, te mboolem ndabi këram ga ñuy wax Gottub Libaŋ wurusu ngalam la. Dara du ca xaalis, ndax xaalis jàppeesu ko woon muy dara ca janti Suleymaan.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Te sax ay gaal yu mag la Buur amoon, ñuy ànd ak gaali Iram, benn yoon ci ñetti at yu nekk gaal ya yeb wurus ak xaalis ak bëñi ñay, aki golo ba ciy dàngin.<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Buur Suleymaan dem na ba sut mboolem buuri kaw suuf ci wàllu alal, ak ci wàllu xel mu rafet.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Mboolem àddinaa daan wuta giseek Suleymaan, ngir taataansi xelam mu rafet mi Yàlla def cib xolam.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Ñooñu ñoo ko daan indil at ci kaw at, ku nekk ak sab teraanga, muy ay jumtukaayi wurus ak yu xaalis aki mbubb aki gànnaay aki cuuraay aki fas aki berkelle.<span id="bookmarks25"></span></div><span id="bookmarks25"></span><a id="v26"></a>
+<div class="p"><span class="v">26</span><span class="vsp">&nbsp;</span>Ba mu ko defee Suleymaan dajale watiir yaak fas ya, muy junni ak ñeenti téeméeri watiir (1&nbsp;400), ak fukki junniy fas ak ñaar (12&nbsp;000) yu mu yebal ca dëkk ya watiir ya féete, ak ca Yerusalem ga mu nekk.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Buur Suleymaan a def xaalis late biir Yerusalem bay safi doj, garabi seedar di fa saf garabi sikomoor yi ne xas ci suufu tund yi.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Fasi Suleymaan, Misra lañu leen daan jëggaanee ak Silisi<span class="footnote selectable" id="F-0"><sup>a</sup></span>, baana-baanay buur, ca Silisi lañu leen daan jënde.<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Ab watiir bu ñu jëggaanee Misra, indi, juróom benni téeméeri dogi xaalis (600) la leen daan dikke, aw fas di téeméer ak juróom fukki dogi xaalis (150), te noonu lañu ca daan jëndaaleel mboolem buuri Etteen ña ak buuri Siri, indil leen.<span id="bookmarks29"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

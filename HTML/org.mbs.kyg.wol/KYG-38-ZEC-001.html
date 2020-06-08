@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sàkkaryaa 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1.12 </span><span class=\"ft\">Juróom ñaar fukki at la waa Yuda nekk cig njaam. ca Babilon.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">1.15 </span><span class=\"ft\">Xeet yooyu ñoo tegoon Yuda notaange gu jéggi dayo, ba raw la leen Yàlla naraloon.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-71": "<div><span class=\"k\">Siyoŋ:</span> Mooy turu tund, wa ñu tabax Yerusalem ci kawam. Dees na ko wooye itam askanu Yawut.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 14 }];
+var hasIntro = false;
+var baseRef  = "KYG-38-ZEC-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-37-HAG-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-37-HAG-002.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Sàkkaryaa&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-38-ZEC-002.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-39-MAL-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt2"><span class="mt2">Téereb Yonent Yàlla</span></div>
+<div class="mt"><span class="mt">Sàkkaryaa</span></div>
+<div class="b"></div>
+<div class="b"></div>
+
+<div class="s"><div id="s1">Waññiku ci Aji Sax ji weesul</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ci juróom ñetteelu weeru ñaareelu atu nguurug Daryus buuru Pers, kàddug <span class="footnote selectable" id="G-3">Aji Sax</span> ji moo dikkal Yonent Yàlla Sàkkaryaa, doomu Berekiya doomu Ido. Mu ne ko:<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>«Aji Sax ji mere na seeni maam mer mu réy.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Kon nag waxal askan wi, ne leen Aji Sax ji Boroom gàngoor yi dafa wax ne: “Dellusileen ci man,” kàddug Aji Sax jee, Boroom gàngoor yi, “kon dinaa dellusi ci yeen.” Aji Sax ji Boroom gàngoori xare yee ko wax.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Buleen mel ni seen maam, ya yonent yu jëkk ya biraloon ne leen: “Aji Sax ji Boroom gàngoor yi dafa wax ne: Dëdduleen seeni jikko yu bon ak seeni jëf ju bon.” Te dégluwuñu, faalewuñu ma.» Kàddug Aji Sax jee.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>«Seeni maam, ana ñu tey? Yonent yi nag, ndax ba fàww lañuy dund?<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Teewul sama kàdduy àrtu ak sama dogali yoon ya ma yóbbante woon sama jaam ña, yonent ya, du lépp a dab seeni maam? Ñu dëpp nag daldi ne: “Noonee Aji Sax ji Boroom gàngoor yi nammoona def ak nun, feye nu ko sunuy jikko ak sunuy jëf, noonu la def ak nun.”&nbsp;»<span id="bookmarks6"></span></div>
+
+<div class="s"><div id="s2">Misaal mu jëkk: Ay fas aki gawar</div></div><span id="bookmarks6"></span><a id="v7"></a>
+<div class="p"><span class="v">7</span><span class="vsp">&nbsp;</span>Ca ñaar fukki fan ak ñeent, ca fukkeelu weer waak benn, di weeru Sebat, ca ñaareelu atu nguurug Daryus, kàddug <span class="footnote selectable" id="G-3">Aji Sax</span> ji moo dikkal Yonent Yàlla Sàkkaryaa doomu Berekiya doomu Ido. Sàkkaryaa ne:<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Maa jekki gis, ag guddi, nit ku war fas wu xonq. Moom nag mu ngi taxaw ci biir garabi mirt ci aw xur, li ko féete gannaaw di fas yu xonq, ak yu ngëlembu, ak yu weex, ak seeni gawar.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Ma ne: «Ñii lu ñu wund, Sang bi?» Malaaka miy wax ak man ne ma: «Maa lay won lu ñii wund.»<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Waa ja taxaw ca biir garabi mirt ya àddu, daldi ne: «Ñii ñooy ñi Aji Sax ji yebal, ngir ñu wër àddina.»<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Ci kaw loolu gawar ya àddu, wax ak malaakam Aji Sax ji taxaw ci biir garabi mirt yi. Ñu ne: «Wër nanu biir àddina, ndeke àddina sépp a ngi ci jàmm, ne tekk.»<span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="p"><span class="v">12</span><span class="vsp">&nbsp;</span>Malaakam Aji Sax ji ne: «Éy Aji Sax ji Boroom gàngoor yi, loo deeti xaar, doo noppee xañ yërmande Yerusalem ak yeneen dëkki Yuda? Juróom ñaar fukki at a ngii yoo leen mere<span class="footnote selectable" id="F-0"><sup>a</sup></span>!»<span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>Aji Sax ji nag àddu, wax ak malaaka ma doon wax ak man, kàdduy mas-sawu yu neex.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Ca la ma malaaka ma doon wax ak man, ne ma: «Yéeneel, nga ne: Aji Sax ji Boroom gàngoor yi dafa wax ne: “Maa fiire Yerusalem, maa fiire <span class="footnote selectable" id="G-71">Siyoŋ</span> fiiraange ju réy.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Waaye mer mu réy laa mere xeet yii naagu. As lëf laa meroon, waaye ñoom ñoo yokk aw ay<span class="footnote selectable" id="F-1"><sup>b</sup></span>.”<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Moo tax Aji Sax ji dafa wax ne: “Yërmande laay dellusee Yerusalem. Sama kër lees fay tabaxaat.” Kàddug Aji Sax jee, Boroom gàngoor yi. Mu ne: “Buumu nattukaay dina tàllalu ci kaw Yerusalem.”<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Nanga yéenewaat, nga ne Aji Sax ji Boroom gàngoor yi dafa wax ne: “Samay dëkk ay walewaat ak alal, te Aji Sax ji mooy dëfalati Siyoŋ, mooy taamooti Yerusalem googu.”»<span id="bookmarks17"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

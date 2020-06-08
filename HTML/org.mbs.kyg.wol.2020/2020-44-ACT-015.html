@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jëf ya 15</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">15.1 </span><span class=\"ft\">Seetal ci 7.8.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">15.14 </span><span class=\"fk\">Simoŋ </span><span class=\"ft\">mooy Piyeer ba tey.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-50": "<div><span class=\"k\">Musaa:</span> Yonent Yàlla Musaa yonent bu mag la woon. Moo jiite bànni Israyil, bi ñu gàddaayee réewu Misra. Ca moom la Yàlla jaarale téere bi ñuy wax Tawreet, mu ëmb ndigal yi ñuy wooye yoonu Musaa.</div>",
+    "G-86": "<div><span class=\"k\">Yerusalem:</span> Mooy péeyu réewum Yawut, te fa la kër Yàlla ga nekkoon. Foofa rekk lañu manoona rendi ay saraxi mala yu ñu jébbal Yàlla.</div>",
+    "G-60": "<div><span class=\"k\">Samari:</span> Mooy diiwaan ba nekkoon diggante Yude ak Galile. Ñu bare ci waa Samari ay làkk-kati yéefar la leen Yawut yi jàppe woon, te ay noon lañu woon.</div>",
+    "G-29": "<div><span class=\"k\">Farisen y-:</span> Tariixa lañu woon ci biir Yawut yi. Ñu xér lañu woon ci sàmm yoonu Musaa, waaye jëf ju tegu ba mu ëpp ci ndigal moom lañu jiital, ba seen jaamu Yàlla mujj nekk ngistal, ak xeebeel seen digg ak képp ku bokkul ci ñoom.</div>",
+    "G-56": "<div><span class=\"k\">Noo gu Sell g-:</span> Moo di Noowug Yàlla. Du malaaka te du mbindeef. Mooy Taxawukat, bi Almasi digoon ay taalibeem, ne mooy dikk dëkk ci seen xol, di leen dooleel ak a sellal.</div>",
+    "G-21": "<div><span class=\"k\">Daawuda:</span> Buuru Israyil bu mag la woon te moo bind lu bare ci <span class=\"bk\">Sabóor</span>.</div>",
+    "G-19": "<div><span class=\"k\">bésub Noflaay b-:</span> Moo doon juróom ñaareelu bés ci ayu bésu bànni Israyil. Bés la woon bu ñu jagleel Yàlla, ñu aaye ci bépp liggéey. Bésub Noflaay boobu Yàllaa ko séddoo, ba muy sàkk lépp. Gannaaw gi la tànn bésub Noflaay, firndeele ko kóllëre gi mu fasoo ak bànni Israyil.</div>",
+    "G-5": "<div><span class=\"k\">Almasi:</span> Baatu ebrë la, di tekki «ki ñu fal». Bu Yawut yi masaana fal nit, dañuy sotti diw ci boppam, muy yonent, di sarxalkat mbaa buur. Almasi nag, mooy ki Yàlla sol Noowam, ngir firndeel ne mooy Yonent, bi nuy jottli xibaaru jàmm bu Yàlla; di Sarxalkat, bi nu ubbil bunt fa Yàlla; te di Buur, bi yilif lépp ak ñépp.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 28 }];
+var hasIntro = false;
+var baseRef  = "2020-44-ACT-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='2020-42-LUK-000.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='2020-44-ACT-014.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Jëf ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;15&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-44-ACT-016.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-45-ROM-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Péncoo am na ca Yerusalem</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">15</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ñenn nit ñu bàyyikoo Yude dikk Àncos, ñoo doon digal bokki taalibe yi, ne leen: «Su ngeen xaraful<span class="footnote selectable" id="F-0"><sup>a</sup></span>, ni ko aaday <span class="footnote selectable" id="G-50">Musaa</span> santaanee, dungeen mana mucc.»<span id="bookmarks1"></span></div><span id="bookmarks1"></span><a id="v2"></a>
+<div class="p"><span class="v">2</span><span class="vsp">&nbsp;</span>Mbir ma nag mujje féewaloo ak werante wu xawa metti, te Póol ak Barnaba séq ko ak ñooñu. Ba loolu amee ñu ne, na Póol ak Barnaba, ak ñenn ca gëmkati Àncos, ànd dem <span class="footnote selectable" id="G-86">Yerusalem</span> ca ndawi Yeesu, ak mag ña, ba lijjanti mbir moomu.<span id="bookmarks2"></span></div><span id="bookmarks2"></span><a id="v3"></a>
+<div class="p"><span class="v">3</span><span class="vsp">&nbsp;</span>Ci kaw loolu mbooloom gëmkat ñi yebal leen, ñu jaare Fenisi ak <span class="footnote selectable" id="G-60">Samari</span>, daldi àgge waa foofa ni jaambur ñi dul Yawut tuube, ba bokki gëmkat ñépp bég ca lool.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Gannaaw loolu, ñu agsi Yerusalem, mbooloom gëmkat ñi, ak ndawi Yeesu yi, ak mag ñi, dalal leen, ñu nettali leen mboolem ni Yàlla def ak ñoom.<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="p"><span class="v">5</span><span class="vsp">&nbsp;</span>Ba mu ko defee ñenn ci gëmkat ñi bokk ci ngérum <span class="footnote selectable" id="G-29">Farisen</span> yi, daldi taxaw temm, ne gëmkat ñi dul Yawut, fàww ñu xarfal leen, sàmmloo leen yoonu Musaa.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Ba loolu amee ndawi Yeesu yi ak mag ñi bokk daje, ngir seet mbir moomu.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Werante wu réy am ca. Ci kaw loolu Piyeer jóg ne leen: «Bokk yi, yeen xam ngeen ne bu yàgg la ma Yàlla seppee ci seen biir, ngir jaambur ñi dégge ci sama làmmiñ, kàddug xibaaru jàmm bi, ba doon ay gëmkat.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Yàlla, mi xam xolu nit nag moo seereel jaambur ñi, ba mu leen mayee <span class="footnote selectable" id="G-56">Noo gu Sell</span> gi, ni mu nu ko maye nun itam.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Yàlla amul xejj ak seen sunu digg ak ñoom, ndax seen ngëm la raxase seen xol.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Léegi nag lu tax ngeen di diiŋat Yàlla, di teg taalibe yi yen bu nu masula àttan, cay maam ba ci nun?<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Yiwu Sang bi Yeesu daal lanu gëm ne ci lanuy mucce, te ñoom itam, noonu rekk.»<span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="p"><span class="v">12</span><span class="vsp">&nbsp;</span>Ba loolu wéyee mbooloo mépp ne xerem. Ñu déglu nag Barnaba ak Póol, ñu xamle mboolem firnde yeek kéemaan, yi Yàlla defe seen ñaari jëmm ci biir jaambur ñi.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Ba ñu noppee, Yanqóoba àddu ne: «Bokk yi, dégluleen ma.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Simoŋ<span class="footnote selectable" id="F-1"><sup>b</sup></span> xamle na, ni Yàlla yége jaambur ñi ca njàlbéen, ba sàkke ci seen biir, xeet wu mu tudde turam.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Te loolu dëppoo na ak kàdduy yonent yi, ndax bindees na ne:<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="q-vv top-spacing"><span class="v">16</span><span class="vsp">&nbsp;</span>“Boroom bi nee:</div>
+<div class="q">Gannaaw loolu dinaa délsi;</div>
+<div class="q">maay yékkati kër <span class="footnote selectable" id="G-21">Daawuda</span> gi daanu,</div>
+<div class="q">maay yékkati gent yi, joyanti ko,<span id="bookmarks16"></span></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="q-vv"><span class="v">17</span><span class="vsp">&nbsp;</span>ngir ndesu nit ñi sàkku Boroom bi,</div>
+<div class="q">te ñooñoo di jaambur ñi ñu tudde sama tur.<span id="bookmarks17"></span></div><span id="bookmarks17"></span><a id="v18"></a>
+<div class="q-vv"><span class="v">18</span><span class="vsp">&nbsp;</span>Boroom bee xamle loolu bu yàgga yàgg.”<span id="bookmarks18"></span></div><span id="bookmarks18"></span><a id="v19"></a>
+<div class="p"><span class="v">19</span><span class="vsp">&nbsp;</span>«Kon nag sama xalaat mooy: bunu gétën jaambur ñi tuub, ba waññiku ci Yàlla.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Xanaa nu bind leen, ne leen ñu moytu lu ay xërëm sobeel, moytu powum séy, moytoo lekk yàppu mala mu ñu tuurul deretam, ak lekk deret ci boppam.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Ndaxte ca njàlbéen ga ba tey ay nit a ngi waaree yoonu Musaa ci dëkk bu nekk, ñu di ko jàng ci jàngu yi <span class="footnote selectable" id="G-19">bésub Noflaay</span> bu nekk.»<span id="bookmarks21"></span></div>
+
+<div class="s"><div id="s2">Ndaje ma bind na ñi dul Yawut</div></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Ba loolu amee ndaw yi ak mag ñi mànkoo ak mbooloom gëmkat ñépp, ngir tànne ci seen biir ay nit, yebal leen Àncos, boole leen ak Póol ak Barnaba. Ñooñoo di Yuda, mi ñu dippee Barsabas, ak Silas, ñu diy mag ca bokk ya.<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Ñu yóbbante leen bataaxal, bind ci ne:</div>
+<div class="b">&nbsp;</div>
+<div class="pi">Nun ndawi Yeesu, ak mag ñi, seen bokki Yerusalem, noo leen bind, yeen sunu bokki gëmkat ñi dul Yawut te dëkke Àncos ak Siri ak Silisi. Nu ngi jiital sunub nuyoo.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Dégg nanu ne ay nit ñu bawoo ci nun, ñoo leen lëjal ak seeni wax, di jaxase seen xel, te nun joxunu leen lenn ndigal.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Moo tax nu mànkoo ci tànn ay nit ñu nu yebal ci yeen, boole leen ak sunuy soppe Barnaba ak Póol,<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>ñoom ñi jaay seen bakkan ngir sunu Sang Yeesu <span class="footnote selectable" id="G-5">Almasi</span>.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Kon nag noo yebal Yuda ak Silas, ngir ñu àgge leen ci seen gémmiñu bopp, lii nu leen bind.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Ndaxte <span class="footnote selectable" id="G-56">Noo gu Sell</span> gi moo mànkoo ak nun ci bañ leena teg benn coono, xanaa lii manula ñàkk:<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Ngeen moytu yàpp wu ñu sarxal ay tuur, ak deret, ak yàppu jur gu ñu tuurul deretam, ak powum séy. Yooyii, bu ngeen ko moytoo bu baax, def ngeen lu baax. Jàmm ak jàmm.</div>
+<div class="b">&nbsp;</div><span id="bookmarks29"></span><span id="bookmarks29"></span><a id="v30"></a>
+<div class="p"><span class="v">30</span><span class="vsp">&nbsp;</span>Ba loolu amee ñu tàggtoo, daldi dem ba Àncos. Ci kaw loolu ñu woo mbooloo mi, jébbal leen bataaxal bi.<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Ba ñu jàngee bataaxal bi, kàddu ga dëfal leen, seen xol sedd.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Yuda ak Silas it gannaaw ay yonent lañu woon, wax nañu ak bokk yi lu yàgg, ngir ñaax leen, feddli seen ngëm.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33-34</span><span class="vsp">&nbsp;</span>Ba loolu amee ñu toog fa ab diir, bokk yi door leena ñaanal yoonu jàmm, yiwi leen, ngir ñu dellu ca ña leen yebaloon.<span id="bookmarks33-34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Póol ak Barnaba nag des Àncos. Ñu ànd ak ñeneen ñu bare, di jàngle ak a xamle kàddug Boroom bi.<span id="bookmarks35"></span></div>
+
+<div class="s"><div id="s3">Póol ak Silas ànd nañu</div></div><span id="bookmarks35"></span><a id="v36"></a>
+<div class="p"><span class="v">36</span><span class="vsp">&nbsp;</span>Ba ñu ca tegee ay fan Póol ne Barnaba: «Nan dellu seeti bokk yi ci mboolem dëkk yi nu yégle woon kàddug Boroom bi, ba gis nu ñu def.»<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>Barnaba nag bëggoon ñu yóbbaale Yowaan, mi ñuy wax Màrk.<span id="bookmarks37"></span> <a id="v38"></a><span class="v">38</span><span class="vsp">&nbsp;</span>Teewul Póol jàpp ne gannaaw Yowaan Màrk moomu moo leen waccoon ca Pamfili te àndul woon ak ñoom ci liggéey bi, yóbbaale ko warul.<span id="bookmarks38"></span></div><span id="bookmarks38"></span><a id="v39"></a>
+<div class="p"><span class="v">39</span><span class="vsp">&nbsp;</span>Mbir mi nag mujje dëngoo bu metti, ba ñu teqlikoo. Barnaba ànd ak Yowaan Màrk, dugg gaal, jëm Sippar.<span id="bookmarks39"></span> <a id="v40"></a><span class="v">40</span><span class="vsp">&nbsp;</span>Póol moom, taamu Silas, daldi ànd ak moom dem, gannaaw ba leen bokk ya dénkee Boroom bi ciw yiwam.<span id="bookmarks40"></span> <a id="v41"></a><span class="v">41</span><span class="vsp">&nbsp;</span>Ci kaw loolu mu jaare diiwaani Siri ak Silisi, di ñaax mboolooy gëmkat ña.<span id="bookmarks41"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2020 MBS.</span></div></div>
+</div>
+</body>
+</html>

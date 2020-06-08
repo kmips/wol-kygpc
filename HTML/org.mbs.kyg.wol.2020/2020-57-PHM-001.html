@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filemon 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">11 </span><span class=\"fk\">njariñ: </span><span class=\"ft\">ci làkku gereg turu Onesim mooy tekki «Ku am njariñ.»</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-5": "<div><span class=\"k\">Almasi:</span> Baatu ebrë la, di tekki «ki ñu fal». Bu Yawut yi masaana fal nit, dañuy sotti diw ci boppam, muy yonent, di sarxalkat mbaa buur. Almasi nag, mooy ki Yàlla sol Noowam, ngir firndeel ne mooy Yonent, bi nuy jottli xibaaru jàmm bu Yàlla; di Sarxalkat, bi nu ubbil bunt fa Yàlla; te di Buur, bi yilif lépp ak ñépp.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 1 }];
+var hasIntro = false;
+var baseRef  = "2020-57-PHM-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='2020-56-TIT-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='2020-56-TIT-003.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Filemon&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-58-HEB-001.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-58-HEB-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt2"><span class="mt2">Bataaxal bi Yàlla may Póol, mu bind ko</span></div>
+<div class="mt"><span class="mt">Filemon</span></div>
+<div class="b"></div>
+<div class="b"></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ci man Póol, mi ñu tëj kaso ngir <span class="footnote selectable" id="G-5">Almasi</span> Yeesu, ci man ak itam ci Timote miy mbokkum gëmkat la bataaxal bii bawoo, ñeel Filemon, sunu soppe bi bokk ak nun liggéey bi.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Mu ñeel itam sunub jigéen Afya, ak Arsipp sunu mbokkum xarekat, ak mbooloom gëmkat miy dajee sa kër.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Yeen la aw yiw ak jàmm ñeel, bawoo fa Yàlla sunu Baay, ak Sang Yeesu Almasi.<span id="bookmarks3"></span></div>
+
+<div class="s"><div id="s1">Póol a ngi sant ci biir ñaan</div></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="p"><span class="v">4</span><span class="vsp">&nbsp;</span>Sant sama Yàlla laa dëkke saa yu ma la fàttlikoo ci samay ñaan,<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>ndax dégg naa sa gëm Sang Yeesu, ak sa cofeel ci mboolem ñu sell ñi.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Damay ñaan nag sa ngëm, gi nu bokk amal la njariñal ràññee mboolem ngëneel, yi nu am ci <span class="footnote selectable" id="G-5">Almasi</span>.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Mbokk mi, mbégte mu réy, ak xel mu dal laa am ci sa cofeel, ndax ni nga serale xolu aji sell ñi.<span id="bookmarks7"></span></div>
+
+<div class="s"><div id="s2">Póol tinul na Onesim</div></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>Lii nag sañoon naa la koo digal ci turu Almasi, ndax mooy li la war,<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>waaye tinu la ci ngir cofeel, mooy li ma taamu, man Póol mu màggat mii, boole ci léegi tënku biir kaso ndax <span class="footnote selectable" id="G-5">Almasi</span> Yeesu.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Damay tinul Onesim, sama doomu tuubeen ji ma tuubloo ba mu mel ni maa ko jur ci diir bi ma nekke fii ci kaso bi.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Amalu la woon njariñ<span class="footnote selectable" id="F-0"><sup>a</sup></span> démb, waaye tey yaak man la amal njariñ.<span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="p"><span class="v">12</span><span class="vsp">&nbsp;</span>Maa ngi koy yebal ngir mu dellu fi yaw, te di kenn ci man.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Dama koo bëggoona téye fi sama wet, ngir mu taxawal la, di ma dimbali, li feek maa ngi ci kaso bi ngir xibaaru jàmm bi.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Waaye buggumaa def dara loo àndul, ngir mu baña doon ndimbalu ñàkk pexe, xanaa loo defe xol bu tàlli.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Jombul itam dees koo tàggale ak yaw ab diir, ngir nga jotaat ci moom ba fàww,<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>ba dootu doon sab jaam, waaye day wees ab jaam, di mbokk, di soppe, ma sopp ko lool, te nga war ma koo gëna sopp, ngir jëmmu boppam, ak Sang bi ngeen bokk.<span id="bookmarks16"></span></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="p"><span class="v">17</span><span class="vsp">&nbsp;</span>Ndegam nag sa waay nga ma def, dalal ko ni su doon man.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Su la tooñee, mbaa mu ameel la lenn, topp ma ko.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Man Póol maay bind fii ci sama loxol bopp: maay fey loolu, duma ci tuddaale bor bi nga ma ameel, te muy sa njotug bakkanu bopp!<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Kon nag mbokk mi, may ma googu njekk ngir Sang bi, te nga seral sama xol ndax Almasi.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Wóor na ma ci diggante bii may bind bataaxal bi, ne dinga ma déggal, te xam naa ne dinga def sax lu wees li may wax.<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Te itam nanga ma waajalaale ab dal, ndax yaakaar naa ne dees na ma délloosi fi yeen, ndax seen ñaan yu nangu.<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Epafras, mbokk mi ñu ma tëjandool ndax Almasi Yeesu, mu ngi lay nuyu,<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>mook Màrk ak Aristàrk ak Demas ak Luug, bokk yi may liggéeyandool.<span id="bookmarks24"></span></div><span id="bookmarks24"></span><a id="v25"></a>
+<div class="p"><span class="v">25</span><span class="vsp">&nbsp;</span>Yal na yiwu Sang Yeesu Almasi ànd ak seenum xel.<span id="bookmarks25"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2020 MBS.</span></div></div>
+</div>
+</body>
+</html>

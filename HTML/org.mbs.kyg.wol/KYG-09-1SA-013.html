@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Samiyel 13</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">13.1 </span><span class=\"ft\">Sóol falu na ñaari at bala ñoo tànn Daawuda, mi koy wuutu. Seetal ci 16.13 ak <span class=\"bk\">Jëf ya</span> 13.21.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">13.5 </span><span class=\"fk\">3&nbsp;000: </span><span class=\"ft\">mooy lim bi ñu siiwal ni ñu ko tekkee ci làkku gereg ak yeneen làkk.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">13.16 </span><span class=\"fk\">Geba: </span><span class=\"ft\">seetal ci 13.3. </span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-25": "<div><span class=\"k\">Ebrë:</span> Ebrë, am na ñu koy wax Ibraan ba tey. Yonent Yàlla Ibraayma ab Ebrë la woon. Xeet wi soqikoo ci moom te sëtoo ci Yanqóoba, moom lañuy wooye Ebrë. Seen làkk mooy ebrë mbaa ibraan. Wax nañu ne, Ebrë ci seen turu maam Eber la jóge (<span class=\"bk\">Njàlbéen ga</span> 10.21).</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-61": "<div><span class=\"k\">Sarax yi:</span> Sarax yi ñuy wax fii, Yàlla lañu koy jagleel. Bànni Israyil amoon nañu xeeti sarax yu bare: ay saraxi yéene ak ay saraxi sañul-bañ ak sarax su ñuy tuural Yàlla ak saraxu xaalis ak saraxu pepp. Waaye li ci ëpp ay saraxi tuur deret la woon yu leen Yàlla tegoon, ngir seen njéggalug bàkkaar. Su ko defee ñu mana dëkke jokkook moom, Yàlla ju sell ji, ndax saraxu deret ja. Am na ci ay sarax, Yàlla da ciy xamal bànni Israyil ne peyug bàkkaar mooy dee, te deewu jur, gi ñuy sarxal, njot la ci boroom sarax bi. Bu loolu weesoo, deretu sarax dina fóot sobes bàkkaar itam, muy sobe suy topp nit mbaa lenn ci jumtukaayi jaamookaay ba.</div><div class=\"pi\"><span class=\"bd\">saraxu cant ci biir jàmm:</span> Mooy sarax, si ñu daan sante Yàlla jàmmam. Sarax boobu ag jur lay doon gu ñuy séddale ñetti cér. Benn bi, ñu lakkal ko Aji Sax ji ci sarxalukaay bi, ba mu jeex. Benn bi, sarxalkat yi féetewoo ko. Ñetteel bi, ki sarxe moo koy lekk, ak waa këram.</div><div class=\"pi\"><span class=\"bd\">saraxu dóomal:</span> Seetal ci <span class=\"bd\">saraxu rendi-dóomal</span>.</div><div class=\"pi\"><span class=\"bd\">saraxu ndoortel meññeef:</span> Meññeef mu jëkka ñor la bànni Israyil daa sarxalal Aji Sax ji, mu yemook seen màggalu Ngóobum at mu nekk. Muy la jëkka ñor, di lu góor lu nit ak jur taawloo, lépp lañu séddoon Aji Sax ji, muy moomeelu boppam.</div><div class=\"pi\"><span class=\"bd\">saraxu pepp m-:</span> Peppam bele la mu ñuy jagleel Yàlla. Lenn li, ñu jaxase kook cuuraay ak diwu oliw, taal ko. Li ci des sarxalkat bee ko moom. Sarax la su ñu daan defal Aji Sax ji, muy galag bu ñuy nangoo nguuram, nangoo ko moomeel gu mat sëkk gu mu moom bakkanu ki koy joxe. Nit ki daan ko yeesloo ngiñam ne dina sàmmonte ak kóllëreg Aji Sax ji.</div><div class=\"pi\"><span class=\"bd\">saraxu peyug tooñ:</span> Bu nit tooñee ci lenn lu sell lu mu teddadil, muy jumtukaay bu sell mbaa sarax, mbaa lu bokk ci bànni Israyil gi Yàlla sellal, mbaa mu sofental sellngay turu Yàlla; bu defee lenn ci yooyu, pey gu mat sëkk war na ko ci gépp tooñ gu ni mel, te war na caa teg daan bu tollook benn xaajub juróomeel, ñeel ka mu tooñ. Gannaaw loolu itam war na caa boole sarax bu muy defal Yàlla, doora am njéggal.</div><div class=\"pi\"><span class=\"bd\">saraxu póotum bàkkaar:</span> Ci misaal, sarax la suy dindi sobe, di far ag tooñ tey musal boroom ci mbugalu bàkkaar. Ag jur lay doon gu nit ki di rendil Yàlla, defal ko ko sarax. Bu ñu tuuree deret ji, bakkanu jur gi mooy wuutu bakkanu ki sarxe. Sarax boobu it dees koy lakk.</div><div class=\"pi\"><span class=\"bd\">saraxu rendi-dóomal:</span> Mooy tekki sarax su kenn dul lekk dara. Dañu koy lakk muy saxar, ba jeex, jagleel lépp Yàlla.</div><div class=\"pi\"><span class=\"bd\">sarax su ñuy tuural Aji Sax ji, saraxu tuuru:</span> Saraxu naan la bu ñu daan defal Yàlla, muy ànd ak saraxu rendi-dóomal mbaa saraxu pepp. Li ci ëpp biiñ la daan doon, ñu di ko sotti ca taatu sarxalukaay ba.</div><div class=\"pi\"><span class=\"bd\">saraxu yéene:</span> Xeetu saraxu cant la ci biir jàmm. Day neex boroom, mu def ko, waaye du wartéef.</div><div class=\"pi\"><span class=\"bd\">sarax bu ñuy yékkati, jébbal Aji Sax ji:</span> Turu sarax soosu day wone ne dañu ko daan yékkati, mel ni ku koy jox Aji Sax ji, door koo wàcce. Jombul ay yooni yoon lañu ko daan yékkati, wàcce.</div>",
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 31 }];
+var hasIntro = false;
+var baseRef  = "KYG-09-1SA-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-08-RUT-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-09-1SA-012.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Samiyel&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;13&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-09-1SA-014.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Sóol tooñ na</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">13</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Sóol ci boppam làqoon na ay at, ba muy falu buur; mu falu jiite Israyil ñaari at<span class="footnote selectable" id="F-0"><sup>a</sup></span>.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Ci kaw loolu mu tànn ñetti junniy nit ci Israyil; ñaari junniy nit ñuy nekk ak moom ca Migmas ak ca tundi Betel, ak junniy nit ñu nekk ak Yonatan doomu Sóol ca Gibeya gu Beñamin. Ña ca des mu yiwi leen, ñu ñibbi seeni xayma.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Yonatan nag song dalub waa Filisti ca Geba. Waa Filisti yég ko. Ba mu ko defee Sóol wal-lu liit ga ca réew ma mépp, ne: «Na ko <span class="footnote selectable" id="G-25">Ebrë</span> yi dégg!»<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Ñu yégal Israyil gépp la xew ne leen: «Sóol song na dalub waa Filisti, ba tax waa Filisti jéppi <span class="footnote selectable" id="G-13">bànni Israyil</span>.» Gàngoor ga daldi daje, topp ca gannaaw Sóol ca Gilgal.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Ci biir loolu waa Filisti daje ngir xareek Israyil. Ña ngaak ñetti junniy<span class="footnote selectable" id="F-1"><sup>b</sup></span> watiiri xare ak juróom benni junniy gawar, xarekat ya bare, mel ni feppi suufas géej. Ñu dem dali ca Migmas, ca penkub Bet Awen.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Niti Israyil nag gis diggante bu metti bi ñu tollu ndax na ñu tance seen gàngoor ga. Ñu dem làquji ci ay xunteek ay dédd ak ay doj, aki seyaan aki kàmb.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Am na sax ay Ebrë yu jàll dexu Yurdan, wuti réewum Gàdd ak Galàdd. Fekk na Sóol a nga ca Gilgal ba tey. Mbooloom xareem ma mépp nekk faak moom, di pat-pati ndax tiitaange.<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>Mu négandiku juróom ñaari fan, diir ba ko Samiyel àppaloon. Waaye taxul Samiyel agsi Gilgal. Mbooloo ma tàmbalee dëddu Sóol, di tasaaroo.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Ba loolu amee Sóol ne: «Indil-leen ma <span class="footnote selectable" id="G-61">saraxu rendi-dóomal</span> bi, ak <span class="footnote selectable" id="G-61">saraxu cantu biir jàmm</span> bi.» Ñu indil ko, mu daldi def saraxu rendi-dóomal bi.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Naka la def saraxu rendi-dóomal bi ba sottal rekk, Samiyel ne jaas. Sóol génn gatandu ko, ngir nuyu ko.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Samiyel ne ko: «Loo def nii?» Sóol ne ko: «Man kat damaa gis mbooloo mi dëddu ma, di tasaaroo, te yaw it dikkoo bésu àpp bi. Rax ci dolli waa Filistee nga daje ca Migmas.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Ma noon, waa Filisti dinañu ma songsi Gilgal, te sàkkooguma ndimbalu <span class="footnote selectable" id="G-3">Aji Sax</span> ji. Looloo ma taxa sàcc sama bopp rekk, ba def saraxu rendi-dóomal bi.»<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Samiyel ne Sóol: «Ag ndof nga def, ndax jëfewuloo santaane bi la sa Yàlla Aji Sax ji santoon. Soo ko defoon, Aji Sax ji dina saxal sa nguur ci kaw Israyil ba fàww.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Léegi nag sa nguur du wéy; Aji Sax ji sàkkul na boppam ki xolam jubool, te fal na ko njiitu ñoñam, ndax yaa sàmmul li Aji Sax ji santaane.»<span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><span class="v">15</span><span class="vsp">&nbsp;</span>Ba mu ko defee Samiyel bàyyikoo Gilgal, dem Gibeya gu Beñamin. Sóol nag waññ ñi mu àndal, ñu tollu ci juróom benni téeméeri góor.<span id="bookmarks15"></span></div>
+
+<div class="s"><div id="s2">Yonatan def na njàmbaar</div></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>Sóol ak doomam Yonatan, ak gàngoor ga ànd ak ñoom ña nga dal ca Geba <span class="footnote selectable" id="F-2"><sup>c</sup></span> gu Beñamin, waa Filisti dal ca Migmas.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Ci biir loolu genn gàngooru yàqkat def ñetti kurél, jóge ca dalub waa Filisti. Genn ga jubal bëj-gànnaar, aw yoonu Ofra ca diiwaanu Suwal,<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>ñaareel ga jubal sowu ca Bet Oron, ñetteel ga jëm penku ca tund ya tiim xuru Ceboyim, fa féeteek màndiŋ ma.<span id="bookmarks18"></span></div><span id="bookmarks18"></span><a id="v19"></a>
+<div class="p"><span class="v">19</span><span class="vsp">&nbsp;</span>Booba nag benn tëgg amul woon ca réewum Israyil ba mu daj, ndax waa Filisti dañu noon: Bu <span class="footnote selectable" id="G-25">Ebrë</span> yi sàkk ay saamar aki xeej.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Moo tax <span class="footnote selectable" id="G-13">bànni Israyil</span> gépp, ku ci bëggoona nàmmlu sa ngajju mbaa sa daba, mbaa sa sémmiñ, mbaa sa sawta, doo man lu moy dem ca tëggi waa Filisti.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Ku ci nekk, saa yu sa ngajju dayee, mbaa sa daba, ñaari ñetteelu siikal nga koy daasloo, njég gu jafe, tollook ñaari ñetteelu dogu xaalis. Boo dee daaslu ab roqub ñetti càq, mbaa sémmiñ, mbaa ngay jubbantilu catal ràbbu, genn-wàllam ngay fey.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Looloo tax keroog bésub xare ba, du benn xarekat bu ànd ak Sóol ak Yonatan, te yor saamar mbaa xeej ci loxoom. Mennum Sóol rekk a ci amoon, mook doomam Yonatan.<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Ci biir loolu ab kurélu xarekati waa Filisti dem, taxawi ca jàllukaayu Migmas ba.<span id="bookmarks23"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

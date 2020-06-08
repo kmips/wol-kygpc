@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6 مُوسَىٰ گَنࣹ نَ اࣵدِّنَ 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+// Audio
+$(window).load(function() {
+
+var pop = Popcorn("#audio");
+
+var timings = [
+    { label: "s1", start: 0, end: 3.27 },
+    { label: "1a", start: 3.52, end: 6.03 },
+    { label: "1b", start: 6.28, end: 7.79 },
+    { label: "1c", start: 8.04, end: 9.31 },
+    { label: "1d", start: 9.56, end: 10.29 },
+    { label: "1e", start: 10.54, end: 12.81 },
+    { label: "1f", start: 13.06, end: 14.63 },
+    { label: "2", start: 14.88, end: 20.21 },
+    { label: "3a", start: 20.46, end: 23.03 },
+    { label: "3b", start: 23.28, end: 26.47 },
+    { label: "4", start: 26.72, end: 31.25 },
+    { label: "5a", start: 31.5, end: 36.15 },
+    { label: "5b", start: 36.4, end: 37.75 },
+    { label: "5c", start: 38, end: 39.33 },
+    { label: "5d", start: 39.58, end: 41.81 },
+    { label: "6a", start: 42.06, end: 46.13 },
+    { label: "6b", start: 46.38, end: 48.83 },
+    { label: "7a", start: 49.08, end: 51.43 },
+    { label: "7b", start: 51.68, end: 52.55 },
+    { label: "7c", start: 52.8, end: 53.83 },
+    { label: "7d", start: 54.08, end: 54.81 },
+    { label: "7e", start: 55.06, end: 56.79 },
+    { label: "s2", start: 57.04, end: 61.95 },
+    { label: "8a", start: 62.2, end: 63.39 },
+    { label: "8b", start: 63.64, end: 67.63 },
+    { label: "9a", start: 67.88, end: 69.75 },
+    { label: "9b", start: 70, end: 70.87 },
+    { label: "9c", start: 71.12, end: 74.49 },
+    { label: "9d", start: 74.74, end: 76.37 },
+    { label: "10a", start: 76.62, end: 78.13 },
+    { label: "10b", start: 78.38, end: 80.21 },
+    { label: "10c", start: 80.46, end: 82.21 },
+    { label: "10d", start: 82.46, end: 84.23 },
+    { label: "10e", start: 84.48, end: 85.65 },
+    { label: "10f", start: 85.9, end: 87.53 },
+    { label: "11a", start: 87.78, end: 92.67 },
+    { label: "11b", start: 92.92, end: 94.99 },
+    { label: "11c", start: 95.24, end: 99.45 },
+    { label: "11d", start: 99.7, end: 102.61 },
+    { label: "11e", start: 102.86, end: 105.31 },
+    { label: "12a", start: 105.56, end: 108.09 },
+    { label: "12b", start: 108.34, end: 110.01 },
+    { label: "12c", start: 110.26, end: 111.07 },
+    { label: "12d", start: 111.32, end: 115.47 },
+    { label: "13", start: 115.72, end: 118.93 },
+    { label: "14a", start: 119.18, end: 123.23 },
+    { label: "14b", start: 123.48, end: 124.81 },
+    { label: "14c", start: 125.06, end: 126.05 },
+    { label: "14d", start: 126.3, end: 130.31 },
+    { label: "14e", start: 130.56, end: 136.27 },
+    { label: "15a", start: 136.52, end: 140.73 },
+    { label: "15b", start: 140.98, end: 142.97 },
+    { label: "15c", start: 143.22, end: 144.87 },
+    { label: "16a", start: 145.12, end: 146.31 },
+    { label: "16b", start: 146.56, end: 148.89 },
+    { label: "16c", start: 149.14, end: 151.19 },
+    { label: "16d", start: 151.44, end: 152.45 },
+    { label: "16e", start: 152.7, end: 153.33 },
+    { label: "16f", start: 153.58, end: 154.49 },
+    { label: "16g", start: 154.74, end: 154.99 },
+    { label: "16h", start: 155.24, end: 156.57 },
+    { label: "17a", start: 156.82, end: 159.59 },
+    { label: "17b", start: 159.84, end: 162.01 },
+    { label: "17c", start: 162.26, end: 164.33 },
+    { label: "17d", start: 164.58, end: 165.51 },
+    { label: "18a", start: 165.76, end: 168.11 },
+    { label: "18b", start: 168.36, end: 169.07 },
+    { label: "18c", start: 169.32, end: 171.11 },
+    { label: "18d", start: 171.36, end: 172.67 },
+    { label: "18e", start: 172.92, end: 173.85 },
+    { label: "19a", start: 174.1, end: 176.01 },
+    { label: "19b", start: 176.26, end: 177.43 },
+    { label: "19c", start: 177.68, end: 180.75 },
+    { label: "19d", start: 181, end: 182.31 },
+    { label: "19e", start: 182.56, end: 184.59 },
+    { label: "19f", start: 184.84, end: 186.99 },
+    { label: "20a", start: 187.24, end: 189.85 },
+    { label: "20b", start: 190.1, end: 191.11 },
+    { label: "20c", start: 191.36, end: 193.79 },
+    { label: "21", start: 194.04, end: 197.93 },
+    { label: "22a", start: 198.18, end: 201.27 },
+    { label: "22b", start: 201.52, end: 202.23 },
+    { label: "22c", start: 202.48, end: 204.63 },
+    { label: "22d", start: 204.88, end: 205.45 },
+    { label: "22e", start: 205.7, end: 207.13 },
+    { label: "22f", start: 207.38, end: 208.73 },
+    { label: "22g", start: 208.98, end: 209.43 },
+    { label: "22h", start: 209.68, end: 211.49 },
+    { label: "s3", start: 211.74, end: 215.83 },
+    { label: "23", start: 216.08, end: 221.97 },
+    { label: "24a", start: 222.22, end: 223.57 },
+    { label: "24b", start: 223.82, end: 225.73 },
+    { label: "24c", start: 225.98, end: 227.41 },
+    { label: "24d", start: 227.66, end: 228.65 },
+    { label: "24e", start: 228.9, end: 231.41 },
+    { label: "25a", start: 231.66, end: 232.53 },
+    { label: "25b", start: 232.78, end: 234.03 },
+    { label: "25c", start: 234.28, end: 236.89 },
+    { label: "25d", start: 237.14, end: 239.21 },
+    { label: "25e", start: 239.46, end: 240.67 },
+    { label: "25f", start: 240.92, end: 241.87 },
+    { label: "25g", start: 242.12, end: 243.51 },
+    { label: "25h", start: 243.76, end: 244.63 },
+    { label: "25i", start: 244.88, end: 246.25 },
+    { label: "26a", start: 246.5, end: 251.45 },
+    { label: "26b", start: 251.7, end: 252.67 },
+    { label: "26c", start: 252.92, end: 254.91 },
+    { label: "27a", start: 255.16, end: 258.77 },
+    { label: "27b", start: 259.02, end: 260.85 },
+    { label: "27c", start: 261.1, end: 264.25 },
+    { label: "27d", start: 264.5, end: 267.95 },
+    { label: "27e", start: 268.2, end: 269.79 },
+    { label: "27f", start: 270.04, end: 271.43 },
+    { label: "28a", start: 271.68, end: 273.63 },
+    { label: "28b", start: 273.88, end: 275.25 },
+    { label: "28c", start: 275.5, end: 276.89 },
+    { label: "28d", start: 277.14, end: 278.45 },
+    { label: "28e", start: 278.7, end: 279.45 },
+    { label: "28f", start: 279.7, end: 280.27 },
+    { label: "28g", start: 280.52, end: 281.79 },
+    { label: "28h", start: 282.04, end: 283.89 },
+    { label: "29a", start: 284.14, end: 287.11 },
+    { label: "29b", start: 287.36, end: 288.23 },
+    { label: "29c", start: 288.48, end: 292.21 },
+    { label: "30a", start: 292.46, end: 294.17 },
+    { label: "30b", start: 294.42, end: 294.63 },
+    { label: "30c", start: 294.88, end: 295.45 },
+    { label: "30d", start: 295.7, end: 296.91 },
+    { label: "30e", start: 297.16, end: 299.03 },
+    { label: "31a", start: 299.28, end: 300.87 },
+    { label: "31b", start: 301.12, end: 303.27 },
+    { label: "31c", start: 303.52, end: 304.57 },
+    { label: "31d", start: 304.82, end: 306.37 },
+    { label: "31e", start: 306.62, end: 308.13 },
+    { label: "32a", start: 308.38, end: 310.37 },
+    { label: "32b", start: 310.62, end: 312.29 },
+    { label: "32c", start: 312.54, end: 313.85 },
+    { label: "32d", start: 314.1, end: 317.43 },
+    { label: "32e", start: 317.68, end: 320.95 },
+    { label: "s4", start: 321.2, end: 325.29 },
+    { label: "33a", start: 325.54, end: 327.81 },
+    { label: "33b", start: 328.06, end: 329.11 },
+    { label: "33c", start: 329.36, end: 330.67 },
+    { label: "33d", start: 330.92, end: 332.85 },
+    { label: "33e", start: 333.1, end: 334.31 },
+    { label: "33f", start: 334.56, end: 339.23 },
+    { label: "34a", start: 339.48, end: 341.55 },
+    { label: "34b", start: 341.8, end: 342.63 },
+    { label: "34c", start: 342.88, end: 344.27 },
+    { label: "34d", start: 344.52, end: 345.55 },
+    { label: "34e", start: 345.8, end: 347.01 },
+    { label: "35a", start: 347.26, end: 349.73 },
+    { label: "35b", start: 349.98, end: 352.29 },
+    { label: "35c", start: 352.54, end: 354.33 },
+    { label: "35d", start: 354.58, end: 354.99 },
+    { label: "35e", start: 355.24, end: 357.21 },
+    { label: "36a", start: 357.46, end: 358.55 },
+    { label: "36b", start: 358.8, end: 361.65 },
+    { label: "36c", start: 361.9, end: 363.71 },
+    { label: "36d", start: 363.96, end: 366.11 },
+    { label: "36e", start: 366.36, end: 367.99 },
+    { label: "36f", start: 368.24, end: 369.25 },
+    { label: "36g", start: 369.5, end: 372.11 },
+    { label: "37a", start: 372.36, end: 376.01 },
+    { label: "37b", start: 376.26, end: 377.91 },
+    { label: "37c", start: 378.16, end: 379.13 },
+    { label: "37d", start: 379.38, end: 380.41 },
+    { label: "37e", start: 380.66, end: 382.31 },
+    { label: "37f", start: 382.56, end: 384.51 },
+    { label: "38a", start: 384.76, end: 386.23 },
+    { label: "38b", start: 386.48, end: 388.11 },
+    { label: "38c", start: 388.36, end: 391.11 },
+    { label: "38d", start: 391.36, end: 393.17 },
+    { label: "38e", start: 393.42, end: 394.35 },
+    { label: "38f", start: 394.6, end: 396.55 },
+    { label: "39a", start: 396.8, end: 398.25 },
+    { label: "39b", start: 398.5, end: 399.43 },
+    { label: "39c", start: 399.68, end: 401.51 },
+    { label: "39d", start: 401.76, end: 402.79 },
+    { label: "40a", start: 403.04, end: 406.81 },
+    { label: "40b", start: 407.06, end: 408.67 },
+    { label: "40c", start: 408.92, end: 411.35 },
+    { label: "41a", start: 411.6, end: 412.45 },
+    { label: "41b", start: 412.7, end: 413.79 },
+    { label: "41c", start: 414.04, end: 415.71 },
+    { label: "41d", start: 415.96, end: 417.03 },
+    { label: "41e", start: 417.28, end: 418.37 },
+    { label: "42a", start: 418.62, end: 419.75 },
+    { label: "42b", start: 420, end: 420.93 },
+    { label: "42c", start: 421.18, end: 422.75 },
+    { label: "42d", start: 423, end: 423.67 },
+    { label: "42e", start: 423.92, end: 425.59 },
+    { label: "43a", start: 425.84, end: 428.91 },
+    { label: "43b", start: 429.16, end: 432.33 },
+    { label: "44a", start: 432.58, end: 434.27 },
+    { label: "44b", start: 434.52, end: 438.71 },
+    { label: "44c", start: 438.96, end: 440.13 },
+    { label: "44d", start: 440.38, end: 441.63 }
+];
+
+initAudioTimings(pop, timings);
+});
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1‏.11 </span><span class=\"fk\">فِرْعَوْنَ </span><span class=\"ft\">تُرُ ݒَلْ لَ، ݧࣹيلْ بࣺݒّ بُورِ مِسْرَ.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">1‏.11 </span><span class=\"fk\">مِسْرَ </span><span class=\"ft\">مࣷويْ رࣺيوْ مِ ݧُيْ وَخْ اࣹسِبْتࣴ بَ تࣹيْ.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">1‏.15 </span><span class=\"fk\">اࣹبْرࣴ </span><span class=\"ft\">تُرْ لَ وُ نِتِ جَمࣷنࣷ جࣷوجَ دَانْ وࣷويࣹ خࣹيتْ، يَ بࣵنِّ إِسْرَاءِيلْ بࣷڪّ.</span></div>",
+    "F-3": "<div class=\"footnote-p\"><span class=\"fr\">2‏.2 </span><span class=\"ft\">سࣹيتَلْ ݖِ مُݖّ گَ 6‏.20‏.</span></div>",
+    "F-4": "<div class=\"footnote-p\"><span class=\"fr\">2‏.10 </span><span class=\"fk\">مࣷسࣹ </span><span class=\"ft\">بَاتُ لࣵڪُّ مِسْرَ لَ بُ نࣹيخࣷو اَڪْ مَسَ، دِ بَاتْ بِيْ تࣹڪِّ «گࣺنّࣹ» ݖِ لࣵڪُّ اࣹبْرࣴ.</span></div>",
+    "F-5": "<div class=\"footnote-p\"><span class=\"fr\">2‏.18 </span><span class=\"fk\">رُوࣹلْ </span><span class=\"ft\">مࣷويْ يࣹتّرࣷ بَ تࣹيْ.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 1 }];
+var hasIntro = false;
+var baseRef  = "wolofal-06-OT06-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="ltr">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='wolofal-05-OT05-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='wolofal-05-OT05-001.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;6 مُوسَىٰ گَنࣹ نَ اࣵدِّنَ&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='wolofal-07-OT07-001.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='wolofal-07-OT07-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="b"></div>
+<div class="b"></div>
+<div class="ms2">مُوسَىٰ گَنࣹ نَ اࣵدِّنَ</div>
+<div class="ms2">ݧُ جُڪّࣹي ڪࣷ ݖِ تَوْرࣹيتُ مُوسَىٰ</div>
+<div class="ms2">مُݖّ گَ، سَارْ 1.1-22.2  </div>
+
+<div class="s"><div id="Ts1" class="txs">بࣵنِّ إِسْرَاءِيلْ دࣹمْ نَ رࣺيوُمْ مِسْرَ</div></div><a id="v1"></a>
+<div class="m"><div id="T1a" class="txs"><span class="v">&#x200f;1</span><span class="vsp">&nbsp;</span><span class="myc">1 </span> <span class="myv">1 </span> گٗورْ ݧِ سࣹينْ بَايْ دِ يَعْقُوبَ،</div> <div id="T1b" class="txs">مِ ݧُ دِݒّࣹي إِسْرَاءِيلْ،</div> <div id="T1c" class="txs">ݧُ اࣵنْدࣷونْ اَڪْ مࣷومْ،</div> <div id="T1d" class="txs">دࣹمْ مِسْرَ،</div> <div id="T1e" class="txs">تࣹ ڪُ نࣹڪّ يٗبَّالࣹ وَا ڪࣴرَمْ،</div> <div id="T1f" class="txs">سࣹينِ تُرَ دِ:</div><span id="bookmarks1"></span> <a id="v2"></a><div id="T2" class="txs"><span class="v">&#x200f;2</span><span class="vsp">&nbsp;</span><span class="myv">2 </span> رُبࣹنْ اَڪْ سِمࣹيࣷنْ اَڪْ لࣹوِ اَڪْ يُدَ</div><span id="bookmarks2"></span> <a id="v3"></a><div id="T3a" class="txs"><span class="v">&#x200f;3</span><span class="vsp">&nbsp;</span><span class="myv">3 </span> اَڪْ اِسَڪَارْ اَڪْ سَبُلࣷنْ،</div> <div id="T3b" class="txs">اَڪْ اِتَمْ بࣹݧَمِنْ؛</div><span id="bookmarks3"></span> <a id="v4"></a><div id="T4" class="txs"><span class="v">&#x200f;4</span><span class="vsp">&nbsp;</span><span class="myv">4 </span> اَڪْ دَنْ اَڪْ نࣹفْتَلِ اَڪْ گࣵدّ اَڪْ اَسࣹرْ؞</div><span id="bookmarks4"></span> <a id="v5"></a><div id="T5a" class="txs"><span class="v">&#x200f;5</span><span class="vsp">&nbsp;</span><span class="myv">5 </span> گٗورْ ݧِ سࣷقِڪࣷو ݖِ يَعْقُوبَ ݧࣺݒّ جُرٗومْ ݧَارْ فُڪّ لَݧُ (70)،</div> <div id="T5b" class="txs">بُ ݧُ ݖِ بࣷولࣹي دࣷومَمْ،</div> <div id="T5c" class="txs">جِ ݧُيْ وَخْ يُوسُفَ،</div> <div id="T5d" class="txs">مࣷومْ مَ ݧُ فࣹڪّ مِسْرَ؞</div><span id="bookmarks5"></span> <a id="v6"></a><div id="T6a" class="txs"><span class="v">&#x200f;6</span><span class="vsp">&nbsp;</span><span class="myv">6 </span> گَنَّاوْ گَ يُوسُفَ اَڪِ دࣷومِ بَايَمْ يُ گٗورْ يࣺݒّ نࣹلَوْ،</div> <div id="T6b" class="txs">ݧࣷوڪْ مَاسْ گࣷوگُ گࣺݒّ؞</div><span id="bookmarks6"></span> <a id="v7"></a><div id="T7a" class="txs"><span class="v">&#x200f;7</span><span class="vsp">&nbsp;</span><span class="myv">7 </span> بࣵنِّ إِسْرَاءِيلْ نَگْ گِيرْ فَ،</div> <div id="T7b" class="txs">لَوْ،</div> <div id="T7c" class="txs">دِ فُلَنْدِوُ،</div> <div id="T7d" class="txs">بَ يࣷڪُّ لࣷولْ،</div> <div id="T7e" class="txs">فࣹيسْ رࣺيوْ مَ؞</div><span id="bookmarks7"></span></div>
+
+<div class="s"><div id="Ts2" class="txs">فِرْعَوْنَ نࣷتْ نَ بࣵنِّ إِسْرَاءِيلْ</div></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><div id="T8a" class="txs"><span class="v">&#x200f;8</span><span class="vsp">&nbsp;</span><span class="myv">8 </span> ݧُ دࣹمْ بَ جࣴمِّ جَمࣷنࣷ،</div> <div id="T8b" class="txs">بࣹنࣹينْ بُورْ بُ خَمُلْ يُوسُفَ فَلُ ݖَ مِسْرَ؞</div><span id="bookmarks8"></span> <a id="v9"></a><div id="T9a" class="txs"><span class="v">&#x200f;9</span><span class="vsp">&nbsp;</span><span class="myv">9 </span> مُ وَخْ اَڪْ وَا رࣺيوَمْ،</div> <div id="T9b" class="txs">نࣹ لࣹينْ:</div> <div id="T9c" class="txs">«گِيرُ بࣵنِّ إِسْرَاءِيلْ ڪَتْ ݧُ نگِ نُيْ گࣴنَ بَرࣹ،</div> <div id="T9d" class="txs">بَ اࣴݒّ نُ دࣷولࣹ؞</div><span id="bookmarks9"></span> <a id="v10"></a><div id="T10a" class="txs"><span class="v">&#x200f;10</span><span class="vsp">&nbsp;</span><span class="myv">10 </span> نَنُ ݖِ سࣵڪّ ݒࣹخࣹ،</div> <div id="T10b" class="txs">نگِرْ ݧُ بَݧَتࣹي يࣷڪُّ؞</div> <div id="T10c" class="txs">لُ ڪࣷ مࣷيْ بُ خَرࣹ اَمࣹي،</div> <div id="T10d" class="txs">مَنْ نَݧࣷو فَرْ اَڪْ سُنُيْ نࣷونْ،</div> <div id="T10e" class="txs">خࣹيخْ اَڪْ نُنْ،</div> <div id="T10f" class="txs">بَ گࣺنّ رࣺيوْ مِ؞»</div><span id="bookmarks10"></span> <a id="v11"></a><div id="T11a" class="txs"><span class="v">&#x200f;11</span><span class="vsp">&nbsp;</span><span class="myv">11 </span> بَ لࣷولُ اَمࣹي ݧُ فَلْ اَيْ نِتْ ݧُ لࣹينْ دِ گَ ݖَ سࣹينِ سَسْ،</div> <div id="T11b" class="txs">دِ لࣹينْ ݖَ فِتْنَالْ لࣷولْ؞</div> <div id="T11c" class="txs">نࣷونُ لَ بࣵنِّ إِسْرَاءِيلْ تَبَخَلࣹ فِرْعَوْنَ<span class="footnote selectable" id="F-0"><sup>a</sup></span> بُورُ مِسْرَ<span class="footnote selectable" id="F-1"><sup>b</sup></span> دࣴڪّ،</div> <div id="T11d" class="txs">يَ ݧُ نَا ݒِتࣷمْ اَڪْ رَمْسࣹسْ،</div> <div id="T11e" class="txs">مُ دࣹفْ ڪࣷ اَيْ دࣹنْݖُڪَايِ دُندّ؞</div><span id="bookmarks11"></span> <a id="v12"></a><div id="T12a" class="txs"><span class="v">&#x200f;12</span><span class="vsp">&nbsp;</span><span class="myv">12 </span> تࣹرࣹوُلْ لُ ݧُ لࣹينْ گࣴنَ فِتْنَالْ،</div> <div id="T12b" class="txs">ݧُيْ گࣴنْ دِ فُلَنْدِوُ،</div> <div id="T12c" class="txs">يࣷڪُّ،</div> <div id="T12d" class="txs">بَ وَا مِسْرَ اَمْ نجࣵقَرࣹ ݖَ بࣵنِّ إِسْرَاءِيلْ؞</div><span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><div id="T13" class="txs"><span class="v">&#x200f;13</span><span class="vsp">&nbsp;</span><span class="myv">13 </span> وَا مِسْرَ دَݧࣷو مُجّ دِ جَامْلࣷو بࣵنِّ إِسْرَاءِيلْ بُ مࣹتِّ،</div><span id="bookmarks13"></span> <a id="v14"></a><div id="T14a" class="txs"><span class="v">&#x200f;14</span><span class="vsp">&nbsp;</span><span class="myv">14 </span> يࣹنْ لࣹينْ تࣷسْڪَرࣹيْ اࣵدِّنَ ندَخْ لِگّࣺييْ يُ مࣹتِّ؞</div> <div id="T14b" class="txs">ݧُيْ مٗولْ بَنْ،</div> <div id="T14c" class="txs">دِ تَبَخْ،</div> <div id="T14d" class="txs">وَا مِسْرَ تࣹگْ ݖَ سࣴفْ لࣹينْ مبࣷولࣹمْ لِگّࣺييُ تࣷولْ يَ؞</div> <div id="T14e" class="txs">نࣺيگࣷونْ نَݧُ ݖَ ݧࣷومْ لࣷولْ ݖَ مبࣷولࣹمْ لِگّࣺييُ نجَامْ بُ ݧُ لࣹينْ سَسْ؞</div><span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><div id="T15a" class="txs"><span class="v">&#x200f;15</span><span class="vsp">&nbsp;</span><span class="myv">15 </span> فِرْعَوْنَ بُورُ مِسْرَ تࣹگْ ݖَ وَخْ اَڪْ رࣹوْلِڪَتِ اࣹبْرࣴ يَ<span class="footnote selectable" id="F-2"><sup>c</sup></span>،</div> <div id="T15b" class="txs">تࣹ ڪࣹنّ ڪَ تُدّࣷونْ سِفْرَ،</div> <div id="T15c" class="txs">ڪَ ݖَ دࣹسْ دِ ݒُوَ؞</div><span id="bookmarks15"></span> <a id="v16"></a><div id="T16a" class="txs"><span class="v">&#x200f;16</span><span class="vsp">&nbsp;</span><span class="myv">16 </span> مُ نࣹ لࣹينْ:</div> <div id="T16b" class="txs">«بُ نگࣹينْ دࣹي رࣹوْلِ جِگࣺينِ اࣹبْرࣴ يِ،</div> <div id="T16c" class="txs">نَنگࣹينْ خࣷولْ لُ خَلࣹ بِ دࣷونْ؞</div> <div id="T16d" class="txs">سُ دࣹي گٗورْ،</div> <div id="T16e" class="txs">رࣹيْلࣹينْ،</div> <div id="T16f" class="txs">سُ دࣹي جِگࣺينْ،</div> <div id="T16g" class="txs">بࣵيِّلࣹينْ،</div> <div id="T16h" class="txs">مُ دُندّ؞»</div><span id="bookmarks16"></span> <a id="v17"></a><div id="T17a" class="txs"><span class="v">&#x200f;17</span><span class="vsp">&nbsp;</span><span class="myv">17 </span> تࣹيوُلْ رࣹوْلِڪَتْ يَ رَگَلْ يࣵلَّ،</div> <div id="T17b" class="txs">بَ دࣹفُݧُ لَ لࣹينْ بُورْ بَ سَنتّ؛</div> <div id="T17c" class="txs">خَنَا ݧُ بࣵيِّ لِيرْ يُ گٗورْ يَ،</div> <div id="T17d" class="txs">ݧُ دُندّ؞</div><span id="bookmarks17"></span> <a id="v18"></a><div id="T18a" class="txs"><span class="v">&#x200f;18</span><span class="vsp">&nbsp;</span><span class="myv">18 </span> بُورُ مِسْرَ وࣷولُ رࣹوْلِڪَتْ يَ،</div> <div id="T18b" class="txs">نࣹ لࣹينْ:</div> <div id="T18c" class="txs">«اَنَ لُ تَخْ نگࣹينْ دࣹفْ لِي،</div> <div id="T18d" class="txs">دِ بࣵيِّ لِيرْ يُ گٗورْ يِ،</div> <div id="T18e" class="txs">ݧُ دُندّ؟»</div><span id="bookmarks18"></span> <a id="v19"></a><div id="T19a" class="txs"><span class="v">&#x200f;19</span><span class="vsp">&nbsp;</span><span class="myv">19 </span> رࣹوْلِڪَتْ يَ نࣹ ڪࣷ:</div> <div id="T19b" class="txs">«لِ تَخْ ڪَيْ مࣷويْ،</div> <div id="T19c" class="txs">جِگࣺينِ اࣹبْرࣴ يِ دَݧࣷو نِرࣷووُلْ اَڪْ جِگࣺينِ وَا مِسْرَ؛</div> <div id="T19d" class="txs">ندَخْ دَݧࣷو نجَخْلَفْ،</div> <div id="T19e" class="txs">بَ بُ رࣹوْلِڪَتْ يِيْ لاَتَ اَگْسِ،</div> <div id="T19f" class="txs">فࣹڪّ ݧُ مُݖّ بَ نࣷݒِّ؞»</div><span id="bookmarks19"></span> <a id="v20"></a><div id="T20a" class="txs"><span class="v">&#x200f;20</span><span class="vsp">&nbsp;</span><span class="myv">20 </span> بࣵنِّ إِسْرَاءِيلْ نَگْ دِ فُلَنْدِوُ،</div> <div id="T20b" class="txs">گࣴنَ يࣷڪُّ،</div> <div id="T20c" class="txs">يࣵلَّ دࣹفَلْ رࣹوْلِڪَتْ يَ اَوْ يِوْ،</div><span id="bookmarks20"></span> <a id="v21"></a><div id="T21" class="txs"><span class="v">&#x200f;21</span><span class="vsp">&nbsp;</span><span class="myv">21 </span> مَيْ لࣹينْ گِيرْ ندَخْ سࣹينُگْ رَگَلْ يࣵلَّ؞</div><span id="bookmarks21"></span> <a id="v22"></a><div id="T22a" class="txs"><span class="v">&#x200f;22</span><span class="vsp">&nbsp;</span><span class="myv">22 </span> گَنَّاوْ لࣷولُ فِرْعَوْنَ سَنتّ وَا رࣺيوْ مَ يࣺݒّ،</div> <div id="T22b" class="txs">نࣹ لࣹينْ:</div> <div id="T22c" class="txs">«مبࣷولࣹمْ دࣷومْ جُ جُدُّ ݖِ اࣹبْرࣴ يِ،</div> <div id="T22d" class="txs">دِ گٗورْ،</div> <div id="T22e" class="txs">سࣵنِّلࣹينْ ݖَ دࣹخْ گَ،</div> <div id="T22f" class="txs">وَايࣹ لُ ݖِيْ جِگࣺينْ،</div> <div id="T22g" class="txs">بࣵيِّلࣹينْ،</div> <div id="T22h" class="txs">مُ دُندّ؞»</div><span id="bookmarks22"></span></div>
+
+<div class="s"><div id="Ts3" class="txs">مُوسَىٰ گَنࣹ نَ اࣵدِّنَ</div></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="m"><div id="T23" class="txs"><span class="v">&#x200f;23</span><span class="vsp">&nbsp;</span><span class="myc">2 </span> <span class="myv">1 </span> جࣹنّ وَايْ جُ بࣷڪّ ݖِ گِيرُ لࣹوِ نَگْ مࣷو جࣴلࣷونْ جَنقّ بُ مُ بࣷڪَّلْ گِيرْ؞</div><span id="bookmarks23"></span> <a id="v24"></a><div id="T24a" class="txs"><span class="v">&#x200f;24</span><span class="vsp">&nbsp;</span><span class="myv">2 </span> ندَوْ سَ اࣴمبّ،</div> <div id="T24b" class="txs">بَ مُجّ اَمْ دࣷومْ جُ گٗورْ<span class="footnote selectable" id="F-3"><sup>d</sup></span>؞</div> <div id="T24c" class="txs">بَ مُ گِسࣹي تَارْ،</div> <div id="T24d" class="txs">بَ لِيرْ بَ اࣵنْدَلْ،</div> <div id="T24e" class="txs">نࣴبّ نَ ڪࣷ لُ مَتْ ݧࣹتِّ وࣹيرْ؞</div><span id="bookmarks24"></span> <a id="v25"></a><div id="T25a" class="txs"><span class="v">&#x200f;25</span><span class="vsp">&nbsp;</span><span class="myv">3 </span> مُ دࣹمْ نَگْ،</div> <div id="T25b" class="txs">بَ مَنَتُ ڪࣷو نࣴبّ؞</div> <div id="T25c" class="txs">مُ وُتْ ݒَݧࣹ بُ ݧُ رࣵبّࣹ بَرَخْ،</div> <div id="T25d" class="txs">فَتّࣹ ڪࣷ گࣷدࣷرࣷݝْ اَڪْ ندࣵبّ،</div> <div id="T25e" class="txs">يࣹبْ ݖَ لِيرْ بَ،</div> <div id="T25f" class="txs">دَلْدِ دࣹمْ،</div> <div id="T25g" class="txs">تࣹگْ ڪࣷ ݖَ بِيرْ بَرَخْ،</div> <div id="T25h" class="txs">بَ ݖَ تࣵڪَّلْ دࣹخْ،</div> <div id="T25i" class="txs">گَ ݧُ نَانْ نِيلْ؞</div><span id="bookmarks25"></span> <a id="v26"></a><div id="T26a" class="txs"><span class="v">&#x200f;26</span><span class="vsp">&nbsp;</span><span class="myv">4 </span> خَلࣹ بُ جِگࣺينْ بَيْ مَگُ لِيرْ بَ مَ نگَ تَخَوْ فُ سࣷرࣹيَاتࣷو اَڪْ لِيرْ بَ،</div> <div id="T26b" class="txs">دِ خࣷولْ،</div> <div id="T26c" class="txs">بَ خَمْ نُ مُيْ مُجّࣹ؞</div><span id="bookmarks26"></span></div><span id="bookmarks26"></span><a id="v27"></a>
+<div class="p"><div id="T27a" class="txs"><span class="v">&#x200f;27</span><span class="vsp">&nbsp;</span><span class="myv">5 </span> بَ مُ ڪࣷ دࣹفࣹي دࣷومُ فِرْعَوْنَ جُ جِگࣺينْ دِڪّ،</div> <div id="T27b" class="txs">دِ سَنگُسِ ݖَ دࣹخُ نِيلْ گَ،</div> <div id="T27c" class="txs">سُرْگَامْ يُ جِگࣺينْ يَيْ دࣷخَنْتُ ݖَ تࣵڪّ گَ؞</div> <div id="T27d" class="txs">بَ لࣷولُ اَمࣹي مُ سࣺينْ ݒَݧࣹ بَ ݖَ بِيرْ بَرَخْ بَ،</div> <div id="T27e" class="txs">دَلْدِ يٗنِّ جَامَمْ،</div> <div id="T27f" class="txs">مُ يٗتْ ڪࣷ ڪࣷ؞</div><span id="bookmarks27"></span> <a id="v28"></a><div id="T28a" class="txs"><span class="v">&#x200f;28</span><span class="vsp">&nbsp;</span><span class="myv">6 </span> نَڪَ لَ ڪࣷ نࣹ اُبّࣹتْ،</div> <div id="T28b" class="txs">يࣹمْ ݖَ خَلࣹ بَ،</div> <div id="T28c" class="txs">مُيْ لِيرْ بُ گٗورْ،</div> <div id="T28d" class="txs">خَلࣹ بَيْ جࣷويْ،</div> <div id="T28e" class="txs">يَرَمْ وَ دَوْ،</div> <div id="T28f" class="txs">مُ نࣹ:</div> <div id="T28g" class="txs">«ڪِي دࣹ ندࣹيْسَانْ،</div> <div id="T28h" class="txs">ݖِ دࣷومِ اࣹبْرࣴ يِ لَ!»</div><span id="bookmarks28"></span> <a id="v29"></a><div id="T29a" class="txs"><span class="v">&#x200f;29</span><span class="vsp">&nbsp;</span><span class="myv">7 </span> مَگُ لِيرْ بَ دَلْدِ وَخْ دࣷومُ فِرْعَوْنَ جَ،</div> <div id="T29b" class="txs">نࣹ ڪࣷ:</div> <div id="T29c" class="txs">«ندَخْ مَ دࣹمْ وُتَلِ لَ ڪُ ڪࣷيْ نࣵمْݒَلْ ݖِ اࣹبْرࣴ يِ؟»</div><span id="bookmarks29"></span> <a id="v30"></a><div id="T30a" class="txs"><span class="v">&#x200f;30</span><span class="vsp">&nbsp;</span><span class="myv">8 </span> دࣷومُ فِرْعَوْنَ نࣹ ڪࣷ:</div> <div id="T30b" class="txs">«وَاوْ،</div> <div id="T30c" class="txs">دࣹمَلْ؞»</div> <div id="T30d" class="txs">خَلࣹ بَ دࣹمْ،</div> <div id="T30e" class="txs">اِنْدِلْ ڪࣷ يَايُ لِيرْ بَ؞</div><span id="bookmarks30"></span> <a id="v31"></a><div id="T31a" class="txs"><span class="v">&#x200f;31</span><span class="vsp">&nbsp;</span><span class="myv">9 </span> دࣷومُ فِرْعَوْنَ نࣹ ڪࣷ:</div> <div id="T31b" class="txs">«يٗبُّلْ خَلࣹ بِي تࣹ نࣵمْݒَلَلْ مَ ڪࣷ،</div> <div id="T31c" class="txs">مَا لَيْ فࣹيْ؞»</div> <div id="T31d" class="txs">ندَوْ سَ جࣴلْ لِيرْ بَ،</div> <div id="T31e" class="txs">دِ ڪࣷ نࣵمْݒَلْ؞</div><span id="bookmarks31"></span> <a id="v32"></a><div id="T32a" class="txs"><span class="v">&#x200f;32</span><span class="vsp">&nbsp;</span><span class="myv">10 </span> بَ خَلࣹ بَ مࣵگّࣹي،</div> <div id="T32b" class="txs">مُ يٗتْ ڪࣷ دࣷومُ فِرْعَوْنَ،</div> <div id="T32c" class="txs">مُ دࣹفْ ڪࣷ مُيْ دࣷومَمْ،</div> <div id="T32d" class="txs">تُدّࣹ ڪࣷ مُوسَىٰ (مُ فِرِ ڪِ ݧُ گࣺنّࣹ)،</div> <div id="T32e" class="txs">ندَخْ لَ مُ ڪࣷ گࣺنّࣹي ݖَ ندࣷخْ مَ<span class="footnote selectable" id="F-4"><sup>e</sup></span>؞</div><span id="bookmarks32"></span></div>
+
+<div class="s"><div id="Ts4" class="txs">مُوسَىٰ گࣵدَّايِ نَ رࣺيوُمْ مَجَنْ</div></div><span id="bookmarks32"></span><a id="v33"></a>
+<div class="p"><div id="T33a" class="txs"><span class="v">&#x200f;33</span><span class="vsp">&nbsp;</span><span class="myv">11 </span> بَ ݧُ دࣹمࣹي بَ مُوسَىٰ مࣵگّ،</div> <div id="T33b" class="txs">دَفَ اَمْ بࣺسْ،</div> <div id="T33c" class="txs">مُ سࣹيتِ بࣷڪَّمْ يَ،</div> <div id="T33d" class="txs">گِسْ لࣹينْ ݖَ لِگّࣺييْ يُ مࣹتِّ،</div> <div id="T33e" class="txs">يَ ݧُ لࣹينْ سَسْ؞</div> <div id="T33f" class="txs">مُ گِسْ جࣹنّ وَايُ مِسْرَ دِ دٗورْ ڪࣹنّ ݖَ بࣷڪِّ اࣹبْرࣴ يَ؞</div><span id="bookmarks33"></span> <a id="v34"></a><div id="T34a" class="txs"><span class="v">&#x200f;34</span><span class="vsp">&nbsp;</span><span class="myv">12 </span> مُوسَىٰ گࣹيسْتُ وࣹتْ گُ نࣹڪّ،</div> <div id="T34b" class="txs">گِسُلْ ڪࣹنّ،</div> <div id="T34c" class="txs">مُ رࣹيْ وَا مِسْرَ جَ،</div> <div id="T34d" class="txs">دَلْدِ گَسْ،</div> <div id="T34e" class="txs">سُولْ ڪࣷ؞</div><span id="bookmarks34"></span></div><span id="bookmarks34"></span><a id="v35"></a>
+<div class="p"><div id="T35a" class="txs"><span class="v">&#x200f;35</span><span class="vsp">&nbsp;</span><span class="myv">13 </span> ݖَ اࣴلّࣴگْ سَ مُ دࣹلُّ گࣺنّ،</div> <div id="T35b" class="txs">يࣹمْ ݖِ ݧَارِ اࣹبْرࣴ يُيْ خࣹيخْ؞</div> <div id="T35c" class="txs">مُوسَىٰ وَخْ اَڪْ ڪَ تࣷوݧْ،</div> <div id="T35d" class="txs">نࣹ ڪࣷ:</div> <div id="T35e" class="txs">«لُ تَخْ نگَيْ دٗورْ سَ مࣷرࣷومْ مِي؟»</div><span id="bookmarks35"></span> <a id="v36"></a><div id="T36a" class="txs"><span class="v">&#x200f;36</span><span class="vsp">&nbsp;</span><span class="myv">14 </span> وَا جَ نࣹ ڪࣷ:</div> <div id="T36b" class="txs">«ڪُ لَ دࣹفْ سُنُ نجِيتْ مبَا سُنُ اࣵتّࣹڪَتْ؟</div> <div id="T36c" class="txs">خَنَا دَنگَ مَا نَرَ رࣹيْ،</div> <div id="T36d" class="txs">نَ نگَ رࣹيࣹ وࣷونْ وَا مِسْرَ جَ؟»</div> <div id="T36e" class="txs">مُوسَىٰ نَگْ تِيتْ،</div> <div id="T36f" class="txs">نَانْ ݖَ خࣹلَمْ:</div> <div id="T36g" class="txs">«ندࣹڪࣹ مبِرْ مِ ڪَيْ سِيوْ نَ؞»</div><span id="bookmarks36"></span></div><span id="bookmarks36"></span><a id="v37"></a>
+<div class="p"><div id="T37a" class="txs"><span class="v">&#x200f;37</span><span class="vsp">&nbsp;</span><span class="myv">15 </span> بَ لࣷولُ اَمࣹي فِرْعَوْنَ دࣺگّ مبِرْ مَ،</div> <div id="T37b" class="txs">دِ وُتَ رࣹيْلُ مُوسَىٰ؞</div> <div id="T37c" class="txs">مُوسَىٰ دَوْ،</div> <div id="T37d" class="txs">بَ سࣷرࣹ فِرْعَوْنَ،</div> <div id="T37e" class="txs">دࣹمْ دَلِ ݖَ رࣺيوُ مَجَنْ،</div> <div id="T37f" class="txs">فُ دࣹندّ اَڪْ اَبْ تࣹينْ؞</div><span id="bookmarks37"></span> <a id="v38"></a><div id="T38a" class="txs"><span class="v">&#x200f;38</span><span class="vsp">&nbsp;</span><span class="myv">16 </span> يࣹتّرࣷ،</div> <div id="T38b" class="txs">سَرْخَلْڪَتُ مَجَنْ بَ نَگْ،</div> <div id="T38c" class="txs">اَمࣷونْ نَ جُرٗومْ ݧَارِ دࣷومْ يُ جِگࣺينْ؞</div> <div id="T38d" class="txs">ݧُ ݧࣴوْ دِ رࣷوتْسِ،</div> <div id="T38e" class="txs">دِ دُيْ مبَلْڪَ،</div> <div id="T38f" class="txs">يَ ݧُيْ وࣴگّࣹ سࣹينْ جُرُ بَايْ؞</div><span id="bookmarks38"></span> <a id="v39"></a><div id="T39a" class="txs"><span class="v">&#x200f;39</span><span class="vsp">&nbsp;</span><span class="myv">17 </span> اَيْ سࣵمّ اَگْسِ،</div> <div id="T39b" class="txs">دࣵقْ لࣹينْ؞</div> <div id="T39c" class="txs">مُوسَىٰ وَلُّ جِگࣺينْ ݧَ،</div> <div id="T39d" class="txs">وࣴگَّلْ لࣹينْ سࣹينْ جُرْ؞</div><span id="bookmarks39"></span></div><span id="bookmarks39"></span><a id="v40"></a>
+<div class="p"><div id="T40a" class="txs"><span class="v">&#x200f;40</span><span class="vsp">&nbsp;</span><span class="myv">18 </span> بَ ݧُ دࣹلّࣷو ݖَ سࣹينْ بَايْ رُوࣹلْ<span class="footnote selectable" id="F-5"><sup>f</sup></span>،</div> <div id="T40b" class="txs">مُ لاَجْ لࣹينْ نࣹ لࣹينْ:</div> <div id="T40c" class="txs">«لُ تَخْ نگࣹينْ تࣹيلَ ݧِبّسِ تࣹيْ؟»</div><span id="bookmarks40"></span> <a id="v41"></a><div id="T41a" class="txs"><span class="v">&#x200f;41</span><span class="vsp">&nbsp;</span><span class="myv">19 </span> ݧُ نࣹ ڪࣷ:</div> <div id="T41b" class="txs">«اَبْ وَا مِسْرَ دَالْ،</div> <div id="T41c" class="txs">مࣷو نُ خࣹتّلِ ݖَ سࣵمّ يَ؛</div> <div id="T41d" class="txs">رࣷوتَلْ نَ نُ سَخْ،</div> <div id="T41e" class="txs">بَ وࣴگّ جُرْ گِ؞»</div><span id="bookmarks41"></span> <a id="v42"></a><div id="T42a" class="txs"><span class="v">&#x200f;42</span><span class="vsp">&nbsp;</span><span class="myv">20 </span> رُوࣹلْ نࣹ لࣹينْ:</div> <div id="T42b" class="txs">«اَنَ وَا جَ؟</div> <div id="T42c" class="txs">لُ تَخْ نگࣹينْ بࣵيِّ ڪࣷ فَ؟</div> <div id="T42d" class="txs">وࣷويِلࣹينْ ڪࣷ،</div> <div id="T42e" class="txs">مُ اَݧْسِ ڪَيْ!»</div><span id="bookmarks42"></span></div><span id="bookmarks42"></span><a id="v43"></a>
+<div class="p"><div id="T43a" class="txs"><span class="v">&#x200f;43</span><span class="vsp">&nbsp;</span><span class="myv">21 </span> مُوسَىٰ فَرْ دَلْ ݖَ ڪࣴرْ وَا جَ؞</div> <div id="T43b" class="txs">مُ مُجّ ڪࣷ مَيْ دࣷومَمْ جُ ݧُيْ وَخْ سِݒࣷرَ؞</div><span id="bookmarks43"></span> <a id="v44"></a><div id="T44a" class="txs"><span class="v">&#x200f;44</span><span class="vsp">&nbsp;</span><span class="myv">22 </span> مُ اَمْ دࣷومْ جُ گٗورْ،</div> <div id="T44b" class="txs">مُوسَىٰ تُدّࣹ ڪࣷ گࣹرْسࣷمْ (مُ فِرِ دࣷخَنْدࣺيمْ فِي)،</div> <div id="T44c" class="txs">ندَخْتࣹ دَفَ نࣹ:</div> <div id="T44d" class="txs">«دࣷخَنْدࣺيمْ لاَ فِي؞»</div><span id="bookmarks44"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010, 2018 AES et MBS  (NINEA MBS: 20215410C9).</span></div></div>
+</div>
+
+<div id="toolbar-bottom">
+<div class="audio-player">
+  <audio id="audio" controls>
+    <source id="audio1" src="../mp3//OT06.mp3" />
+  </audio>
+</div>
+</div>
+
+</body>
+</html>
