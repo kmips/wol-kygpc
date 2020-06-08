@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Buur ya 7</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">7.13 </span><span class=\"fk\">Uram </span><span class=\"ft\">mooy Iram ba tey. Seetal it aaya 40 ak 45.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">7.14 </span><span class=\"fk\">Tir </span><span class=\"ft\">ab dëkk la bu bokkul ci Israyil.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">7.48 </span><span class=\"fk\">mburum teewal mi </span><span class=\"ft\">mooy mburu mi ñuy teewal fi kanam Aji Sax ji.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-51": "<div><span class=\"k\">néeg (Yàlla) bu mag b-:</span> Mooy néeg bu mag ba nekkoon ca biir tabaxu kër Yàlla ga. Néeg boobu, sarxalkat yi ak Leween ñi doŋŋ a fa sañoona dugg. Dees na ko wooye it bérab bu sell bi, mu wuuteek néegu biir bi, di bérab bu sell baa sell te sarxalkat bu mag ba doŋŋ sañ faa dugg benn yoon cim at.</div>",
+    "G-67": "<div><span class=\"k\">serub y-:</span> Baatu ebrë la. Ay bindeef lañu yu bokk ak Yàlla jataay. Ñooy wattu dénd ba ngànguney Yàlla nekk, ba foofa dëkke sell. Jaamookaayu Yàlla ga amoon na gaal gu ñuy wooye gaalu kóllëre ga. Ñaari serub yu ñu tëgge wurus lañu tegoon ca kawam, ñu tiim ko, seeni laaf firiku, di saamandaay ngàngunem buur. Loolu di wone ne Yàlla Aji Sax jaa nga fa teew, na mu teewe ca kaw asamaan, serub ya yéew ko. Yàlla ci boppam nag kenn jëmmalu ko fa, na ñu jëmmale serub ya ñu tëgg.</div>",
+    "G-63": "<div><span class=\"k\">sarxalukaay b-:</span> Waa penku baaxoo woon nañoo yékkatil seeni yàlla, ay sarxalukaay ci yenn bérab, ngir njukkale ko seeni yàlla. Sarxalukaay yooyu, ban lees ko daan tabaxe mbaa ay xeer, mu taxawe ni waxande, te jur gi ñuy def sarax di tege ca kaw.</div><div class=\"p\">Niti Aji Sax ji ci seen wallu bopp, naka jekk, daan nañu yékkatil Aji Sax ji ay sarxalukaay yu ñu koy njukkale. Ba kërug jaamookaayu Aji Sax ji taxawee itam, noonu la bànni Israyil ame woon ñaari sarxalukaay ca biir kër Yàlla ga, benn bi ñuy lakke jur gu ñu rendi, bi ci des, ñu di ci taal cuuraayu sarax. Sarxalukaayu jur gi amul woon kubeer ca kaw, waaye ab caaxam la àndaloon, ñu di ci teg matt mi ñuy lakke jur gi. Ay béjjén lañu sàkkaloon boobu sarxalukaay ca ñeenti koñam ya ca kaw.</div>",
+    "G-49": "<div><span class=\"k\">mburum teewal m-:</span> Ayu bés gu nekk sarxalkat ya daan nañu sàkk fukki mburu ak ñaar, teewal ko ca kanam Yàlla, muy misaal ni bànni Israyil jébbaloo ci Yàlla.</div>",
+    "G-15": "<div><span class=\"k\">bérab bu sell b-:</span> Muy xaymab jaamookaay ba, di néeg Yàlla ba ñu mujje tabax, lu ci nekk ñaari wàll lees ko séddale woon. Wàll wu jëkk, wa ngay janook rido ba, moo doon bérab bu sell ba. Sarxalkat yépp a fa sañoona dugg. Néegu biir ba ca wàllaa rido ba lañu doon tudde bérab bu sell baa sell. Sarxalkat bu mag ba doŋŋ moo sañoona dugg benn yoon cim at ca bérab bu sell baa sell te deretu sarax lay duggaale. Taxawalinu xayma bi ak tabaxinu kër Yàlla gi ak li ci biiram, lépp, sellaayu Yàlla lay misaal.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 22 }];
+var hasIntro = false;
+var baseRef  = "KYG-11-1KI-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-006.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Buur ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;7&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-008.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Suleymaan tabax na këram</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">7</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Kërug boppam nag, Suleymaan tabax na ko ci fukki at ak ñett, doora sottal këram gépp.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Ma nga jëkka tabax kër ga ñuy wooye Gottub Libaŋ. Guddaay bi di téeméeri xasab, yaatuwaay bi di juróom fukki xasab, taxawaay bi di fanweeri xasab, def ñeenti sàppey jëni seedar yu yenu ay gàlluy seedar yu ñu yett.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Ñu teg ay banti seedar ci kaw gàllu, yi jën yi yenu: muy ñeent fukki gàllu ak juróom, sàppe bu nekk fukki gàllu ak juróom.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Mu am ñetti sësalantey palanteer yu ñu fege ay laat te ñu dékkarloo ñett-ñett.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Bunt yépp ànd ak seen banti feguwaay, bunt bu ci nekk def ñeenti wet yu janoo màkk ñaar-ñaar; bunt yi sësaloo te dékkarloo ñett-ñett.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Ci biir loolu mu defar néeg ba ñuy wooye Néegu jëni kenu ya. Guddaay bi di juróom fukki xasab, yaatuwaay bi di fanweeri xasab, ak beneen néeg ci kanamam, mu ànd ak ay jëni kenoom ak xaddam bu mbaar ci kanam.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Mu tabax néeg ba ñuy wooye Néegu ngàngune ma walla Àttekaay ba, mu di fa àttee. Mu dare néeg bi banti seedar ci suuf ba ci kaw.<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>Këram ga mu dëkk it, ñu tabaxe ko noonu ci gannaaw Néegu ngàngune ma. Suleymaan teg ca tabaxal soxnaam doomu Firawna ja geneen kër gu nirook këram.<span id="bookmarks8"></span></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="p"><span class="v">9</span><span class="vsp">&nbsp;</span>Tabax yooyu yépp biir ak biti xeeri tànnéef yu ñu yett la, natt ko, xacc ko, rattaxal, dale ko ci kenu gi, ba ci cati xadd bi ci kaw, daleeti ci biti ba ci ëtt bu mag bi.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Ñu defare kenu yi xeeri tànnéef yu mag: yii di fukki xasab, yii di juróom ñetti xasab.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Xeer yi tege ci kenu gi, xeeri tànnéef la yu ñu yett, natt ko, yemale, booleek banti seedar.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Miiru ëtt bu mag bi dees koo wëralee ay xeeri yett aki xànqi seedar: ñetti sësalantey xeer yu tegloo yu ne, benn sësalanteb xànqi seedar tege ca. Mu mel ni na ñu def ëttu biir bu kër <span class="footnote selectable" id="G-3">Aji Sax</span> ja ak dëru buntu kër ga.<span id="bookmarks12"></span></div>
+
+<div class="s"><div id="s2">Tëgg ba def na wàllam</div></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>Ci kaw loolu Buur Suleymaan yónnee, jëli ca Tir ku ñuy wax Uram<span class="footnote selectable" id="F-0"><sup>a</sup></span>.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Doomu jëtun la woon, bokk ci giirug Neftali. Baayam dëkkoon Tir<span class="footnote selectable" id="F-1"><sup>b</sup></span>, di tëggub xànjar. Uram di ku xareñ lool, rafet xel te mane mboolem liggéeyu xànjar. Mu dikk ca Buur Suleymaan, liggéeyal ko la ñu ko sant lépp.<span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><span class="v">15</span><span class="vsp">&nbsp;</span>Mu móol ñaari xeri xànjar, wu ci nekk am taxawaayu fukki xasab ak juróom ñett, te wu ci nekk buumu fukki xasab ak ñaar a koy ub.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Ci biir loolu mu defar ñaari boppi xànjar yu mu xelli, teg ko ci kaw xer yi, bopp bu ci nekk am taxawaayu juróomi xasab.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Bopp yi ci kaw xer yi, bu ci nekk da koo rafetale ab caaxu càllala, bopp bu ci nekk am ci juróom ñaar.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Mu defar ñaari jaray gërënaat, solal ko caax yi, wëralee ko bopp yi, ci xer wu ci nekk.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Bopp yi nekkoon ci kaw xer yi ci kanam nag bindoo ni lëppi tóor-tóor te bu ci nekk di ñeenti xasab.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Bopp yi ci kaw ñaari xer yi, bu ci nekk ñaar téeméeri gërënaat a ko wër ci kaw, feggook gamb bi ci wàllaa caax bi.<span id="bookmarks20"></span></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>Mu samp jën yi ci kanam bunt <span class="footnote selectable" id="G-51">néeg Yàlla bu mag</span> bi; samp jënu ndijoor wi, tudde ko Yakin (Kiy taxawal), samp jënu càmmoñ wi, tudde ko Bowas (Kiy dooleel).<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Kaw xer yi ay lëppi tóor-tóor yu ñu xellee ci tege. Liggéeyu xer ya daldi sotti.<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Ba mu ko defee Uram móol mbalkam njàpp mu weñ, ñu di ko wax Géej ga. Mbalka ma daa mërgalu, yaatoo fukki xasab, catu omb ba catu omb, taxawaay ba di juróomi xasab, ag buumu fanweeri xasab di ko ub.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Ay gamb la ko sàkkal ci suufu kéméj gi, fukki gamb tollook xasab. Mu def gamb yi ñaari caq yu wër mbalka mi ba mu daj te ànd ak mbalka mi ci benn xelli.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Mbalkam njàpp mi tege ci kaw fukki jëmmi nag ak yaar, ñett jublu bëj-gànnaar, ñett jublu sowu, ñett jublu bëj-saalum, ñett jublu penku. Mbalka mi war nag yi, seeni gannaaw féete biir, ñoom ñépp.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Dëllaayu mbalka mi yaatuwaayu loxo la, kéméj gi mel ni gémmiñu kaas, di nirook lëppi tóor-tóor. Ñaar téeméeri barigo la mbalka miy def. (200).<span id="bookmarks26"></span></div><span id="bookmarks26"></span><a id="v27"></a>
+<div class="p"><span class="v">27</span><span class="vsp">&nbsp;</span>Mu daldi sàkk fukki watiiri rootukaayi xànjar, wu ci nekk am guddaayu ñeenti xasab, yaatuwaayam di ñeenti xasab, taxawaayam di ñetti xasab.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Ni ñu defare rootukaay yi nii la: ay wetam lañu defare làcci xànjar, lëkklee làcc yi ay laat.<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Muy làcc yu Uram yett ci kawam ay gaynde, ay nag ak malaakay <span class="footnote selectable" id="G-67">serub</span>. Kaw laat yi itam am na ci nataal yi. Mu yett ay caqi tóor-tóor yuy lang ci suufu gaynde yeek nag yi.<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>Rootukaay bu nekk am na ñeenti mbegey xànjar yu ñu lëkklee yeti xànjar. Mu am ay kenu yu ñu xellil rootukaay bi ci ñeenti koñam, kenu yi yenu benn bagaan te am ay nataali tóor-tóor.<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Gémmiñu rootukaay bu nekk amoon na omb bu mërgalu bu bagaanu ndox biy tege. Xóotaayu gémmiñ gi di xasab, yaatuwaay bi di xasab ak genn-wàll. Ñu yett ci kaw gémmiñ gi ay nataal ba tey. Rootukaay bi mërgaluwul, waaye daa bindoo ñeenti wet yu janoo màkk ñaar-ñaar te yem kepp.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Ñeenti mbege yi ronu làcc yi, tóori weñ yi ci wewe sax ci rootukaay bi. Mbege mu ci nekk am na taxawaayu xasab ak genn-wàll.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Mbege yi bindoo ni mbegey watiiri xare. Tóor yeek mbege yi ak sidditi mbege yi ak ŋanku yi, xànjar lañu ko xellee.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Ñeenti kenu yi ci ñeenti koñi rootukaay bi, bu ci nekk dees koo xelleendook weti rootukaay yi, ba lépp di benn.<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Kaw boppu rootukaay bu nekk, kéméj gu mërgaloo féete ci kaw, taxawaayam di genn-wàllu xasab, njàppu yeek làcc yi sax ci, lépp di benn.<span id="bookmarks35"></span> <a id="v36"></a><span class="v">36</span><span class="vsp">&nbsp;</span>Fi amul dara ci kaw njàppu yeek làcc yi, mu ñaas ci ay nataali serub aki gaynde aki garabi ron yu ñu wërale ay caqi tóor-tóor.<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>Noonu la Uram defare fukki rootukaay yi. Lépp bokk móol, yem dayo te bokk bind.<span id="bookmarks37"></span></div><span id="bookmarks37"></span><a id="v38"></a>
+<div class="p"><span class="v">38</span><span class="vsp">&nbsp;</span>Mu defar itam fukki bagaani xànjar; bagaan bu ci nekk tollook ñeenti xasab, di def lu xawa tollook juróomi barigo; bagaan bu ci nekk tegu cib rootukaay, ba fukki rootukaay yi daj.<span id="bookmarks38"></span></div><span id="bookmarks38"></span><a id="v39"></a>
+<div class="p"><span class="v">39</span><span class="vsp">&nbsp;</span>Ba mu ko defee mu taaj juróomi rootukaay fa féete kër Yàlla ga ndijoor ak juróomi rootukaay fa féete kër ga càmmoñ. Mu teg mbalkam jàpp mi fa féete kër ga ndijoor, ca wetu bëj-saalum, jàpp penku.<span id="bookmarks39"></span></div><span id="bookmarks39"></span><a id="v40"></a>
+<div class="p"><span class="v">40</span><span class="vsp">&nbsp;</span>Iram sàkk itam ndab yu ndaw yi ak ñiitukaay yi ak këlli tuurukaay yi.</div>
+<div class="p">Ci kaw loolu Iram sottal mboolem liggéey ba mu liggéeyal Buur Suleymaan ca kër <span class="footnote selectable" id="G-3">Aji Sax</span> ji:<span id="bookmarks40"></span> <a id="v41"></a><span class="v">41</span><span class="vsp">&nbsp;</span>muy ñaari jën yi, ak ñaari gamb yiy boppi jën yi, ak ñaari caaxi càllala yiy muur ñaari gamb yi,<span id="bookmarks41"></span> <a id="v42"></a><span class="v">42</span><span class="vsp">&nbsp;</span>ak ñeenti téeméeri gërënaat yiy ànd ak ñaari caax yi; caax bu nekk, ñaari caqi gërënaat, ñu dar ñaari gamb yiy boppi xer yi;<span id="bookmarks42"></span> <a id="v43"></a><span class="v">43</span><span class="vsp">&nbsp;</span>ak fukki rootukaay yi ak fukki bagaan yi ci kaw rootukaay yi.<span id="bookmarks43"></span> <a id="v44"></a><span class="v">44</span><span class="vsp">&nbsp;</span>Mbalkam jàpp mi it ci la, ak fukki nag ak yaar yi ronu mbalkam jàpp mi.<span id="bookmarks44"></span> <a id="v45"></a><span class="v">45</span><span class="vsp">&nbsp;</span>Bagaan yu ndaw yi bokk na ci, ak ñiitukaay yi ak këll yi. Mboolem yooyu jumtukaayi kër Aji Sax ji, xànjar bu ñu jonj la Buur Suleymaan sant Uram, mu defare ko.<span id="bookmarks45"></span> <a id="v46"></a><span class="v">46</span><span class="vsp">&nbsp;</span>Ca joorug Yurdan la ko Buur xellilu, ci móoli ban, diggante Sukkóot ak Sartan.<span id="bookmarks46"></span> <a id="v47"></a><span class="v">47</span><span class="vsp">&nbsp;</span>Suleymaan daldi bàyyi jumtukaay yépp noonu, ndax na mu baree lool, ba natteesul diisaayu xànjar ba ca dem.<span id="bookmarks47"></span></div><span id="bookmarks47"></span><a id="v48"></a>
+<div class="p"><span class="v">48</span><span class="vsp">&nbsp;</span>Gannaaw loolu Suleymaan defarlu na mboolem yeneen jumtukaayi kër Aji Sax ji: muy <span class="footnote selectable" id="G-63">sarxalukaayu</span> wurus ba, ak taabal ja ñuy teg <span class="footnote selectable" id="G-49">mburum teewal</span> ma<span class="footnote selectable" id="F-2"><sup>c</sup></span><span id="bookmarks48"></span> <a id="v49"></a><span class="v">49</span><span class="vsp">&nbsp;</span>ak tegukaayi làmpi wurusu ngalam yi, juróom ci wetu ndijoor, juróom ci wetu càmmoñ, fi kanam néeg bu sell baa sell; tóor-tóor yi ak làmp yi ak ñiim yi, lépp di wurus;<span id="bookmarks49"></span> <a id="v50"></a><span class="v">50</span><span class="vsp">&nbsp;</span>ndab yi itam, ak feyukaay yi ak këll yi ak kopp yi ak andi cuuraayu yi, lépp di wurusu ngalam. Te it ngoosi wurus yi bunti néeg bi wewe, ñu di fa jaare dugg ca <span class="footnote selectable" id="G-15">bérab bu sell</span> baa sell, ak ngoosi wurus yi beneen buntu néeg bi wewe, ñu di fa jaare dugg ci néeg Yàlla bu mag bi, lépp wurus la.<span id="bookmarks50"></span></div><span id="bookmarks50"></span><a id="v51"></a>
+<div class="p"><span class="v">51</span><span class="vsp">&nbsp;</span>Ba loolu amee, mboolem lu Buur Suleymaan liggéeyal kër Aji Sax ji daldi sotti. Mu boole xaalis baak wurus waak jumtukaay ya baayam Daawuda sellalaloon Aji Sax ji, yeb ko ca denc ya def alali kër Aji Sax ji.<span id="bookmarks51"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

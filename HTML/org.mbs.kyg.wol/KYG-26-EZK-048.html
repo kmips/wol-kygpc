@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esekiyel 48</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-66": "<div><span class=\"k\">sell:</span> Lu sell, ni ko yoonu Tawreet dégge, mooy lu ñu beral Yàlla; man naa doon nit, mbaa ab jumtukaay. Mboolem lu set te sellaluñu ko, su laalantee ak lu sell, lu sell loola day daldi teqlikoo ak sellngaam. Waaye du tee lu sell la set, li feek sobe laalu ko. Lu sell nag, bu taqee sobe rekk, sobewu na. Day daldi doon lu setul. Moo tax lu sell warul dajeek sobe fenn. Ku taq sobe, su masaana lekk lu sell lu mel ni yàppu jur gu ñu sarxal Yàlla, dees koy dagge ci askanu bànni Israyil, rey ko. Ci yoonu Tawreet, su ñu nee Yàlla ku sell la, ni mu beroo ak ni mu wéete ci sellngay jikkoom moo tax ñuy wax, ndax Yàlla moo matale mboolem mbaax, moo mucc ci gépp sikkaange, te lenn ci sellaayu jikkoom mooy ngoram gu bare, ak kóllëreem gu sax.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-43": "<div><span class=\"k\">Leween b-:</span> Lewi kenn la woon ca ña sos bànni Israyil, di fukki doomi Yanqóoba yaak ñaar. Lewi mooy maamu Musaa ak Aaróona. Aaróona la Yàlla tànn muy sarxalkat bu mag ba. Ñenn ci ñi soqikoo ci moom ñoo daan donnante liggéeyu carxal bi. Ña ca des ñoo leen daan jàpple ca liggéeyu kër Yàlla ga.</div>",
+    "G-15": "<div><span class=\"k\">bérab bu sell b-:</span> Muy xaymab jaamookaay ba, di néeg Yàlla ba ñu mujje tabax, lu ci nekk ñaari wàll lees ko séddale woon. Wàll wu jëkk, wa ngay janook rido ba, moo doon bérab bu sell ba. Sarxalkat yépp a fa sañoona dugg. Néegu biir ba ca wàllaa rido ba lañu doon tudde bérab bu sell baa sell. Sarxalkat bu mag ba doŋŋ moo sañoona dugg benn yoon cim at ca bérab bu sell baa sell te deretu sarax lay duggaale. Taxawalinu xayma bi ak tabaxinu kër Yàlla gi ak li ci biiram, lépp, sellaayu Yàlla lay misaal.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 48 }];
+var hasIntro = false;
+var baseRef  = "KYG-26-EZK-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-25-LAM-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-26-EZK-047.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Esekiyel&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;48&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-27-DAN-001.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-27-DAN-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Daggal nañu suuf giiri bëj-gànnaar</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">48</div> <span class="v">1</span><span class="vsp">&nbsp;</span>«Lii mooy limeefu giiri Israyil, ak céru suuf bi giir gu ci nekk di féetewoo. Céru Dan moo féete catu bëj-gànnaar. Kemoom day topp yoonu Ettlon ba Lebo Amat, jàll ba Àccar Enan ga digalook Damaas, Amat féete ko bëj-gànnaar. Suufas Dan day jàpp penku ba sowu, ca géej gu mag ga, di benn pàcc.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Suufas Aser day digalook sos Dan, jàpp, moom it, penku ba sowu, di benn pàcc.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Suufas Neftali day digalook sos Aser, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Suufas Manase day digalook suufas Neftali, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Suufas Efrayim day digalook sos Manase, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Suufas Ruben day digalook sos Efrayim, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Suufas Yuda day digalook sos Ruben, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks7"></span></div>
+
+<div class="s"><div id="s2">Daggal nañu Aji Sax ji céram bu sell</div></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>«Suuf sa digalook Yuda ca wetu bëj-gànnaaram, te dale penku ba sowu, mooy doon pàkk bi ñuy jooxe. Ñaar fukki junniy xasab ak juróom (25&nbsp;000), fukki kilomeetar ak ñett, lay yaatoo, gudde ni suufas genn giir gu ci nekk, te bérab bu sell bi nekk ci digg bi.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Pàkk bi ngeen di jooxeel <span class="footnote selectable" id="G-3">Aji Sax</span> ji ci dog boobu, day am guddaayu ñaar fukki junniy xasab ak juróom (25&nbsp;000) yemook fukki kilomeetar ak ñett ak yaatuwaayu fukki junniy xasab (10&nbsp;000), di juróomi kilomeetar ak xaajaat.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Cér bu <span class="footnote selectable" id="G-66">sell</span> a ngoog, ñeel <span class="footnote selectable" id="G-62">sarxalkat</span> yi. Ñaar fukki junniy xasab ak juróom (25&nbsp;000) lay am wetu bëj-gànnaar, yaatoo fukki junniy xasab (10&nbsp;000) wetu sowu, yaatoo fukki junniy xasab (10&nbsp;000) wetu penku, gudde ñaar fukki junniy xasab ak juróom (25&nbsp;000) wetu bëj-saalum, te bérabu Aji Sax bu sell bi nekk ci digg bi.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Dig-digal bu sell boobu, na ñeel sarxalkat yi askanoo ci Cadog, ñoom ñi sàmmoon sama ndénkaane, baña ànd ak <span class="footnote selectable" id="G-13">bànni Israyil</span>, di lajj ni seen yeneen bokki <span class="footnote selectable" id="G-43">Leween</span> ñi.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Jooxeb suufas réew mi, nañu ci jooxeel sarxalkat yi <span class="footnote selectable" id="G-15">bérab bu sella</span> sell, mu feggook suufas Leween ñi.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Na suufas Leween ñi digalook sos sarxalkat yi, di pàkk bu gudde ñaar fukki junniy xasab ak juróom (25&nbsp;000), te yaatoo fukki junniy xasab (10&nbsp;000). Bu ci nekk na am guddaayu ñaar fukki junniy xasab ak juróom (25&nbsp;000) ak yaatuwaayu fukki junniy xasab (10&nbsp;000).<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Cér boobu mooy tànnéefu suuf si. Maneesu cee jaay, mbaa di ci weccikoo lenn, te lenn du ci tàbbi ciy loxo, ndax cér bu sell la, ñeel Aji Sax ji.<span id="bookmarks14"></span></div>
+
+<div class="s"><div id="s3">Daggal nañu suuf waa dëkk bi ak boroom jal bi</div></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><span class="v">15</span><span class="vsp">&nbsp;</span>«Pàkk bay des ci yaatuwaayu dog boobu dina yaatoo juróomi junniy xasab (5&nbsp;000), gudde ñaar fukki junniy xasab ak juróom (25&nbsp;000); suufas ñépp la pàkk boobu di doon, ngir dëkk bi. Man naa doon ay dëkkuwaay aki parlu, te na dëkk bi ci boppam féetewoo digg ba.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Na dëkk bi bindoo ab kaare bu wet gi di ñeenti junniy xasab ak juróomi téeméer (4&nbsp;500), di ñaari kilomeetar ak genn-wàll.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Parlub dëkk bi nag, na féeteek ñeenti weti dëkk bi, te doon fa wet gu nekk bayaal bu yaatoo ñaar téeméeri xasab ak juróom fukk (250).<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Fi feggook dog bu <span class="footnote selectable" id="G-66">sell</span> bi ñu beral Aji Sax ji, dina des pàkk bu ñuy bey, bu gudde fukki junniy xasab (10&nbsp;000) wetu penkub dëkk bi, ak beneen pàkk bu ni tollu ci wetu sowu. Ca lañuy jële lekku liggéeykati dëkk bi.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Waa dëkk bi koy bey, ci giiri Israyil yépp lañuy bàyyikoo.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Mboolem pàkk boobu ñuy jooxe, na doon kaare bu wet gi di ñaar fukki junniy xasab ak juróom (25&nbsp;000), te pàkk boobu ñuy jooxe, pàkk bu sell bi ci la, dëkk bi, ci la.<span id="bookmarks20"></span></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>«Li féete penku ak li féete sowu yépp nag te des ci suuf si, gannaaw cér bu sell bi, ak suufas dëkk bi, buur bi ci jal bee koy moom; wet gu ci nekk yaatoo ñaar fukki junniy xasab ak juróom (25&nbsp;000), gii àkki kemu Israyil ga féete penku, gee àkki kemu Israyil ga féete sowu, cér bu sell beek kër gu sell gi nekk ci digg bi.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Kon suufas <span class="footnote selectable" id="G-43">Leween</span> ñi ak suufas dëkk bi day bokk féete ci diggu suufas boroom jal bi, suufas boroom jal bi nekk diggante céru Yuda ba ca bëj-gànnaar, ak céru Beñamin ca bëj-saalum.<span id="bookmarks22"></span></div>
+
+<div class="s"><div id="s4">Daggal nañu suuf giiri bëj-saalum</div></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>«Limeefu giiri Israyil yi ci des, seeni suuf nii lay tëdde: Li dale kemu penku ba, ba ca géej gu mag ga ca sowu, benn pàcc lay doon, Beñamin féetewoo ko.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Suufas Simeyon feggook sos Beñamin, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Suufas Isaakar jàpp penku ba sowu, feggook sos Simeyon, di benn pàcc.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Suufas Sabulon feggook sos Isaakar, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Suufas Gàdd feggook sos Sabulon, jàpp penku ba sowu, di benn pàcc.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Suufas Gàdd, kemug bëj-saalumam mooy doon kemug réew mi. Day dale fa Tamar ca penku ba, ba ca yoonu ndoxu Meriba ca Kades, leru walum Misra, ba ca géej gu mag ga.<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Noonu ngeen di séddalee réew mi giiri Israyil yi, giir gu ci nekk, ngeen dogale ko noonu céru suufam. Kàddug Boroom bi <span class="footnote selectable" id="G-3">Aji Sax</span> jee.<span id="bookmarks29"></span></div>
+
+<div class="s"><div id="s5">Yerusalem: tur wu yees, fukki bunt ak ñaar, ni giir yi</div></div><span id="bookmarks29"></span><a id="v30"></a>
+<div class="p"><span class="v">30</span><span class="vsp">&nbsp;</span>«Bunti dëkk bi nag nii lay tëdde: Ñeenti miiri dëkk bi, bu ci nekk day am guddaayu ñeenti junniy xasab ak juróomi téeméer (4&nbsp;500).<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Miir bu ci nekk dina am ñetti bunt yu ñu dippee ñetti giiri Israyil. Wetu bëj-gànnaar, benn buntu Ruben ak benn buntu Yuda ak benn buntu Lewi.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Wetu penku am miiru ñeenti junniy xasab ak juróomi téeméer (4&nbsp;500) ak ñetti bunt: benn buntu Yuusufa ak benn buntu Beñamin ak benn buntu Dan.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Wetu bëj-saalum am miiru ñeenti junniy xasab ak juróomi téeméer (4&nbsp;500) ak ñetti bunt: benn buntu Simeyon ak benn buntu Isaakar ak benn buntu Sabulon.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Wetu sowu am miiru ñeenti junniy xasab ak juróomi téeméer (4&nbsp;500) ak ñetti bunt: benn buntu Gàdd ak benn buntu Aser ak benn buntu Neftali.<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Wurmbalu dëkk bi bépp fukki junniy xasab ak juróom ñett (18&nbsp;000) lay doon. Turu dëkk bi nag, dale ko ca bés ba, di “<span class="footnote selectable" id="G-3">Aji Sax</span> jaa ngi fi.”»<span id="bookmarks35"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

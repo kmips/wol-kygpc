@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luug 10</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">10.27 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Baamtug Yoon wi</span> 6.5 ak <span class=\"bk\">Sarxalkat yi</span> 19.18.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">10.35 </span><span class=\"ft\">Benn poset bu ci nekk, benn dinaar la tollool, te moo doon peyooru benn bésub lëmm. Seetal </span><span class=\"fq\">Xaalis </span><span class=\"ft\">ci Leeral yi.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-72": "<div><span class=\"k\">Sodom ak Gomor:</span> Dëkk yu siiw la woon ca jamonoy Ibraayma. Waa Sodom ak Gomor la seeni bàkkaar réyoon, ba Yàlla tas dëkk ya. Leeg-leeg turi dëkk yooyu dees na ko misaale xeeti yàqute, yi waa dëkk ya daan def.</div>",
+    "G-75": "<div><span class=\"k\">Tir:</span> Tir ak Sidon, ay teeru lañu woon yu siiw ndax seeni bàkkaar, ca diiwaanu Siri.</div>",
+    "G-69": "<div><span class=\"k\">Seytaane:</span> Mooy malaaka mu dëddu Yàlla, ba noonoo ak moom, te moo yóbbaale malaaka yu bare yu ànd ak moom ci jaww ji. Almasi moo ko nasaxal ca bant ba mu deeye. Ku gëm Almasi, rëcc nga ci dooleem. Yàllaa ko daan te moo koy mujj tàbbal sawara. Dees na ko wooye itam: Beelsebul; Belyar; Ibliis; Tuumaalkat bi; yàllay xarnu bi, kilifay àddina si.</div>",
+    "G-56": "<div><span class=\"k\">Noo gu Sell g-:</span> Moo di Noowug Yàlla. Du malaaka te du mbindeef. Mooy Taxawukat, bi Almasi digoon ay taalibeem, ne mooy dikk dëkk ci seen xol, di leen dooleel ak a sellal.</div>",
+    "G-86": "<div><span class=\"k\">Yerusalem:</span> Mooy péeyu réewum Yawut, te fa la kër Yàlla ga nekkoon. Foofa rekk lañu manoona rendi ay saraxi mala yu ñu jébbal Yàlla.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-43": "<div><span class=\"k\">Leween b-:</span> Lewi kenn la woon ca ña sos bànni Israyil, di fukki doomi Yanqóoba yaak ñaar. Lewi mooy maamu Musaa ak Aaróona. Aaróona la Yàlla tànn muy sarxalkat bu mag ba. Ñenn ci ñi soqikoo ci moom ñoo daan donnante liggéeyu carxal bi. Ña ca des ñoo leen daan jàpple ca liggéeyu kër Yàlla ga.</div>",
+    "G-60": "<div><span class=\"k\">Samari:</span> Mooy diiwaan ba nekkoon diggante Yude ak Galile. Ñu bare ci waa Samari ay làkk-kati yéefar la leen Yawut yi jàppe woon, te ay noon lañu woon.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 24 }];
+var hasIntro = true;
+var baseRef  = "2020-42-LUK-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='2020-42-LUK-009.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Luug&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;10&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-42-LUK-011.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-44-ACT-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Yeesu yebal na juróom ñaar fukk ak ñaar</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">10</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Gannaaw loolu Sang bi tabb na yeneen juróom ñaar fukki taalibe ak ñaar, yebal leen, ñaar, ñaar, ñu jiituji ko ca mboolem dëkk yaak gox, ya mu nammoona dem moom ci boppam.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Mu ne leen: «Ngóob mee yaatu, te surga yi néew. Kon nag ñaanleen Boroom ngóob mi, ay surga yu mu yebal cim ngóobam.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Demleen! Xamleen ne maa leen yebal, mbete ay gàtt ci biiri bukki.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Buleen yóbbaale dencukaayu xaalis, mbaa mbuus, mbaa ay carax te buleen taxaw di saafoonte ak kenn ci yoon wi.<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="p"><span class="v">5</span><span class="vsp">&nbsp;</span>«Gépp kër gu ngeen dugg, jëkkleen ne: “Jàmm ñeel na leen.”<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Su fa nitu jàmm nekkee, seen jàmm dal ko. Lu ko moy, mu délsi ci yeen.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Dal-leen ca kër googa, di lekk ak a naan ca la ñu leen jox, ndax liggéeykat yelloo na peyooram. Buleen di wër nag kër ak kër.<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>«Bépp dëkk bu ngeen dugg, ñu dalal leen, la ñu leen taajal, lekkleen ko.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Wéral leen jaragi dëkk ba, te ngeen wax waa dëkk ba, ne leen: “Nguurug Yàlla dëgmal na leen.”<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Waaye bépp dëkk bu ngeen dugg te dalaluñu leen, demleen ca pénc ma te ngeen ne leen:<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>“Seen pëndub dëkk bi ci sunu ndëgguy tànk sax, nu ngi koy faxas, seedeele leen ko seen ngàntal. Waaye nag xamleen ne nguurug Yàlla dëgmal na.”<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Maa leen ko wax, bu bés baa, boobu dëkk, <span class="footnote selectable" id="G-72">Sodom</span> a koy gënu demin.<span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>«Wóoy ngalla yeen waa Korasin, yeen waa Beccayda it, wóoy ngalla yeen, nde kéemaan yi sottee fi seen biir, su doon fa waa <span class="footnote selectable" id="G-75">Tir</span> mbaa fa waa Sidon la sottee, kon bu yàgg lañu doon sol ay saaku, xëppoob dóom, ngir tuub.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Moo tax it, kera àtte ba, waa Tir ak Sidon a leen di gënu demin.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Yeen waa Kapernawum nag, dees na leen yékkati ba asamaan a? Xanaa ba fa njaniiw kay ngeen di wàcci.<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>«Ku leen déggal nag, man nga déggal; ku leen gàntal, man nga gàntal. Te ku ma gàntal, gàntal nga ki ma yebal.»<span id="bookmarks16"></span></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="p"><span class="v">17</span><span class="vsp">&nbsp;</span>Ba juróom ñaar Fukk ñaak ñaar demee ba délsi, mbégte lañu àndal. Ñu ne: «Sang bi, rab yi sax, danu leen di jox ndigal ci sa tur, ñu nangul nu.»<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Yeesu ne leen: «Séen naa <span class="footnote selectable" id="G-69">Seytaane</span> mu fàqe asamaan ni ag melax.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Dama ne, maa leen jox sañ-sañu joggi ci kawi jaan aki jiit, joggati mboolem dooley bañaale bi, te dara du leen mana gaañ mukk.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Noonu leen rab yi nangule nag, buleen ko bége, bégeleen kay la seen tur binde fa asamaan.»<span id="bookmarks20"></span></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>Ca waxtu woowa tembe la kemtalaayu mbégte tukkee ci <span class="footnote selectable" id="G-56">Noo gu Sell</span> gi, dugg Yeesu, mu daldi ne: «Baay, Boroom asamaan ak suuf, sant naa la, nde yaa làq lii boroom xam-xam yeek boroom xel yi, xamal ko tuut-tànk yi, nde loolu de, Baay, mooy li la soob.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Lépp la ma sama Baay dénk, te kenn xamul kuy Doom ji, ku dul Baay bi; kenn it xamul kuy Baay bi, ku dul Doom ji, ak képp ku ko Doom ji namma xamal.»<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Ci kaw loolu Yeesu walbatiku ca taalibe ya, wax leen ñoomu neen, ne leen: «Ndokklee ñi seeni gët gis li ngeen gis.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Ndax maa leen ko wax, bare na ay yonent ak buur yu bëggoona gis li ngeen gis, te gisuñu ko, ak itam dégg li ngeen dégg, te dégguñu ko.»<span id="bookmarks24"></span></div>
+
+<div class="s"><div id="s2">Texe am na yoon</div></div><span id="bookmarks24"></span><a id="v25"></a>
+<div class="p"><span class="v">25</span><span class="vsp">&nbsp;</span>Benn xamkatu yoonu Musaa moo jekki woon jóg, di fexee fiir Yeesu. Mu ne ko: «Sëriñ bi, ana lu may def, ba texe ba fàww?»<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Yeesu ne ko: «Yoonu Musaa, ana lees ci bind? Loo ci jànge?»<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Mu ne ko: «Boroom bi sa Yàlla, nanga ko soppe sa léppi xol ak sa léppi bakkan ak sa léppi doole ak sa léppi xel, te ni nga soppe sa bopp, nanga ko soppe sa moroom<span class="footnote selectable" id="F-0"><sup>a</sup></span>.»<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Yeesu nag ne ko: «Wax nga dëgg. Noonu ngay def, daldi texe.»<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Waa ja nag namma wutu lay, ne Yeesu: «Sama moroom mooy kan?»<span id="bookmarks29"></span></div><span id="bookmarks29"></span><a id="v30"></a>
+<div class="p"><span class="v">30</span><span class="vsp">&nbsp;</span>Yeesu neeti ko: «Jenn waay a jóge woon <span class="footnote selectable" id="G-86">Yerusalem</span>, jëm Yeriko. Mu dajeek ay sàcc, ñu futti ko, dóor ko, daldi dem, bàyyi ko, muy waaja dee.<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Yàlla woo yàlla ab <span class="footnote selectable" id="G-62">sarxalkat</span> bu jaare yoon woowa, séen nit ka, daldi teggi.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Jenn waay ju soqikoo ci giirug <span class="footnote selectable" id="G-43">Lewi</span> it noonu; daa dikk ba tollu foofa, séen waa ja, daldi teggi.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Jenn waay ju dëkk <span class="footnote selectable" id="G-60">Samari</span> nag doon tukki, dikk ba jege waa ja, xool ko, yërëm ko lool.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Mu dikk, sotti diw ak biiñ ca gaañu-gaañu ya, lëmës ko. Ci kaw loolu mu teg ko ci mbaamam, yóbbu ko ci ab dalukaay, di ko topptoo.<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Ca ëllëg sa, mu yékkati ñaari poseti xaalis<span class="footnote selectable" id="F-1"><sup>b</sup></span>, jox ko boroom dal ba, ne ko: “Topptoo ko waa ji. Loo ci dolli, bu ma dëppee, maa la koy delloo.”»<span id="bookmarks35"></span></div><span id="bookmarks35"></span><a id="v36"></a>
+<div class="p"><span class="v">36</span><span class="vsp">&nbsp;</span>Mu teg ca ne ko: «Ñett ñii, kan nga foog ne moo ci taxawu waa ja dajeek sàcc ya, taxawaayu nit ak moroomam?»<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>Mu ne ko: «Xanaa ki ko defal yërmande.» Yeesu nag ne ko: «Demal boog, di defe noonu.»<span id="bookmarks37"></span></div>
+
+<div class="s"><div id="s3">Maryaama raw na Màrt</div></div><span id="bookmarks37"></span><a id="v38"></a>
+<div class="p"><span class="v">38</span><span class="vsp">&nbsp;</span>Yeesu ak ay taalibeem ñoo toppoon seenu yoon, ba tollook ab dëkk. Ba ñu dikkee, senn as ndaw su ñuy wax Màrt, ganale ko.<span id="bookmarks38"></span> <a id="v39"></a><span class="v">39</span><span class="vsp">&nbsp;</span>Ci kaw loolu rakkam ju ñuy wax Maryaama toog ca wetu Sang bi, di déglu kàddoom,<span id="bookmarks39"></span> <a id="v40"></a><span class="v">40</span><span class="vsp">&nbsp;</span>te fekk Màrt jàpp lool ca liggéeyu waañ wa. Mu dikk ne Yeesu: «Sang bi, xanaa gisoo sama rakk ji ma bàyyeek liggéeyu waañ wi, man doŋŋ? Wax ci boog, mu jàpple ma.»<span id="bookmarks40"></span> <a id="v41"></a><span class="v">41</span><span class="vsp">&nbsp;</span>Sang bi ne ko: «Màrt, Màrt, yitte yi nga xintewoo, di ci doñ-doñi moo bare.<span id="bookmarks41"></span> <a id="v42"></a><span class="v">42</span><span class="vsp">&nbsp;</span>Ndaxam lenn doŋŋ a manula ñàkk. Maryaama nag, cér bi gën la taamu, te deesu ko nangu ci moom.»<span id="bookmarks42"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2020 MBS.</span></div></div>
+</div>
+</body>
+</html>

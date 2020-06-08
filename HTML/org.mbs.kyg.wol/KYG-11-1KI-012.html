@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Buur ya 12</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-16": "<div><span class=\"k\">bérabi jaamookaay y-:</span> Bérabi jaamookaay yi ay bérab la yu nit ñi taamu woona màggale, muy yéefar yi, di bànni Israyil. Lu ci ëpp ay bérab yu kawe la daan doon, waaye man naa baña kawe itam. Su dee yéefar yi, ñu di ca jaamu seeni xërëm; su dee bànni Israyil ñoom, ñu di ca jaamu seen Yàlla Aji Sax ji. Gannaaw ba Suleymaan tabaxee ca Yerusalem kër Yàlla gu ñuy màggale Aji Sax ji, bérabi jaamookaay yooya ay tuurukaay rekk lañu mujj doon.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-63": "<div><span class=\"k\">sarxalukaay b-:</span> Waa penku baaxoo woon nañoo yékkatil seeni yàlla, ay sarxalukaay ci yenn bérab, ngir njukkale ko seeni yàlla. Sarxalukaay yooyu, ban lees ko daan tabaxe mbaa ay xeer, mu taxawe ni waxande, te jur gi ñuy def sarax di tege ca kaw.</div><div class=\"p\">Niti Aji Sax ji ci seen wallu bopp, naka jekk, daan nañu yékkatil Aji Sax ji ay sarxalukaay yu ñu koy njukkale. Ba kërug jaamookaayu Aji Sax ji taxawee itam, noonu la bànni Israyil ame woon ñaari sarxalukaay ca biir kër Yàlla ga, benn bi ñuy lakke jur gu ñu rendi, bi ci des, ñu di ci taal cuuraayu sarax. Sarxalukaayu jur gi amul woon kubeer ca kaw, waaye ab caaxam la àndaloon, ñu di ci teg matt mi ñuy lakke jur gi. Ay béjjén lañu sàkkaloon boobu sarxalukaay ca ñeenti koñam ya ca kaw.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 22 }];
+var hasIntro = false;
+var baseRef  = "KYG-11-1KI-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-011.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Buur ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;12&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-013.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="ms"><div id="ms1">Réew ma xàjjalikoo na</div></div>
+<div class="mr"><div id="mr1">(Saar 12.1—22.54)</div></div>
+
+<div class="s"><div id="s1">Israyil jàmbu na Robowam</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">12</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ba loolu amee Robowam dem dëkk ba ñuy wax Sikem, ndax fa la Israyil gépp daje woon, ngir fal ko buur.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Yerbowam doomu Nebat dégge ko ca Misra ga mu dawoon dem, di fa làqu Buur Suleymaan, te toogoon foofa ca Misra ba booba.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Waa giiri bëj-gànnaar woolu ko, ñu daldi ànd mook mbooloo mépp ca Robowam. Ñu ne ko:<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>«Sa baay da noo tegoon njaam gu metti. Léegi yaw dangay woyofal sunu liggéey bu metti bi nu sa baay sëf, te yolomal buumu njaam gu teeŋ gi mu nu gàll, kon nu jaamu la.»<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Mu ne leen: «Demleen ba mu am ñetti fan, ngeen délsi.» Mbooloo ma dem.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Buur Robowam giseek mag ña daa taxawu Suleymaan baayam ba muy dund. Mu ne leen: «Lu ngeen may digal, ma wax ko mbooloo mii?»<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Ñu ne ko: «Soo nangulee tey mbooloo mii, déggal leen, wax leen kàddu yu rafet, say jaam lañuy doon ba fàww.»<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="p"><span class="v">8</span><span class="vsp">&nbsp;</span>Robowam nag dégluwul waxi mag ña, xanaa dem giseek xale yu góor, ya màggandoo ak moom te di ko taxawu.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Mu ne leen: «Lu ngeen may digal ma wax ko mbooloo mii ne ma, ma yolomal buumu njaam gi leen sama baay gàlloon?»<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><span class="v">10</span><span class="vsp">&nbsp;</span>Xale yu góor ya mu màggandool ne ko: «Mbooloo mii ne la sa baay da leena gàlloon buumu njaam gu teeŋ, waaye yaw yolomalal leen ko; li nga leen di wax mooy lii: “Sama baaraamu sanqleeñ moo gëna diis sama tànku baay.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Sama baay a leena tegoon njaam gu metti, waaye man maay yokk seen njaam, ba mu gëna metti. Te sama baay ay yar la leen daan cawe, waaye man ay leraw yu ñu kor weñ laa leen di cawe.”»<span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="p"><span class="v">12</span><span class="vsp">&nbsp;</span>Ñetteelu bés ba Yerbowam ànd ak mbooloo ma mépp, dellu ca Robowam, noonee leen ko Buur waxe woon ne leen ñu dem ba mu am ñetti fan, ñu délsi.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Buur tontu mbooloo ma kàddu gu ñagas, bàyyi la ko mag ña digaloon.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Na ko xale yu góor ya digale la waxeek ñoom, ne leen: «Sama baay a leen tegoon njaam gu metti, waaye man maa koy yokk, mu gëna metti. Te sama baay ay yar la leen daa cawe, waaye man ay leraw yu ñu kor weñ laa leen di cawe.»<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Noonu la Buur tanqamloo mbooloo ma, te <span class="footnote selectable" id="G-3">Aji Sax</span> ji moo walbatee noonu mbir ma, ngir amal wax, ja mu waxoon Yerbowam doomu Nebat, Axiya waa Silo ba jottli.<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>Ba Israyil gépp gisee na leen Buur tanqamloo, dañu koo tontu ne ko:</div>
+<div class="q top-spacing">«Ana lu nu bokk ak Daawuda,</div>
+<div class="q">lu nu séq ak doomu Yese?</div>
+<div class="q"><span class="footnote selectable" id="G-13">Bànni Israyiloo</span>, ca seeni xayma!</div>
+<div class="q">Yaw askanu Daawuda, xoolalal sa bopp sa kër.»</div>
+<div class="p">Ba mu ko defee bànni Israyil dellu ca seeni xayma;<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Teewul bànni Israyil ya dëkkoon ca dëkki Yuda, Robowam wéy di seen buur.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Ci kaw loolu Buur Robowam yónni Adoram may sase liggéeyi sañul-bañ ya. Teewul Israyil gépp bokk dóor ko ay doj ba mu dee. Buur Robowam daldi gaaw war watiir, daw làquji Yerusalem.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Noonu la Israyil fippoo ci kaw waa kër Daawuda ba sunu jonni yàllay tey.<span id="bookmarks19"></span></div><span id="bookmarks19"></span><a id="v20"></a>
+<div class="p"><span class="v">20</span><span class="vsp">&nbsp;</span>Ci biir loolu Israyil gépp dégg ne Yerbowam délsi na; ñu woote ndaje, woo ko ca, fal ko buurub Israyil gépp. Kenn farul ak waa kër Daawuda, lu moy waa giirug Yuda doŋŋ.<span id="bookmarks20"></span></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>Ci kaw loolu Robowam agsi Yerusalem, daldi woo waa kër Yuda gépp, ñook giirug Beñamin, ñu daje di téeméer ak juróom ñett fukki junniy nit (180&nbsp;000), diy ñeyi xare. Ñu nara xareek waa kër Israyil, ngir delloo nguur ga ca loxol Robowam doomu Suleymaan.<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Ci biir loolu kàddug Yàlla dikkal góoru Yàlla gu ñuy wax Semaya. Mu ne ko:<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>«Waxal Robowam doomu Suleymaan buurub Yuda, ak waa kër Yudak Beñamin ak mbooloo ma ca des, ne leen:<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>“Aji Sax ji dafa wax ne: Buleen jóg di xeex ak seen bokki bànni Israyil. Na ku nekk ñibbi këram, ndax ci man la mbir mii sababoo.”» Ñu dégg kàddug Aji Sax ji, walbatiku dem, noonee ko Aji Sax ji waxe.<span id="bookmarks24"></span></div>
+
+<div class="s"><div id="s2">Buurub Israyil bokkaale na</div></div><span id="bookmarks24"></span><a id="v25"></a>
+<div class="p"><span class="v">25</span><span class="vsp">&nbsp;</span>Gannaaw loolu Yerbowam tabaxaat Sikem, dëkk ba ca diiwaanu tundi Efrayim, daldi fay dëkk. Mu jóge foofa tabaxaat dëkk ba ñuy wax Penuwel.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Yerbowam nag di wax ca xelam naa: «Léegi nguur gi dellu ci loxol waa kër Daawuda.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Bu mbooloo mii demee di sarxali ca kër <span class="footnote selectable" id="G-3">Aji Sax</span> ji ca Yerusalem, seen xol dina walbatiku ne napp ca seen sang, Robowam buurub Yuda. Su ko defee ñu rey ma, dellu ca Robowam buurub Yuda.»<span id="bookmarks27"></span></div><span id="bookmarks27"></span><a id="v28"></a>
+<div class="p"><span class="v">28</span><span class="vsp">&nbsp;</span>Ci kaw loolu Buur seetluwaat mbir ma, daldi sàkklu ñaari wëlluy wurus. Mu ne mbooloo ma: «Yeen waa Israyil, bare ngeen lu ngeen di jaabante yoonu Yerusalem. Xool-leen fii kay! Seen yàlla ya leen génne woon réewum Misraa ngi.»<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Ba loolu amee mu teg wenn wëllu wa ca dëkk ba ñuy wax Betel, wa ca des mu tegi ko ca Dan.<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>Mbir moomu doon bàkkaar. Mbooloo ma dox jiitu wenn wëllu wa, ba àgg Dan.<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Ci kaw loolu Yerbowam tabax ay <span class="footnote selectable" id="G-16">bérabi jaamookaay</span>, ba noppi tabb ay <span class="footnote selectable" id="G-62">sarxalkat</span> ci baadoolo yu bokkul ci askanu Lewi.<span id="bookmarks31"></span></div><span id="bookmarks31"></span><a id="v32"></a>
+<div class="p"><span class="v">32</span><span class="vsp">&nbsp;</span>Ba mu ko defee Yerbowam dogal màggalug fukki fan ak juróom ca weeru juróom ñetteel wa. Mu mel ni màggal gay am Yuda. Yerbowam rendi ay sarax ca <span class="footnote selectable" id="G-63">sarxalukaay</span> ba. Noonu la def Betel, rendil fa ay sarax wëllu ya mu defarlu woon, defal ko wëllu ya sarax. Ci biir loolu mu tabb ca Betel ay sarxalkat ngir bérabi jaamookaay yooyu mu sos.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Nii la rendee ay sarax ca kaw sarxalukaay ba mu sàkklu ca Betel, ca fukki fan ak juróom ca weeru juróom ñetteel wa, muy weer wu mu tànnal boppam. Ba mu ko defee mu dogalal waa Israyil màggal googu, daldi yéeg ca kaw sarxalukaay ba, ngir taal fa sarax su ñuy lakk.<span id="bookmarks33"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

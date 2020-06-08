@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macë 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 28 }];
+var hasIntro = false;
+var baseRef  = "KYG-40-MAT-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-00-XXE-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-00-XXE-001.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Macë&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-40-MAT-002.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-41-MRK-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt2"><span class="mt2">Xibaaru jàmm bi ci Almasi bi Yeesu, ni ko Yàlla jaaralee ci</span></div>
+<div class="mt"><span class="mt">MACË</span></div>
+<div class="b"></div>
+<div class="b"></div>
+
+<div class="s"><div id="s1">Cosaanu Yeesu Kirist</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Lii mooy cosaanu Yeesu Kirist, sëtu Daawuda, sëtu Ibraayma.<span id="bookmarks1"></span></div><span id="bookmarks1"></span><a id="v2"></a>
+<div class="mi"><span class="v">2</span><span class="vsp">&nbsp;</span>Ibraayma moo jur Isaaxa;</div>
+<div class="q top-spacing">Isaaxa jur Yanqóoba;</div>
+<div class="q">Yanqóoba jur Yuda ak i doomi baayam;<span id="bookmarks2"></span></div><span id="bookmarks2"></span><a id="v3"></a>
+<div class="q-v"><span class="v">3</span><span class="vsp">&nbsp;</span>Yuda, Peres ak Sara ci Tamar;</div>
+<div class="q">Peres Esron, miy baayu Aram;<span id="bookmarks3"></span></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="q-v"><span class="v">4</span><span class="vsp">&nbsp;</span>Aram Aminadab;</div>
+<div class="q">Aminadab Nason;</div>
+<div class="q">Nason Salmon;<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="q-v"><span class="v">5</span><span class="vsp">&nbsp;</span>Salmon jur ci Raxab doom ju tudd Bowas;</div>
+<div class="q">Bowas am ak Ruut Obedd;</div>
+<div class="q">Obedd jur Isayi,<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>miy baayu buur bi Daawuda.</div>
+<div class="mi">Daawuda moo jur Suleymaan ci ki nekkoon soxnas Uri;<span id="bookmarks6"></span></div><span id="bookmarks6"></span><a id="v7"></a>
+<div class="q-v top-spacing"><span class="v">7</span><span class="vsp">&nbsp;</span>Suleymaan jur Robowam;</div>
+<div class="q">Robowam Abiya;</div>
+<div class="q">Abiya Asaf;<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="q-v"><span class="v">8</span><span class="vsp">&nbsp;</span>Asaf Yosafat;</div>
+<div class="q">Yosafat Yoram, miy baayu Osiyas;<span id="bookmarks8"></span></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="q-v"><span class="v">9</span><span class="vsp">&nbsp;</span>Osiyas jur Yowatam;</div>
+<div class="q">Yowatam Akas, miy baayu Esekiya;<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="q-vv"><span class="v">10</span><span class="vsp">&nbsp;</span>Esekiya Manase;</div>
+<div class="q">Manase Amon;</div>
+<div class="q">Amon Yosiyas;<span id="bookmarks10"></span></div><span id="bookmarks10"></span><a id="v11"></a>
+<div class="q-vv"><span class="v">11</span><span class="vsp">&nbsp;</span>Yosiyas jur Yekoñas ak i doomi baayam ca jamono, ja ñu defe Yawut ya jaam, yóbbu leen Babilon.<span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="mi"><span class="v">12</span><span class="vsp">&nbsp;</span>Ba ñu leen yóbboo ca Babilon,</div>
+<div class="q top-spacing">Yekoñas jur Salacel;</div>
+<div class="q">Salacel Sorobabel,<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>miy baayu Abiyudd;</div>
+<div class="q">Abiyudd Eliyakim;</div>
+<div class="q">Eliyakim Asor;<span id="bookmarks13"></span></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="q-vv"><span class="v">14</span><span class="vsp">&nbsp;</span>Asor Sadog;</div>
+<div class="q">Sadog Akim;</div>
+<div class="q">Akim Eliyudd;<span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="q-vv"><span class="v">15</span><span class="vsp">&nbsp;</span>Eliyudd Eleyasar;</div>
+<div class="q">Eleyasar Matan, miy baayu Yanqóoba;<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="q-vv"><span class="v">16</span><span class="vsp">&nbsp;</span>Yanqóoba nag moo jur Yuusufa jëkkëru Maryaama;</div>
+<div class="q">te ci Maryaama la Yeesu, mi ñuy wax Kirist, juddoo.<span id="bookmarks16"></span></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="p"><span class="v">17</span><span class="vsp">&nbsp;</span>Mboolem giir googu nag, la dale ca Ibraayma ba ca Daawuda, fukk lañu ak ñeent; la dale ca Daawuda ba ca njaam ga ca Babilon, fukk lañu ak ñeent; la dale njaam ga ca Babilon ba ci Kirist, fukk lañu ak ñeent.<span id="bookmarks17"></span></div>
+
+<div class="s"><div id="s2">Juddub Yeesu Kirist</div></div><span id="bookmarks17"></span><a id="v18"></a>
+<div class="p"><span class="v">18</span><span class="vsp">&nbsp;</span>Nii la Yeesu Kirist juddoo. Bi ñu mayee Maryaama ndeyam Yuusufa, waaye laata ñoo ànd, gis nañu ne dafa ëmb ci kàttanu Xel mu Sell mi.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Yuusufa jëkkëram nag, nekkoon na nit ku jub te bëggu ko woona weer. Mu nara xàccook moom ci sutura.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Waaye bi muy xalaat ci loolu, benn malaakam Boroom bi daldi ko feeñu ci gént ne ko: «Yaw Yuusufa, sëtu Daawuda, bul ragala yeggali Maryaama sa jabar, ndaxte doom ji mu ëmb, ci Xel mu Sell mi la jóge.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Dina jur doom ju góor; nanga ko tudde Yeesu, ndaxte moo di kiy musal xeetam ci seeni bàkkaar.»<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Loolu lépp xewoon na, ngir amal li Boroom bi wax, jaarale ko cib yonent, bi mu naan:<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="q-vv top-spacing"><span class="v">23</span><span class="vsp">&nbsp;</span>«Janq bi dina ëmb,</div>
+<div class="q">jur doom ju góor,</div>
+<div class="q">ñu tudde ko Emanuwel,»</div>
+<div class="m">liy tekki «Yàlla ganesi na nu.»<span id="bookmarks23"></span></div><span id="bookmarks23"></span><a id="v24"></a>
+<div class="p"><span class="v">24</span><span class="vsp">&nbsp;</span>Noonu Yuusufa yewwu, yeggali soxnaam, na ko ko malaakam Boroom bi sante woon.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Waaye àndul ak moom, ba kera mu mucc, jur doom ju góor; mu tudde ko Yeesu.<span id="bookmarks25"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

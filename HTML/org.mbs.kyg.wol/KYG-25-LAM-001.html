@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jooytu 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1.4 </span><span class=\"fk\">Siyoŋ </span><span class=\"ft\">mooy Yerusalem itam.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">1.11 </span><span class=\"fk\">wut ab dund: </span><span class=\"ft\">li leen xañ ab dund mooy gaw bu yàgg bu ñu leen gaw, ba ñu mujj xiif lool. Seetal ci <span class=\"bk\">2.Buur ya</span> 25.1-3.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-71": "<div><span class=\"k\">Siyoŋ:</span> Mooy turu tund, wa ñu tabax Yerusalem ci kawam. Dees na ko wooye itam askanu Yawut.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 5 }];
+var hasIntro = false;
+var baseRef  = "KYG-25-LAM-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-24-JER-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-24-JER-052.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Jooytu&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-25-LAM-002.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-26-EZK-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt"><span class="mt">Kàdduy Jooytu</span></div>
+<div class="b"></div>
+<div class="b"></div>
+<div class="sp"><div id="sp1">Yonent Yàlla Yeremi àddu na</div></div><a id="v1"></a>
+<div class="m top-spacing">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ndeysaan! Dëkk beeka wéet tey!</div>
+<div class="q2 top-spacing">Te ñoñam noon gàññ démb.</div>
+<div class="q">Ndeysaan! Mu ngi mel nib jëtun tey,</div>
+<div class="q2">te noon ràññ fi biir xeet yi!</div>
+<div class="q">Moo doon lingeeru diiwaan yi,</div>
+<div class="q2">tey mu sasoo liggéeyu sañul-bañ.</div>
+<div class="b">&nbsp;</div><span id="bookmarks1"></span><span id="bookmarks1"></span><a id="v2"></a>
+<div class="q-v"><span class="v">2</span><span class="vsp">&nbsp;</span>Day fanaanee jooya jooy,</div>
+<div class="q2">rongooñ yay bas-basi,</div>
+<div class="q">te du kenn ku koy dëfal</div>
+<div class="q2">ci mboolemi soppeem.</div>
+<div class="q">Xaritoo xarit wor ko,</div>
+<div class="q">walbatiku diy noonam.</div>
+<div class="b">&nbsp;</div><span id="bookmarks2"></span><span id="bookmarks2"></span><a id="v3"></a>
+<div class="q-v"><span class="v">3</span><span class="vsp">&nbsp;</span>Ngàllo lañu yóbbu Yuda,</div>
+<div class="q2">ci biir naqar ak njaam gu metti.</div>
+<div class="q">Ci biiri jaambur lañu dëkk,</div>
+<div class="q2">amuñu fu ñu nopploo,</div>
+<div class="q">mboolem ña leen dàqa leen dab,</div>
+<div class="q">ba tance leen ca ruq ya.</div>
+<div class="b">&nbsp;</div><span id="bookmarks3"></span><span id="bookmarks3"></span><a id="v4"></a>
+<div class="q-v"><span class="v">4</span><span class="vsp">&nbsp;</span>Yoon yi jëm <span class="footnote selectable" id="G-71">Siyoŋ</span><span class="footnote selectable" id="F-0"><sup>a</sup></span> jooy na wéet,</div>
+<div class="q">kenn jaareetu ca màggalsi.</div>
+<div class="q">Pénc yépp a gental,</div>
+<div class="q"><span class="footnote selectable" id="G-62">sarxalkat</span> yay binni,</div>
+<div class="q">janq ja jàq,</div>
+<div class="q">Siyoŋ gépp di naqarlu!</div>
+<div class="b">&nbsp;</div><span id="bookmarks4"></span><span id="bookmarks4"></span><a id="v5"></a>
+<div class="q-v"><span class="v">5</span><span class="vsp">&nbsp;</span>Seen noon yaa jiite tey,</div>
+<div class="q">seen bañ yooyoo ne finaax,</div>
+<div class="q"><span class="footnote selectable" id="G-3">Aji Sax</span> jee mbugale waa Siyoŋ</div>
+<div class="q2">seeni tooñ yu bare,</div>
+<div class="q">seeni doom duggig njaam,</div>
+<div class="q2">di moomeel ub noon.</div>
+<div class="b">&nbsp;</div><span id="bookmarks5"></span><span id="bookmarks5"></span><a id="v6"></a>
+<div class="q-v"><span class="v">6</span><span class="vsp">&nbsp;</span>Lu doon sagub Siyoŋ, dëkk bu taaru bi,</div>
+<div class="q2">tey sàggiku na.</div>
+<div class="q">Seeni garmee ngi mel ni kéwél</div>
+<div class="q2">yu amul parlu,</div>
+<div class="q">di koyoŋ-koyoŋiy daw,</div>
+<div class="q">te rëbb ne leen dann.</div>
+<div class="b">&nbsp;</div><span id="bookmarks6"></span><span id="bookmarks6"></span><a id="v7"></a>
+<div class="q-v"><span class="v">7</span><span class="vsp">&nbsp;</span>Tey ci janti toroxte ak tumurànke,</div>
+<div class="q2">la Yerusalem di fàttlikoo</div>
+<div class="q2">mboolem ngëneeli démbam.</div>
+<div class="q">Aw askanam a tàbbi ci loxol noon,</div>
+<div class="q2">te wall amul,</div>
+<div class="q">noon ba gis leen,</div>
+<div class="q">di textexi ci seenug yàqule.</div>
+<div class="b">&nbsp;</div><span id="bookmarks7"></span><span id="bookmarks7"></span><a id="v8"></a>
+<div class="q-v"><span class="v">8</span><span class="vsp">&nbsp;</span>Yerusalem a moya moy,</div>
+<div class="q2">ba tax koo mujj di sobe;</div>
+<div class="q">ku ko teraloon, sofental ko,</div>
+<div class="q2">ndax gis ko, mu ne duŋŋ.</div>
+<div class="q">Moom ci boppam mu ngi binni,</div>
+<div class="q2">fuuylu.</div>
+<div class="b">&nbsp;</div><span id="bookmarks8"></span><span id="bookmarks8"></span><a id="v9"></a>
+<div class="q-v"><span class="v">9</span><span class="vsp">&nbsp;</span>Sobey Siyoŋ ca pendalam,</div>
+<div class="q2">te bàyyiwul xel ag mujam.</div>
+<div class="q">Jéllam ba yéeme na,</div>
+<div class="q">te amul ku ko dëfal.</div>
+<div class="q">Siyoŋ nee: «Éy Aji Sax ji, xoolal sama njàqare;</div>
+<div class="q">noon bi déy, am na ndam!»</div>
+<div class="b">&nbsp;</div><span id="bookmarks9"></span><span id="bookmarks9"></span><a id="v10"></a>
+<div class="q-vv"><span class="v">10</span><span class="vsp">&nbsp;</span>Loxo la noon bi teg ci</div>
+<div class="q2">ngëneeli Siyoŋ gépp.</div>
+<div class="q">Siyoŋ kay a gis yéefar yi songsi</div>
+<div class="q2">këram gu sell gi,</div>
+<div class="q">te ci ñoom nga santaane woon, ne</div>
+<div class="q2">buñu dugg sam ndaje.</div>
+<div class="b">&nbsp;</div><span id="bookmarks10"></span><span id="bookmarks10"></span><a id="v11"></a>
+<div class="q-vv"><span class="v">11</span><span class="vsp">&nbsp;</span>Waa Siyoŋ gépp a ngi binni,</div>
+<div class="q2">di wut ab dund<span class="footnote selectable" id="F-1"><sup>b</sup></span>,</div>
+<div class="q">seeni ngëneel lañuy weccikoo aw ñam</div>
+<div class="q2">wu ñu leqlikoo.</div>
+<div class="b">&nbsp;</div><span id="bookmarks11"></span>
+<div class="sp"><div id="sp2">Yerusalem àddu na</div></div>
+<div class="q top-spacing">Gisal <span class="footnote selectable" id="G-3">Aji Sax</span> ji, seetal</div>
+<div class="q2">ni ma mujj tekkeedee!</div>
+<div class="b">&nbsp;</div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="q-vv"><span class="v">12</span><span class="vsp">&nbsp;</span>Yeen mboolem ñiy jaare yoon wi,</div>
+<div class="q2">lii safu leen,</div>
+<div class="q">waaye seetleen rekk ba gis</div>
+<div class="q">ndax wenn mitit dab na</div>
+<div class="q2">mitit wi ñu ma teg,</div>
+<div class="q">te Aji Sax ji naqarale ma ko</div>
+<div class="q2">ci jantub tàkktel sànjam.</div>
+<div class="b">&nbsp;</div><span id="bookmarks12"></span><span id="bookmarks12"></span><a id="v13"></a>
+<div class="q-vv"><span class="v">13</span><span class="vsp">&nbsp;</span>Fa kaw la Aji Sax ji sànnee sawara</div>
+<div class="q2">ci sama biiri yax,</div>
+<div class="q">moo laaw ab caax ngir fakktal ma,</div>
+<div class="q">waññi ma, jànnaxe ma,</div>
+<div class="q2">ma dëkke yoggooral.</div>
+<div class="b">&nbsp;</div><span id="bookmarks13"></span><span id="bookmarks13"></span><a id="v14"></a>
+<div class="q-vv"><span class="v">14</span><span class="vsp">&nbsp;</span>Samay tooñ la Aji Sax ji ëmb,</div>
+<div class="q2">fastee ko loxoom,</div>
+<div class="q">mu tege sama kaw ndodd,</div>
+<div class="q">ba jeexal sama doole.</div>
+<div class="q">Boroom bee ma tàbbal</div>
+<div class="q2">ci loxo yu ma manula të.</div>
+<div class="b">&nbsp;</div><span id="bookmarks14"></span><span id="bookmarks14"></span><a id="v15"></a>
+<div class="q-vv"><span class="v">15</span><span class="vsp">&nbsp;</span>Ku doon jàmbaar fi sama biir,</div>
+<div class="q2">la Boroom bi xalab.</div>
+<div class="q">Am ndaje la ma wooteel,</div>
+<div class="q2">ngir falaxe sama ndaw yu góor.</div>
+<div class="q">Boroom bee dëggaate Janq Yuda mu taaru mi,</div>
+<div class="q2">ni reseñ ci biir nalukaay.</div>
+<div class="b">&nbsp;</div><span id="bookmarks15"></span><span id="bookmarks15"></span><a id="v16"></a>
+<div class="q-vv"><span class="v">16</span><span class="vsp">&nbsp;</span>Looloo ma tax di jooy,</div>
+<div class="q">rongooñ di wal-wali,</div>
+<div class="q">te ku may dëfal sore ma,</div>
+<div class="q2">mook kuy seral sama xol.</div>
+<div class="q">Samay doom a ngi jaaxle,</div>
+<div class="q2">nde noon bi daan na.</div>
+<div class="b">&nbsp;</div><span id="bookmarks16"></span>
+<div class="sp"><div id="sp3">Yeremi àddu na</div></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="q-vv top-spacing"><span class="v">17</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-71">Siyoŋ</span> tàllal na loxoom,</div>
+<div class="q2">waaye amul ku ko dëfal.</div>
+<div class="q"><span class="footnote selectable" id="G-3">Aji Sax</span> jee wool askanu Yanqóoba</div>
+<div class="q2">seeni noon yi leen wër,</div>
+<div class="q">ba Yerusalem mujj di sobe fi seen biir.</div>
+<div class="b">&nbsp;</div><span id="bookmarks17"></span>
+<div class="sp"><div id="sp4">Yerusalem àddu na</div></div><span id="bookmarks17"></span><a id="v18"></a>
+<div class="q-vv top-spacing"><span class="v">18</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-3">Aji Sax</span> ji moo yey,</div>
+<div class="q">kàddoom laa gàntal.</div>
+<div class="q">Yeen, xeetoo xeet, ngalla dégluleen</div>
+<div class="q2">te xool samaw tiis.</div>
+<div class="q">Samay ndaw yu góor ak yu jigéen,</div>
+<div class="q2">ñoo duggi ngàllo!</div>
+<div class="b">&nbsp;</div><span id="bookmarks18"></span><span id="bookmarks18"></span><a id="v19"></a>
+<div class="q-vv"><span class="v">19</span><span class="vsp">&nbsp;</span>Samay soppe laa woo wall,</div>
+<div class="q">ñoom ñu wor ma.</div>
+<div class="q">Samay <span class="footnote selectable" id="G-62">sarxalkat</span> ak samay mag di wuti ab dund</div>
+<div class="q2">bu ñu leqlikoo,</div>
+<div class="q">far faatu ci biir dëkk bi.</div>
+<div class="b">&nbsp;</div><span id="bookmarks19"></span><span id="bookmarks19"></span><a id="v20"></a>
+<div class="q-vv"><span class="v">20</span><span class="vsp">&nbsp;</span>Éy Aji Sax ji, xoolal sama njàqare,</div>
+<div class="q">samay butit di fuddu,</div>
+<div class="q">sama biir xol salfaañoo ndaxu tiis.</div>
+<div class="q">Man de maa gàntal ba gàntaaral,</div>
+<div class="q">ba fa biti, saamar di fa bóome,</div>
+<div class="q">te biir kër it di ndee.</div>
+<div class="b">&nbsp;</div><span id="bookmarks20"></span><span id="bookmarks20"></span><a id="v21"></a>
+<div class="q-vv"><span class="v">21</span><span class="vsp">&nbsp;</span>Dégg nañu may binni,</div>
+<div class="q">te awma ku ma dëfal.</div>
+<div class="q">Noon yépp a dégg samaw ay</div>
+<div class="q2">te di ko bége, nde yaa ko def.</div>
+<div class="q">Ngalla indil bés bi nga dige,</div>
+<div class="q">ba ñu daj li ma daj.</div>
+<div class="b">&nbsp;</div><span id="bookmarks21"></span><span id="bookmarks21"></span><a id="v22"></a>
+<div class="q-vv"><span class="v">22</span><span class="vsp">&nbsp;</span>Yal na seen gépp mbon teew fi sa kanam,</div>
+<div class="q">ba nga mbugal leen</div>
+<div class="q2">ni nga ma mbugale</div>
+<div class="q2">ndax mboolem samay tooñ.</div>
+<div class="q">Samay onk bare na,</div>
+<div class="q">sama xol jeex tàkk.<span id="bookmarks22"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

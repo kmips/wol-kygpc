@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Màndiŋ ma 9</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-45": "<div><span class=\"k\">Màggali Yawut yi:</span> Ci biir màggali Yawut yi, amoon na ñetti màggal yu mag yu ànd ak tukkib siyaare: màggalu bésub Mucc ba, màggalu Ngóob topp ci, juróom fukki fan gannaaw loolu; ak màggalu bési Mbaar yi, di ñeenti weer gannaaw màggalu Ngóob.</div><div class=\"pi\"><span class=\"bd\">màggalug Ayi bés:</span> Seetal ci <span class=\"bd\">(màggalug ayi bési) Ngóob m-</span>.</div><div class=\"pi\"><span class=\"bd\">màggalu bésu Farmàngu: </span> Kuy farmàngu, jeexal nga bépp liggéeyu tool. Jamonoy lolli lañu daan amal màggal gii ca réewum Israyil, mu dëppook diggu sàttumbar. Moo yemook fa ndajalem meññeef ma jeexe, gannaaw bu ñu wittee oliw jaak reseñ ja. Ci wàllu diine, at maa nga daan tàmbalee ci weeru Nisaan, di màrs jàpp awril, yemook weer, wa bànni Israyil génne Misra. Waaye ci wàllu caada, at maa nga daan jeexe ci diggu weeru sàttumbar, mu dëppook njeextel liggéeyu tool ya ca réewi penku yooyu. Seetal ci <span class=\"bk\">Mucc ga</span> 23.16 ak 34.22.</div><div class=\"pi\"><span class=\"bd\">màggalu bésu Liit y-:</span> Liit gi béjjénu kuuy la daan doon, ñu di ko wal wal mu xumb ngir yéene at mu bees. Seetal ci <span class=\"bk\">Sarxalkat yi</span> 23.23-25.</div><div class=\"pi\"><span class=\"bd\">(màggalu bési) Mbaar y-:</span> Màggal la gu bànni Israyil daan amal, diiru juróom ñetti fan yu ñuy dale mbaar yu ñu defare cari garab. Ñu di ko amal gannaaw bu ñu wittee reseñ ak oliw ak yeneeni meññeef. Su ko defee seeni sët xam ne ciy mbaar la Yàlla dëkkaloon bànni Israyil, ba mu leen génnee réewum Misra. Seetal ci <span class=\"bk\">Sarxalkat yi</span> 23.33-43.</div><div class=\"pi\"><span class=\"bd\">(màggalug) ayu bésu Mburu mu amul lawiir b-:</span> Moo topp ca bésub Mucc ba, di màggalug ayu bés. Ca la bànni Israyil daan lekke mburu mu amul lawiir, di ko fàttlikoo fitna ja seeni maam génne réewum Misra; taluñu woona nég sax, ba mburu ma funki. Mburu mu amul lawiir di misaal itam ni seen xol wara selle ñeel Yàlla. Seetal ci <span class=\"bk\">Sarxalkat yi</span> 23.6-8.</div><div class=\"pi\"><span class=\"bd\">(màggalu) bésub Mucc b-:</span> Bésub Mucc ba, weeru Yawut wa jiitu la daan yemool, mu dëppook awril ci weeru tubaab. Bànni Israyil daan ca baaxantal la xewoon ca réewum Misra ca jamonoy Yonent Yàlla Musaa. Mooy ba maam ya rendee ay gàtt, taqal deret ja ca seeni buntu kër, ba tax malaakam reykat ba jéggi seeni kër. Noonu la leen Yàlla musale ca musiba, ma mu wàcce ca Misra, goreel leen, génne leen ca loxoy Firawna, buuru Misra, ba génne leen réew ma.</div><div class=\"pi\"><span class=\"bd\">(màggalug ayi bési) Ngóob m-:</span> Ca ñetteelu weeru Yawut lañu ko daan amal. Gannaaw bu bésub Mucc ba weesoo lu mat juróom ñaari ayi bés, ca lañu ko daan amal. Ca lañu daan sante Yàlla ca seen naataangey ngóobum bele. Pàntakot mooy tur wi ñu ko mujj tudde. Dees na ko wooye itam màggalug Ayi bés. Seetal ci <span class=\"bk\">Sarxalkat yi</span> 23.15-22.</div><div class=\"pi\"><span class=\"bd\">bésub Njotlaay b-:</span> Amoon na ca fukkeelu fanu juróom ñaareelu weer wa. Ca bés booba la sarxalkat bu mag ba yóbbu deretu mala fa kanam Yàlla, ngir mu baal Yawut ya seeni bàkkaar. Bés bu sella sell la woon, ca lañu daan yendoo woor. Seetal ci <span class=\"bk\">Sarxalkat yi</span> 16 ak 23.26-32.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 36 }];
+var hasIntro = true;
+var baseRef  = "KYG-04-NUM-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-03-LEV-000.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-04-NUM-008.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Màndiŋ ma&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;9&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-04-NUM-010.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-05-DEU-000.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Lu jëm ci màggalu bésub Mucc</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">9</div> <span class="v">1</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-3">Aji Sax</span> ji wax na Musaa ca màndiŋu Sinayi, ca seen atum ñaareel, gannaaw ba ñu génnee réewum Misra ca weer wa jëkk. Mu ne ko:<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>«Na <span class="footnote selectable" id="G-13">bànni Israyil</span> di màggal <span class="footnote selectable" id="G-45">bésub Mucc</span> ba, saa yu jotee.<span id="bookmarks2"></span></div><span id="bookmarks2"></span><a id="v3"></a>
+<div class="p"><span class="v">3</span><span class="vsp">&nbsp;</span>«Fukki fan ak ñeent ci weer wii, diggante ngoon ak jant bu so, ci ngeen koy màggal, saa yu jotee. Na mu dëppook mboolem dogali yoonam ak àttey yoonam, nangeen ko màggale noonu.»<span id="bookmarks3"></span></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="p"><span class="v">4</span><span class="vsp">&nbsp;</span>Musaa nag sant bànni Israyil ne leen ñu màggal bésub Mucc bi.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Ñu daldi màggal bésub Mucc bi ci weer wi jëkk, fukki fanam ak ñeent, diggante ngoon ak jant bu so, ca màndiŋu Sinayi. Noonee ko Aji Sax ji sante woon Musaa, na la ko bànni Israyil defe.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="p"><span class="v">6</span><span class="vsp">&nbsp;</span>Ci biir loolu mu am ay nit ñu ab néew tax ñu sobewu, ba manuñoo màggal bésub Mucc bi bésub keroog. Ñu dikk ba ci Musaa ak Aaróona ca bés ba.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Ñooñu nag ne Musaa: «Nun de, danoo sobewu ndax ab néew, waaye lu nu teree joxesi saraxu Aji Sax ji ci waxtoom, ci digg bànni Israyil?»<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Musaa ne leen: «Taxawleen, ba ma dégg lu Aji Sax ji di santaane ci seen mbir.»<span id="bookmarks8"></span></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="p"><span class="v">9</span><span class="vsp">&nbsp;</span>Aji Sax ji ne Musaa:<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>«Waxal bànni Israyil ne leen, képp ku bokk ci yeen tey, mbaa mu bokk ci seen kuutaay ëllëg, su sobewoo ndax ab néew, mbaa mu nekk ci yoon wu sore, du tere mu màggal bésub Mucc bi ngir Aji Sax ji.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Waaye ñaareelu weer wa, ca fukki fanam ak ñeent, diggante ngoon ak jant bu so, ca la koy màggal. Mburu mu amul lawiir ak xob yu wex lay booleek gàttu sarax bi, lekk ko.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Bumu ci wacc dara mu fanaan, te benn yax, bumu ko ci damm. Na mu dëppook mboolem dogali yooni bésub Mucc, na ko màggale noonu.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Ku set nag te nekkul ciw yoon, su ñàkkee màggal bésub Mucc bi, kooku dees koy dagge ciw askanam, ndax saraxu Aji Sax ji mu joxewul ci bésam. Kooku moo gàddu bàkkaaru boppam.<span id="bookmarks13"></span></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="p"><span class="v">14</span><span class="vsp">&nbsp;</span>«Su dee ab doxandéem bu ngeen dëkkal, sañ naa màggal bésub Mucc bi ñeel Aji Sax ji. Na mu dëppook mboolem dogali yooni bésub Mucc, ak àttey yoonam, ni la koy màggale; benn dogal bi lay doon ci yeen, muy doxandéem bi, di njuddu-ji-réew.»<span id="bookmarks14"></span></div>
+
+<div class="s"><div id="s2">Aji Sax ji yiir na xaymab ndaje ma</div></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><span class="v">15</span><span class="vsp">&nbsp;</span>Keroog bés ba ñu sampee màkkaan ma, niir wa daa muur màkkaanu xaymab seede sa. Ca ngoon sa lu mel ni sawara tiim màkkaan ma, ba ca ëllëg sa.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Noonu la ko niir wa jàppoo muure, bu guddee mu mel ni sawara.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Fu niir wa masa bàyyikoo fa tiim xayma ba, <span class="footnote selectable" id="G-13">bànni Israyil</span> day fabu topp ko, te fépp fu niir wa masa dale, fa la bànni Israyil di fàkk ab dal.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Ci kàddug <span class="footnote selectable" id="G-3">Aji Sax</span> ji la bànni Israyil daan faboo, ci kàddug Aji Sax ji lañu daan dale, te mboolem fan ya niir way dal, tiim màkkaan ma, ñoom it dañuy dal.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Su niir wa yàggee ca kaw màkkaan ma it, ak lu fan ya bare bare, bànni Israyil a ngay dénkoo dénkaaney Aji Sax ji, waaye duñu dem.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Leeg-leegaa fan yu néew la niir way dal-lu fa tiim màkkaan ma. Waaye ci kàddug Aji Sax ji daal, lañuy dale te ci kàddug Aji Sax ji lañuy faboo.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Leeg-leegaa it niir wa dal-lu ag ngoon, fanaan, ba bët set, mu sàqi, ñu fabu ànd ak moom. Muy guddi, di bëccëg, bu niir wa jógaa, rekk, ñu fabu.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Su doon ñaari fan, su doon weer, mbaa ay fani fan la niir wa taxaw tiim màkkaan ma, des fa it, bànni Israyil dañuy dal, waaye duñu dem. Bu jógee rekk lañuy fabu.<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>Ci kàddug Aji Sax ji lañu daa dale, ci kàddug Aji Sax ji lañu daa faboo. Dénkaaney Aji Sax ji daal lañuy dénkoo, ci kàddug Aji Sax, ji Musaa di jottli.<span id="bookmarks23"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

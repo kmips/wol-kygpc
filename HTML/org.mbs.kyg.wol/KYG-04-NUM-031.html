@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Màndiŋ ma 31</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">31.2 </span><span class=\"ft\">Seetal ci 25.16-19.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-66": "<div><span class=\"k\">sell:</span> Lu sell, ni ko yoonu Tawreet dégge, mooy lu ñu beral Yàlla; man naa doon nit, mbaa ab jumtukaay. Mboolem lu set te sellaluñu ko, su laalantee ak lu sell, lu sell loola day daldi teqlikoo ak sellngaam. Waaye du tee lu sell la set, li feek sobe laalu ko. Lu sell nag, bu taqee sobe rekk, sobewu na. Day daldi doon lu setul. Moo tax lu sell warul dajeek sobe fenn. Ku taq sobe, su masaana lekk lu sell lu mel ni yàppu jur gu ñu sarxal Yàlla, dees koy dagge ci askanu bànni Israyil, rey ko. Ci yoonu Tawreet, su ñu nee Yàlla ku sell la, ni mu beroo ak ni mu wéete ci sellngay jikkoom moo tax ñuy wax, ndax Yàlla moo matale mboolem mbaax, moo mucc ci gépp sikkaange, te lenn ci sellaayu jikkoom mooy ngoram gu bare, ak kóllëreem gu sax.</div>",
+    "G-43": "<div><span class=\"k\">Leween b-:</span> Lewi kenn la woon ca ña sos bànni Israyil, di fukki doomi Yanqóoba yaak ñaar. Lewi mooy maamu Musaa ak Aaróona. Aaróona la Yàlla tànn muy sarxalkat bu mag ba. Ñenn ci ñi soqikoo ci moom ñoo daan donnante liggéeyu carxal bi. Ña ca des ñoo leen daan jàpple ca liggéeyu kër Yàlla ga.</div>",
+    "G-81": "<div><span class=\"k\">xaymab ndaje m-:</span> Ba bànni Israyil nekkee ca màndiŋ ma, moo doon seen jaamookaay bu ñu mana wékki, yóbbu. Fa la Yàlla daan taseek Musaa, te fa la Yàlla taamu woona misaale teewaayam ci digg ñoñam ñi mu goreel.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 36 }];
+var hasIntro = true;
+var baseRef  = "KYG-04-NUM-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-03-LEV-000.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-04-NUM-030.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Màndiŋ ma&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;31&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-04-NUM-032.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-05-DEU-000.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Israyil duma na Majan</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">31</div> <span class="v">1</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-3">Aji Sax</span> ji waxati Musaa, ne ko:<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>«Fexeel ba feyul <span class="footnote selectable" id="G-13">bànni Israyil</span> ci waa Majan<span class="footnote selectable" id="F-0"><sup>a</sup></span>. Gannaaw loolu dees na la yóbbu, tëral la fa say bokk.»<span id="bookmarks2"></span></div><span id="bookmarks2"></span><a id="v3"></a>
+<div class="p"><span class="v">3</span><span class="vsp">&nbsp;</span>Musaa daldi wax ak mbooloo ma, ne leen: «Na ñenn ci yeen gànnaayu, waajal xare, te dal ci kaw waa Majan, ba feyul Aji Sax ji.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Gii giir, junni, gee giir junni, ba giiri Israyil yépp daj, ngeen yebal leen ñu xareji.»<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="p"><span class="v">5</span><span class="vsp">&nbsp;</span>Ba mu ko defee ñu tànne ca gàngoori Israyil, junniy góor jóge ci giir gu nekk, ñuy fukki junneek ñaari (12&nbsp;000) xarekat yu gànnaayu.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Musaa nag yebal leen, junni jóge ci giir gu nekk, ñu xareji. Ñoom ak <span class="footnote selectable" id="G-62">sarxalkat</span> bi Fineyas doomu Elasar, ñoo xareji, yóbbaale jumtukaay yu <span class="footnote selectable" id="G-66">sell</span> yaak liiti xare ya.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Ñu xareek Majan, na ko Aji Sax ji sante Musaa, ba rey góor ñépp,<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>reyaale buuri Majan, Ewi ak Rekem ak Sur ak Ur ak Reba, juróomi buuri Majan ya. Balaam doomu Bewor it, ñu reye ko saamar.<span id="bookmarks8"></span></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="p"><span class="v">9</span><span class="vsp">&nbsp;</span>Ba loolu amee bànni Israyil jàpp jigéeni Majan, ak seeni tuut-tànk, ak seen jur gépp, gu gudd ak gu gàtt, seen alal jépp, ñu sëxëtoo ko.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Seen dëkk yépp ak seeni dëkkuwaay, ak seen dal yépp, ñu lakk.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Ba mu ko defee ñu jël mboolem la ñu sëxëtoo, mboolem la ñu ca jàppe, nit ñaak jur ga.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Ñu daldi yóbbu ca Musaa ak Elasar sarxalkat ba, ak mbooloom bànni Israyil, ña ñu jàppe ca xare ba, ak la ñu ca jàppe, ak la ñu sëxëtoo. Ñu indi lépp ca seen dal ba ca joori Mowab, fa janook Yeriko, te dendeek dexu Yurdan.<span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>Ci kaw loolu Musaa ak Elasar sarxalkat ba ànd ak mboolem njiiti mbooloo ma, ñu génn dal ba, gatandu leen ca biti.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Musaa nag sànju ca kaw kilifay xare ya, muy kilifay kuréli junni yaak kilifay kuréli téeméer, ya jóge xare.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Musaa ne leen: «Kon jigéeni Majan ñépp ngeen bàyyi, ñu dund!<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Xanaa du ñoom ñoo dëdduloo woon bànni Israyil Aji Sax ji, ci ndigalal Balaam, ca mbir ma woon ca Pewor, ba tax mbas ma dikkal mbooloom Aji Sax ji?<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Kon nag reyleen lépp luy góor ci tuut-tànk yi, mboolem lu ciy jigéen ju xam lalu góor it, rey leen,<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>mboolem lu ciy jigéen ju ndaw, te xamul lalu góor, ngeen bàyyi mu dund, ñeel leen.<span id="bookmarks18"></span></div><span id="bookmarks18"></span><a id="v19"></a>
+<div class="p"><span class="v">19</span><span class="vsp">&nbsp;</span>«Te yeen nag, dal-leen ci biti, buleen dugg ci biir dal bi diiru juróom ñaari fan, mboolem ñi rey ak mboolem ñi laal ku ñu rey. Nangeen setlu bésub ñetteel ba, ak bésub juróom ñaareel ba, yeen ak ñi ngeen jàpp.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Te itam lépp luy yére, ak bépp jumtukaayu der, ak lépp lees defare kawari bëy, ak bépp jumtukaayu bant, nangeen ko setal.»<span id="bookmarks20"></span></div><span id="bookmarks20"></span><a id="v21"></a>
+<div class="p"><span class="v">21</span><span class="vsp">&nbsp;</span>Ba mu ko defee Elasar sarxalkat ba wax ak ña xareji woon, ne leen: «Lii moo di dogalu yoon, bi Aji Sax ji dénk Musaa:<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Luy wurus ak xaalis ak xànjar, ak weñ gu ñuul, ak weñ gu weex, ak beteex,<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>mboolem lu dul lakk, rekk, nangeen ko laalale sawara, mu set. Ndoxum setlu mi it, warees na koo dellu setale yooyii. Waaye mboolem luy lakk, ci ndoxum setal mi doŋŋ lees koy dugal, ngir mu set.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Bésub juróom ñaareel ba, fóotleen seeni yére, daldi set. Gannaaw loolu man ngeena duggsi ci dal bi.»<span id="bookmarks24"></span></div>
+
+<div class="s"><div id="s2">Lu jëm ci séddaleb alalu waa Majan</div></div><span id="bookmarks24"></span><a id="v25"></a>
+<div class="p"><span class="v">25</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-3">Aji Sax</span> ji waxati Musaa ne ko:<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>«Yaw ak Elasar <span class="footnote selectable" id="G-62">sarxalkat</span> bi, ak ñi jiite seeni kër maam ci mbooloo mi, waññleen alal ji ñu nangoo xare, nit aku jur.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Xaajleen sëxëtoo mi ñaar, te ngeen séddale ko diggante xarekat ya xareji woon, ak mbooloo mi ci des yépp.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Te ngeen sàkkal Aji Sax ji, ci céru xarekat ya xareji woon, ab galag bu yemook benn bopp ci juróomi téeméer (500) yu nekk, ci aw nit, mbaa ay nag, mbaa ay mbaam, mbaa ay gàtt.<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Ci céru xarekat yi ngeen koy sàkke, jox ko Elasar sarxalkat bi, muy jooxeb Aji Sax ji.<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>Céru <span class="footnote selectable" id="G-13">bànni Israyil</span> bi ci des, nangeen ci sàkk benn ci juróom fukk yu nekk (50), ci aw nit, mbaa ay nag, mbaa ay mbaam, mbaa ay gàtt, mbaa gépp jur, te ngeen jox ko <span class="footnote selectable" id="G-43">Leween</span> ñi dénkoo dénkaaney màkkaanu Aji Sax ji.»<span id="bookmarks30"></span></div><span id="bookmarks30"></span><a id="v31"></a>
+<div class="p"><span class="v">31</span><span class="vsp">&nbsp;</span>Ba loolu amee Musaa ak Elasar sarxalkat bi defe ko noonee ko Aji Sax ji sante Musaa.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>La des ca alalu sëxëtoo, ja ña xareji woon indaale, gannaaw ba ñu ca génnee yooyu, nii la tollu: gàtt yi, juróom benni téeméeri junneek juróom ñaar fukk ak juróom (675&nbsp;000);<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>nag yi, juróom ñaar fukki junneek ñaar (72&nbsp;000);<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>mbaam yi, juróom benn fukki junneek benn (61&nbsp;000),<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>aw nit, fanweeri junniy jigéen ñu xamul lalu góor (30&nbsp;000).<span id="bookmarks35"></span></div><span id="bookmarks35"></span><a id="v36"></a>
+<div class="p"><span class="v">36</span><span class="vsp">&nbsp;</span>Genn-wàll giy céru nit ña xareji woon, nii la tëdde: gàtt yi, ñetti téeméeri junneek fanweer ak juróom ñaar ak juróomi téeméer (337&nbsp;500),<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>galagu Aji Sax ji génne ci gàtt yi, di juróom benni téeméer ak juróom ñaar fukk ak juróom (675);<span id="bookmarks37"></span> <a id="v38"></a><span class="v">38</span><span class="vsp">&nbsp;</span>nag yi, fanweeri junneek juróom benn (36&nbsp;000), galagu Aji Sax ji génne ci, di juróom ñaar fukk ak ñaar (72);<span id="bookmarks38"></span> <a id="v39"></a><span class="v">39</span><span class="vsp">&nbsp;</span>mbaam yi, fanweeri junneek juróomi téeméer (30&nbsp;500), galagu Aji Sax ji génne ci, di juróom benn fukk ak benn (61);<span id="bookmarks39"></span> <a id="v40"></a><span class="v">40</span><span class="vsp">&nbsp;</span>aw nit, fukki junneek juróom benn (16&nbsp;000), galagu Aji Sax ji génne ci, di fanweeri bopp ak ñaar (32).<span id="bookmarks40"></span> <a id="v41"></a><span class="v">41</span><span class="vsp">&nbsp;</span>Ba mu ko defee Musaa jox galag ba Elasar sarxalkat ba, muy jooxeb Aji Sax ji, na ko Aji Sax ji sante Musaa.<span id="bookmarks41"></span></div><span id="bookmarks41"></span><a id="v42"></a>
+<div class="p"><span class="v">42</span><span class="vsp">&nbsp;</span>Genn-wàll giy céru bànni Israyil, ba Musaa teqale ak cérub ña xareji woon,<span id="bookmarks42"></span> <a id="v43"></a><span class="v">43</span><span class="vsp">&nbsp;</span>te muy céru mbooloo ma, ci wàllu gàtt yi, ñetti téeméeri junneek fanweer ak juróom ñaar ak juróomi téeméer (337&nbsp;500) la;<span id="bookmarks43"></span> <a id="v44"></a><span class="v">44</span><span class="vsp">&nbsp;</span>nag yi di fanweeri junneek juróom benn (36&nbsp;000);<span id="bookmarks44"></span> <a id="v45"></a><span class="v">45</span><span class="vsp">&nbsp;</span>mbaam yi, fanweeri junneek juróomi téeméer (30&nbsp;500);<span id="bookmarks45"></span> <a id="v46"></a><span class="v">46</span><span class="vsp">&nbsp;</span>aw nit, fukki junneek juróom benn (16&nbsp;000).<span id="bookmarks46"></span> <a id="v47"></a><span class="v">47</span><span class="vsp">&nbsp;</span>Musaa daldi sàkk ci céru bànni Israyil boobu, benn ci juróom fukk yu nekk. Musaa jox loola Leween ñi dénkoo dénkaaney màkkaanu Aji Sax ji, noonee ko ko Aji Sax ji sante woon.<span id="bookmarks47"></span></div>
+
+<div class="s"><div id="s3">Kilifay xare ya jëfe nañu ngor</div></div><span id="bookmarks47"></span><a id="v48"></a>
+<div class="p"><span class="v">48</span><span class="vsp">&nbsp;</span>Ba loolu amee njiiti gàngooru xarekat ya, kilifay kuréli junni yaak kilifay kuréli téeméer ya, ñoom ñépp dem ca Musaa.<span id="bookmarks48"></span> <a id="v49"></a><span class="v">49</span><span class="vsp">&nbsp;</span>Ñu ne Musaa: «Sang bi, nun de, waññ nanu xarekat yi ci sunu kilifteef, waaye kenn wuutewu ci.<span id="bookmarks49"></span> <a id="v50"></a><span class="v">50</span><span class="vsp">&nbsp;</span>Moo tax nu indi jooxeb <span class="footnote selectable" id="G-3">Aji Sax</span> ji, ku nekk ak la nga muurloo, ci gànjari wurus; lami përëg, ak takkub jara, ak jaaroy torlukaay, ak jaaroy nopp, aki caq. Noo ko def sunu njotlaayal bakkan, fi kanam Aji Sax ji.»<span id="bookmarks50"></span></div><span id="bookmarks50"></span><a id="v51"></a>
+<div class="p"><span class="v">51</span><span class="vsp">&nbsp;</span>Musaa ak Elasar <span class="footnote selectable" id="G-62">sarxalkat</span> ba nangoo wurus wa ca ñoom, lépp di takkaay yu ñu tëgg.<span id="bookmarks51"></span> <a id="v52"></a><span class="v">52</span><span class="vsp">&nbsp;</span>Mboolem wurusu jooxe, wi ñu jooxeel Aji Sax ji, di fukk ak juróom benni junniy siikal ak juróom ñaar téeméer ak juróom fukk (16&nbsp;750), yemook barigo ak juróom ñaar fukki kilo (170), te bawoo ci kilifay kuréli junni yaak kilifay kuréli téeméer ya.<span id="bookmarks52"></span> <a id="v53"></a><span class="v">53</span><span class="vsp">&nbsp;</span>Xarekati gàngoor ga ñoom, dañoo féetewoo la ñu sëxëtoo.<span id="bookmarks53"></span> <a id="v54"></a><span class="v">54</span><span class="vsp">&nbsp;</span>Musaa ak Elasar sarxalkat ba nag jële wurus wa ca kilifay kuréli junni yaak kuréli téeméer ya. Ñu yóbbu ko ca biir <span class="footnote selectable" id="G-81">xaymab ndaje</span> ma, muy seedeel <span class="footnote selectable" id="G-13">bànni Israyil</span> fi kanam Aji Sax ji.<span id="bookmarks54"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

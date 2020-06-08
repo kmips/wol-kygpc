@@ -1,0 +1,18 @@
+
+
+
+1.1.0: 
+New:
+Two-pane viewing
+Last known state of each pane saved to return to same passage
+Added feedback link
+Separate mydata.js allows quicker localization/adapting to new projects
+
+Bug fixes: 
+Corrected non-functioning Version option in Windows/Linux context menu. 
+Added version number dynamically in menu and context menu. 
+Release: 
+
+1.0.0: 
+First public release
+Release: March 12 2020

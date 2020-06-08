@@ -1,0 +1,4 @@
+owner: kmips
+repo: wol-kygpc
+provider: github
+updaterCacheDirName: kyg-updater

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Buur ya 15</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">15.2 </span><span class=\"fk\">Abisalom </span><span class=\"ft\">ak Absalom jàpp nañu ne kenn ki la.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">15.5 </span><span class=\"ft\">Seetal ci <span class=\"bk\">2.Samiyel</span> 11.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">15.17 </span><span class=\"fk\">Raama </span><span class=\"ft\">ma nga féete woon Yerusalem bëj-gànnaar, tollu diggante ñaari réew yi. Mu nekkoon ci kaw tund wu aw yoon jaar, jóge péeyu Israyil, jëm Yerusalem. </span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-8": "<div><span class=\"k\">Asera:</span> Mooy tuuru Kanaaneen mu jigéen mi ñu gëmoon ne mooy giiral nit. Ñu di ko farala dendaleek tuur mi ñuy wax Baal. Ñu daan ko jaamu fu jege ab gott, walla fu ñu ko sampal ay xer.</div>",
+    "G-16": "<div><span class=\"k\">bérabi jaamookaay y-:</span> Bérabi jaamookaay yi ay bérab la yu nit ñi taamu woona màggale, muy yéefar yi, di bànni Israyil. Lu ci ëpp ay bérab yu kawe la daan doon, waaye man naa baña kawe itam. Su dee yéefar yi, ñu di ca jaamu seeni xërëm; su dee bànni Israyil ñoom, ñu di ca jaamu seen Yàlla Aji Sax ji. Gannaaw ba Suleymaan tabaxee ca Yerusalem kër Yàlla gu ñuy màggale Aji Sax ji, bérabi jaamookaay yooya ay tuurukaay rekk lañu mujj doon.</div>",
+    "G-66": "<div><span class=\"k\">sell:</span> Lu sell, ni ko yoonu Tawreet dégge, mooy lu ñu beral Yàlla; man naa doon nit, mbaa ab jumtukaay. Mboolem lu set te sellaluñu ko, su laalantee ak lu sell, lu sell loola day daldi teqlikoo ak sellngaam. Waaye du tee lu sell la set, li feek sobe laalu ko. Lu sell nag, bu taqee sobe rekk, sobewu na. Day daldi doon lu setul. Moo tax lu sell warul dajeek sobe fenn. Ku taq sobe, su masaana lekk lu sell lu mel ni yàppu jur gu ñu sarxal Yàlla, dees koy dagge ci askanu bànni Israyil, rey ko. Ci yoonu Tawreet, su ñu nee Yàlla ku sell la, ni mu beroo ak ni mu wéete ci sellngay jikkoom moo tax ñuy wax, ndax Yàlla moo matale mboolem mbaax, moo mucc ci gépp sikkaange, te lenn ci sellaayu jikkoom mooy ngoram gu bare, ak kóllëreem gu sax.</div>",
+    "G-40": "<div><span class=\"k\">kóllëre g-:</span> Ci Mbind mu sell mi, digoo la bu ëmb ay dige. Man nañu koo tëral, mu dib digoo diggante nit ak moroom ma, mu mel ni la Ibraayma digoo woon ak Abimeleg (<span class=\"bk\">Njàlbéen ga</span> 21.27), mbaa diggante kilifa ak surgaam. Kóllëre gu ni mel la Yàlla taamu woona fasook nit, mu mel ni la Yàlla digoo woon ak àddina, jaare ko ci Nóoyin (6.18), mbaa diggante Yàllaak Ibraayma (15.18), mbaa Yàllaak Isaaxa (17.19). Ñetti yoon yu mujj yooyu ñu lim, Yàlla rekk a dige; moom ci wàllu boppam moo fas kóllëre ak ñooñu. Ñoom defuñu dara lu dul gëm ko. Waaye Ibraaymaak Abimeleg dañoo digoo, maanaam dañoo fasoo kóllëre, ku nekk am lu ko war. Noonu lañu dégge li xàjjale fas kóllëre ak fasoo kóllëre.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 22 }];
+var hasIntro = false;
+var baseRef  = "KYG-11-1KI-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-014.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Buur ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;15&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-016.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Abiyam falu na ca Yuda</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">15</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Ca fukki at ak juróom ñetteelu nguurug Yerbowam, ca la Abiyam doomu Nebat falu buur ca kaw Yuda.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Ñetti at la nguuru fa Yerusalem te yaayam moo doon Maaka doomu Abisalom<span class="footnote selectable" id="F-0"><sup>a</sup></span>.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Muy roy nag baayam ca mboolem bàkkaar ya mu daan def. Te it wéetalul woon Yàllaam <span class="footnote selectable" id="G-3">Aji Sax</span> ji ni maamam Daawuda.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Terewul Daawuda tax Aji Sax ji Yàllaam may ko doom ju góor ju koy wuutu ca Yerusalem, ndax askanu Daawuda baña fey, Yerusalem it mana ñoŋ.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Li ko waral mooy Daawuda da daan jëfe njub lu Aji Sax ji rafetlu, te giiru dundam gépp teggiwul lenn lu ko Aji Sax ji sant lu moy ci mbirum Uri Etteen ba.<span class="footnote selectable" id="F-1"><sup>b</sup></span><span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Xare masula dakk diggante waa kër Robowam ak Yerbowam giiru dundu Abiyam gépp.<span id="bookmarks6"></span></div><span id="bookmarks6"></span><a id="v7"></a>
+<div class="p"><span class="v">7</span><span class="vsp">&nbsp;</span>Li des ci mbiri Abiyam ak mboolem lu mu def, bindees na ko moos ca téere ba ñu dippee Jaloorey buuri Yuda ca seeni jant. Xare it jiboon na diggante Abiyam ak Yerbowam.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Gannaaw gi Buur Abiyam tëdd, fekki ay maamam, ñu denc ko ca gox ba ñu naan Kër Daawuda, Asa doomam falu buur, wuutu ko.<span id="bookmarks8"></span></div>
+
+<div class="s"><div id="s2">Asa falu na ca Yuda</div></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="p"><span class="v">9</span><span class="vsp">&nbsp;</span>Ba Buur Yerbowam faloo Israyil, ba dugg ñaar fukkeelu atu nguuram, ca la Asa falu buur, jiite Yuda.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Ñeent fukki at ak benn la Buur Asa péeyoo Yerusalem. Maaka doomu Abisalom ju jigéen moo doon maamam.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Asa nag di def njub gi <span class="footnote selectable" id="G-3">Aji Sax</span> ji rafetlu, Daawuda maamam.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Dàqe na ca réew ma ñu daan jaay seen bopp fa ñuy màggale tuur ya. Mu jële ca réew ma kasaray tuur ya fa ay maamam defoon yépp.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Maaka maamam ju jigéen sax, Asa xañ na ko céru lingeer yaayu buur ba mu amoon, ndax Maaka moo sàkkaloon <span class="footnote selectable" id="G-8">Asera</span> tuur ma, ab xer bu seexluwu bu ñu koy màggale. Asa gor xeru maamam ja, lakk ko ca xuru Sedoron.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Waaye <span class="footnote selectable" id="G-16">bérabi jaamookaay</span> ya, jëleesu ko fa, doonte Asa, Aji Sax ji la wéetaloon cib xolam, giiru dundam gépp.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Moo indi ca kër Aji Sax ji, jumtukaay yu <span class="footnote selectable" id="G-66">sell</span> yu baayam ya, ak jumtukaay yu sell yu boppam, muy xaalis ak wurus aki ndab.<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>Xare nag masula dakk diggante Asa ak Basa buurub Israyil seen giiru dund gépp.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Ci biir loolu Basa buurub Israyil song Yuda, daldi dàbbli dëkk ba ñuy wax Raama<span class="footnote selectable" id="F-2"><sup>c</sup></span>, ba kenn du dugg jëm ca Asa buurub Yuda mbaa muy génn.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Asa dajale mboolem luy xaalis ak wurus wu desoon ca denci kër Aji Sax ji, ak denci kër Buur. Mu teg ko ci loxoy jawriñam ña. Ba mu ko defee Buur Asa yebal leen ca buurub Siri ba ca Damaas, di Ben Addàd doomu Tabrimon doomu Esiyon.</div>
+<div class="p">Asa nag ne Ben Addàd:<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>«<span class="footnote selectable" id="G-40">Kóllëree</span> dox sama digganteek yaw, na mu doxe woon sama diggante baay ak sa baay. Lii nag maa la ko may, xaalis la ak wurus. Te nga dogoo rekk ak Basa buurub Israyil, ndax mu jóge samam réew.»<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Ben Addàd déggal Buur Asa, daldi yebal njiiti xarey gàngooram ca dëkki Israyil. Ni la nangoo dëkk ya ñuy wax Yon ak Dan ak Abel Bet Maaka ak diiwaanu Kineret gépp, boole ca diiwaanu Neftali gépp.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Ba ko Basa déggee, Raama ga mu doon dàbbli la ba, ba dem toogi Tirsa.<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Ba loolu amee Buur Asa joxe ndigal, woolu waa Yuda gépp, kenn desul. Ñu ànd jëleji ca Raama doj yaak bant ya Basa doon tabaxe. Buur Asa tabax ca dëkk ba ñuy wax Geba gu giirug Beñamin, tabax ca Mispa.<span id="bookmarks22"></span></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>Li des ci mbiri Asa ak mboolem njàmbaaram ak la mu def yépp ak dëkk ya mu tabax, bindees na lépp moos ca téere ba ñu dippee Jaloorey buuri Yuda ca seeni jant. Ba Asa demee ba màggat nag, jàngoroy tànk la ame woon.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Gannaaw gi mu tëdd, fekki ay maamam, ñu denc ko ca gox ba ñu naan Kër Daawuda maamam. Yosafat doomam falu buur, wuutu ko.<span id="bookmarks24"></span></div>
+
+<div class="s"><div id="s3">Nadab falu na ca Israyil</div></div><span id="bookmarks24"></span><a id="v25"></a>
+<div class="p"><span class="v">25</span><span class="vsp">&nbsp;</span>Ba Asa buurub Yuda duggee ñaareelu atu nguuram, ca la Nadab doomu Yerbowam falu buur, jiite Israyil. Nadab jiite na Israyil ñaari at,<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>di jëfe lu <span class="footnote selectable" id="G-3">Aji Sax</span> ji ñaawlu, aw ci tànki baayam, di bàkkaarloo Israyil.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Ci biir loolu doomu Axiya, ji giiroo ci Isaakar te ñu di ko wax Basa, daldi fexeel Nadab, jam ko ca Gibeton gu Filisteen ña. Fekk Nadab ànd ak Israyil gépp, gaw Gibeton.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Basa daldi rey Nadab, yemook ba Asa buurub Yuda di dugg ñetteelu atu nguuram. Basa falu buur, wuutu Nadab.<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Naka la falu, daldi rey waa kër Yerbowam gépp. Bàyyiwul kenn kuy noyyi te bokk ci Yerbowam. Mu faagaagal leen, muy la Aji Sax ji waxoon, Axiya jaamam ba ca Silo jottli.<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>Li ko waral mooy bàkkaari Yerbowam yi mu bàkkaar te bàkkaarloo ko waa Israyil, di merloo Aji Sax ji, Yàllay Israyil, ba feesal xolam.<span id="bookmarks30"></span></div><span id="bookmarks30"></span><a id="v31"></a>
+<div class="p"><span class="v">31</span><span class="vsp">&nbsp;</span>Li des ci mbiri Nadab ak mboolem lu mu def, bindees na ko moos ca téere ba ñu dippee Jaloorey buuri Israyil ca seeni jant.<span id="bookmarks31"></span></div><span id="bookmarks31"></span><a id="v32"></a>
+<div class="p"><span class="v">32</span><span class="vsp">&nbsp;</span>Xare masula dakk diggante Asa ak Basa buurub Israyil, seen giiru dund gépp.<span id="bookmarks32"></span></div>
+
+<div class="s"><div id="s4">Basa falu na ca Israyil</div></div><span id="bookmarks32"></span><a id="v33"></a>
+<div class="p"><span class="v">33</span><span class="vsp">&nbsp;</span>Ba Asa buurub Yuda duggee ñetteelu atu nguuram, ca la Basa doomu Axiya falu buur ca Israyil gépp, péeyoo Tirsa. Nguuru na ñaar fukki at ak ñeent.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Da daan def li <span class="footnote selectable" id="G-3">Aji Sax</span> ji ñaawlu, aw ci tànki Yerbowam ak bàkkaaram ya mu daan bàkkaarloo Israyil.<span id="bookmarks34"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

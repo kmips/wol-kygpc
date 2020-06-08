@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Room 4</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">4.3 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Njàlbéen ga</span> 15.6.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">4.7-8 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Sabóor</span> 32.1-2.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">4.9 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Njàlbéen ga</span> 15.6.</span></div>",
+    "F-3": "<div class=\"footnote-p\"><span class=\"fr\">4.13 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Njàlbéen ga</span> 12.1-3; 17.5.</span></div>",
+    "F-4": "<div class=\"footnote-p\"><span class=\"fr\">4.17 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Njàlbéen ga</span> 17.5.</span></div>",
+    "F-5": "<div class=\"footnote-p\"><span class=\"fr\">4.18 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Njàlbéen ga</span> 17.5.</span></div>",
+    "F-6": "<div class=\"footnote-p\"><span class=\"fr\">4.23 </span><span class=\"ft\">Seetal ci <span class=\"bk\">Njàlbéen ga</span> 15.6.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-32": "<div><span class=\"k\">Ibraayma:</span> Jamonoy Ibraayma jiitoo na jamonoy Yeesu Almasi lu xawa tollu ci ñaari junniy (2&nbsp;000) at. Yàlla moo digoon Ibraayma doom, mu di ko nég diiru ñaar fukki at ak juróom, Isaaxa doomam doora juddu, fekk Ibraaymaa ngi ci téeméeri atam.</div>",
+    "G-21": "<div><span class=\"k\">Daawuda:</span> Buuru Israyil bu mag la woon te moo bind lu bare ci <span class=\"bk\">Sabóor</span>.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 16 }];
+var hasIntro = false;
+var baseRef  = "2020-45-ROM-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='2020-44-ACT-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='2020-45-ROM-003.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Room&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;4&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-45-ROM-005.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='2020-46-1CO-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Njubteg Ibraayma du ci jëfam</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">4</div> <span class="v">1</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-32">Ibraayma</span> sunu maam ci wàllu njureel nag, ana lu nuy wax ne moom la gis ci moomu mbir?<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Bu fekkoon ne Ibraayma, ci kawi jëfam lees ko jox àtteb ku jub, kon mu man koo damoo, waaye demewul noonu fa Yàlla.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Ana lu ci Mbind mi wax? Da ne: «Ibraayma moo gëm Yàlla, ñu waññal ko ngëmam ag njub<span class="footnote selectable" id="F-0"><sup>a</sup></span>.»<span id="bookmarks3"></span></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="p"><span class="v">4</span><span class="vsp">&nbsp;</span>Kuy liggéey, ag peyooram du taxawe ag may, waaye wartéef la.<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>Waaye ki jëful te gëm Yàlla miy jox ab yéefar sax, àtteb ku jub, ngëmam googu, ag njub lees ko koy waññal.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Ci moomu mbir la <span class="footnote selectable" id="G-21">Daawuda</span> doon wax, ba muy biral mbégtem nit ku Yàlla waññal ag njub gu jotewul dara ak ay jëfam.<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>Mu ne:</div>
+<div class="q top-spacing">«Mbégte ñeel na ñi ñu jéggal seeni tooñ,</div>
+<div class="q">ñeel na ñooñu ñu baal seeni bàkkaar.<span id="bookmarks7"></span></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="q-v"><span class="v">8</span><span class="vsp">&nbsp;</span>Mbégte ñeel na ku Boroom bi</div>
+<div class="q2">waññalul ag moyam<span class="footnote selectable" id="F-1"><sup>b</sup></span>.»<span id="bookmarks8"></span></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="p"><span class="v">9</span><span class="vsp">&nbsp;</span>Kon moomu mbégte xanaa Yawut yiy xaraf doŋŋ la ñeel? Ñi xaraful it dañu cee bokkul? Ndax kat danu ne Ibraayma lañu waññal ngëmam ga, ag njub<span class="footnote selectable" id="F-2"><sup>c</sup></span>.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Nan lees ko ko waññale? Gannaaw ba mu xarafee, am ba mu xarafagul? Du gannaaw ba mu xarafee, waaye ba mu xarafagul la.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Gannaaw gi la jagoo màndargam xaraf, mu firndeel àtteb njubam gi ngëmam waral, te fekkul mu xaraf. Noonu la Ibraayma mana nekke maamu mboolem gëmkat ñi. Looloo tax muy maamu mboolem ñi xaraful, te gëm, ndax ñu waññal leen seen ngëm, ab àtteb ñu jub.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Looloo tax it Ibraayma di maamu ñi xaraf, te du xaraf gu ñu toppe aada, xanaa ñu boole ca topp ci tànki ngëm ga sunu maam Ibraayma amoon ba mu xarafagul.<span id="bookmarks12"></span></div>
+
+<div class="s"><div id="s2">Ibraayma gëmoon na digeb Yàlla</div></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="p"><span class="v">13</span><span class="vsp">&nbsp;</span>Ndax kat digeb <span class="footnote selectable" id="G-32">Ibraayma</span> ba sédde Ibraayma àddina si, moom ak askanam<span class="footnote selectable" id="F-3"><sup>d</sup></span>, sàmm gu mu sàmm yoonu Musaa taxul, waaye àtteb njub bi mu jagoo ndax ngëmam, moo ko waral.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Nde su dee ñi ci yoonu Musaa la dige bi ñeel, kon ngëm dootu tekki dara, te kon digeb Yàlla ba day neen.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Yoonu Musaa daal, am sànj lay jur, te fu yoon wees di sàmm amul, genn moy amu fa.<span id="bookmarks15"></span></div><span id="bookmarks15"></span><a id="v16"></a>
+<div class="p"><span class="v">16</span><span class="vsp">&nbsp;</span>Kon nag dige Yàlla boobu, ngëm moo ko waral, ngir mu di aw yiw doŋŋ. Noonu la dige bi doone lu wóor, ñeel ñi soqikoo ci Ibraayma ñépp; du ñi bokk ci yoonu Musaa rekk, waaye ñeel na itam ñi bokk ci ngëmu Ibraayma, miy sunu maam, nun ñépp.<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Noonu la Mbind mi indee ne: «Maa la def ngay maamu xeet yu bare<span class="footnote selectable" id="F-4"><sup>e</sup></span>.» Ibraayma mooy sunu maam fi kanam Ki mu gëm, te muy Yàlla miy delloo ñi dee, bakkan, tey woo lu nekkul, mu doon lu nekk.<span id="bookmarks17"></span></div><span id="bookmarks17"></span><a id="v18"></a>
+<div class="p"><span class="v">18</span><span class="vsp">&nbsp;</span>Ba bunti yaakaar yépp tëjee, Ibraayma moo dese woon yaakaaram, wéye ngëmam, ba doon maamu xeet yu bare, loolu dëppook kàddu ga noon: «Noonu la saw askan di tollu<span class="footnote selectable" id="F-5"><sup>f</sup></span>.»<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Ngëmu Ibraayma wàññikuwul, doonte ba mu xoolaatee boppam, xam na ne yaramam dee na daanaka, ndax fekk na ay atam xawa tollu ci téeméer, te njurukaayu Saarata it fekk na ko dee.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Teewul digeb Yàlla ba la ne jàkk, nàttablewul, gëmadiwul, xanaa dëgërloo dooley ngëmam rekk, sant Yàlla.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Dafa wéroon Ibraayma péŋŋ ne li Yàlla dige, man na koo def.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Moo tax it, ñu waññal ko ngëmam ag njub.<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>Ba ñu bindee ne ngëmu Ibraayma, moom lees ko waññal àtteb ku jub<span class="footnote selectable" id="F-6"><sup>g</sup></span>, du Ibraayma doŋŋ la mbind ma ñeel.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Nun itam ci lanu; dees na nu waññal sunu ngëm, àtteb ñu jub, nun ñi gëm Ki dekkal sunu Sang Yeesu,<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>mi ñu teg ciy loxo, mu dee ndax sunuy tooñ, ba dekkal ko, ngir nu jagoo àtteb nit ñu jub.<span id="bookmarks25"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2020 MBS.</span></div></div>
+</div>
+</body>
+</html>

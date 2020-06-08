@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.Buur ya 1</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">1.50 </span><span class=\"ft\">Jàpp ca sarxalukaay ba ca kër Yàlla ga, nit daan na ko def, di ko sàkkoo rawale bakkanam. Seetal ci <span class=\"bk\">Mucc ga</span> 21.14.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-63": "<div><span class=\"k\">sarxalukaay b-:</span> Waa penku baaxoo woon nañoo yékkatil seeni yàlla, ay sarxalukaay ci yenn bérab, ngir njukkale ko seeni yàlla. Sarxalukaay yooyu, ban lees ko daan tabaxe mbaa ay xeer, mu taxawe ni waxande, te jur gi ñuy def sarax di tege ca kaw.</div><div class=\"p\">Niti Aji Sax ji ci seen wallu bopp, naka jekk, daan nañu yékkatil Aji Sax ji ay sarxalukaay yu ñu koy njukkale. Ba kërug jaamookaayu Aji Sax ji taxawee itam, noonu la bànni Israyil ame woon ñaari sarxalukaay ca biir kër Yàlla ga, benn bi ñuy lakke jur gu ñu rendi, bi ci des, ñu di ci taal cuuraayu sarax. Sarxalukaayu jur gi amul woon kubeer ca kaw, waaye ab caaxam la àndaloon, ñu di ci teg matt mi ñuy lakke jur gi. Ay béjjén lañu sàkkaloon boobu sarxalukaay ca ñeenti koñam ya ca kaw.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 22 }];
+var hasIntro = false;
+var baseRef  = "KYG-11-1KI-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-10-2SA-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-10-2SA-024.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;1.Buur ya&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-11-1KI-002.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-12-2KI-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="mt"><span class="mt">Buur ya</span></div>
+<div class="mt2"><span class="mt2">di téere bu jëkk bi</span></div>
+<div class="b"></div>
+<div class="b"></div>
+<div class="ms"><div id="ms1">Lu jëm ci nguurug Suleymaan</div></div>
+<div class="mr"><div id="mr1">(Saar 1.1—11.43)</div></div>
+
+<div class="s"><div id="s1">Daawuda néew na doole</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">1</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Gannaaw gi Buur Daawuda mujj naa màggat, ba làq at yu bare, ñu di ko sàng ay sér te du ko taxa tàng.<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>Ay dagam ne ko: «Buur, sang bi, nañu la wutal ab janq, mu di la taxawu, di la topptoo. Man naa tëdd it ci sa wet, Buur, ndax nga liwwi, sang bi.»<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Ñu daldi seet ci tundu Israyil wépp, ba gis janq bu rafet bu ñuy wax Abisag, di waa Sunem. Ñu indil ko Buur.<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>Janq baa nga taaru lool. Muy topptoo nag Buur, di ko taxawu, waaye Buur dëkkoowu ko.<span id="bookmarks4"></span></div>
+
+<div class="s"><div id="s2">Adoñaa ngi sàkku jal bi</div></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="p"><span class="v">5</span><span class="vsp">&nbsp;</span>Ci biir loolu Adoña doomu Daawudaak Agit, di tëggu naan: «Man mii maay doon buur.» Mu waajalal boppam watiiru xare aki fas ak juróom fukki nit ñuy daw di ko jiitu.<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>Baayam Daawuda nag masu koo wax dara, ak lu mu mana def. Adoña moo toppoon ci Absalom. Mu doonoon ku góorayiw lool.<span id="bookmarks6"></span></div><span id="bookmarks6"></span><a id="v7"></a>
+<div class="p"><span class="v">7</span><span class="vsp">&nbsp;</span>Ci kaw loolu Adoña diisook Yowab, mi Seruya di ndeyam, ak Abiyatar <span class="footnote selectable" id="G-62">sarxalkat</span> ba, ñooñu jàpple ko.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Waaye Cadog sarxalkat ba ak Benaya doomu Yoyada, ak Yonent Yàlla Natan, ak Simey ak Reyi, ñook jàmbaari Daawuda ya koy dar, ñooñu ànduñu woon ak Adoña.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Ba mu ko defee Adoña sarxe ay xar aki nag aki wëllu yu duuf ca wetu doju Soyelet, fa feggook En Rogel. Mu woo ca mboolem doomi Buur yu góor ya mu bokkal baay, ak jawriñi Buur yu diiwaanu Yuda.<span id="bookmarks9"></span> <a id="v10"></a><span class="v">10</span><span class="vsp">&nbsp;</span>Waaye woowul Yonent Yàlla Natan ak Benaya, woowul jàmbaar yay dar Daawuda, woowul rakkam Suleymaan.<span id="bookmarks10"></span></div><span id="bookmarks10"></span><a id="v11"></a>
+<div class="p"><span class="v">11</span><span class="vsp">&nbsp;</span>Ba loolu amee Natan laaj Batseba, ndeyu Suleymaan, ne ko: «Waaw, xanaa déggoo ne Adoña doomu Agit falu na buur te sunu sang Daawuda yégu ko?<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Kaay gaaw, ma digal la nooy def, ba musal sa bakkan ak sa bakkanu doom Suleymaan.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Gaawal dem ca Buur Daawuda, ne ko: “Buur, sang bi, du yaa ma giñaloon, yaw sang bi, ne ma sama doom Suleymaan mooy falu buur, wuutu la, te mooy toog ci sa jal bi? Kon nag lu tax Adoña falu buur?”<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Gisal, diir bi ngay wax ak Buur foofa, man dinaa duggsi, topp ci yaw te dinaa dëggal sa kàddu.»<span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="p"><span class="v">15</span><span class="vsp">&nbsp;</span>Batseba dem ba ca Buur, ca biir néegam. Buur a nga màggat lool, Abisag mu Sunem di ko taxawu.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Batseba agsi sujjóotal Buur, sukk fi kanamam. Buur ne ko: «Lu doon say tànk?»<span id="bookmarks16"></span> <a id="v17"></a><span class="v">17</span><span class="vsp">&nbsp;</span>Mu ne ko: «Sama sang, yaw yaa ma giñal ci sa Yàlla <span class="footnote selectable" id="G-3">Aji Sax</span> ji, sang bi, nga ne ma sama doom Suleymaan de dina falu buur moos, wuutu la, te moom mooy toog ci sa kaw jal bi.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Waaye xoolal léegi Adoñaa ngii falu buur, te yaw Buur sang bi, yéguloo ko.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Sarxe na ay nag ak wëllu yu duuf ak xar yu bare. Woo na ca doomi Buur yu góor yépp, woo ca Abiyatar sarxalkat ba, woo ca Yowab, njiitu mbooloom xare mi. Waaye Suleymaan sa surga ba, woowu ko.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Yaw nag Buur, sang bi, Israyil gépp a ngi ne jàkk ci yaw, ngir nga xamal leen kan ngay dëj ci sab jal, mu wuutu la, sang bi.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Lu ko moy de Buur, sang bi, bés boo nopplujee fekki say maam, su boobaa man, maak sama doom Suleymaan dinañu nu tuumaal.»<span id="bookmarks21"></span></div><span id="bookmarks21"></span><a id="v22"></a>
+<div class="p"><span class="v">22</span><span class="vsp">&nbsp;</span>Na Batseba di wax ak Buur, Yonent Yàlla Natan jekki ne jalañ.<span id="bookmarks22"></span> <a id="v23"></a><span class="v">23</span><span class="vsp">&nbsp;</span>Ñu wax ko ne ko: «Buur, Yonent Yàlla Natan a ngoog.» Mu agsi ba ci kanam Buur, sujjóotal ko, dëpp kanamam fa suuf.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Natan ne ko: «Buur, sang bi, ndax yaa wax ne Adoña mooy falu buur, wuutu la, te moom mooy toog ci kaw jal bi?<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Ndax kat, Adoña dem na tey jii, sarxeji lu bare ciy nag ak wëllu yu duuf aki xar. Woo na ca doomi Buur yu góor yépp, ñook njiiti xare yeek Abiyatar sarxalkat bi. Ña nga noonee di lekk ak a naan ñook moom te naa: “Buur Adoña, guddalu fan!”<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Man sa surga bii nag, maak Cadog sarxalkat bi ak Benaya doomu Yoyada ak sa surga ba Suleymaan, woowu nu ca.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Buur, sang bi, ndax wér na ne loolu ndigal la lu bàyyikoo fi yaw, te xamaloo nu kan mooy toog ci sa kaw jal bi, wuutu la, yaw Buur, sang bi?»<span id="bookmarks27"></span></div><span id="bookmarks27"></span><a id="v28"></a>
+<div class="p"><span class="v">28</span><span class="vsp">&nbsp;</span>Buur Daawuda ne ko: «Wool ma Batseba!» Ci kaw loolu Batseba dikk taxaw fa kanam Buur.<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Buur daldi giñ ne: «Giñ naa ci Aji Sax ji, Kiy Dund te musal sama bakkan bii ci jépp njàqare,<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>bir na ne loolu ma la giñaloon ci Aji Sax ji, Yàllay Israyil, ne la bir na ne Suleymaan sa doom mooy doon buur wuutu ma te mooy toog ci kaw jal bii ma toog– loolu déy dinaa ko sottal bés niki tey.»<span id="bookmarks30"></span> <a id="v31"></a><span class="v">31</span><span class="vsp">&nbsp;</span>Ba mu ko defee Batseba dëpp kanamam fa suuf, sukk fa kanam Buur, ne ko: «Buur Daawuda, sang bi, yal nanga fi yàgg.»<span id="bookmarks31"></span></div>
+
+<div class="s"><div id="s3">Suleymaan falu na</div></div><span id="bookmarks31"></span><a id="v32"></a>
+<div class="p"><span class="v">32</span><span class="vsp">&nbsp;</span>Buur Daawuda daldi ne: «Wool-leen ma Cadog <span class="footnote selectable" id="G-62">sarxalkat</span> bi, ak Yonent Yàlla Natan ak Benaya doomu Yoyada.» Ba ñu dikkee fa kanam Buur,<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Buur ne leen: «Àndleen ak samay dag, ngeen waral sama doom Suleymaan ca sama kaw berkelle bu jigéen ba, te yóbbu ko Giyon, bëtu ndox ba.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Cadog sarxalkat bi ak Yonent Yàlla Natan, nañu ko diw foofa, fal ko mu jiite Israyil. Su ko defee ngeen wal liit gi te yéene ne: “Buur Suleymaan, guddalu fan!”<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Ngeen topp nag ci moom, délsi, mu dikk toog ci kaw jal bi. Moom mooy nguuru, wuutu ma. Moom laa fal, mu yilif Israyil ak Yuda.»<span id="bookmarks35"></span> <a id="v36"></a><span class="v">36</span><span class="vsp">&nbsp;</span>Ba loolu amee Benaya doomu Yoyada ne Buur: «Buur, sang bi, yal na ko <span class="footnote selectable" id="G-3">Aji Sax</span> ji sa Yàlla dogal. Amiin!<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>Na Aji Sax ji ànde woon ak yaw Buur, sang bi, yal na ni àndeek Suleymaan, te yal na kaweel ab jalam, ba mu sut sab jal, yaw Buur Daawuda, sang bi.»<span id="bookmarks37"></span> <a id="v38"></a><span class="v">38</span><span class="vsp">&nbsp;</span>Gannaaw loolu Cadog sarxalkat ba daldi ànd ak Yonent Yàlla Natan ak Benaya doomu Yoyada, ak waa Keret ak waa Pelet yay dar Daawuda. Ñu waral Suleymaan berkelleb Buur Daawuda. Ñu dar ko ba Giyon, bëtu ndox ba.<span id="bookmarks38"></span> <a id="v39"></a><span class="v">39</span><span class="vsp">&nbsp;</span>Ci kaw loolu Cadog sarxalkat ba dem ca xaymab Aji Sax ji, jële fa béjjén ba def diwu pal ga, diw ca Suleymaan. Ñu wal liit ga, mbooloo ma mépp àddu ca kaw ne: «Buur Suleymaan, guddalu fan!»<span id="bookmarks39"></span> <a id="v40"></a><span class="v">40</span><span class="vsp">&nbsp;</span>Ba loolu amee mbooloo ma mépp topp ca, bég lool, di toxoro, coow la jolli, ba suuf sa di riir.<span id="bookmarks40"></span></div><span id="bookmarks40"></span><a id="v41"></a>
+<div class="p"><span class="v">41</span><span class="vsp">&nbsp;</span>Ba mu ko defee Adoña dégg ca, mook mboolem ña mu woo woon, ñu nekk faak moom. Fekk ñu lekk ba noppi. Ba Yowab déggee liit ga, da ne: «Waaw, riir mi ci dëkk bi, lu mu doon?»<span id="bookmarks41"></span> <a id="v42"></a><span class="v">42</span><span class="vsp">&nbsp;</span>Daaneelagul kàddoom sax, Yonatan doomu Abiyatar sarxalkat ba ne jaas, agsi. Adoña ne ko: «Dikkal, yaw nit ku baax nga, te xibaaru jàmm ngay indi.»<span id="bookmarks42"></span> <a id="v43"></a><span class="v">43</span><span class="vsp">&nbsp;</span>Yonatan ne Adoña: «Déedéet kay, sunu sang Buur Daawuda fal na Suleymaan buur.<span id="bookmarks43"></span> <a id="v44"></a><span class="v">44</span><span class="vsp">&nbsp;</span>Buur boole na kook Cadog sarxalkat bi ak Yonent Yàlla Natan ak Benaya doomu Yoyada ak waa Keret ak waa Pelet yay dar Buur. Yebal na leen, ñu waral ko berkelleb Buur.<span id="bookmarks44"></span> <a id="v45"></a><span class="v">45</span><span class="vsp">&nbsp;</span>Cadog sarxalkat baak Yonent Yàlla Natan diw nañu ko, fal ko ca Giyon, ba bàyyikoo ca, di ko bége, mu dim riir ci dëkk bi. Mooy coow, li ngeen dégg.<span id="bookmarks45"></span> <a id="v46"></a><span class="v">46</span><span class="vsp">&nbsp;</span>Suleymaan sax toog na ca jalu buur;<span id="bookmarks46"></span> <a id="v47"></a><span class="v">47</span><span class="vsp">&nbsp;</span>te it jawriñi Buur ñëw nañu, di sargalsi sunu sang Buur Daawuda, ne ko: “Yal na sa Yàlla siiwal turu Suleymaan, ba mu gën laa amu tur. Yal na kaweel ab jalam, ba mu gëna kawe sab jal.” Buur sujjóot ca kaw lalam,<span id="bookmarks47"></span> <a id="v48"></a><span class="v">48</span><span class="vsp">&nbsp;</span>teg ca ne: “Cant ñeel na Aji Sax ji, Yàllay Israyil, ji ma jox bésub tey ku ma wuutu ci samab jal, may gis.”»<span id="bookmarks48"></span> <a id="v49"></a><span class="v">49</span><span class="vsp">&nbsp;</span>Ba loolu amee tiitaange jàpp mboolem ña ñu woo woon ca jataayu Adoña. Ñu jóg, tasaaroo, ku nekk dem yoonam.<span id="bookmarks49"></span></div><span id="bookmarks49"></span><a id="v50"></a>
+<div class="p"><span class="v">50</span><span class="vsp">&nbsp;</span>Adoña nag ragal Suleymaan, daldi dem jàpp ca béjjén ya ca cati <span class="footnote selectable" id="G-63">sarxalukaay</span> ba, ngir rawale bakkanam<span class="footnote selectable" id="F-0"><sup>a</sup></span>.<span id="bookmarks50"></span> <a id="v51"></a><span class="v">51</span><span class="vsp">&nbsp;</span>Ñu wax ko Suleymaan, ne ko: «Buur Suleymaan, Adoña de, ragal na la. Deful lu moy jàpp ca béjjéni sarxalukaay ba te naa: “Na ma Buur Suleymaan sang bi giñal tey jii ne du ma jam saamar, ma dee.”»<span id="bookmarks51"></span> <a id="v52"></a><span class="v">52</span><span class="vsp">&nbsp;</span>Suleymaan daldi ne: «Su dee nit ku jara wóolu de, genn kawaram du wadd ci suuf. Waaye su lalee pexem wor de, dina dee.»<span id="bookmarks52"></span> <a id="v53"></a><span class="v">53</span><span class="vsp">&nbsp;</span>Ba loolu amee Buur Suleymaan yónnee, ñu jëleji Adoña ca sarxalukaay ba, mu dikk, sujjóotal Buur Suleymaan. Mu ne ko: «Man ngaa ñibbi sa kër.»<span id="bookmarks53"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

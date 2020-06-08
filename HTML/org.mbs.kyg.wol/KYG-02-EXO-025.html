@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mucc ga 25</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">25.5 </span><span class=\"fk\">piipi </span><span class=\"ft\">rabu géej la, bu der ba nooy te ndox du ko dugg.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">25.5 </span><span class=\"fk\">séng: </span><span class=\"ft\">am na ñu koy wooye kasiya.</span></div>",
+    "F-2": "<div class=\"footnote-p\"><span class=\"fr\">25.10 </span><span class=\"fk\">xasab </span><span class=\"ft\">mooy guddaayu loxo, diggante catu baaraamu digg ak conc.</span></div>",
+    "F-3": "<div class=\"footnote-p\"><span class=\"fr\">25.33 </span><span class=\"fk\">garabu amànd </span><span class=\"ft\">xeetoo naak gerte-tubaab.</span></div>",
+    "F-4": "<div class=\"footnote-p\"><span class=\"fr\">25.39 </span><span class=\"ft\">Mu yemook benn nattu diisaay bu ñu daan jëfandikoo, ñu di ko wax talaŋ.</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-13": "<div><span class=\"k\">bànni Israyil:</span> Israyil mooy tur wi Yàlla jox Yanqóoba, doomu Isaaxa, sëtub Ibraayma. Ñi soqikoo ci Yanqóoba lañuy wooye bànni Israyil mbaa Yawut. Ñoo def fukki giir ak ñaar, di xeet yi soqikoo ci doomi Yanqóoba. Gannaaw ba réew ma séddlikoo, saa yu Mbind mi indee baatub «Israyil» ñaare, réew mépp taxul ñuy wax, waaye fukki giir yi féete bëj-gànnaar rekk lañuy wax.</div>",
+    "G-80": "<div><span class=\"k\">xar-sànni m-:</span> Mbubbu jaamookaay la, mu sarxalkat biy sol, kiiraayal dënn ba tege ca kaw. Kiiraay li xeetu jiba la ju daan def jumtukaay yooyu ñuy wax Urim ak Tumim, jumtukaay yu sell, yi ñuy seete, ba xam li Yàlla namm.</div>",
+    "G-30": "<div><span class=\"k\">gaalu kóllëre g-:</span> Mooy waxande wa ñu dencoon àlluway doj ya Yàlla joxoon Musaa. Àlluwa yooyu la lale kóllëre ga mu fas ak bànni Israyil. Li waral ñu tudde ko <span class=\"bd\">gaal ga seede sa dence</span>, mbaa <span class=\"bd\">gaal ga àlluway seede sa dence</span> moo di àlluwa yooyu, seede la woon ca la Yàlla santaane. Bu gaal ga masaana teew bérab, loolu day firndeel ne Yàllaa fa teewal ag leeram ngir ñoñam.</div>",
+    "G-67": "<div><span class=\"k\">serub y-:</span> Baatu ebrë la. Ay bindeef lañu yu bokk ak Yàlla jataay. Ñooy wattu dénd ba ngànguney Yàlla nekk, ba foofa dëkke sell. Jaamookaayu Yàlla ga amoon na gaal gu ñuy wooye gaalu kóllëre ga. Ñaari serub yu ñu tëgge wurus lañu tegoon ca kawam, ñu tiim ko, seeni laaf firiku, di saamandaay ngàngunem buur. Loolu di wone ne Yàlla Aji Sax jaa nga fa teew, na mu teewe ca kaw asamaan, serub ya yéew ko. Yàlla ci boppam nag kenn jëmmalu ko fa, na ñu jëmmale serub ya ñu tëgg.</div>",
+    "G-49": "<div><span class=\"k\">mburum teewal m-:</span> Ayu bés gu nekk sarxalkat ya daan nañu sàkk fukki mburu ak ñaar, teewal ko ca kanam Yàlla, muy misaal ni bànni Israyil jébbaloo ci Yàlla.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 40 }];
+var hasIntro = true;
+var baseRef  = "KYG-02-EXO-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-01-GEN-000.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-02-EXO-024.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Mucc ga&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;25&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-02-EXO-026.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-03-LEV-000.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+<div class="ms"><div id="ms1">Lu jëm ci jaamookaay bi</div></div><a id="v1"></a>
+<div class="m">
+<div class="c-drop">25</div> <span class="v">1</span><span class="vsp">&nbsp;</span><span class="footnote selectable" id="G-3">Aji Sax</span> ji waxati Musaa ne ko:<span id="bookmarks1"></span> <a id="v2"></a><span class="v">2</span><span class="vsp">&nbsp;</span>«Waxal <span class="footnote selectable" id="G-13">bànni Israyil</span> ne leen, ñu indil ma ab jooxe. Ci képp ku am yéeneem ngeen di nangoo sama jooxe, indil ma ko.<span id="bookmarks2"></span> <a id="v3"></a><span class="v">3</span><span class="vsp">&nbsp;</span>Jooxe bi ngeen di nangoo ci ñoom di wurus ak xaalis ak xànjar,<span id="bookmarks3"></span> <a id="v4"></a><span class="v">4</span><span class="vsp">&nbsp;</span>ak wëñ gu baxa te laal yolet ak wëñ gu xewar ak gu xonq curr ak wëñu lẽe, ak kawari bëy<span id="bookmarks4"></span> <a id="v5"></a><span class="v">5</span><span class="vsp">&nbsp;</span>ak deri kuuyu xar yu ñu wulli, sóob ko xonqal, ak deri piipi<span class="footnote selectable" id="F-0"><sup>a</sup></span> ak banti séng<span class="footnote selectable" id="F-1"><sup>b</sup></span>,<span id="bookmarks5"></span> <a id="v6"></a><span class="v">6</span><span class="vsp">&nbsp;</span>ak diwu oliw gu ñuy taaloo, ak ndàbb luy xeeñal diwu pal, di xeeñal cuuraay,<span id="bookmarks6"></span> <a id="v7"></a><span class="v">7</span><span class="vsp">&nbsp;</span>ak peri onigsë, ak yeneen per yu ñuy tapp ci <span class="footnote selectable" id="G-80">xar-sànnim</span> sarxalkat bu mag ba ak kiiraayal dënnam.<span id="bookmarks7"></span> <a id="v8"></a><span class="v">8</span><span class="vsp">&nbsp;</span>Na ma bànni Israyil defaral kër gu sell, ndax ma dëkk ci seen biir.<span id="bookmarks8"></span> <a id="v9"></a><span class="v">9</span><span class="vsp">&nbsp;</span>Na lépp dëppoo ak li ma lay won. Muy misaalu xaymab jaamookaay bi, di misaalu mboolem ay jumtukaayam, lépp defe leen ko noonu.<span id="bookmarks9"></span></div>
+
+<div class="s"><div id="s1">Lu jëm ci gaal giy def àlluway seede si</div></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="p"><span class="v">10</span><span class="vsp">&nbsp;</span>«Defarleen gaalu dénku séng, guddaayam di ñaari xasab<span class="footnote selectable" id="F-2"><sup>c</sup></span> ak genn-wàll, yaatuwaayam di xasab ak genn-wàll; taxawaayam di xasab ak genn-wàll.<span id="bookmarks10"></span> <a id="v11"></a><span class="v">11</span><span class="vsp">&nbsp;</span>Nañu ko xoob wurusu ngalam. Biir ak biti lañu koy xoob, sàkkal ko kéméju wurus, gu ko wër.<span id="bookmarks11"></span> <a id="v12"></a><span class="v">12</span><span class="vsp">&nbsp;</span>Móolalal gaal gi ñeenti lami wurus yu ñuy takk ci ñeenti tànk yi; ñaari lam, wet gii; ñaar wet gee.<span id="bookmarks12"></span> <a id="v13"></a><span class="v">13</span><span class="vsp">&nbsp;</span>Yettlul ay banti njàppuy séng te nga xoob bu ci nekk wurus.<span id="bookmarks13"></span> <a id="v14"></a><span class="v">14</span><span class="vsp">&nbsp;</span>Su ko defee nga roof njàppu yi ci lam, yi ci weti <span class="footnote selectable" id="G-30">gaal</span> gi, ngir ñu di ko yóbboo gaal gi.<span id="bookmarks14"></span> <a id="v15"></a><span class="v">15</span><span class="vsp">&nbsp;</span>Ci lami gaal gi la njàppu yiy des te bañ cee jógeeti.<span id="bookmarks15"></span> <a id="v16"></a><span class="v">16</span><span class="vsp">&nbsp;</span>Yebal ci gaal gi àlluway seede si ma lay jox.<span id="bookmarks16"></span></div><span id="bookmarks16"></span><a id="v17"></a>
+<div class="p"><span class="v">17</span><span class="vsp">&nbsp;</span>«Defarlul kubeer gu ñuy amale njotlaay gu wurusu ngalam ngir gaal gi. Na guddaayam di ñaari xasab ak genn-wàll, yaatuwaayam di xasab ak genn-wàll.<span id="bookmarks17"></span> <a id="v18"></a><span class="v">18</span><span class="vsp">&nbsp;</span>Tëgglul ñaari malaakay <span class="footnote selectable" id="G-67">serub</span> yu wurus te nga féetale leen ak ñaari cati kubeeru njotlaay ga.<span id="bookmarks18"></span> <a id="v19"></a><span class="v">19</span><span class="vsp">&nbsp;</span>Defal cat lii ab serub, cat lee ab serub te nanga móolaale kubeer gi ak serub yi ci ñaari cat yi, ñu ànd di benn.<span id="bookmarks19"></span> <a id="v20"></a><span class="v">20</span><span class="vsp">&nbsp;</span>Na serub yi tàllal seeni laaf, jëme kaw te nañu yiire kubeeru njotlaay gi seeni laaf. Nañu janoo, te na seeni kanam jublook kubeeru njotlaay gi.<span id="bookmarks20"></span> <a id="v21"></a><span class="v">21</span><span class="vsp">&nbsp;</span>Tegal kubeeru njotlaay gi ci kaw gaal gi, gannaaw boo ci yebee àlluway seede si ma lay jox.<span id="bookmarks21"></span> <a id="v22"></a><span class="v">22</span><span class="vsp">&nbsp;</span>Foofa laay dajeek yaw; fa tiim kubeeru njotlaay ga, ca diggante ñaari serub ya ca kaw gaalu seede sa, fa laa lay waxe mboolem lu ma lay sant, ñeel <span class="footnote selectable" id="G-13">bànni Israyil</span>.<span id="bookmarks22"></span></div>
+
+<div class="s"><div id="s2">Lu jëm ci taabalu mburum sarax mi</div></div><span id="bookmarks22"></span><a id="v23"></a>
+<div class="p"><span class="v">23</span><span class="vsp">&nbsp;</span>«Defarlul taabalu bantu séng, guddaayam di ñaari xasab, yaatuwaayam di xasab, taxawaayam di xasab ak genn-wàll.<span id="bookmarks23"></span> <a id="v24"></a><span class="v">24</span><span class="vsp">&nbsp;</span>Xoob ko wurusu ngalam te defal ko kéméju wurus gu ko wër.<span id="bookmarks24"></span> <a id="v25"></a><span class="v">25</span><span class="vsp">&nbsp;</span>Defal ko pegg bu ko wër bu tollu ci ñeenti baaraam, te sàkkal pegg ba wombu wurus, wërale ko.<span id="bookmarks25"></span> <a id="v26"></a><span class="v">26</span><span class="vsp">&nbsp;</span>Defarlul ko ñeenti lami wurus te takk lam ya ca ñeenti wet ya, fa fareek ñeenti tànk ya.<span id="bookmarks26"></span> <a id="v27"></a><span class="v">27</span><span class="vsp">&nbsp;</span>Na lam yi dendeek pegg bi, ngir mana téye njàppu, yi ñuy yóbboo taabal ji.<span id="bookmarks27"></span> <a id="v28"></a><span class="v">28</span><span class="vsp">&nbsp;</span>Yettlul ay njàppu yu bantu séng, nga xoob njàppu yi wurus, ñu di ko yóbboo taabal ji.<span id="bookmarks28"></span> <a id="v29"></a><span class="v">29</span><span class="vsp">&nbsp;</span>Sàkkal ko ay ndabam yu tell aki mbàttoom aki njaqam, ak këllam yi ñuy tuuroo. Te wurusu ngalam ngay def lu ci nekk.<span id="bookmarks29"></span> <a id="v30"></a><span class="v">30</span><span class="vsp">&nbsp;</span>Tegal <span class="footnote selectable" id="G-49">mburum teewal</span> mi ci kaw taabal ji, mu nekk ci sama kanam ba fàww.<span id="bookmarks30"></span></div>
+
+<div class="s"><div id="s3">Lu jëm ci tegukaayu làmp bi</div></div><span id="bookmarks30"></span><a id="v31"></a>
+<div class="p"><span class="v">31</span><span class="vsp">&nbsp;</span>«Defarlul tegukaayu làmp bu wurusu ngalam. Tegukaay ba, dees koy tëgg. Na taatu tegukaay ba ak per ba ànd aki kaasam aki kàmbóotam aki mbaram, lépp di benn.<span id="bookmarks31"></span> <a id="v32"></a><span class="v">32</span><span class="vsp">&nbsp;</span>Juróom benni car ñooy soqikoo ca wet ya, ñetti car ci gii wet, ñett ca ga ca des.<span id="bookmarks32"></span> <a id="v33"></a><span class="v">33</span><span class="vsp">&nbsp;</span>Benn car day am ñetti kaas yu bindoo ni tóor-tóoru garabu amànd<span class="footnote selectable" id="F-3"><sup>d</sup></span>, kaas bu ci nekk ànd ak ay kàmbóotam aki mbaram, car ba ca topp am ñetti kaas yu bindoo ni tóor-tóoru garabu amànd, kaas bu ci nekk ànd aki kàmbóotam aki mbaram, juróom benni car, ya soqikoo ca per ba, daj.<span id="bookmarks33"></span> <a id="v34"></a><span class="v">34</span><span class="vsp">&nbsp;</span>Gannaaw loolu peru tegukaayu làmp ba itam day am ñeenti kaas yu bindoo ni tóor-tóoru garabu amànd, ànd ak ay kàmbóotam aki mbaram.<span id="bookmarks34"></span> <a id="v35"></a><span class="v">35</span><span class="vsp">&nbsp;</span>Ab kàmbóot ay ronu yii ñaari car, jàpp ca; beneen kàmbóot ronu ñaari car ya ca topp, jàpp ca, ab kàmbóot ronu ñaari car ya mujj, jàpp ca, juróom benni car, ya soqikoo ca peru làmp ba, daj.<span id="bookmarks35"></span> <a id="v36"></a><span class="v">36</span><span class="vsp">&nbsp;</span>Kàmbóot ya ak car ya dañuy ànd ak tegukaay ba, di benn, lépp doon lu ñu tëgge wenn dogu wurusu ngalam.<span id="bookmarks36"></span> <a id="v37"></a><span class="v">37</span><span class="vsp">&nbsp;</span>Defarlul juróom ñaari làmpam. Te na làmp ya tege tegin wuy leeral ca kanam tegukaay ba.<span id="bookmarks37"></span> <a id="v38"></a><span class="v">38</span><span class="vsp">&nbsp;</span>Ñiimi feyukaayu làmp yi ak andi làmp yi na doon wurusu ngalam.<span id="bookmarks38"></span> <a id="v39"></a><span class="v">39</span><span class="vsp">&nbsp;</span>Fanweeri kiloy wurusu ngalam ak juróom<span class="footnote selectable" id="F-4"><sup>e</sup></span>, ci lees di sàkk tegukaayu làmp bi, ak mboolem li mu àndal.<span id="bookmarks39"></span> <a id="v40"></a><span class="v">40</span><span class="vsp">&nbsp;</span>Nanga xool te topp misaal, yi ñu la ciy won ci kaw tund wi.<span id="bookmarks40"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

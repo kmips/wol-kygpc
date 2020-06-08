@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esayi 12</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Glossary entries
+var glossary = {
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>",
+    "G-71": "<div><span class=\"k\">Siyoŋ:</span> Mooy turu tund, wa ñu tabax Yerusalem ci kawam. Dees na ko wooye itam askanu Yawut.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 66 }];
+var hasIntro = false;
+var baseRef  = "KYG-23-ISA-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-22-SNG-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-23-ISA-011.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Esayi&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;12&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-23-ISA-013.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-24-JER-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Cant jib na</div></div><a id="v1"></a>
+<div class="m top-spacing">
+<div class="c-drop">12</div> <span class="v">1</span><span class="vsp">&nbsp;</span>Bésub keroog dees na ne:</div>
+<div class="q top-spacing">«<span class="footnote selectable" id="G-3">Aji Sax</span> ji, sant naa la;</div>
+<div class="q">yaa ma mere woon, meddi, dëfal ma.»<span id="bookmarks1"></span></div><span id="bookmarks1"></span><a id="v2"></a>
+<div class="q-v"><span class="v">2</span><span class="vsp">&nbsp;</span>Ma ne: «Yàllaa may wallu,</div>
+<div class="q">ma dal-lu, duma tiit.</div>
+<div class="q">Sama dooleek sama kaaraange mooy Ki sax,</div>
+<div class="q">di Aji Sax ji,</div>
+<div class="q">te mooy sama wall.»<span id="bookmarks2"></span></div><span id="bookmarks2"></span><a id="v3"></a>
+<div class="q-v"><span class="v">3</span><span class="vsp">&nbsp;</span>Mbégte ngeen di rooteji</div>
+<div class="q">fa wali mucc ya.<span id="bookmarks3"></span></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="q-v"><span class="v">4</span><span class="vsp">&nbsp;</span>Bésub keroog ngeen ne:</div>
+<div class="q">«Santleen Aji Sax ji, tudd turam,</div>
+<div class="q">xamley jalooreem ci biir xeet yi,</div>
+<div class="q">fàttli màggaayu turam.<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="q-v"><span class="v">5</span><span class="vsp">&nbsp;</span>Woyleen Aji Sax ji,</div>
+<div class="q">moo kawey jëf!</div>
+<div class="q">Na lii siiw biir àddina sépp.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="q-v"><span class="v">6</span><span class="vsp">&nbsp;</span>Yeen waa <span class="footnote selectable" id="G-71">Siyoŋ</span>, serleen te sarxolleel</div>
+<div class="q2">ku màgg ki fi seen biir,</div>
+<div class="q">Aji Sell ju Israyil.»<span id="bookmarks6"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>

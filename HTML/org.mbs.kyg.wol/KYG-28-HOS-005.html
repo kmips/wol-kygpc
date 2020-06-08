@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ose 5</title>
+
+<script type='text/javascript' src='js/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='js/popcorn-complete.min.js'></script>
+<script type='text/javascript' src='js/jquery.tooltipster.min.js'></script>
+<script type='text/javascript' src='js/app-builder-audio.js'></script>
+<script type='text/javascript' src='js/app-builder-footnotes.js'></script>
+<script type='text/javascript' src='js/app-builder-menus.js'></script>
+<script type='text/javascript' src='js/app-builder-video.js'></script>
+<script type='text/javascript' src='js/book-names.js'></script>
+
+<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+<link rel="stylesheet" type="text/css" href="css/sab-stylesheet.css" />
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+// Footnotes and Cross-references
+var footnotes = {
+    "F-0": "<div class=\"footnote-p\"><span class=\"fr\">5.8 </span><span class=\"ft\">Seetal 4.15.</span></div>",
+    "F-1": "<div class=\"footnote-p\"><span class=\"fr\">5.13 </span><span class=\"fk\">Yareb </span><span class=\"ft\">man naa tekki «xeexkat.»</span></div>"
+};
+
+initFootnotes(footnotes);
+
+
+// Glossary entries
+var glossary = {
+    "G-62": "<div><span class=\"k\">sarxalkat b-:</span> Ab sarxalkat njiitu diine la bu sasoo di rendil jaamukat yi seeni sarax. Muy yéefar yi di bànni Israyil, ku ci nekk amoon na ay sarxalkatam yu leen di taxawal ca kanam ka ñu gëm, mu dim tuur su dee yéefar yi, mbaa muy Aji Sax ji, su dee bànni Israyil. Yàlla moo taamu ñi bokk ci giirug Lewi, doomu Yanqóoba, ñuy Aaróona ak ñi askanoo ci moom, ngir ñu taxawal bànni Israyil fa kanamam. Sarxalkati bànni Israyil ay góor lañu yu ñu sellalal Yàlla, ñu féetewoo liggéeyam. Ñoo sasoo liggéey biy jubale mbooloo meek Yàlla. Ñoo leen di sarxalal te ñoo yore liggéeyu jaamu Yàlla bi. <span class=\"bd\">Sarxalkat bu mag bi</span> moo doon kilifay sarxalkat yi, te mooy misaal Almasi Yeesu, mi nuy àgge fa Yàlla.</div>",
+    "G-3": "<div><span class=\"k\">Aji Sax j-:</span> Mooy turu Yàlla. Mooy ki sax fàww.</div>"
+};
+
+initFootnotes(glossary);
+
+});
+
+// Chapters
+var chapters = [ { start: 1, end: 14 }];
+var hasIntro = false;
+var baseRef  = "KYG-28-HOS-";
+
+
+</script>
+</head>
+
+<body class="browser" dir="LTR">
+
+<div id="book-menu"></div>
+<div id="chapter-menu"></div>
+
+<div id="toolbar-top">
+<div class="navigation-top">
+  <span class="button"><a href='KYG-27-DAN-001.html' title='Previous Book'>&nbsp;&lt;&lt;&nbsp;</a></span>
+  <span class="button"><a href='KYG-28-HOS-004.html' title='Previous Chapter'>&nbsp;&nbsp;&lt;&nbsp;&nbsp;</a></span>
+  <span id="book-selector"><a href="#" onclick="toggleBookMenu(); return false;">&nbsp;&nbsp;Ose&nbsp;&nbsp;</a></span>
+<span id="chapter-selector"><a href="#" onclick="toggleChapterMenu(chapters, hasIntro, baseRef); return false;">&nbsp;&nbsp;5&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-28-HOS-006.html' title='Next Chapter'>&nbsp;&nbsp;&gt;&nbsp;&nbsp;</a></span>
+  <span class="button"><a href='KYG-29-JOL-001.html' title='Next Book'>&nbsp;&gt;&gt;&nbsp;</a></span>
+</div>
+</div>
+
+<div id="content">
+
+
+<div class="s"><div id="s1">Njiiti Israyil lajj nañu</div></div><a id="v1"></a>
+<div class="m top-spacing">
+<div class="c-drop">5</div> <span class="v">1</span><span class="vsp">&nbsp;</span>«Dégluleen lii, yeen <span class="footnote selectable" id="G-62">sarxalkat</span> yi!</div>
+<div class="q top-spacing">Teeyluleen, yeen waa kër Israyil!</div>
+<div class="q">Teewluleen, yeen waa kër buur!</div>
+<div class="q">Yeen la àtte bi ñeel.</div>
+<div class="q">Ag fiir ngeen tegoon ca Mispa,</div>
+<div class="q">ab caax ngeen laloon ca tundu Tabor,<span id="bookmarks1"></span></div><span id="bookmarks1"></span><a id="v2"></a>
+<div class="q-v"><span class="v">2</span><span class="vsp">&nbsp;</span>Fippukat yi gën nañoo xuus ci seen bóome,</div>
+<div class="q">waaye maa leen di yar, ñoom ñépp.<span id="bookmarks2"></span></div><span id="bookmarks2"></span><a id="v3"></a>
+<div class="q-v"><span class="v">3</span><span class="vsp">&nbsp;</span>Maa xam Efrayim,</div>
+<div class="q">Israyil laa ne, umpu ma.</div>
+<div class="q">Efrayim, yaa gànctu,</div>
+<div class="q">Israyil laa ne, yaa sobeel sa bopp.<span id="bookmarks3"></span></div><span id="bookmarks3"></span><a id="v4"></a>
+<div class="q-v"><span class="v">4</span><span class="vsp">&nbsp;</span>Seeni jëf a leen mayul ñu dellu ci seen Yàlla,</div>
+<div class="q">nde ngelawal ngànctoo wale fa seen biir,</div>
+<div class="q">te <span class="footnote selectable" id="G-3">Aji Sax</span> ji, faalewuñu ko.<span id="bookmarks4"></span></div><span id="bookmarks4"></span><a id="v5"></a>
+<div class="q-v"><span class="v">5</span><span class="vsp">&nbsp;</span>Israyil, ag reewandeem a ko tiiñal,</div>
+<div class="q">Israyil ak Efrayim ñooy fakktaloo seenug ñaawtéef,</div>
+<div class="q">Yuda it ànd ak ñoom fakktalu.<span id="bookmarks5"></span></div><span id="bookmarks5"></span><a id="v6"></a>
+<div class="q-v"><span class="v">6</span><span class="vsp">&nbsp;</span>Seen jur gu gudd ak gu gàtt lañuy àndal,</div>
+<div class="q2">di seet Aji Sax ji, duñu ko gis,</div>
+<div class="q">te moo leen dëddu.<span id="bookmarks6"></span></div><span id="bookmarks6"></span><a id="v7"></a>
+<div class="q-v"><span class="v">7</span><span class="vsp">&nbsp;</span>Aji Sax ji lañu wor,</div>
+<div class="q">nde doomi po lañu jur;</div>
+<div class="q">Léegi la leen màggalug Terutel weer</div>
+<div class="q2">di booleek seen suuf, sànk leen.<span id="bookmarks7"></span></div>
+
+<div class="s"><div id="s2">Yàlla dëkk na Israyil ak Yuda.</div></div><span id="bookmarks7"></span><a id="v8"></a>
+<div class="q-v top-spacing"><span class="v">8</span><span class="vsp">&nbsp;</span>«Wal-leen bufta gi ca Gibeya,</div>
+<div class="q">jibal liit gi ca Raama</div>
+<div class="q">te yéene ca Bet Awen<span class="footnote selectable" id="F-0"><sup>a</sup></span>.</div>
+<div class="q">Moytul sa gannaaw, Beñamin.<span id="bookmarks8"></span></div><span id="bookmarks8"></span><a id="v9"></a>
+<div class="q-v"><span class="v">9</span><span class="vsp">&nbsp;</span>Efrayim day gental kera bésu mbugal,</div>
+<div class="q">maa xamle ci biir giiri Israyil lu wér péŋŋ.<span id="bookmarks9"></span></div><span id="bookmarks9"></span><a id="v10"></a>
+<div class="q-vv"><span class="v">10</span><span class="vsp">&nbsp;</span>Kàngami Yuda mujj mel ni</div>
+<div class="q2">ñuy toxal màndargam làccu suuf.</div>
+<div class="q">Ci seen kaw laay yuri samam sànj nim ndox.<span id="bookmarks10"></span></div><span id="bookmarks10"></span><a id="v11"></a>
+<div class="q-vv"><span class="v">11</span><span class="vsp">&nbsp;</span>Efrayim lees di not,</div>
+<div class="q">joggati ay yelleefam,</div>
+<div class="q">nde moo dogoo topp yoonu caaxaan.<span id="bookmarks11"></span></div><span id="bookmarks11"></span><a id="v12"></a>
+<div class="q-vv"><span class="v">12</span><span class="vsp">&nbsp;</span>Man nag ni ñaawat laay def ak Efrayim,</div>
+<div class="q">te ni sànkar laay def ak Yuda.<span id="bookmarks12"></span></div><span id="bookmarks12"></span><a id="v13"></a>
+<div class="q-vv"><span class="v">13</span><span class="vsp">&nbsp;</span>Ba Efrayim gisee jàngoroom,</div>
+<div class="q">Yuda gis ab danaam,</div>
+<div class="q">Efrayim a dem Asiri,</div>
+<div class="q">yónnee ca Buur Yareb<span class="footnote selectable" id="F-1"><sup>b</sup></span>.</div>
+<div class="q">Waaye manu koo wéral,</div>
+<div class="q">mbaa di ko fajal ab danaam.<span id="bookmarks13"></span></div><span id="bookmarks13"></span><a id="v14"></a>
+<div class="q-vv"><span class="v">14</span><span class="vsp">&nbsp;</span>Man déy ni gaynde laay mel ak Efrayim,</div>
+<div class="q">ni gaynde gu ndaw laay mel ak waa kër Yuda.</div>
+<div class="q">Man, man mii maay xotat, wéy,</div>
+<div class="q">maay yóbbu te kenn du wallu.<span id="bookmarks14"></span></div><span id="bookmarks14"></span><a id="v15"></a>
+<div class="q-vv"><span class="v">15</span><span class="vsp">&nbsp;</span>Ma daldi ñibbi, ba ñu nangu seenug tooñ,</div>
+<div class="q2">sàkku ma.</div>
+<div class="q">Bu ñu jàqee lañuy daw wutsi ma.»<span id="bookmarks15"></span></div><div class="footer"><div class="footer-line"><span class="footer"><b>Kàddug Yàlla gi</b>: Texte <a href="https://sng.al/copyright">copyright</a> © 2010-2020 AES et MBS.</span></div></div>
+</div>
+</body>
+</html>
