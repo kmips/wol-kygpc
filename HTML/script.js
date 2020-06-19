@@ -398,6 +398,8 @@ ipcRenderer.on("mainWin-closing-save-data", (e) => {
 });
 
 ipcRenderer.on("language-switch", (e, lang) => {
+  //Call this function from above to save the page
+  saveDataMainWindow();
   //Store the incoming language request to localStorage
   localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(lang));
   //Now send a message back to main.js to reload the page
