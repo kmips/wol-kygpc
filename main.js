@@ -287,6 +287,7 @@ function createMenus(displayLang) {
 //back here to tell main process to reload the pages.
 ipcMain.on("lang-changed-reload-pages", (e) => {
   mainWindow.hide();
+  global.sharedObj = { loadingMain: true };
   mainWindow.webContents.reload();
   mainWindow.show();
 });
