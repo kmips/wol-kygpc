@@ -1,5 +1,12 @@
 // Renderer javascript for index.html
-const { remote, shell, ipcRenderer, Menu, BrowserWindow } = require("electron");
+const {
+  remote,
+  shell,
+  ipcRenderer,
+  Menu,
+  BrowserWindow,
+  ipcMain,
+} = require("electron");
 
 //Our app's version for comparison below
 thisAppVersion = remote.app.getVersion();
@@ -10,22 +17,10 @@ const myData = require("../mydata");
 //This is the array with information about our collections in an array
 const initialState = myData.collections;
 
-//Get text for the other translations from otherText array; the app's invitation to open and close second window and to give feedback.
-const appInvToOpen = myData.otherText[0].invToOpen;
-const appInvToClose = myData.otherText[0].invToClose;
-const appFeedback = myData.otherText[0].giveFeedback;
-const appFeedbackemail = myData.otherText[0].giveFeedbackemail;
-const appFeedbacksubject = myData.otherText[0].giveFeedbacksubject;
-const thisAppName = myData.otherText[0].thisAppName;
+//Set up variables to hold the current state of our two windows
 let currentStateMainWindow = [];
 let currentStateSecWindow = [];
-
-//Give the app builder a message if they have put feedback message but no email or subject
-if (!(appFeedback === "") && appFeedbackemail === "") {
-  alert(
-    "App feedback is enabled but no email address is entered. Check out mydata.js."
-  );
-}
+let displayLang;
 
 //Check the if the app has been previously run and if version is same as last run.
 //If lastOpenedVersion is null, then it's a new open.
@@ -44,6 +39,11 @@ if (localStorage.getItem("lastOpenedVersion") === null) {
     "lastKnownStateSecWin",
     JSON.stringify(currentStateSecWindow)
   );
+  //This gets us our default interface lang from myData.
+  displayLang = myData.otherText.defaultLang;
+  localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(displayLang));
+  //Let the main process know the displayLang
+  ipcRenderer.send("set-display-lang", displayLang);
 }
 
 //Or if the last version opened is the same as this one,
@@ -57,6 +57,9 @@ else if (
   currentStateSecWindow = JSON.parse(
     localStorage.getItem("lastKnownStateSecWin")
   );
+  displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+  //Let the main process know the displayLang
+  ipcRenderer.send("set-display-lang", displayLang);
 }
 //Or if we've upgraded, chances are we've added pages or collections, so reinitialize - that is:
 else if (
@@ -76,6 +79,27 @@ else if (
   localStorage.setItem(
     "lastKnownStateSecWin",
     JSON.stringify(currentStateSecWindow)
+  );
+  displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+  //Let the main process know the displayLang
+  ipcRenderer.send("set-display-lang", displayLang);
+}
+
+//Get text for the other translations from myTranslations array; the app's invitation to open and close second window and to give feedback.
+const appInvToOpen = myData.myTranslations.invToOpen[displayLang];
+
+const appInvToClose = myData.myTranslations.invToClose[displayLang];
+const appFeedback = myData.myTranslations.giveFeedback[displayLang];
+const appFeedbackemail = myData.otherText.giveFeedbackemail;
+const appFeedbacksubject =
+  myData.myTranslations.giveFeedbacksubject[displayLang];
+const thisAppName = myData.otherText.thisAppName;
+
+//Housekeeping:
+//Give the app builder a message if they have put feedback message but no email or subject
+if (!(appFeedback === "") && appFeedbackemail === "") {
+  alert(
+    "App feedback is enabled but no email address is entered. Check out mydata.js."
   );
 }
 
@@ -236,6 +260,7 @@ if (remote.getGlobal("sharedObj").loadingMain === true) {
   sidebarMenuItem = document.createElement("a");
   sidebarMenuItem.setAttribute("href", "#");
   sidebarMenuItem.setAttribute("id", "twoPaneButton");
+  sidebarMenuItem.setAttribute("data-open-close-state", "InvToOpen");
   sidebarMenuItem.innerHTML = `<span><i class="material-icons" id="two-window-icon">library_add</i><span class='icon-text'>${appInvToOpen}</span>`;
   sidebarMenuBottomDiv.appendChild(sidebarMenuItem);
   sidebarMenuItem.addEventListener("click", openOrCloseNewWindow);
@@ -288,26 +313,30 @@ document.getElementById("mainFrame").onload = () => {
 //These two open and close the sidebar menu.
 function openSidebar() {
   document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
 }
 
 function closeSidebar() {
   document.getElementById("mySidebar").style.width = "85px";
-  document.getElementById("main").style.marginLeft = "85px";
 }
 
-function openOrCloseNewWindow() {
+function openOrCloseNewWindow(displayLang) {
   //Get the main process to open the secondary window
   //This checks if the invitation to open is showing:
-  if (twoPaneButton.innerText === "library_add" + appInvToOpen) {
+  if (twoPaneButton.dataset.openCloseState === "InvToOpen") {
     //see this function lower down a bit - changes icon and text for the new window button
     toggleButtonIcon();
+    //This changes our marker back to Invitation to Close showing so we can check whether to open or close
+    twoPaneButton.dataset.openCloseState = "InvToClose";
     //Send via ipcRenderer to the main process on channel 'secondary-window' the message
     //'open-sec' or 'close-sec' the secondary window.
     ipcRenderer.send("secondary-window", "open-sec");
   } else {
     //here the toggle button was not set to library_add so we know the secondary window is open - close it
     ipcRenderer.send("secondary-window", "close-sec");
+    //Change the marker so we know what state we're in, invitation to open or to close showing.
+    twoPaneButton.dataset.openCloseState = "InvToOpen";
+    //One expects toggleButtonIcon() here, but it is called from sec-window-is-closed-main-window-actions below
+    //so that it gets triggered no matter how the user closes SecWindow (via x or via the sidebarmenu).
   }
 }
 
@@ -340,7 +369,7 @@ function saveDataMainWindow() {
 
 function saveDataSecWindow() {
   var iframeSource = document.getElementById("mainFrame").contentDocument.URL;
-  debugger;
+
   var iframeInfotoSave = iframeSource.split("/");
   pageToSave = iframeInfotoSave.pop();
   folderToSave = iframeInfotoSave.pop();
@@ -367,3 +396,12 @@ ipcRenderer.on("sec-window-is-closed-main-window-actions", (e) => {
 ipcRenderer.on("mainWin-closing-save-data", (e) => {
   saveDataMainWindow();
 });
+
+ipcRenderer.on("language-switch", (e, lang) => {
+  //Store the incoming language request to localStorage
+  localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(lang));
+  //Now send a message back to main.js to reload the page
+  ipcRenderer.send("lang-changed-reload-pages");
+});
+
+//

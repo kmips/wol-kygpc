@@ -1,24 +1,23 @@
-const { app, BrowserWindow, Menu, ipcMain } = require("electron");
+const { app, BrowserWindow, Menu, ipcMain, ipcRenderer } = require("electron");
 const { screen } = require("electron");
 
 //Get the app name from mydata.js - rather than in package.json
 const myData = require("./mydata");
-thisAppName = myData.otherText[0].thisAppName;
+const appText = myData.otherText;
+const transl = myData.myTranslations;
+
+//Set up some info about the app
+thisAppName = myData.otherText.thisAppName;
 app.setName(thisAppName);
+let MyAppVersion = app.getVersion();
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-
-//declare a placeholder for our secondary window for later but don't do anything with it
-//let mainWindow would normally be declared here but because of how our about window calling order works it's in menu.js
+let mainWindow;
 let secWindow;
-
-//Import our other javascript
-const updater = require("./updater");
-const menu = require("./menu");
-
-//Set context menu to the definition in menu.js
-contextMenu = menu.contextMenu;
+let copyrightWindow;
+let mainMenu;
+let contextMenu;
 
 // Window state keeper - this and below windowStateKeeper code let the window
 //return at its last known dimensions and location when reopened.
@@ -53,12 +52,9 @@ function createWindow() {
   mainWindow.loadFile("HTML/index.htm");
 
   // Open the DevTools.
-  //mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools();
 
   //Listener for right click to call the menu defined in menu.js
-  mainWindow.webContents.on("context-menu", (e) => {
-    contextMenu.popup();
-  });
 
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
@@ -84,18 +80,219 @@ function createWindow() {
   });
 }
 
+//Copyright & license window to show from the menu
+
+function openAboutWindow() {
+  if (copyrightWindow) {
+    copyrightWindow.focus();
+    return;
+  }
+
+  copyrightWindow = new BrowserWindow({
+    parent: mainWindow,
+    modal: true,
+    width: 600,
+    height: 650,
+    title: "Copyright // Version " + MyAppVersion,
+    minimizable: false,
+    fullscreenable: false,
+    resizable: false,
+    alwaysOnTop: true,
+    menu: null,
+    show: false,
+    webPreferences: { nodeIntegration: true, enableRemoteModule: true },
+  });
+
+  copyrightWindow.loadFile("HTML/copy.html");
+
+  copyrightWindow.once("ready-to-show", () => {
+    copyrightWindow.show();
+    //copyrightWindow.webContents.openDevTools()
+  });
+
+  copyrightWindow.once("blur", () => {
+    copyrightWindow.close();
+  });
+
+  copyrightWindow.on("closed", function () {
+    copyrightWindow = null;
+  });
+}
+//End of copyright window
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on("ready", () => {
   // Create main window
   createWindow();
+  createMenus();
+});
+
+//Menus
+//For multilingual to work correctly we have to put our menus in separately
+//from our normal window opening process, a bit unusually for Electron.
+//This enables us to return to it however when we change languages.
+
+//This calls the initial menu load after the variable has been loaded from localStorage
+//Then for the refreshes the menu calls createMenus on click
+ipcMain.on("set-display-lang", (e, displayLang) => {
+  createMenus(displayLang);
+  console.log("set-display-lang " + displayLang);
+});
+
+function createMenus(displayLang) {
+  let coreMenuSection1 = [
+    {
+      label: transl.menuZoomIn[displayLang],
+      role: "zoomIn",
+    },
+    {
+      label: transl.menuZoomOut[displayLang],
+      role: "zoomOut",
+    },
+    {
+      label: transl.menuResetZoom[displayLang],
+      role: "resetZoom",
+    },
+    {
+      type: "separator",
+    },
+    {
+      label: transl.menuCopy[displayLang],
+      accelerator: "CmdOrCtrl+C",
+      selector: "copy:",
+    },
+    {
+      label: transl.menuSelectAll[displayLang],
+      role: "selectAll",
+    },
+    {
+      type: "separator",
+    },
+    {
+      label: transl.menutoggleDevTools[displayLang],
+      role: "toggleDevTools",
+    },
+    {
+      label: transl.menuOpenAboutWin[displayLang],
+      click() {
+        openAboutWindow();
+      },
+    },
+  ];
+
+  //Language switcher submenu
+
+  if (!(Object.entries(transl.langName).length === 1)) {
+    var langMenuDefinition = [];
+    for (let [key, value] of Object.entries(transl.langName)) {
+      miniLangMenuDefinition = {
+        label: `${value}`,
+        click() {
+          createMenus(`${key}`);
+          //Send a message to the renderer to refresh the language on the sidebar
+          mainWindow.send("language-switch", `${key}`);
+        },
+      };
+      langMenuDefinition.push(miniLangMenuDefinition);
+    }
+
+    coreMenuSection2 = [
+      {
+        label: transl.menuLangSwitch[displayLang],
+        submenu: langMenuDefinition,
+      },
+    ];
+  } //If the length is not equal to 1 that means there are multiple languages, so put in lang switcher
+  //If there's only one display language it keeps rolling, skipping the language switcher
+
+  //Now we have the first part of the menu as the array coreMenuDefinition
+  //If we have a website prompt and a URL, make it the next part of the menu,
+  //but if we don't have either one, then skip on to the final section of the menu
+  if (
+    !(transl.menuWebsite[displayLang] === "") &&
+    !(appText.menuWebURL === "")
+  ) {
+    coreMenuSection3 = [
+      {
+        type: "separator",
+      },
+      {
+        label: transl.menuWebsite[displayLang],
+        click() {
+          shell.openExternal(appText.menuWebURL);
+        },
+      },
+      {
+        type: "separator",
+      },
+    ];
+  } else {
+    coreMenuSection3 = [
+      {
+        type: "separator",
+      },
+    ];
+  }
+
+  //This is the last section of the menu
+  coreMenuSection4 = [
+    {
+      label: transl.menuQuit[displayLang],
+      role: "quit",
+    },
+    { label: appText.thisAppName + " " + MyAppVersion, enabled: false },
+  ];
+  //This operator takes multiple arrays (coreMenuSections) and joins them into one array, coreMenuDefinition
+  //https://dmitripavlutin.com/operations-on-arrays-javascript/#42-spread-operator
+  coreMenuDefinition = [
+    ...coreMenuSection1,
+    ...coreMenuSection2,
+    ...coreMenuSection3,
+    ...coreMenuSection4,
+  ];
+
+  // Here we have separate menus for Mac (darwin) vs Win&Linux. To gain some consistency across the operating systems, we show the menu only in Mac.
+  // If Win or Linux, it returns null below, which makes the menu empty, and thus hidden, and all functions are available from context menu.
+  // Because of that our menu and contextmenu are basically identical, except that the mainMenu needs an extra level on top, with the main menu elements
+  // as a submenu underneath that. So set up the core menu, then either dress it with that top Menu level or not and return the objects.
+
+  //Now take that core definition array that we've assembled and include it in the Menu array wrapper
+  //but only enable it if we're on macOS (darwin)
+  if (process.platform === "darwin") {
+    mainMenu = Menu.buildFromTemplate([
+      { label: "Menu", submenu: coreMenuDefinition },
+    ]);
+  } else {
+    mainMenu = null;
+  }
+
+  //The context menu just takes that core menu
+  contextMenu = Menu.buildFromTemplate(coreMenuDefinition);
+
+  mainWindow.webContents.on("context-menu", (e) => {
+    contextMenu.popup();
+  });
 
   //This is the menu declared in menu.js. If Win or Lin there will be no main menu.
-  Menu.setApplicationMenu(menu.mainMenu);
+  Menu.setApplicationMenu(mainMenu);
+
+  mainWindow.send("change-lang", displayLang);
+  console.log("end of create menu " + displayLang);
+}
+
+//When a language change is triggered via a click() calling createMenus() wiht the new language, it sends a message to
+//the renderer telling it to change localStorage to teh desired lanugage for future loads. It then bounces a message
+//back here to tell main process to reload the pages.
+ipcMain.on("lang-changed-reload-pages", (e) => {
+  mainWindow.hide();
+  mainWindow.webContents.reload();
+  mainWindow.show();
 });
 
 // Check for update after x seconds
+const updater = require("./updater");
 setTimeout(updater.check, 2000);
 
 //----------------
@@ -121,7 +318,7 @@ function adjustForWin10InvisibleBorders() {
   }
 }
 
-//Opening
+//Opening Secondary Window
 function createSecondaryWindow() {
   mainWindow.hide();
   //Set this global to false so we know we're loading index.html
@@ -248,12 +445,12 @@ function createSecondaryWindow() {
 
 // Calling secondary window
 
-//Listening from the command to open secWindow
+//Listening for the command to open or close secWindow
 ipcMain.on("secondary-window", (e, message) => {
   if (message === "open-sec") {
     createSecondaryWindow();
   } else if (message === "close-sec") {
-    //this closes the window, which triggers secWindow.on('close' where the cleanup happens
+    //this closes the window, which triggers secWindow.on('close') where the cleanup happens
     secWindow.close();
   }
 });
