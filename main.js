@@ -501,17 +501,16 @@ ipcMain.on("open-search", (e) => {
 //Main search routine
 //vanilla = no index file generation
 ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
-  //var allVersesArray = []; //The big array index of all verses
+  var allVersesArray = []; //The big array index of all verses
   var verseid = 0; //in alltext we want an easy to pass id - this increments further on
 
   //requiring path and fs modules
   const path = require("path");
   const fs = require("fs");
 
-  myData.collections.forEach((collection) => {
+  for (const collection of myData.collections) {
     //joining path of directory
     const directoryPath = path.join("HTML", collection.folder);
-    var collectionName = collection.name;
     //Get all the html and htm files in our path
     fs.readdir(directoryPath, function (err, files) {
       //handling error
@@ -519,7 +518,7 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
         return console.log("Unable to scan directory: " + err);
       } else {
         //listing all files using forEach
-        files.forEach(function (file) {
+        for (const file of files) {
           if (file.substr(-5) == ".html" || file.substr(-4) == ".htm") {
             var fullFilePath = path.join(directoryPath, file);
             //read the contents of each file out
@@ -567,13 +566,13 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
                     id: verseid,
                     file: file,
                     folder: collection.folder,
-                    collectionName: collectionName,
+                    collectionName: collection.name,
                     verseText: verseTextOnly,
                     bookAndChapter: bookAndChapter,
                     verseNumber: verseNumber,
                   };
                   searchWindow.send("search-result", verseResult);
-                  //allVersesArray.push(verseResult);
+                  allVersesArray.push(verseResult);
                   verseid++;
                 } else {
                 }
@@ -588,7 +587,7 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
             // });
             // console.log('after calling readFile');
           }
-        });
+        }
         //This takes the array and writes it to a file. This does work, commenting it out for now
         // fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
         //   err
@@ -601,9 +600,10 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
         searchWindow.send("no-results");
         console.log("no-results in main.js");
       }
+      console.log(allVersesArray);
     });
     //if verseid is still 0 there are no results.
-  });
+  }
 });
 
 //Now open the search result the user selected in search Window
