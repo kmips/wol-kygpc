@@ -49,18 +49,19 @@ var collections = [
 
 var myTranslations = {
   langName: {
-    //The invitation to open and close the second window, e.g. "One Pane" "Two Pane":
+    //The name of the language in that language
     en: "English",
     fr: "Français",
     wo: "Wolof",
   },
   menuLangSwitch: {
+    //The menu item that invites the user to change languages
     en: "Language",
     fr: "Langue d'interface",
     wo: "Làmmiñu diisookaay bi",
   },
   invToOpen: {
-    //The invitation to open and close the second window, e.g. "One Pane" "Two Pane":
+    //The invitation to open the second window, e.g. "One Pane" "Two Pane":
     en: "Two Panes",
     fr: "Deux Volets",
     wo: "Ñaari laf",
@@ -73,9 +74,9 @@ var myTranslations = {
   giveFeedback: {
     //If this is empty, then there will be no feedback button.
     //Make sure it looks like this if you want the button:
-    //ln: 'Feedback',
+    //en: 'Feedback',
     //or like this if you want no feedback button:
-    //ln: '',
+    //en: '',
     en: "Feedback",
     fr: "Feedback",
     wo: "Feedback",
@@ -114,7 +115,7 @@ var myTranslations = {
   menutoggleDevTools: {
     en: "Open DevTools",
     fr: "Outils de développement",
-    wo: "Outils de développement",
+    wo: "Jumtukaayi appli bi",
   },
   menuWebsite: {
     //The text prompt on the option to open the website. Note the URL is below in otherText.
@@ -129,18 +130,25 @@ var myTranslations = {
     wo: "Copyright && license",
   },
 
+  menuSearch: {
+    en: "Search",
+    fr: "Rechercher",
+    wo: "Gëstu",
+  },
+
   menuQuit: {
     en: "Quit",
     fr: "Quitter",
-    wo: "Quitter",
+    wo: "Ub",
   },
 };
 
 var otherText = {
+  //These are text strings that do not change with translations
   thisAppName: "Kàddug Yàlla gi", //The name that you want to use in the app title bar etc.
   menuWebURL: "https://sng.al/app", //The URL for 'visit our website'. Leave empty if you have no website.
   giveFeedbackemail: "equipedevmbs@gmail.com", //the email address to which a user can send feedback
-  defaultLang: "en", //The language code that the app should be initially opened in
+  defaultLang: "fr", //The language code that the app should be initially opened in
 };
 
 module.exports.collections = collections;
