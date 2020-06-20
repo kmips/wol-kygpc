@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(../MaterialIcons-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Harmattan";
+  font-style: normal;
+  font-weight: 22;
+  src: local("Harmattan"), local("Harmattan-Regular"),
+    url(../Harmattan-Regular.ttf) format("truetype");
+}
+
+.material-icons,
+.material-icons-large {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.material-icons-large {
+  font-size: 35px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font: caption;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+}
+
+button {
+  background: #818181;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  outline: none;
+}
+
+input {
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid silver;
+  padding: 0 10px;
+}
+
+input::placeholder {
+  color: lightgray;
+}
+
+header {
+  background: #111111;
+  display: flex;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid silver;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#searchText {
+  flex-grow: 1;
+  font-family: "Harmattan";
+}
+
+main {
+  flex-grow: 1;
+  overflow: scroll;
+}
+
+#no-items {
+  font-weight: bold;
+  color: silver;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  z-index: -1;
+}
+
+button {
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+.search-result {
+  /* display: flex; */
+  /* align-items: center;
+  align-content: center; */
+  font-family: "Harmattan";
+  font-size: 20px;
+  border-bottom: lightgray 2px solid;
+  background: #fafafa;
+  padding: 10px;
+  border-left: 10px solid lightgray;
+  -webkit-user-select: none;
+}
+
+.search-result:hover {
+  background-color: #eee;
+}
+
+.search-result.selected {
+  border-left-color: #818181;
+}
+
+.search-result img {
+  width: 20%;
+  margin-right: 25px;
+}
+
+resultRef {
+  font-size: 16px;
+  color: #818181;
+}

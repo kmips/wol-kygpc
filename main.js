@@ -18,11 +18,14 @@ let secWindow;
 let copyrightWindow;
 let mainMenu;
 let contextMenu;
+let searchWindow;
 
 // Window state keeper - this and below windowStateKeeper code let the window
 //return at its last known dimensions and location when reopened.
 const windowStateKeeper = require("electron-window-state");
 
+//------------------------
+//mainWindow code
 function createWindow() {
   //This is a global shared variable we'll use just to differentiate between mainWindow and secWindow on load.
   //We want to set it to true on createWindow so the window loading will know it is to run the mainWindow
@@ -36,7 +39,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: winState.width,
     height: winState.height,
-    minHeight: 500,
+    minHeight: 550,
     minWidth: 500,
     x: winState.x,
     y: winState.y,
@@ -79,7 +82,10 @@ function createWindow() {
     mainWindow = null;
   });
 }
+//End of mainWindow
+//------------------------
 
+//------------------------
 //Copyright & license window to show from the menu
 
 function openAboutWindow() {
@@ -119,6 +125,7 @@ function openAboutWindow() {
   });
 }
 //End of copyright window
+//------------------------
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -129,6 +136,7 @@ app.on("ready", () => {
   createMenus();
 });
 
+//------------------------
 //Menus
 //For multilingual to work correctly we have to put our menus in separately
 //from our normal window opening process, a bit unusually for Electron.
@@ -138,7 +146,6 @@ app.on("ready", () => {
 //Then for the refreshes the menu calls createMenus on click
 ipcMain.on("set-display-lang", (e, displayLang) => {
   createMenus(displayLang);
-  console.log("set-display-lang " + displayLang);
 });
 
 function createMenus(displayLang) {
@@ -279,8 +286,9 @@ function createMenus(displayLang) {
   Menu.setApplicationMenu(mainMenu);
 
   mainWindow.send("change-lang", displayLang);
-  console.log("end of create menu " + displayLang);
 }
+//End of createMenus
+//------------------------
 
 //When a language change is triggered via a click() calling createMenus() wiht the new language, it sends a message to
 //the renderer telling it to change localStorage to teh desired lanugage for future loads. It then bounces a message
@@ -384,7 +392,7 @@ function createSecondaryWindow() {
     width: winWidth,
     height: screenHeight,
     title: thisAppName,
-    minHeight: 430,
+    minHeight: 550,
     minWidth: 500,
     animate: true,
     x: secWinscreenx,
@@ -456,6 +464,153 @@ ipcMain.on("secondary-window", (e, message) => {
   }
 });
 //End of secondary Window
+//------------------------
+
+//------------------------
+//Search Window
+ipcMain.on("open-search", (e) => {
+  searchWindow = new BrowserWindow({
+    width: 350,
+    height: 650,
+    minWidth: 350,
+    maxWidth: 650,
+    minHeight: 300,
+    title: "",
+    minimizable: true,
+    fullscreenable: false,
+    resizable: true,
+    alwaysOnTop: true,
+    menu: null,
+    show: false,
+    webPreferences: { nodeIntegration: true, enableRemoteModule: true },
+  });
+
+  searchWindow.loadFile("HTML/search/search.html");
+
+  searchWindow.once("ready-to-show", () => {
+    searchWindow.show();
+    searchWindow.webContents.openDevTools();
+  });
+
+  // Listen for window being closed
+  searchWindow.on("closed", () => {
+    searchWindow = null;
+  });
+});
+
+//Main search routine
+//vanilla = no index file generation
+ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
+  //var allVersesArray = []; //The big array index of all verses
+  var verseid = 0; //in alltext we want an easy to pass id - this increments further on
+
+  //requiring path and fs modules
+  const path = require("path");
+  const fs = require("fs");
+
+  myData.collections.forEach((collection) => {
+    //joining path of directory
+    const directoryPath = path.join("HTML", collection.folder);
+    var collectionName = collection.name;
+    //Get all the html and htm files in our path
+    fs.readdir(directoryPath, function (err, files) {
+      //handling error
+      if (err) {
+        return console.log("Unable to scan directory: " + err);
+      } else {
+        //listing all files using forEach
+        files.forEach(function (file) {
+          if (file.substr(-5) == ".html" || file.substr(-4) == ".htm") {
+            var fullFilePath = path.join(directoryPath, file);
+            //read the contents of each file out
+            var fileContents = fs.readFileSync(fullFilePath, "utf8");
+            //Can we get Chapter and book here?
+            var bookAndChapter = fileContents.substring(
+              fileContents.indexOf("<title>") + 7,
+              fileContents.indexOf("</title>")
+            );
+            //Grab the content, leave the headers and footers
+            var fileContentsBody = fileContents.substring(
+              fileContents.indexOf(`<div id="content">`) + 18,
+              fileContents.indexOf(`<div class="footer">`)
+            );
+
+            //split the file contents via verse numbers into the array oneChapterByVerse
+            splitString = `<span class="v">`;
+            var oneChapterByVerse = fileContentsBody.split(splitString);
+            //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
+            if (oneChapterByVerse.length > 2) {
+              //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
+              oneChapterByVerse.forEach(function (verse) {
+                //First normalize the searchterm: no accents, no caps
+                var searchTermLowerCaseNoAccents = searchTerm
+                  .toLowerCase()
+                  .normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "");
+                //First normalize the searchterm: no accents, no caps, and no HTML tags
+                var verseTextOnly = verse.replace(/<\/?[^>]+(>|$)/g, ""); //Take out HTML tags
+                var verseLowerCaseNoAccents = verseTextOnly
+                  .toLowerCase()
+                  .normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "");
+                //Get verse number
+                var verseNumber = verseLowerCaseNoAccents.substring(
+                  0,
+                  verseLowerCaseNoAccents.indexOf("&nbsp;")
+                );
+                //Now search: if there is the search term, then give the result.
+                var searchSuccess = verseLowerCaseNoAccents.search(
+                  searchTermLowerCaseNoAccents
+                );
+                if (searchSuccess > 0) {
+                  var verseResult = {
+                    id: verseid,
+                    file: file,
+                    folder: collection.folder,
+                    collectionName: collectionName,
+                    verseText: verseTextOnly,
+                    bookAndChapter: bookAndChapter,
+                    verseNumber: verseNumber,
+                  };
+                  searchWindow.send("search-result", verseResult);
+                  //allVersesArray.push(verseResult);
+                  verseid++;
+                } else {
+                }
+              });
+            } else {
+            }
+
+            // //async example?
+            //https://code-maven.com/reading-a-file-with-nodejs
+            //fs.readFile('DATA', 'utf8', function(err, contents) {
+            //   console.log(contents);
+            // });
+            // console.log('after calling readFile');
+          }
+        });
+        //This takes the array and writes it to a file. This does work, commenting it out for now
+        // fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
+        //   err
+        // ) {
+        //   if (err) throw err;
+        //   console.log("Saved!");
+        // });
+      }
+      if (verseid === 0) {
+        searchWindow.send("no-results");
+        console.log("no-results in main.js");
+      }
+    });
+    //if verseid is still 0 there are no results.
+  });
+});
+
+//Now open the search result the user selected in search Window
+ipcMain.on("open-search-result-search-to-main", (e, openthis) => {
+  mainWindow.focus();
+  mainWindow.send("open-search-result-main-to-mainWindow", openthis);
+});
 //------------------------
 
 app.on("window-all-closed", function () {

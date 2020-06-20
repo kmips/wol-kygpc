@@ -87,7 +87,7 @@ else if (
 
 //Get text for the other translations from myTranslations array; the app's invitation to open and close second window and to give feedback.
 const appInvToOpen = myData.myTranslations.invToOpen[displayLang];
-
+const appSearchText = myData.myTranslations.menuSearch[displayLang];
 const appInvToClose = myData.myTranslations.invToClose[displayLang];
 const appFeedback = myData.myTranslations.giveFeedback[displayLang];
 const appFeedbackemail = myData.otherText.giveFeedbackemail;
@@ -257,6 +257,17 @@ sidebarMenu.appendChild(sidebarMenuBottomDiv);
 //We only want that on the main window, so do an if to pick it up
 if (remote.getGlobal("sharedObj").loadingMain === true) {
   sidebarMenuBottomDiv = document.getElementById("mySidebarBottom");
+
+  //Insert the Search button
+  sidebarMenuItem = document.createElement("a");
+  sidebarMenuItem.setAttribute("href", "#");
+  sidebarMenuItem.setAttribute("id", "searchButton");
+  sidebarMenuItem.innerHTML = `<span><i class="material-icons" id="search-icon">pageview</i><span class='icon-text'>${appSearchText}</span>`;
+  sidebarMenuBottomDiv.appendChild(sidebarMenuItem);
+  sidebarMenuItem.addEventListener("click", openSearch);
+  sidebarMenuBottomDiv.appendChild(document.createElement("br"));
+
+  //Insert the Two Pane Open button
   sidebarMenuItem = document.createElement("a");
   sidebarMenuItem.setAttribute("href", "#");
   sidebarMenuItem.setAttribute("id", "twoPaneButton");
@@ -340,6 +351,10 @@ function openOrCloseNewWindow(displayLang) {
   }
 }
 
+function openSearch(displayLang) {
+  ipcRenderer.send("open-search");
+}
+
 //There are only two options, the interface can either offer to open secondary window or close it.
 //The options just go back and forth when this is triggered.
 function toggleButtonIcon() {
@@ -404,6 +419,51 @@ ipcRenderer.on("language-switch", (e, lang) => {
   localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(lang));
   //Now send a message back to main.js to reload the page
   ipcRenderer.send("lang-changed-reload-pages");
+});
+
+ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
+  console.log(openthis);
+
+  //open the search result
+
+  //Here is the current path on the iframe
+  var iframeSource = document.getElementById("mainFrame").contentDocument.URL;
+
+  // .split() takes a string and splits it into an array by the character in the parentheses,
+  // so here we make the array with the info about what the window is currently showing in the iframe
+  var iframeInfotoSave = iframeSource.split("/");
+
+  //.pop returns the last item in an array and simultaneously eliminates it from the array.
+  //So here is the last element in the array, the page, split out from the path
+  pageToSave = iframeInfotoSave.pop();
+  //And here is the folder name split out from the path
+  folderToSave = iframeInfotoSave.pop();
+
+  //i here is the index number of the array currentStateMainWindow where myData.collections.folder = folderToSave from above
+  var i = currentStateMainWindow.findIndex(
+    (obj) => obj.folder === folderToSave
+  );
+
+  //Now change the array to set the window we are leaving so we can come back to it when the user returns to that collection
+  currentStateMainWindow[i].fileToView = pageToSave;
+
+  //That's the page we're leaving, now this is the page we are going to.
+
+  //Set the iframe to the new destination, our search result:
+  //currentStateMainWindow[i].fileToView is coming straight from the array at index number i.
+  document.getElementById(
+    "mainFrame"
+  ).src = `./${openthis.folder}/${openthis.file}`;
+
+  remote
+    .getCurrentWindow()
+    .setTitle(thisAppName + "   ||   " + openthis.folder);
+
+  //Now the info is stored in memory, go ahead and store to localStorage so it will survive a crash etc.
+  localStorage.setItem(
+    "lastKnownStateMainWin",
+    JSON.stringify(currentStateMainWindow)
+  );
 });
 
 //
