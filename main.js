@@ -540,7 +540,7 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
             //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
             if (oneChapterByVerse.length > 2) {
               //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
-              oneChapterByVerse.forEach(function (verse) {
+              for (const verse of oneChapterByVerse) {
                 //First normalize the searchterm: no accents, no caps
                 var searchTermLowerCaseNoAccents = searchTerm
                   .toLowerCase()
@@ -576,7 +576,7 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
                   verseid++;
                 } else {
                 }
-              });
+              }
             } else {
             }
 
@@ -588,14 +588,15 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
             // console.log('after calling readFile');
           }
         }
-        //This takes the array and writes it to a file. This does work, commenting it out for now
-        // fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
-        //   err
-        // ) {
-        //   if (err) throw err;
-        //   console.log("Saved!");
-        // });
       }
+      //This takes the array and writes it to a file. This does work, commenting it out for now
+      // fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
+      //   err
+      // ) {
+      //   if (err) throw err;
+      //   console.log("Saved!");
+      // });
+
       if (verseid === 0) {
         searchWindow.send("no-results");
         console.log("no-results in main.js");
