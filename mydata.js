@@ -141,6 +141,16 @@ var myTranslations = {
     fr: "Quitter",
     wo: "Ub",
   },
+  searchFuzzy: {
+    en: "Fuzzy search",
+    fr: "Recherche floue",
+    wo: "Recherche floue",
+  },
+  searchStrict: {
+    en: "Strict search",
+    fr: "Recherche stricte",
+    wo: "Recherche stricte",
+  },
 };
 
 var otherText = {

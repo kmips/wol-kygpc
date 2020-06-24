@@ -512,98 +512,83 @@ ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
     //joining path of directory
     const directoryPath = path.join("HTML", collection.folder);
     //Get all the html and htm files in our path
-    fs.readdir(directoryPath, function (err, files) {
-      //handling error
-      if (err) {
-        return console.log("Unable to scan directory: " + err);
-      } else {
-        //listing all files using forEach
-        for (const file of files) {
-          if (file.substr(-5) == ".html" || file.substr(-4) == ".htm") {
-            var fullFilePath = path.join(directoryPath, file);
-            //read the contents of each file out
-            var fileContents = fs.readFileSync(fullFilePath, "utf8");
-            //Can we get Chapter and book here?
-            var bookAndChapter = fileContents.substring(
-              fileContents.indexOf("<title>") + 7,
-              fileContents.indexOf("</title>")
-            );
-            //Grab the content, leave the headers and footers
-            var fileContentsBody = fileContents.substring(
-              fileContents.indexOf(`<div id="content">`) + 18,
-              fileContents.indexOf(`<div class="footer">`)
-            );
+    files = fs.readdirSync(directoryPath);
+    //handling error
 
-            //split the file contents via verse numbers into the array oneChapterByVerse
-            splitString = `<span class="v">`;
-            var oneChapterByVerse = fileContentsBody.split(splitString);
-            //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
-            if (oneChapterByVerse.length > 2) {
-              //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
-              for (const verse of oneChapterByVerse) {
-                //First normalize the searchterm: no accents, no caps
-                var searchTermLowerCaseNoAccents = searchTerm
-                  .toLowerCase()
-                  .normalize("NFD")
-                  .replace(/[\u0300-\u036f]/g, "");
-                //First normalize the searchterm: no accents, no caps, and no HTML tags
-                var verseTextOnly = verse.replace(/<\/?[^>]+(>|$)/g, ""); //Take out HTML tags
-                var verseLowerCaseNoAccents = verseTextOnly
-                  .toLowerCase()
-                  .normalize("NFD")
-                  .replace(/[\u0300-\u036f]/g, "");
-                //Get verse number
-                var verseNumber = verseLowerCaseNoAccents.substring(
-                  0,
-                  verseLowerCaseNoAccents.indexOf("&nbsp;")
-                );
-                //Now search: if there is the search term, then give the result.
-                var searchSuccess = verseLowerCaseNoAccents.search(
-                  searchTermLowerCaseNoAccents
-                );
-                if (searchSuccess > 0) {
-                  var verseResult = {
-                    id: verseid,
-                    file: file,
-                    folder: collection.folder,
-                    collectionName: collection.name,
-                    verseText: verseTextOnly,
-                    bookAndChapter: bookAndChapter,
-                    verseNumber: verseNumber,
-                  };
-                  searchWindow.send("search-result", verseResult);
-                  allVersesArray.push(verseResult);
-                  verseid++;
-                } else {
-                }
-              }
-            } else {
+    //listing all files using forEach
+    for (const file of files) {
+      if (file.substr(-5) == ".html" || file.substr(-4) == ".htm") {
+        var fullFilePath = path.join(directoryPath, file);
+        //read the contents of each file out
+        var fileContents = fs.readFileSync(fullFilePath, "utf8");
+        //Can we get Chapter and book here?
+        var bookAndChapter = fileContents.substring(
+          fileContents.indexOf("<title>") + 7,
+          fileContents.indexOf("</title>")
+        );
+        //Grab the content, leave the headers and footers
+        var fileContentsBody = fileContents.substring(
+          fileContents.indexOf(`<div id="content">`) + 18,
+          fileContents.indexOf(`<div class="footer">`)
+        );
+
+        //split the file contents via verse numbers into the array oneChapterByVerse
+        splitString = `<span class="v">`;
+        var oneChapterByVerse = fileContentsBody.split(splitString);
+        //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
+        if (oneChapterByVerse.length > 2) {
+          //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
+          for (const verse of oneChapterByVerse) {
+            //First normalize the searchterm: no accents, no caps
+            var searchTermLowerCaseNoAccents = searchTerm
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "");
+            //First normalize the searchterm: no accents, no caps, and no HTML tags
+            var verseTextOnly = verse.replace(/<\/?[^>]+(>|$)/g, ""); //Take out HTML tags
+            var verseLowerCaseNoAccents = verseTextOnly
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "");
+            //Get verse number
+            var verseNumber = verseLowerCaseNoAccents.substring(
+              0,
+              verseLowerCaseNoAccents.indexOf("&nbsp;")
+            );
+            //Now search: if there is the search term, then give the result.
+            var searchSuccess = verseLowerCaseNoAccents.search(
+              searchTermLowerCaseNoAccents
+            );
+            if (searchSuccess > 0) {
+              var verseResult = {
+                id: verseid,
+                file: file,
+                folder: collection.folder,
+                collectionName: collection.name,
+                verseText: verseTextOnly,
+                bookAndChapter: bookAndChapter,
+                verseNumber: verseNumber,
+              };
+              searchWindow.send("search-result", verseResult);
+              allVersesArray.push(verseResult);
+              verseid++;
             }
-
-            // //async example?
-            //https://code-maven.com/reading-a-file-with-nodejs
-            //fs.readFile('DATA', 'utf8', function(err, contents) {
-            //   console.log(contents);
-            // });
-            // console.log('after calling readFile');
           }
         }
       }
-      //This takes the array and writes it to a file. This does work, commenting it out for now
-      // fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
-      //   err
-      // ) {
-      //   if (err) throw err;
-      //   console.log("Saved!");
-      // });
+    }
+  }
+  //This takes the array and writes it to a file. This does work, commenting it out for now
+  // fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
+  //   err
+  // ) {
+  //   if (err) throw err;
+  //   console.log("Saved!");
+  // });
 
-      if (verseid === 0) {
-        searchWindow.send("no-results");
-        console.log("no-results in main.js");
-      }
-      console.log(allVersesArray);
-    });
-    //if verseid is still 0 there are no results.
+  if (verseid === 0) {
+    searchWindow.send("no-results");
+    console.log("no-results in main.js");
   }
 });
 
@@ -624,14 +609,12 @@ ipcMain.on("build-search-index", (e) => {
   for (const collection of myData.collections) {
     //joining path of directory
     const directoryPath = path.join("HTML", collection.folder);
-    console.log(directoryPath);
 
     //Get all the html and htm files in our path
     files = fs.readdirSync(directoryPath);
 
     //listing all files using forEach
     for (const file of files) {
-      console.log(file);
       if (file.substr(-5) == ".html" || file.substr(-4) == ".htm") {
         var fullFilePath = path.join(directoryPath, file);
         //read the contents of each file out
@@ -655,11 +638,14 @@ ipcMain.on("build-search-index", (e) => {
           //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
           for (const verse of oneChapterByVerse) {
             //for each verse, Take out HTML tags
-            var verseTextOnly = verse.replace(/<\/?[^>]+(>|$)/g, "");
+            var verseNoHTML = verse.replace(/<\/?[^>]+(>|$)/g, "");
             //Get verse number
-            var verseNumber = verseTextOnly.substring(
+            var verseNumber = verseNoHTML.substring(
               0,
-              verseTextOnly.indexOf("&nbsp;")
+              verseNoHTML.indexOf("&nbsp;")
+            );
+            var verseTextOnly = verseNoHTML.substring(
+              verseNoHTML.indexOf("&nbsp;") + 6
             );
             //Now stash each verse in the array
             var oneVerse = {

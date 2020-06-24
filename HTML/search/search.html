@@ -13,7 +13,28 @@
     <header>
       <button id="searchButton" class="material-icons">search</button>
       <input type="text" id="searchText" placeholder="..." />
+      <button id="searchSettingsButton" class="material-icons">settings</button>
     </header>
+
+    <div id="searchSettingsPanel">
+      <form id="searchType">
+        <input
+          type="radio"
+          id="fuzzy"
+          name="searchType"
+          value="fuzzy"
+          checked
+        />
+        <label id="fuzzyLabel" for="fuzzy">Fuzzy</label><br />
+        <input type="radio" id="strict" name="searchType" value="strict" />
+        <label id="strictLabel" for="strict">Strict</label><br />
+      </form>
+      <hr />
+      <form id="searchWhichCollections"></form>
+      <div>
+        <button id="close-search-settings" class="material-icons">done</button>
+      </div>
+    </div>
 
     <main>
       <p id="no-items" class="material-icons-large">filter_list</p>

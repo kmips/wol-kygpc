@@ -100,12 +100,19 @@ const appFeedbackemail = myData.otherText.giveFeedbackemail;
 const appFeedbacksubject =
   myData.myTranslations.giveFeedbacksubject[displayLang];
 const thisAppName = myData.otherText.thisAppName;
-
+const appMenuWebsite = myData.myTranslations.menuWebsite[displayLang];
+const appMenuWebURL = myData.otherText.menuWebURL;
 //Housekeeping:
 //Give the app builder a message if they have put feedback message but no email or subject
 if (!(appFeedback === "") && appFeedbackemail === "") {
   alert(
-    "App feedback is enabled but no email address is entered. Check out mydata.js."
+    `Menu item for app feedback is enabled but no email address is entered. Check out otherText section of mydata.js.`
+  );
+}
+//Give app builder a msg if they have a 'visit our website' message but not website set
+if (!(appMenuWebsite === "") && appMenuWebURL === "") {
+  alert(
+    `Menu item for "visit our website" is enabled but no site address is entered. Check out otherText section of mydata.js.`
   );
 }
 
@@ -428,7 +435,7 @@ ipcRenderer.on("language-switch", (e, lang) => {
 });
 
 ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
-  console.log(openthis);
+  console.log("openthis in script.js " + openthis);
 
   //open the search result
 
@@ -457,9 +464,23 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
 
   //Set the iframe to the new destination, our search result:
   //currentStateMainWindow[i].fileToView is coming straight from the array at index number i.
-  document.getElementById(
-    "mainFrame"
-  ).src = `./${openthis.folder}/${openthis.file}`;
+  console.log(openthis);
+  console.log(openthis.verseNumber);
+  var linkToOpen = `./${openthis.folder}/${openthis.file}`;
+
+  console.log(linkToOpen);
+
+  document.getElementById("mainFrame").src = linkToOpen;
+  // document.getElementById("mainFrame").onload = () => {
+  //   var elmnt = document.getElementById(`v${openthis.verseNumber}`);
+  //   elmnt.scrollIntoView();
+  // };
+  var target = `v${openthis.verseNumber}`;
+  document.getElementById("mainFrame").onload = function () {
+    var distance = document.getElementById(target).offsetTop;
+
+    this.contentWindow.scrollTo(0, distance);
+  };
 
   remote
     .getCurrentWindow()

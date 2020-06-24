@@ -78,10 +78,40 @@ input::placeholder {
 header {
   background: #111111;
   display: flex;
-  padding: 10px;
+  padding: 10px 0px;
   font-weight: bold;
-  border-bottom: 1px solid silver;
+
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+#searchSettingsPanel {
+  font-family: "Harmattan";
+  font-size: 30px;
+  color: #818181;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  overflow-x: hidden;
+
+  display: none;
+}
+
+#searchType,
+#searchWhichCollections {
+  margin: 40px;
+}
+
+#close-search-settings {
+  position: fixed;
+  bottom: 20px;
+
+  width: 70px;
+
+  right: 20px;
 }
 
 #searchText {
@@ -106,8 +136,8 @@ main {
 
 button {
   padding: 10px;
-  margin-left: 5px;
-  margin-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .search-result {
