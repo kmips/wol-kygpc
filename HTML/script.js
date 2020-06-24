@@ -42,6 +42,9 @@ if (localStorage.getItem("lastOpenedVersion") === null) {
   //This gets us our default interface lang from myData.
   displayLang = myData.otherText.defaultLang;
   localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(displayLang));
+  //when we open search for the first time, build the index
+  let rebuildIndex = true;
+  localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
   //Let the main process know the displayLang
   ipcRenderer.send("set-display-lang", displayLang);
 }
@@ -80,8 +83,11 @@ else if (
     "lastKnownStateSecWin",
     JSON.stringify(currentStateSecWindow)
   );
-  displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+  //when we open search for the first time, build the index
+  let rebuildIndex = true;
+  localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
   //Let the main process know the displayLang
+  displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
   ipcRenderer.send("set-display-lang", displayLang);
 }
 

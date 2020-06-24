@@ -14,7 +14,35 @@ let searchButton = document.getElementById("searchButton"),
 //   }
 // });
 
-//Look at ohter things he does wit the box in electron-master
+//Look at ohter things he does with the box in electron-master
+
+//On searchWindow open, build the index if it is not already built.
+rebuildIndex = localStorage.getItem("rebuildIndex");
+//Below for troubleshooting - uncomment to always build the index on search window load.
+rebuildIndex = "true";
+if (rebuildIndex === "true" || localStorage.getItem("rebuildIndex") === null) {
+  console.log("rebuildIndex is true");
+  var d = new Date();
+  var n = d.getTime();
+  console.log(n);
+
+  ipcRenderer.send("build-search-index");
+}
+
+ipcRenderer.on("search-index-incoming", (e, allVersesArray) => {
+  console.log("in search-index-incoming");
+
+  localStorage.setItem("searchIndex", JSON.stringify(allVersesArray));
+  var d = new Date();
+  var n = d.getTime();
+  console.log(n);
+  console.log("done");
+});
+
+//Search settings toggle
+function openSearchSettings() {
+  document.getElementById("searchSettings").style.width = "250px";
+}
 
 // Set item as selected
 const select = (e) => {
@@ -72,7 +100,8 @@ searchButton.addEventListener("click", (e) => {
     }
 
     document.getElementById("no-items").innerHTML = `<img src="loading2.gif">`;
-    ipcRenderer.send("vanilla-search-for-this", searchText.value);
+    //ipcRenderer.send("vanilla-search-for-this", searchText.value);
+    ipcRenderer.send("index-search-for-this", searchText.value);
   }
 });
 

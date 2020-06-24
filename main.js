@@ -612,6 +612,83 @@ ipcMain.on("open-search-result-search-to-main", (e, openthis) => {
   mainWindow.focus();
   mainWindow.send("open-search-result-main-to-mainWindow", openthis);
 });
+
+ipcMain.on("build-search-index", (e) => {
+  console.log("in build-search-index");
+  let allVersesArray = []; //The big array index of all verses
+  var verseid = 0; //in alltext we want an easy to pass id - this increments further on
+  //requiring path and fs modules
+  const path = require("path");
+  const fs = require("fs");
+
+  for (const collection of myData.collections) {
+    //joining path of directory
+    const directoryPath = path.join("HTML", collection.folder);
+    console.log(directoryPath);
+
+    //Get all the html and htm files in our path
+    files = fs.readdirSync(directoryPath);
+
+    //listing all files using forEach
+    for (const file of files) {
+      console.log(file);
+      if (file.substr(-5) == ".html" || file.substr(-4) == ".htm") {
+        var fullFilePath = path.join(directoryPath, file);
+        //read the contents of each file out
+        var fileContents = fs.readFileSync(fullFilePath, "utf8");
+        //Can we get Chapter and book here?
+        var bookAndChapter = fileContents.substring(
+          fileContents.indexOf("<title>") + 7,
+          fileContents.indexOf("</title>")
+        );
+        //Grab the content, leave the headers and footers
+        var fileContentsBody = fileContents.substring(
+          fileContents.indexOf(`<div id="content">`) + 18,
+          fileContents.indexOf(`<div class="footer">`)
+        );
+
+        //split the file contents via verse numbers into the array oneChapterByVerse
+        splitString = `<span class="v">`;
+        var oneChapterByVerse = fileContentsBody.split(splitString);
+        //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
+        if (oneChapterByVerse.length > 2) {
+          //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
+          for (const verse of oneChapterByVerse) {
+            //for each verse, Take out HTML tags
+            var verseTextOnly = verse.replace(/<\/?[^>]+(>|$)/g, "");
+            //Get verse number
+            var verseNumber = verseTextOnly.substring(
+              0,
+              verseTextOnly.indexOf("&nbsp;")
+            );
+            //Now stash each verse in the array
+            var oneVerse = {
+              id: verseid,
+              file: file,
+              folder: collection.folder,
+              collectionName: collection.name,
+              verseText: verseTextOnly,
+              bookAndChapter: bookAndChapter,
+              verseNumber: verseNumber,
+            };
+            allVersesArray.push(oneVerse);
+            verseid++;
+          }
+        }
+      }
+    }
+  }
+  searchWindow.send("search-index-incoming", allVersesArray);
+});
+
+//This takes the array and writes it to a file. This does work, commenting it out for now
+// fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
+//   err
+// ) {
+//   if (err) throw err;
+//   console.log("Saved!");
+// });
+
 //------------------------
 
 app.on("window-all-closed", function () {
