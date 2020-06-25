@@ -482,6 +482,7 @@ ipcMain.on("open-search", (e) => {
     alwaysOnTop: true,
     menu: null,
     show: false,
+    spellcheck: false,
     webPreferences: { nodeIntegration: true, enableRemoteModule: true },
   });
 

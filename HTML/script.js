@@ -409,6 +409,17 @@ function saveDataSecWindow() {
   );
 }
 
+function highlightVerse(element, start, end) {
+  var str = element.innerHTML;
+  str =
+    str.substr(0, start) +
+    '<span style="background-color:gold">' +
+    str.substr(start, end - start + 1) +
+    "</span>" +
+    str.substr(end + 1);
+  element.innerHTML = str;
+}
+
 //** ipcRenderer listener */
 //If the user closes the secondary window in any way other than the button in the sidebar
 //main process lets you know. Here we receive the message that the secondary window is closed
@@ -464,27 +475,53 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
 
   //Set the iframe to the new destination, our search result:
   //currentStateMainWindow[i].fileToView is coming straight from the array at index number i.
-  console.log(openthis);
-  console.log(openthis.verseNumber);
   var linkToOpen = `./${openthis.folder}/${openthis.file}`;
 
-  console.log(linkToOpen);
-
   document.getElementById("mainFrame").src = linkToOpen;
-  // document.getElementById("mainFrame").onload = () => {
-  //   var elmnt = document.getElementById(`v${openthis.verseNumber}`);
-  //   elmnt.scrollIntoView();
-  // };
-  var target = `v${openthis.verseNumber}`;
-  document.getElementById("mainFrame").onload = function () {
-    var distance = document.getElementById(target).offsetTop;
 
-    this.contentWindow.scrollTo(0, distance);
+  //When we open the target chapter in the ifram scroll to content and mark the result
+  document.getElementById("mainFrame").onload = () => {
+    //scroll to content
+
+    var scrollTarget = `v${openthis.verseNumber}`;
+    var iframe = document.getElementById("mainFrame");
+    var elmnt = iframe.contentWindow.document.getElementById(scrollTarget)
+      .offsetTop;
+    iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
+
+    // //get an array of all verse numbers & highlight verse number of the result
+    // var verseNums = iframe.contentWindow.document.getElementsByClassName("v");
+    // console.log("verseNums " + verseNums);
+
+    // var j;
+    // for (j = 0; j < verseNums.length; j++) {
+    //   if (verseNums[j].innerHTML === openthis.verseNumber) {
+    //     verseNums[j].style.backgroundColor = "gold";
+    //     break;
+    //   }
+    // }
+    //paint the verse yellow
+    var iframeContent = iframe.contentWindow.document.getElementById("content");
+    iframeContentStr = iframeContent.innerHTML.toString();
+    console.log(iframeContentStr);
+
+    var start = iframeContentStr.indexOf(`<a id="v${openthis.verseNumber}`);
+    var end =
+      iframeContentStr.indexOf(
+        `<span id="bookmarks${openthis.verseNumber}"></span>`
+      ) - 1;
+
+    console.log(start + " <start end> " + end);
+
+    highlightVerse(iframeContent, start, end);
   };
+  //reset the onload script to empty so it doesn't go to verse j on subsequent navigations in the session
+  setTimeout(function () {
+    document.getElementById("mainFrame").onload = () => {};
+  }, 500);
 
-  remote
-    .getCurrentWindow()
-    .setTitle(thisAppName + "   ||   " + openthis.folder);
+  //set title to current collection
+  remote.getCurrentWindow().setTitle(thisAppName + "   ||   " + openthis.name);
 
   //Now the info is stored in memory, go ahead and store to localStorage so it will survive a crash etc.
   localStorage.setItem(
