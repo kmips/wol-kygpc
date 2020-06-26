@@ -2,7 +2,7 @@
 //document.getElementsByTagName('body')[0].appendChild(readitClose)
 
 // Modules
-const { ipcRenderer } = require("electron");
+const { ipcRenderer, clipboard } = require("electron");
 const myData = require("../../mydata");
 let searchButton = document.getElementById("searchButton"),
   searchText = document.getElementById("searchText");
@@ -88,7 +88,9 @@ ipcRenderer.on("search-index-incoming", (e, allVersesArray) => {
   var d = new Date();
   indexBuildEndTime = d.getTime();
   var totalTimeElapsed = (indexBuildEndTime - indexBuildStartTime) / 1000;
-  console.log("Index built in " + totalTimeElapsed + " seconds");
+  console.log(
+    "Index built and ready to search in " + totalTimeElapsed + " seconds"
+  );
 });
 
 //Search settings show and hide
@@ -150,13 +152,6 @@ const select = (e) => {
   let selectedItem = document.getElementsByClassName(
     "search-result selected"
   )[0];
-  var openthis = {
-    file: selectedItem.dataset.file,
-    folder: selectedItem.dataset.folder,
-    id: selectedItem.dataset.id,
-    collectionName: selectedItem.dataset.collectionName,
-    verseNumber: selectedItem.verseNumber,
-  };
 };
 
 const open = () => {
@@ -166,18 +161,27 @@ const open = () => {
   )[0];
 
   // Get item's info
-  console.log(selectedItem.dataset.file + " " + selectedItem.dataset.folder);
   var openthis = {
     file: selectedItem.dataset.file,
     folder: selectedItem.dataset.folder,
+    id: selectedItem.dataset.id,
+    collectionName: selectedItem.dataset.collectionName,
     verseNumber: selectedItem.dataset.verseNumber,
   };
+  console.log(openthis);
 
   ipcRenderer.send("open-search-result-search-to-main", openthis);
 };
 
 //Go time on the search
 searchButton.addEventListener("click", (e) => {
+  //While we're searching give the user the loading gif so they will know we're working
+  document.getElementById("no-items").innerHTML = `<img src="loading2.gif">`;
+
+  //Track how long the search takes: search start
+  var d = new Date();
+  var searchStartTime = d.getTime();
+
   let resultsList = document.getElementById("items");
   // Check a search term has been entered
   if (searchText.value) {
@@ -187,19 +191,16 @@ searchButton.addEventListener("click", (e) => {
       resultsList.innerHTML = "";
     }
 
-    //While we're searching give the user the loading gif so they will know we're working
-    document.getElementById("no-items").innerHTML = `<img src="loading2.gif">`;
-
-    //First search routine sent to main, which did the searching with no index, just opening html files directly and without options.
-    //ipcRenderer.send("vanilla-search-for-this", searchText.value);
-
     //Search with index
     //Load searchIndex and searchSettings from localStorage.
     searchTerm = searchText.value;
     searchIndex = JSON.parse(localStorage.getItem("searchIndex"));
     searchSettings = JSON.parse(localStorage.getItem("searchSettings"));
+    console.log(searchTerm);
 
-    if ((searchSettings[0] = "fuzzy")) {
+    //kick off the search
+    if (searchSettings[0] === "fuzzy") {
+      console.log("Doing a fuzzy search...");
       //do fuzzy search
       //First normalize the searchterm: no accents, no caps
       var searchTermLowerCaseNoAccents = searchTerm
@@ -215,17 +216,18 @@ searchButton.addEventListener("click", (e) => {
         //Now search:
         //First check if the folder we're looking at exists in searchSettings
         if (searchSettings.includes(verse.folder) === true) {
-          //if there is the search term, then give the result.
-          var searchSuccess = verseLowerCaseNoAccents.search(
+          //if there is the search term, then give the result boolean result; string.includes returns true or false.
+          var searchSuccess = verseLowerCaseNoAccents.includes(
             searchTermLowerCaseNoAccents
           );
-          if (searchSuccess > 0) {
+          if (searchSuccess === true) {
             var result = document.createElement("div");
             result.setAttribute("class", "search-result");
             result.setAttribute("data-file", verse.file);
             result.setAttribute("data-folder", verse.folder);
             result.setAttribute("data-id", verse.id);
             result.setAttribute("data-verse-number", verse.verseNumber);
+            result.setAttribute("data-collection-name", verse.collectionName);
             result.innerHTML = `${verse.verseText}<br><resultRef>${verse.bookAndChapter}.${verse.verseNumber} | ${verse.collectionName}`;
 
             // Attach click handler to select
@@ -241,14 +243,22 @@ searchButton.addEventListener("click", (e) => {
           }
         }
       }
-    } else if ((searchSettings.searchType = "strict")) {
+    } else if (searchSettings[0] === "strict") {
       //do strict search
+      console.log("Doing a strict search...");
+
       for (const verse of searchIndex) {
         //First check if the folder we're looking at exists in searchSettings
         if (searchSettings.includes(verse.folder) === true) {
-          //if there is the search term, then give the result.
-          var searchSuccess = verse.verseText.search(searchTerm);
-          if (searchSuccess > 0) {
+          //string.match searches RegEx - but you can't put the regex right in the match parentheses, you have to contruct it with the
+          //RegExp() constructor and double escape the special terms:
+
+          var searchTermRegEx = new RegExp("\\b" + searchTerm + "\\b");
+          //string.match returns an object if there is a match
+          var searchSuccess = verse.verseText.match(searchTermRegEx);
+          //if there is no search term found, the result is null - if the search term is found, it's not null.
+          //If success, then give the result.
+          if (!(searchSuccess === null)) {
             var result = document.createElement("div");
             result.setAttribute("class", "search-result");
             result.setAttribute("data-file", verse.file);
@@ -262,6 +272,7 @@ searchButton.addEventListener("click", (e) => {
 
             // Attach open doubleclick handler
             result.addEventListener("dblclick", open);
+            // Add it to the results.
             resultsList.appendChild(result);
             // If this is the first item, select it
             if (document.getElementsByClassName("search-result").length === 1) {
@@ -272,17 +283,40 @@ searchButton.addEventListener("click", (e) => {
       }
     }
   }
-  console.log("done searching");
+  document.getElementById("no-items").innerHTML = "";
+  if (!resultsList.hasChildNodes()) {
+    console.log("Search item not found in index");
+    document.getElementById(
+      "no-items"
+    ).innerHTML = `<img src="no-results.png">`;
+  }
+  var d = new Date();
+  var searchEndTime = d.getTime();
+  var totalTimeElapsed = searchEndTime - searchStartTime;
+  console.log("Search complete in " + totalTimeElapsed + " milliseconds");
+
+  var searchTermRegEx2 = new RegExp(
+    `(?<=[\\s,.:;"']|^)" + "Ñu" + "(?=[\\s,.:;"']|$)`
+  );
+
+  // (?<=[\s,.:;"']|^)UNICODE_WORD(?=[\s,.:;"']|$)
+  str =
+    "«Dégluleen ma, ngalla sang yi, siyaare naa leen, tee ngeena dal ak man, su ko defee ngeen jàngu, fanaan ba suba, ngeen xëy topp seen yoon?» Ñu ne ko: «Bàyyil, nu fanaan ci mbedd mi.»";
+  var searchSuccess2 = str.match(searchTermRegEx2);
+  console.log("Ñu " + searchSuccess2);
 });
 
 // Listen for Enter on keyboard and call searchButton click
-searchText.addEventListener("keyup", (e) => {
+searchText.addEventListener("keydown", (e) => {
   if (e.key === "Enter") searchButton.click();
 });
 
-//If there are no results stop the spinner and show the magnifying glass w/ x
-ipcRenderer.on("no-results", (e) => {
-  document.getElementById("no-items").innerHTML = `<img src="no-results.png">`;
+// Listen for Ctl V paste
+
+document.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey && e.key === "v") || (e.metaKey && e.key === "v")) {
+    document.execCommand("paste");
+  }
 });
 
 // Listen for new item from main process vanilla

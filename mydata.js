@@ -107,6 +107,11 @@ var myTranslations = {
     fr: "Copier",
     wo: "Copier",
   },
+  menuPaste: {
+    en: "Paste",
+    fr: "Coller",
+    wo: "Coller",
+  },
   menuSelectAll: {
     en: "Select All",
     fr: "Sélectionner tout",
