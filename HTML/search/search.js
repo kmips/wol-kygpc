@@ -37,6 +37,7 @@ document.getElementById("fuzzyLabel").innerHTML = fuzzyLabel;
 document.getElementById("strictLabel").innerHTML = strictLabel;
 
 let searchWhichCollections = document.getElementById("searchWhichCollections");
+let resultsList = document.getElementById("items");
 
 myData.collections.forEach((collection) => {
   //set up the collectionOption, which will be used for each of the items in the array "collections" exported from mydata.js above.
@@ -66,16 +67,18 @@ localStorage.setItem("searchSettings", JSON.stringify(searchSettings));
 //On searchWindow open, build the index if it is not already built.
 rebuildIndex = localStorage.getItem("rebuildIndex");
 //Below for troubleshooting - uncomment to always build the index on search window load.
-//rebuildIndex = "true";
+rebuildIndex = "true";
 //If rebuild the Index request
 if (rebuildIndex === "true" || localStorage.getItem("searchIndex") === null) {
   //Set loading icon
   document.getElementById("no-items").innerHTML = `<img src="loading2.gif">`;
+  //hiccup so the page & animation can load
+  setTimeout(function () {
+    var d = new Date();
+    indexBuildStartTime = d.getTime();
 
-  var d = new Date();
-  indexBuildStartTime = d.getTime();
-
-  ipcRenderer.send("build-search-index");
+    ipcRenderer.send("build-search-index");
+  }, 1);
 }
 
 ipcRenderer.on("search-index-incoming", (e, allVersesArray) => {
@@ -83,7 +86,9 @@ ipcRenderer.on("search-index-incoming", (e, allVersesArray) => {
 
   //Here we store the index in localStorage
   localStorage.setItem("searchIndex", JSON.stringify(allVersesArray));
-
+  //Now that we've build the index, set a flag that we don't need to do it again
+  let rebuildIndex = false;
+  localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
   //log out how long it took to do the index build
   var d = new Date();
   indexBuildEndTime = d.getTime();
@@ -173,23 +178,46 @@ const open = () => {
   ipcRenderer.send("open-search-result-search-to-main", openthis);
 };
 
-//Go time on the search
-searchButton.addEventListener("click", (e) => {
-  //While we're searching give the user the loading gif so they will know we're working
-  document.getElementById("no-items").innerHTML = `<img src="loading2.gif">`;
+// async function firstFunction(){
+//   for(i=0;i<x;i++){
+//     // do something
+//   }
+//   return;
+// };
+// then use await in your other function to wait for it to return:
 
-  //Track how long the search takes: search start
-  var d = new Date();
-  var searchStartTime = d.getTime();
+// async function secondFunction(){
+//   await firstFunction();
+//   // now wait for firstFunction to finish...
+//   // do something else
+// };
 
-  let resultsList = document.getElementById("items");
+// // Second example
+// async doLongCalculation() {
+//   let firstbit = await doFirstBit();
+//   let secondbit = await doSecondBit(firstbit);
+//   let result = await finishUp(secondbit);
+//   return result;
+// }
+
+// async doFirstBit() {
+//   //...
+// }
+
+// async doSecondBit...
+
+// ...
+
+function mainSearchFn() {
+  console.log("in mainSearchFn");
+
   // Check a search term has been entered
   if (searchText.value) {
     // If we've previously searched, remove search results and start fresh
 
-    if (resultsList.hasChildNodes()) {
-      resultsList.innerHTML = "";
-    }
+    //Track how long the search takes: search start
+    var d = new Date();
+    var searchStartTime = d.getTime();
 
     //Search with index
     //Load searchIndex and searchSettings from localStorage.
@@ -252,8 +280,10 @@ searchButton.addEventListener("click", (e) => {
         if (searchSettings.includes(verse.folder) === true) {
           //string.match searches RegEx - but you can't put the regex right in the match parentheses, you have to contruct it with the
           //RegExp() constructor and double escape the special terms:
-
-          var searchTermRegEx = new RegExp("\\b" + searchTerm + "\\b");
+          // (?<=[\s,.:;"']|^)UNICODE_WORD(?=[\s,.:;"']|$)
+          var searchTermRegEx = new RegExp(
+            `(?<=[\\s.,?!:;؞،؟!؛:]|^)" + searchTerm + "(?=[\\s.,?!:;؞،؟!؛:]|$)`
+          );
           //string.match returns an object if there is a match
           var searchSuccess = verse.verseText.match(searchTermRegEx);
           //if there is no search term found, the result is null - if the search term is found, it's not null.
@@ -294,16 +324,29 @@ searchButton.addEventListener("click", (e) => {
   var searchEndTime = d.getTime();
   var totalTimeElapsed = searchEndTime - searchStartTime;
   console.log("Search complete in " + totalTimeElapsed + " milliseconds");
+  // //Some regex testing
+  //   var searchTermRegEx2 = new RegExp(
+  //     `(?<=[\\s,.:;"']|^)" + "Ñu" + "(?=[\\s,.:;"']|$)`
+  //   );
 
-  var searchTermRegEx2 = new RegExp(
-    `(?<=[\\s,.:;"']|^)" + "Ñu" + "(?=[\\s,.:;"']|$)`
-  );
+  //   // (?<=[\s,.:;"']|^)UNICODE_WORD(?=[\s,.:;"']|$)
+  //   str =
+  //     "«Dégluleen ma, ngalla sang yi, siyaare naa leen, tee ngeena dal ak man, su ko defee ngeen jàngu, fanaan ba suba, ngeen xëy topp seen yoon?» Ñu ne ko: «Bàyyil, nu fanaan ci mbedd mi.»";
+  //   var searchSuccess2 = str.match(searchTermRegEx2);
+  //   console.log("Ñu " + searchSuccess2);
+}
 
-  // (?<=[\s,.:;"']|^)UNICODE_WORD(?=[\s,.:;"']|$)
-  str =
-    "«Dégluleen ma, ngalla sang yi, siyaare naa leen, tee ngeena dal ak man, su ko defee ngeen jàngu, fanaan ba suba, ngeen xëy topp seen yoon?» Ñu ne ko: «Bàyyil, nu fanaan ci mbedd mi.»";
-  var searchSuccess2 = str.match(searchTermRegEx2);
-  console.log("Ñu " + searchSuccess2);
+//Go time on the search
+searchButton.addEventListener("click", (e) => {
+  //While we're searching give the user the loading gif so they will know we're working
+  document.getElementById("no-items").innerHTML = `<img src="loading2.gif">`;
+  if (resultsList.hasChildNodes()) {
+    resultsList.innerHTML = "";
+  }
+  //This ugly thing is required to give the page time to update to showt that animation so the user knows we are working for them!
+  setTimeout(function () {
+    mainSearchFn();
+  }, 1);
 });
 
 // Listen for Enter on keyboard and call searchButton click

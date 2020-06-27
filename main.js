@@ -483,15 +483,10 @@ ipcMain.on("open-search", (e, displayLang) => {
     menu: null,
     show: false,
     spellcheck: false,
-    webPreferences: { nodeIntegration: true, enableRemoteModule: true },
+    webPreferences: { nodeIntegration: true, enableRemoteModule: false },
   });
 
   searchWindow.loadFile("HTML/search/search.html");
-
-  searchWindow.once("ready-to-show", () => {
-    searchWindow.show();
-    searchWindow.webContents.openDevTools();
-  });
 
   let searchWinContextMenu = [
     {
@@ -510,6 +505,10 @@ ipcMain.on("open-search", (e, displayLang) => {
 
   searchWindow.webContents.on("context-menu", (e) => {
     searchWinContextMenu.popup();
+  });
+  searchWindow.once("ready-to-show", () => {
+    searchWindow.show();
+    //searchWindow.webContents.openDevTools();
   });
 
   // Listen for window being closed
