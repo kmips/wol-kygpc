@@ -10,7 +10,8 @@ var collections = [
     //file in the HTML folder and grab the name there.
     folder: "org.mbs.kyg.wol", //The folder in the HTML folder in which this collection is found.
     fileToView: "index.html", //The first file to view on a new install - usually index.html but not necessarily.
-    cssClass: "icon-text", //For Roman script (abc) leave as icon-text. For Arabic script icon-text-arabic.
+    searchFont: "CharisSILCompact-R.ttf", //The name of a font in the HTML folder for displaying search results.
+    searchFontSize: 16, //Size for search results in px.
     horizontalLineFollows: false, //If you want a horizontal line following this entry, put true.
   },
   {
@@ -18,7 +19,8 @@ var collections = [
     icon: "add_circle",
     folder: "org.mbs.kyg.wol.2020",
     fileToView: "index.html",
-    cssClass: "icon-text",
+    searchFont: "CharisSILCompact-R.ttf",
+    searchFontSize: 16,
     horizontalLineFollows: false,
   },
   {
@@ -26,7 +28,8 @@ var collections = [
     icon: "polymer",
     folder: "org.mbs.kygma.wol",
     fileToView: "index.html",
-    cssClass: "icon-text-arabic",
+    searchFont: "Harmattan-Regular.ttf",
+    searchFontSize: 22,
     horizontalLineFollows: true,
   },
   {
@@ -34,7 +37,8 @@ var collections = [
     icon: "format_align_left",
     folder: "org.mbs.chrono.wol.alfa",
     fileToView: "index.html",
-    cssClass: "icon-text",
+    searchFont: "CharisSILCompact-R.ttf",
+    searchFontSize: 16,
     horizontalLineFollows: false,
   },
   {
@@ -42,7 +46,8 @@ var collections = [
     icon: "format_align_right",
     folder: "org.mbs.chrono.wol.ajami",
     fileToView: "index.html",
-    cssClass: "icon-text-arabic",
+    searchFont: "Harmattan-Regular.ttf",
+    searchFontSize: 22,
     horizontalLineFollows: false,
   },
 ];
@@ -163,6 +168,8 @@ var otherText = {
   thisAppName: "Kàddug Yàlla gi", //The name that you want to use in the app title bar etc.
   menuWebURL: "https://sng.al/app", //The URL for 'visit our website'. Leave empty if you have no website.
   giveFeedbackemail: "equipedevmbs@gmail.com", //the email address to which a user can send feedback
+  defaultFont: "Harmattan-Regular.ttf", //A font in the HTML folder that can handle gracefully all scripts in your app;
+  //used where the names of all collections are shown side-by-side
   defaultLang: "fr", //The language code that the app should be initially opened in
 };
 

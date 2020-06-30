@@ -153,14 +153,17 @@ function createMenus(displayLang) {
     {
       label: transl.menuZoomIn[displayLang],
       role: "zoomIn",
+      accelerator: "CmdOrCtrl+Plus",
     },
     {
       label: transl.menuZoomOut[displayLang],
       role: "zoomOut",
+      accelerator: "CmdOrCtrl+-",
     },
     {
       label: transl.menuResetZoom[displayLang],
       role: "resetZoom",
+      accelerator: "CmdOrCtrl+0",
     },
     {
       type: "separator",
@@ -173,6 +176,7 @@ function createMenus(displayLang) {
     {
       label: transl.menuSelectAll[displayLang],
       role: "selectAll",
+      accelerator: "CmdOrCtrl+A",
     },
     {
       type: "separator",
@@ -248,6 +252,7 @@ function createMenus(displayLang) {
     {
       label: transl.menuQuit[displayLang],
       role: "quit",
+      accelerator: "CmdOrCtrl+Q",
     },
     { label: appText.thisAppName + " " + MyAppVersion, enabled: false },
   ];
@@ -508,7 +513,7 @@ ipcMain.on("open-search", (e, displayLang) => {
   });
   searchWindow.once("ready-to-show", () => {
     searchWindow.show();
-    //searchWindow.webContents.openDevTools();
+    searchWindow.webContents.openDevTools();
   });
 
   // Listen for window being closed
@@ -648,6 +653,7 @@ ipcMain.on("build-search-index", (e) => {
           fileContents.indexOf("<title>") + 7,
           fileContents.indexOf("</title>")
         );
+
         //Grab the content, leave the headers and footers
         var fileContentsBody = fileContents.substring(
           fileContents.indexOf(`<div id="content">`) + 18,
@@ -655,16 +661,19 @@ ipcMain.on("build-search-index", (e) => {
         );
 
         //split the file contents via verse numbers into the array oneChapterByVerse
-        splitString = `<span class="v">`;
+        var splitString = `<a id="v`;
         var oneChapterByVerse = fileContentsBody.split(splitString);
         //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
         if (oneChapterByVerse.length > 2) {
           //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
           for (const verse of oneChapterByVerse) {
             //Get verse number
-            var verseNumber = verse.substring(0, verse.indexOf("</span>"));
+            var verseNumber = verse.substring(0, verse.indexOf(`"`));
             //Get the verse string without the nbsp;. substring with no second argument goes to end of string
-            var verseString = verse.substring(verse.indexOf("</span>") + 7);
+
+            var verseInteriorIndex = verse.indexOf(`&nbsp;</span>`);
+
+            var verseString = verse.substring(verseInteriorIndex);
             //Now we're changing the verseString and stripping off bits we don't need
             verseString = verseString.substring(
               0,

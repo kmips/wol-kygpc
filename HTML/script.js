@@ -1,12 +1,5 @@
 // Renderer javascript for index.html
-const {
-  remote,
-  shell,
-  ipcRenderer,
-  Menu,
-  BrowserWindow,
-  ipcMain,
-} = require("electron");
+const { remote, shell, ipcRenderer, webFrame } = require("electron");
 
 //Our app's version for comparison below
 thisAppVersion = remote.app.getVersion();
@@ -21,6 +14,10 @@ const initialState = myData.collections;
 let currentStateMainWindow = [];
 let currentStateSecWindow = [];
 let displayLang;
+defaultFontName = myData.otherText.defaultFont.substr(
+  0,
+  myData.otherText.defaultFont.indexOf(".")
+);
 
 //Check the if the app has been previously run and if version is same as last run.
 //If lastOpenedVersion is null, then it's a new open.
@@ -230,8 +227,8 @@ myData.collections.forEach((item) => {
 
   //text with variables that goes inside the <a></a> tag. Remember this loops for each collection so each in its turn will get
   //its information included in a separate entry
-  sidebarMenuItem.innerHTML = `<span><i class="material-icons">${item.icon}</i><span class=${item.cssClass}>${item.name}</span>`;
-
+  sidebarMenuItem.innerHTML = `<span><i class="material-icons">${item.icon}</i><span style="font-family:${defaultFontName}" class="icon-text">${item.name}</span>`;
+  //sidebarMenuItem.style = `font-family:${defaultFontName}`;
   // Append new node to "sidebarMenu" div
   //remember 'sidebarMenu' is document.getElementById('mySidebar') in index.htm.
   //sidebarMenuItem is the new a with the icon, text, and initial URL that we have set up.
@@ -275,7 +272,7 @@ if (remote.getGlobal("sharedObj").loadingMain === true) {
   sidebarMenuItem = document.createElement("a");
   sidebarMenuItem.setAttribute("href", "#");
   sidebarMenuItem.setAttribute("id", "searchButton");
-  sidebarMenuItem.innerHTML = `<span><i class="material-icons" id="search-icon">pageview</i><span class='icon-text'>${appSearchText}</span>`;
+  sidebarMenuItem.innerHTML = `<span><i class="material-icons" id="search-icon">pageview</i><span style="font-family:${defaultFontName}" class="icon-text">${appSearchText}</span>`;
   sidebarMenuBottomDiv.appendChild(sidebarMenuItem);
   sidebarMenuItem.addEventListener("click", openSearch);
   sidebarMenuBottomDiv.appendChild(document.createElement("br"));
@@ -285,7 +282,7 @@ if (remote.getGlobal("sharedObj").loadingMain === true) {
   sidebarMenuItem.setAttribute("href", "#");
   sidebarMenuItem.setAttribute("id", "twoPaneButton");
   sidebarMenuItem.setAttribute("data-open-close-state", "InvToOpen");
-  sidebarMenuItem.innerHTML = `<span><i class="material-icons" id="two-window-icon">library_add</i><span class='icon-text'>${appInvToOpen}</span>`;
+  sidebarMenuItem.innerHTML = `<span><i class="material-icons" id="two-window-icon">library_add</i><span style="font-family:${defaultFontName}" class="icon-text">${appInvToOpen}</span>`;
   sidebarMenuBottomDiv.appendChild(sidebarMenuItem);
   sidebarMenuItem.addEventListener("click", openOrCloseNewWindow);
 
@@ -298,7 +295,7 @@ if (remote.getGlobal("sharedObj").loadingMain === true) {
       `href`,
       `mailto:${appFeedbackemail}?subject=${appFeedbacksubject}`
     );
-    sidebarMenuItem.innerHTML = `<span><i class="material-icons">local_post_office</i><span class='icon-text'>${appFeedback}</span>`;
+    sidebarMenuItem.innerHTML = `<span><i class="material-icons">local_post_office</i><span style="font-family:${defaultFontName}" class="icon-text">${appFeedback}</span>`;
     sidebarMenuBottomDiv.appendChild(sidebarMenuItem);
     sidebarMenuBottomDiv.appendChild(document.createElement("br"));
   }
@@ -317,6 +314,47 @@ if (document.getElementById("mainFrame")) {
   });
 }
 
+//the menu and its associated accelerators only work on Mac, so we have to manually add accelerators for non-Mac platforms
+
+function getAccelerators() {
+  if (
+    (event.ctrlKey && event.key === "c") ||
+    (event.metaKey && event.key === "c")
+  ) {
+    console.log("c heard");
+    document
+      .getElementById("mainFrame")
+      .contentWindow.document.execCommand("copy");
+  } else if (
+    (event.ctrlKey && event.key === "a") ||
+    (event.metaKey && event.key === "a")
+  ) {
+    console.log("a heard");
+    document
+      .getElementById("mainFrame")
+      .contentWindow.document.execCommand("selectAll");
+  } else if (
+    (event.ctrlKey && event.key === "+") ||
+    (event.metaKey && event.key === "+") ||
+    (event.ctrlKey && event.shiftKey && event.key === "=") ||
+    (event.metaKey && event.shiftKey && event.key === "=")
+  ) {
+    console.log("+ heard");
+    webFrame.setZoomFactor(webFrame.getZoomFactor() + 0.1);
+  } else if (
+    (event.ctrlKey && event.key === "-") ||
+    (event.metaKey && event.key === "-")
+  ) {
+    console.log("- heard");
+    webFrame.setZoomFactor(webFrame.getZoomFactor() - 0.1);
+  } else if (
+    (event.ctrlKey && event.key === "0") ||
+    (event.metaKey && event.key === "0")
+  ) {
+    console.log("- heard");
+    webFrame.setZoomFactor(1);
+  }
+}
 //Safety with nodeintegration:
 //Our index.html has no outside links so they can be normally handled. But often an HTML collection will have
 //an outside link, perhaps for a copyright page or other information. Here we want to parse for relative hyperlinks
@@ -330,7 +368,24 @@ document.getElementById("mainFrame").onload = () => {
       shell.openExternal(event.target.href);
     }
   };
+
+  //You have to run getAccelerators() both here on the mainFrame in the onload event and on the document (see below) for them to
+  //work in all cases when not on Mac. If only in one, when the other has focus doesn't work.
+  if (!remote.process.platform === "darwin") {
+    document.getElementById(
+      "mainFrame"
+    ).contentWindow.document.onkeydown = () => {
+      getAccelerators();
+    };
+  }
 };
+
+//See right above in the mainFrame onload - this loads the accelerators for the rest of the window when not on Mac
+if (!remote.process.platform === "darwin") {
+  document.onkeydown = () => {
+    getAccelerators();
+  };
+}
 
 //** Functions
 
