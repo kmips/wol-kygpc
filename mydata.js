@@ -166,6 +166,28 @@ var myTranslations = {
     fr: "Recherche stricte",
     wo: "Recherche stricte",
   },
+  updaterTitle: {
+    en: "Update available",
+    fr: "Mise à jour disponible",
+    wo: "Mise à jour disponible",
+  },
+  updaterInvToDownload: {
+    en: "A new version is available. Do you want to download it now?",
+    fr:
+      "Une nouvelle version de cette application est disponible. Voulez-vous la mettre à jour maintenant ?",
+    wo:
+      "Une nouvelle version de cette application est disponible. Voulez-vous la mettre à jour maintenant ?",
+  },
+  updaterInvToInstall: {
+    en:
+      "The new version has downloaded. Do you want to quit and install it now?",
+    fr:
+      "Une nouvelle version de cette application est prête. Quitter et installer maintenant ?",
+    wo:
+      "Une nouvelle version de cette application est prête. Quitter et installer maintenant ?",
+  },
+
+  // buttons: ["Mettre à jour", "Non"],
 };
 
 var otherText = {

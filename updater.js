@@ -1,89 +1,98 @@
 // Modules
-const {dialog, BrowserWindow, ipcMain} = require('electron')
-const {autoUpdater} = require('electron-updater')
+const { dialog, BrowserWindow, ipcMain } = require("electron");
+const { autoUpdater } = require("electron-updater");
+const myData = require("./mydata");
+const transl = myData.myTranslations;
 
 // Enable logging
-autoUpdater.logger = require('electron-log')
-autoUpdater.logger.transports.file.level = 'info'
+autoUpdater.logger = require("electron-log");
+autoUpdater.logger.transports.file.level = "info";
 
 // Disable auto downloading
-autoUpdater.autoDownload = false
+autoUpdater.autoDownload = false;
 
 // Check for updates
-exports.check = () => {
-
+function check(displayLang) {
   // Start update check
-  autoUpdater.checkForUpdates()
+  autoUpdater.checkForUpdates();
 
   // Listen for download (update) found
-  autoUpdater.on('update-available', () => {
-
+  autoUpdater.on("update-available", () => {
     // Track progress percent
-    let downloadProgress = 0
+    let downloadProgress = 0;
 
     // Prompt user to update
-    dialog.showMessageBox({
-      type: 'info',
-      title: 'Mise à jour disponible',
-      message: 'Une nouvelle version de cette application est disponible. Voulez-vous la mettre à jour maintenant ?',
-      buttons: ['Mettre à jour', 'Non']
-    }, (buttonIndex) => {
+    dialog.showMessageBox(
+      {
+        type: "info",
+        title: myData.myTranslations.updaterTitle[displayLang],
+        message: myData.myTranslations.updaterInvToDownload[displayLang],
+        buttons: ["✓", "✕"],
+      },
 
-      // If not 'Update' button, return
-      if(buttonIndex !== 0) return
+      (buttonIndex) => {
+        // If not 'Update' button, return
+        console.log(buttonIndex);
 
-      // Else start download and show download progress in new window
-      autoUpdater.downloadUpdate()
+        if (buttonIndex !== 0) return;
 
-      // Create progress window
-      let progressWin = new BrowserWindow({
-        width: 350,
-        height: 70,
-        useContentSize: true,
-        autoHideMenuBar: true,
-        maximizable: false,
-        fullscreen: false,
-        fullscreenable: false,
-        resizable: false
-      })
+        // Else start download and show download progress in new window
+        autoUpdater.downloadUpdate();
 
-      // Load progress HTML
-      
-      progressWin.loadFile('renderer/progress.html')
+        // Create progress window
+        let progressWin = new BrowserWindow({
+          width: 350,
+          height: 70,
+          useContentSize: true,
+          autoHideMenuBar: true,
+          maximizable: false,
+          fullscreen: false,
+          fullscreenable: false,
+          resizable: false,
+        });
 
-      // Handle win close
-      progressWin.on('closed', () => {
-        progressWin = null
-      })
+        // Load progress HTML
 
-      // Listen for preogress request from progressWin
-      ipcMain.on('download-progress-request', (e) => {
-        e.returnValue = downloadProgress
-      })
+        progressWin.loadFile("renderer/progress.html");
 
-      // Track download progress on autoUpdater
-      autoUpdater.on('download-progress', (d) => {
-        downloadProgress = d.percent
-      })
+        // Handle win close
+        progressWin.on("closed", () => {
+          progressWin = null;
+        });
 
-      // Listen for completed update download
-      autoUpdater.on('update-downloaded', () => {
+        // Listen for preogress request from progressWin
+        ipcMain.on("download-progress-request", (e) => {
+          e.returnValue = downloadProgress;
+        });
 
-        // Close progressWin
-        if(progressWin) progressWin.close()
+        // Track download progress on autoUpdater
+        autoUpdater.on("download-progress", (d) => {
+          downloadProgress = d.percent;
+        });
 
-        // Prompt user to quit and install update
-        dialog.showMessageBox({
-          type: 'info',
-          title: 'Prêt pour la mise à jour',
-          message: 'Une nouvelle version de cette application est prête. Quitter et installer maintenant ?',
-          buttons: ['Oui', 'Plus tard']
-        }, (buttonIndex) => {
+        // Listen for completed update download
+        autoUpdater.on("update-downloaded", () => {
+          // Close progressWin
+          if (progressWin) progressWin.close();
 
-          // Update if 'Yes'
-          if(buttonIndex === 0) autoUpdater.quitAndInstall()
-        })
-      })
-    })
-  })
+          // Prompt user to quit and install update
+          dialog.showMessageBox(
+            {
+              type: "info",
+              title: myData.myTranslations.updaterTitle[displayLang],
+              message:
+                "Une nouvelle version de cette application est prête. Quitter et installer maintenant ?",
+              buttons: ["✓", "✕"],
+            },
+            (buttonIndex) => {
+              // Update if 'Yes'
+              if (buttonIndex === 0) autoUpdater.quitAndInstall();
+            }
+          );
+        });
+      }
+    );
+  });
 }
+
+exports.check = check;

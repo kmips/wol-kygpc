@@ -146,6 +146,9 @@ app.on("ready", () => {
 //Then for the refreshes the menu calls createMenus on click
 ipcMain.on("set-display-lang", (e, displayLang) => {
   createMenus(displayLang);
+  // Check for update after x seconds
+  const updater = require("./updater");
+  setTimeout(updater.check, 5000, displayLang);
 });
 
 function createMenus(displayLang) {
@@ -304,10 +307,6 @@ ipcMain.on("lang-changed-reload-pages", (e) => {
   mainWindow.webContents.reload();
   mainWindow.show();
 });
-
-// Check for update after x seconds
-const updater = require("./updater");
-setTimeout(updater.check, 2000);
 
 //----------------
 //Secondary Window
