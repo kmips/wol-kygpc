@@ -1,8 +1,5 @@
-// Append button to body
-//document.getElementsByTagName('body')[0].appendChild(readitClose)
-
 // Modules
-const { ipcRenderer, clipboard } = require("electron");
+const { ipcRenderer, clipboard, webFrame } = require("electron");
 const myData = require("../../mydata");
 let searchButton = document.getElementById("searchButton"),
   searchText = document.getElementById("searchText");
@@ -164,30 +161,23 @@ for (let collection of myData.collections) {
 const uniqueFonts = allFonts.filter((x, i, a) => a.indexOf(x) == i);
 
 //Now include the styles definition necessary for the fonts
-//Get the head element
-
-var searchHead = document.head;
-var searchHeadStr = searchHead.innerHTML;
-//var endHeadTag = searchHeadStr.indexOf("</head>");
-var searchHeadInnerReplacement = "";
-
+var cssToAdd;
 for (let uniqueFont of uniqueFonts) {
   uniqueFontName = uniqueFont.substr(0, uniqueFont.indexOf("."));
-  searchHeadInnerReplacement =
-    searchHeadInnerReplacement +
+  cssToAdd =
+    cssToAdd +
     `
   @font-face {
     font-family: "${uniqueFontName}";
     font-style: normal;
     src: 
       url(../${uniqueFont}) format("truetype");
-  }`;
+  }
+  `;
 }
-//Alter as follows to add our style in the head element
-searchHeadStr =
-  searchHeadStr + `<style> ${searchHeadInnerReplacement} </style>`;
-//set the new string as the head element
-searchHead.innerHTML = searchHeadStr;
+
+//New css insert https://www.electronjs.org/docs/api/web-frame#webframeinsertcsscss
+webFrame.insertCSS(cssToAdd);
 //---
 
 // Set item as selected
@@ -273,7 +263,7 @@ function addSearchResult(verse) {
   result.innerHTML = `${verse.verseText}<br><resultRef style="font-size:${resultRefFontSize}px">${verse.bookAndChapter}.${verse.verseNumber} | ${verse.collectionName}`;
   result.setAttribute(
     "style",
-    `font-family:${searchFontName}; font-size:${myData.collections[i].searchFontSize}px`
+    `font-family:${searchFontName}; font-size:${myData.collections[i].searchFontSize}px; direction:${myData.collections[i].textDirection}`
   );
   // Attach click handler to select
   result.addEventListener("click", select);
@@ -339,12 +329,6 @@ function mainSearchFn() {
         //First check if the folder we're looking at exists in searchSettings
         if (searchSettings.includes(verse.folder) === true) {
           //string.match searches RegEx - but you can't put the regex right in the match parentheses, you have to contruct it with the
-          //RegExp() constructor and double escape the special terms:
-          // (?<=[\s,.:;"']|^)UNICODE_WORD(?=[\s,.:;"']|$)
-          // var searchTermRegEx = new RegExp(
-          //   `(?<=[\\s.,?!:;؞،؟!؛:]|^)" + searchTerm + "(?=[\\s.,?!:;؞،؟!؛:]|$)`
-          // );
-          //string.match returns an object if there is a match
           var searchSuccess = verse.verseText.match(searchTerm);
           //if there is no search term found, the result is null - if the search term is found, it's not null.
           //If success, then give the result.
@@ -367,16 +351,6 @@ function mainSearchFn() {
   var searchEndTime = d.getTime();
   var totalTimeElapsed = searchEndTime - searchStartTime;
   console.log("Search complete in " + totalTimeElapsed + " milliseconds");
-  // //Some regex testing
-  //   var searchTermRegEx2 = new RegExp(
-  //     `(?<=[\\s,.:;"']|^)" + "Ñu" + "(?=[\\s,.:;"']|$)`
-  //   );
-
-  //   // (?<=[\s,.:;"']|^)UNICODE_WORD(?=[\s,.:;"']|$)
-  //   str =
-  //     "«Dégluleen ma, ngalla sang yi, siyaare naa leen, tee ngeena dal ak man, su ko defee ngeen jàngu, fanaan ba suba, ngeen xëy topp seen yoon?» Ñu ne ko: «Bàyyil, nu fanaan ci mbedd mi.»";
-  //   var searchSuccess2 = str.match(searchTermRegEx2);
-  //   console.log("Ñu " + searchSuccess2);
 }
 
 //Go time on the search
@@ -388,10 +362,8 @@ searchButton.addEventListener("click", (e) => {
   }
   //This ugly thing is required to give the page time to update to show that animation so the user knows we are working for them!
   setTimeout(function () {
-    console.log("in timeout");
-
     mainSearchFn();
-  }, 50);
+  }, 40);
 });
 
 // Listen for Enter on keyboard and call searchButton click

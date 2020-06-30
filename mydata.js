@@ -12,6 +12,7 @@ var collections = [
     fileToView: "index.html", //The first file to view on a new install - usually index.html but not necessarily.
     searchFont: "CharisSILCompact-R.ttf", //The name of a font in the HTML folder for displaying search results.
     searchFontSize: 16, //Size for search results in px.
+    textDirection: "ltr",
     horizontalLineFollows: false, //If you want a horizontal line following this entry, put true.
   },
   {
@@ -21,6 +22,7 @@ var collections = [
     fileToView: "index.html",
     searchFont: "CharisSILCompact-R.ttf",
     searchFontSize: 16,
+    textDirection: "ltr",
     horizontalLineFollows: false,
   },
   {
@@ -29,7 +31,8 @@ var collections = [
     folder: "org.mbs.kygma.wol",
     fileToView: "index.html",
     searchFont: "Harmattan-Regular.ttf",
-    searchFontSize: 22,
+    searchFontSize: 24,
+    textDirection: "rtl",
     horizontalLineFollows: true,
   },
   {
@@ -39,6 +42,7 @@ var collections = [
     fileToView: "index.html",
     searchFont: "CharisSILCompact-R.ttf",
     searchFontSize: 16,
+    textDirection: "ltr",
     horizontalLineFollows: false,
   },
   {
@@ -47,7 +51,8 @@ var collections = [
     folder: "org.mbs.chrono.wol.ajami",
     fileToView: "index.html",
     searchFont: "Harmattan-Regular.ttf",
-    searchFontSize: 22,
+    searchFontSize: 24,
+    textDirection: "rtl",
     horizontalLineFollows: false,
   },
 ];

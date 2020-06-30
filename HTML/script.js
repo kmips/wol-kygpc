@@ -537,37 +537,28 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
 
     //Now include the styles definition necessary for the fading highlight animation
-    //Get the head element
-    var iframeHead = iframe.contentWindow.document.head;
-    iframeHeadStr = iframeHead.outerHTML;
-    var endHeadTag = iframeHeadStr.indexOf("</head>");
-    //Alter as follows to add our style in the head element
-    iframeHeadStr =
-      iframeHeadStr.substr(0, endHeadTag) +
-      `<style>
-      @keyframes animationCode {
+
+    var cssToAdd = `@keyframes animationCode {
         from {background-color: gold;}
         to {background-color: transparent;}
       }
-      
-      /* The element to apply the animation to */
       .textToAnimate {
         background-color: transparent;
         animation-name: animationCode;
         animation-duration: 4s;
       }
-      <style>` +
-      iframeHeadStr.substr(endHeadTag - 1);
-    //set the new string as the head element
-    iframeHead.outerHTML = iframeHeadStr;
+      
+      body {margin: 100px;}`;
+
+    //css insert https://www.electronjs.org/docs/api/web-frame#webframeinsertcsscss
+    //Here firstChild refers to the iframe - you have to get the css into the frame, not into the webFrame.
+    webFrame.firstChild.insertCSS(cssToAdd);
 
     //now add the textToAnimate class on the verse
     var iframeContent = iframe.contentWindow.document.getElementById("content");
     iframeContentStr = iframeContent.innerHTML.toString();
 
-    var start = iframeContentStr.indexOf(
-      `<span class="v">${openthis.verseNumber}</span>`
-    );
+    var start = iframeContentStr.indexOf(`<a id="v${openthis.verseNumber}`);
 
     var end =
       iframeContentStr.indexOf(
@@ -585,8 +576,7 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     iframeContent.innerHTML = str;
     //end of iframe onload
   };
-  console.log("openthis.name " + openthis.collectionName);
-  console.log(openthis);
+
   //set title to current collection
   remote
     .getCurrentWindow()
