@@ -132,7 +132,7 @@ function openAboutWindow() {
 app.on("ready", () => {
   // Create main window
   createWindow();
-  createMenus();
+  //createMenus();
 });
 
 //------------------------

@@ -76,7 +76,7 @@ else if (
     localStorage.getItem("lastKnownStateSecWin")
   );
 
-  if (localStorage.getItem("displayLang") === null) {
+  if (localStorage.getItem("lastKnownDisplayLanguage") === null) {
     displayLang = myData.otherText.defaultLang;
     localStorage.setItem(
       "lastKnownDisplayLanguage",
@@ -84,14 +84,7 @@ else if (
     );
   } else {
     displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
-    localStorage.setItem(
-      "lastKnownDisplayLanguage",
-      JSON.stringify(displayLang)
-    );
   }
-  //Set display language to default language
-  displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
-  localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(displayLang));
 
   //Let the main process know the displayLang
   ipcRenderer.send("set-display-lang", displayLang);
@@ -124,7 +117,7 @@ else if (
 
   //Let the main process know the displayLang
   //This gets us our default interface lang from myData.
-  if (localStorage.getItem("displayLang") === null) {
+  if (localStorage.getItem("lastKnownDisplayLanguage") === null) {
     displayLang = myData.otherText.defaultLang;
     localStorage.setItem(
       "lastKnownDisplayLanguage",
@@ -132,10 +125,6 @@ else if (
     );
   } else {
     displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
-    localStorage.setItem(
-      "lastKnownDisplayLanguage",
-      JSON.stringify(displayLang)
-    );
   }
   ipcRenderer.send("set-display-lang", displayLang);
 }
@@ -375,7 +364,6 @@ function getAccelerators() {
     (event.ctrlKey && event.key === "c") ||
     (event.metaKey && event.key === "c")
   ) {
-    console.log("c heard");
     document
       .getElementById("mainFrame")
       .contentWindow.document.execCommand("copy");
@@ -383,7 +371,6 @@ function getAccelerators() {
     (event.ctrlKey && event.key === "a") ||
     (event.metaKey && event.key === "a")
   ) {
-    console.log("a heard");
     document
       .getElementById("mainFrame")
       .contentWindow.document.execCommand("selectAll");
@@ -393,19 +380,16 @@ function getAccelerators() {
     (event.ctrlKey && event.shiftKey && event.key === "=") ||
     (event.metaKey && event.shiftKey && event.key === "=")
   ) {
-    console.log("+ heard");
     webFrame.setZoomFactor(webFrame.getZoomFactor() + 0.1);
   } else if (
     (event.ctrlKey && event.key === "-") ||
     (event.metaKey && event.key === "-")
   ) {
-    console.log("- heard");
     webFrame.setZoomFactor(webFrame.getZoomFactor() - 0.1);
   } else if (
     (event.ctrlKey && event.key === "0") ||
     (event.metaKey && event.key === "0")
   ) {
-    console.log("- heard");
     webFrame.setZoomFactor(1);
   }
 }
@@ -549,8 +533,6 @@ ipcRenderer.on("language-switch", (e, lang) => {
 
 //This is the message that is received here in the mainWindow from main process with the message to open the chosen search result's page.
 ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
-  console.log("openthis in script.js " + openthis);
-
   //open the search result
   //Here is the current path on the iframe
   var iframeSource = document.getElementById("mainFrame").contentDocument.URL;
@@ -612,21 +594,15 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     //now add the textToAnimate class on the verse
     var iframeContent = iframe.contentWindow.document.getElementById("content");
     iframeContentStr = iframeContent.innerHTML.toString();
-    console.log("set the frame");
 
-    console.log("there");
     var startTarget = `<span class="v">\\D*${openthis.verseNumber}`;
-    console.log(startTarget);
 
     var start = iframeContentStr.match(startTarget);
-    console.log(start.index);
 
     var end =
       iframeContentStr.indexOf(
         `<span id="bookmarks${openthis.verseNumber}"></span>`
       ) - 1;
-
-    console.log(end);
 
     var str = iframeContent.innerHTML;
     str =
