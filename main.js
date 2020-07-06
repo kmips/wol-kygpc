@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain, ipcRenderer } = require("electron");
+const { app, BrowserWindow, Menu, ipcMain } = require("electron");
 const { screen } = require("electron");
 
 //Get the app name from mydata.js - rather than in package.json
@@ -14,6 +14,7 @@ let MyAppVersion = app.getVersion();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+//We also need a few more variables to be available everywhere.
 let secWindow;
 let copyrightWindow;
 let mainMenu;
@@ -57,14 +58,12 @@ function createWindow() {
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
 
-  //Listener for right click to call the menu defined in menu.js
-
+  //When ready, show
   mainWindow.on("ready-to-show", () => {
     mainWindow.show();
   });
 
   // Emitted when the window is closed.
-
   mainWindow.on("close", () => {
     //Hiding the window makes things look a bit snappier
     mainWindow.hide();
@@ -145,12 +144,18 @@ app.on("ready", () => {
 //This calls the initial menu load after the variable has been loaded from localStorage
 //Then for the refreshes the menu calls createMenus on click
 ipcMain.on("set-display-lang", (e, displayLang) => {
+  //Create Menus with the displayLang coming from the mainWindow
   createMenus(displayLang);
   // Check for update after x seconds
   const updater = require("./updater");
   setTimeout(updater.check, 5000, displayLang);
 });
 
+//In this app we have one menu that displays both from menu bar and as context menu.
+//Here we build the menu in pieces depending on which we need for this app and then wrap it in
+//such a way that we can use it in both places.
+
+//section one is always created.
 function createMenus(displayLang) {
   let coreMenuSection1 = [
     {
@@ -197,7 +202,10 @@ function createMenus(displayLang) {
   ];
 
   //Language switcher submenu
-
+  //Section two is only created if there is more than one language name defined in mydata.js.
+  //Otherwise it is just empty, so takes no space.
+  var coreMenuSection2 = [];
+  //If the length is not equal to 1 that means there are multiple languages, so put in lang switcher
   if (!(Object.entries(transl.langName).length === 1)) {
     var langMenuDefinition = [];
     for (let [key, value] of Object.entries(transl.langName)) {
@@ -218,10 +226,8 @@ function createMenus(displayLang) {
         submenu: langMenuDefinition,
       },
     ];
-  } //If the length is not equal to 1 that means there are multiple languages, so put in lang switcher
-  //If there's only one display language it keeps rolling, skipping the language switcher
+  }
 
-  //Now we have the first part of the menu as the array coreMenuDefinition
   //If we have a website prompt and a URL, make it the next part of the menu,
   //but if we don't have either one, then skip on to the final section of the menu
   if (
@@ -250,7 +256,7 @@ function createMenus(displayLang) {
     ];
   }
 
-  //This is the last section of the menu
+  //This is the last section of the menu, always created.
   coreMenuSection4 = [
     {
       label: transl.menuQuit[displayLang],
@@ -259,6 +265,7 @@ function createMenus(displayLang) {
     },
     { label: appText.thisAppName + " " + MyAppVersion, enabled: false },
   ];
+
   //This operator takes multiple arrays (coreMenuSections) and joins them into one array, coreMenuDefinition
   //https://dmitripavlutin.com/operations-on-arrays-javascript/#42-spread-operator
   coreMenuDefinition = [
@@ -298,8 +305,8 @@ function createMenus(displayLang) {
 //End of createMenus
 //------------------------
 
-//When a language change is triggered via a click() calling createMenus() wiht the new language, it sends a message to
-//the renderer telling it to change localStorage to teh desired lanugage for future loads. It then bounces a message
+//When a language change is triggered via a click() calling createMenus() with the new language, it sends a message to
+//the renderer telling it to change localStorage to the desired lanugage for future loads. It then bounces a message
 //back here to tell main process to reload the pages.
 ipcMain.on("lang-changed-reload-pages", (e) => {
   mainWindow.hide();
@@ -318,7 +325,7 @@ function adjustForWin10InvisibleBorders() {
   if (process.platform === "win32") {
     //getsystemversion is e.g. 10.0.8484; 'split' gives us that info as an array, e.g. ["10", "0", "8484"]
     completeOSversion = process.getSystemVersion().split(".");
-    //'parseInt' gets the first element of the array into a string into a usable integer
+    //'parseInt' gets the first element of the array ([0]) into a string into a usable integer
     OSversion = parseInt(completeOSversion[0], 10);
     //We know it's Windows, but is it Windows 10?
     if (OSversion >= 10) {
@@ -350,12 +357,13 @@ function createSecondaryWindow() {
   let numScreens = screen.getAllDisplays().length;
 
   if (numScreens === 2) {
-    //workArea gives you the area without the taskbar - regular bounds would get you with the taskbar, so your window goes underneath it
+    //workArea gives you the area without the taskbar - regular 'bounds' would get you with the taskbar, so your window goes underneath it; yucky
     primaryDisplay = screen.getAllDisplays()[0].workArea;
     secondaryDisplay = screen.getAllDisplays()[1].workArea;
     //Where is my mouse pointer?
     xpoint = screen.getCursorScreenPoint().x;
 
+    //If mouse pointer is between these numbers:
     if (
       xpoint > primaryDisplay.x &&
       xpoint < primaryDisplay.x + primaryDisplay.width
@@ -434,6 +442,7 @@ function createSecondaryWindow() {
   secWindow.on("ready-to-show", () => {
     secWindow.show();
   });
+
   //The user has two ways they can close secWindow - they can click the X and also our 'close secWindow' button.
   //So we route all the things we have to do on cleanup here to make it happen right.
   //With the showing and hiding just trying to make it snappier.
@@ -492,6 +501,7 @@ ipcMain.on("open-search", (e, displayLang) => {
 
   searchWindow.loadFile("HTML/search/search.html");
 
+  //The search windows takes a different, smaller context menu for copy and paste alone
   let searchWinContextMenu = [
     {
       label: transl.menuCopy[displayLang],
@@ -504,9 +514,10 @@ ipcMain.on("open-search", (e, displayLang) => {
       selector: "paste:",
     },
   ];
+
   //The context menu just takes that core menu
   searchWinContextMenu = Menu.buildFromTemplate(searchWinContextMenu);
-
+  //Event listener for right-click
   searchWindow.webContents.on("context-menu", (e) => {
     searchWinContextMenu.popup();
   });
@@ -521,120 +532,29 @@ ipcMain.on("open-search", (e, displayLang) => {
   });
 });
 
-//Main search routine
-
-//First vanilla version = no index file generation
-// Leaving here for
-// ipcMain.on("vanilla-search-for-this", (e, searchTerm) => {
-//   var allVersesArray = []; //The big array index of all verses
-//   var verseid = 0; //in alltext we want an easy to pass id - this increments further on
-
-//   //requiring path and fs modules
-//   const path = require("path");
-//   const fs = require("fs");
-
-//   for (const collection of myData.collections) {
-//     //joining path of directory
-//     const directoryPath = path.join("HTML", collection.folder);
-//     //Get all the html and htm files in our path
-//     files = fs.readdirSync(directoryPath);
-//     //handling error
-
-//     //listing all files using forEach
-//     for (const file of files) {
-//       if (file.substr(-5) == ".html" || file.substr(-4) == ".htm") {
-//         var fullFilePath = path.join(directoryPath, file);
-//         //read the contents of each file out
-//         var fileContents = fs.readFileSync(fullFilePath, "utf8");
-//         //Can we get Chapter and book here?
-//         var bookAndChapter = fileContents.substring(
-//           fileContents.indexOf("<title>") + 7,
-//           fileContents.indexOf("</title>")
-//         );
-//         //Grab the content, leave the headers and footers
-//         var fileContentsBody = fileContents.substring(
-//           fileContents.indexOf(`<div id="content">`) + 18,
-//           fileContents.indexOf(`<div class="footer">`)
-//         );
-
-//         //split the file contents via verse numbers into the array oneChapterByVerse
-//         splitString = `<span class="v">`;
-//         var oneChapterByVerse = fileContentsBody.split(splitString);
-//         //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
-//         if (oneChapterByVerse.length > 2) {
-//           //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
-//           for (const verse of oneChapterByVerse) {
-//             //First normalize the searchterm: no accents, no caps
-//             var searchTermLowerCaseNoAccents = searchTerm
-//               .toLowerCase()
-//               .normalize("NFD")
-//               .replace(/[\u0300-\u036f]/g, "");
-//             //First normalize the searchterm: no accents, no caps, and no HTML tags
-//             var verseTextOnly = verse.replace(/<\/?[^>]+(>|$)/g, ""); //Take out HTML tags
-//             var verseLowerCaseNoAccents = verseTextOnly
-//               .toLowerCase()
-//               .normalize("NFD")
-//               .replace(/[\u0300-\u036f]/g, "");
-//             //Get verse number
-//             var verseNumber = verseLowerCaseNoAccents.substring(
-//               0,
-//               verseLowerCaseNoAccents.indexOf("&nbsp;")
-//             );
-//             //Now search: if there is the search term, then give the result.
-//             var searchSuccess = verseLowerCaseNoAccents.search(
-//               searchTermLowerCaseNoAccents
-//             );
-//             if (searchSuccess > 0) {
-//               var verseResult = {
-//                 id: verseid,
-//                 file: file,
-//                 folder: collection.folder,
-//                 collectionName: collection.name,
-//                 verseText: verseTextOnly,
-//                 bookAndChapter: bookAndChapter,
-//                 verseNumber: verseNumber,
-//               };
-//               searchWindow.send("search-result", verseResult);
-//               allVersesArray.push(verseResult);
-//               verseid++;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-//   //This takes the array and writes it to a file. This does work, commenting it out for now
-//   // fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
-//   //   err
-//   // ) {
-//   //   if (err) throw err;
-//   //   console.log("Saved!");
-//   // });
-
-//   if (verseid === 0) {
-//     searchWindow.send("no-results");
-//     console.log("no-results in main.js");
-//   }
-// });
-
 //Now open the search result the user selected in search Window
 ipcMain.on("open-search-result-search-to-main", (e, openthis) => {
   mainWindow.focus();
   mainWindow.send("open-search-result-main-to-mainWindow", openthis);
 });
 
+//This is fired when the user opens the search window for the first time on each app update.
 ipcMain.on("build-search-index", (e) => {
+  //Track how long it takes to build the index
   var d = new Date();
   var indexBuildStartTime = d.getTime();
   console.log("Building search index...");
+
   let allVersesArray = []; //The big array index of all verses
-  var verseid = 0; //in alltext we want an easy to pass id - this increments further on
+  var verseid = 0; //in alltext array we want an easy to pass id - this increments further on
+
   //requiring path and fs modules
   const path = require("path");
   const fs = require("fs");
 
+  //for each collection in the collection list from mydata.js
   for (const collection of myData.collections) {
-    //joining path of directory
+    //joining path of HTML directory with the collection directory again from mydata.js
     const directoryPath = path.join("HTML", collection.folder);
 
     //Get all the html and htm files in our path
@@ -663,16 +583,17 @@ ipcMain.on("build-search-index", (e) => {
         var splitString = `<a id="v`;
         var oneChapterByVerse = fileContentsBody.split(splitString);
         //Leave out the documents that don't have more than two verses: intros, glossaries etc. This counts the array elements = verses.
+        //.length here refers to number of elements in the array.
         if (oneChapterByVerse.length > 2) {
           //For each verse in the resulting array, make an object that contains the relevent info so we can go back to it
           for (const verse of oneChapterByVerse) {
             //Get verse number
             var verseNumber = verse.substring(0, verse.indexOf(`"`));
+
             //Get the verse string without the nbsp;. substring with no second argument goes to end of string
-
             var verseInteriorIndex = verse.indexOf(`&nbsp;</span>`);
-
             var verseString = verse.substring(verseInteriorIndex);
+
             //Now we're changing the verseString and stripping off bits we don't need
             verseString = verseString.substring(
               0,
@@ -702,21 +623,15 @@ ipcMain.on("build-search-index", (e) => {
       }
     }
   }
+  //Now that big for loop is done, send the data to the searchWindow.
   searchWindow.send("search-index-incoming", allVersesArray);
+
   //log out how long it took to do the index build
   var d = new Date();
   var indexBuildEndTime = d.getTime();
   var totalTimeElapsed = (indexBuildEndTime - indexBuildStartTime) / 1000;
   console.log("Index built in " + totalTimeElapsed + " seconds");
 });
-
-//This takes the array and writes it to a file. This does work, commenting it out for now
-// fs.writeFile("searchArray.json", JSON.stringify(allVersesArray), function (
-//   err
-// ) {
-//   if (err) throw err;
-//   console.log("Saved!");
-// });
 
 //------------------------
 

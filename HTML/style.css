@@ -67,6 +67,7 @@ body {
   padding-top: 5vh;
   padding-bottom: 5vh;
   white-space: nowrap;
+  user-select: none;
 }
 
 .sidebarBottom {

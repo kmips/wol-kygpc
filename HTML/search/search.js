@@ -2,26 +2,17 @@
 const { ipcRenderer, clipboard, webFrame } = require("electron");
 const myData = require("../../mydata");
 let searchButton = document.getElementById("searchButton"),
-  searchText = document.getElementById("searchText");
-searchSettingsButton = document.getElementById("searchSettingsButton");
-closeSearchSettingsButton = document.getElementById("close-search-settings");
-searchSettings;
-
-// Navigate item selection with up/down arrows?
-// document.addEventListener("keydown", (e) => {
-//   if (e.key === "ArrowUp" || e.key === "ArrowDown") {
-//     items.changeSelection(e.key);
-//   }
-// });
+  searchText = document.getElementById("searchText"),
+  searchSettingsButton = document.getElementById("searchSettingsButton"),
+  closeSearchSettingsButton = document.getElementById("close-search-settings");
 
 let indexBuildStartTime;
 let indexBuildEndTime;
 
-//Look at ohter things he does with the box in electron-master
-
 //Build search settings panel
 //Search method (fuzzy or strict) translations
 displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+
 fuzzyLabel = myData.myTranslations.searchFuzzy[displayLang];
 strictLabel = myData.myTranslations.searchStrict[displayLang];
 
@@ -30,11 +21,13 @@ var searchSettings = [];
 searchSetting = "fuzzy";
 searchSettings.push(searchSetting);
 
+//Get that default font name, the one that all collection names look good in
 defaultFontName = myData.otherText.defaultFont.substr(
   0,
   myData.otherText.defaultFont.indexOf(".")
 );
 
+//Build the search settings panel
 document.getElementById("fuzzyLabel").innerHTML = fuzzyLabel;
 document.getElementById("fuzzyLabel").style = `font-family:${defaultFontName}`;
 document.getElementById("strictLabel").innerHTML = strictLabel;
@@ -57,7 +50,8 @@ myData.collections.forEach((collection) => {
   collectionOption.setAttribute("value", collectionFolder);
   collectionOption.setAttribute("checked", true);
   searchWhichCollections.appendChild(collectionOption);
-  //collectionLabel is the text to the side of it
+
+  //collectionLabel is the text to the side of the radio button
   let collectionLabel = document.createElement("label");
   collectionLabel.setAttribute("for", collectionFolder);
   collectionLabel.innerHTML = ` ${collection.name}`;
@@ -68,17 +62,18 @@ myData.collections.forEach((collection) => {
   searchSetting = collectionFolder;
   searchSettings.push(searchSetting);
 });
+
 //Store default search settings to localstorage
 localStorage.removeItem("searchSettings");
-
 localStorage.setItem("searchSettings", JSON.stringify(searchSettings));
 
 //--
 //On searchWindow open, build the index if it is not already built.
 rebuildIndex = localStorage.getItem("rebuildIndex");
+
 //Below for troubleshooting - uncomment to always build the index on search window load.
 //rebuildIndex = "true";
-//If rebuild the Index request
+//If rebuild the Index request is true,
 if (rebuildIndex === "true" || localStorage.getItem("searchIndex") === null) {
   //Set loading icon
   document.getElementById("no-items").innerHTML = `<img src="loading2.gif">`;
@@ -87,18 +82,23 @@ if (rebuildIndex === "true" || localStorage.getItem("searchIndex") === null) {
     var d = new Date();
     indexBuildStartTime = d.getTime();
 
+    //and send the messag to main process to build it
     ipcRenderer.send("build-search-index");
   }, 1);
 }
 
+//The main process builds the index but does not have access to localStorage, so hand it back here to save
 ipcRenderer.on("search-index-incoming", (e, allVersesArray) => {
+  //This is the user feedback to hide the spinner to tell them the index is built and search is ready.
   document.getElementById("no-items").innerHTML = `filter_list`;
 
   //Here we store the index in localStorage
   localStorage.setItem("searchIndex", JSON.stringify(allVersesArray));
+
   //Now that we've build the index, set a flag that we don't need to do it again
   let rebuildIndex = false;
   localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
+
   //log out how long it took to do the index build
   var d = new Date();
   indexBuildEndTime = d.getTime();
@@ -113,6 +113,7 @@ searchSettingsButton.addEventListener("click", (e) => {
   searchSettingsPanel.style.display = "block";
 });
 
+//Get the value of the radio button
 function getRadioVal(form, name) {
   var val;
   // get list of radio buttons with specified name
@@ -131,22 +132,27 @@ function getRadioVal(form, name) {
 
 // Confirm search choices
 closeSearchSettingsButton.addEventListener("click", (e) => {
+  //hide the search settings planel
   searchSettingsPanel.style.display = "none";
 
+  //Get the search type, fuzzy or strict
   var val = getRadioVal(document.getElementById("searchType"), "searchType");
   searchSettings = [];
   searchSetting = val;
+  //And save the result
   searchSettings.push(searchSetting);
 
   Array.from(document.getElementsByClassName("collectionChoice")).forEach(
     (choice) => {
       if (choice.checked === true) {
-        var searchFolder = choice.id;
         searchSetting = choice.id;
+        //Put the collection in the search setting
         searchSettings.push(searchSetting);
       }
     }
   );
+
+  //Get rid of old stored search settings and save new
   localStorage.removeItem("searchSettings");
   localStorage.setItem("searchSettings", JSON.stringify(searchSettings));
 });
@@ -176,23 +182,19 @@ for (let uniqueFont of uniqueFonts) {
   `;
 }
 
-//New css insert https://www.electronjs.org/docs/api/web-frame#webframeinsertcsscss
+//css insert https://www.electronjs.org/docs/api/web-frame#webframeinsertcsscss
 webFrame.insertCSS(cssToAdd);
 //---
 
 // Set item as selected
 const select = (e) => {
   // Remove currently selected item class
-
   document
     .getElementsByClassName("search-result selected")[0]
     .classList.remove("selected");
 
-  // Add to clicked item
+  // Add selected to clicked item
   e.currentTarget.classList.add("selected");
-  let selectedItem = document.getElementsByClassName(
-    "search-result selected"
-  )[0];
 };
 
 const open = () => {
@@ -213,41 +215,16 @@ const open = () => {
   ipcRenderer.send("open-search-result-search-to-main", openthis);
 };
 
-// async function firstFunction(){
-//   for(i=0;i<x;i++){
-//     // do something
-//   }
-//   return;
-// };
-// then use await in your other function to wait for it to return:
-
-// async function secondFunction(){
-//   await firstFunction();
-//   // now wait for firstFunction to finish...
-//   // do something else
-// };
-
-// // Second example
-// async doLongCalculation() {
-//   let firstbit = await doFirstBit();
-//   let secondbit = await doSecondBit(firstbit);
-//   let result = await finishUp(secondbit);
-//   return result;
-// }
-
-// async doFirstBit() {
-//   //...
-// }
-
-// async doSecondBit...
-
-// ...
+//When a search is found, add it to the list so the user can see it
 function addSearchResult(verse) {
+  //Each result found runs through here:
   var result = document.createElement("div");
   result.setAttribute("class", "search-result");
+
   //get which collection we're in
   var i = myData.collections.findIndex((obj) => obj.folder === verse.folder);
 
+  //Get the font name each colletion should be displayed in
   searchFontNameWithExtension = myData.collections[i].searchFont;
   searchFontName = searchFontNameWithExtension.substr(
     0,
@@ -265,24 +242,24 @@ function addSearchResult(verse) {
     "style",
     `font-family:${searchFontName}; font-size:${myData.collections[i].searchFontSize}px; direction:${myData.collections[i].textDirection}`
   );
+
   // Attach click handler to select
   result.addEventListener("click", select);
 
   // Attach open doubleclick handler
   result.addEventListener("dblclick", open);
   resultsList.appendChild(result);
+
   // If this is the first item, select it
   if (document.getElementsByClassName("search-result").length === 1) {
     result.classList.add("selected");
   }
 }
 
-//
+//Here is where the magic happens
 function mainSearchFn() {
   // Check a search term has been entered
   if (searchText.value) {
-    // If we've previously searched, remove search results and start fresh
-
     //Track how long the search takes: search start
     var d = new Date();
     var searchStartTime = d.getTime();
@@ -328,7 +305,6 @@ function mainSearchFn() {
       for (const verse of searchIndex) {
         //First check if the folder we're looking at exists in searchSettings
         if (searchSettings.includes(verse.folder) === true) {
-          //string.match searches RegEx - but you can't put the regex right in the match parentheses, you have to contruct it with the
           var searchSuccess = verse.verseText.match(searchTerm);
           //if there is no search term found, the result is null - if the search term is found, it's not null.
           //If success, then give the result.
@@ -340,6 +316,7 @@ function mainSearchFn() {
     }
   }
 
+  //If there are no results by now, give the user feedback to that effect
   document.getElementById("no-items").innerHTML = "";
   if (!resultsList.hasChildNodes()) {
     console.log("Search item not found in index");
@@ -347,6 +324,8 @@ function mainSearchFn() {
       "no-items"
     ).innerHTML = `<img src="no-results.png">`;
   }
+
+  //Log out time elapsed on the search
   var d = new Date();
   var searchEndTime = d.getTime();
   var totalTimeElapsed = searchEndTime - searchStartTime;
@@ -372,7 +351,6 @@ searchText.addEventListener("keydown", (e) => {
 });
 
 // Listen for Ctl V paste
-
 document.addEventListener("keydown", (e) => {
   if ((e.ctrlKey && e.key === "v") || (e.metaKey && e.key === "v")) {
     document.execCommand("paste");

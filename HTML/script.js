@@ -1,4 +1,6 @@
 // Renderer javascript for index.html
+
+//Intro
 const { remote, shell, ipcRenderer, webFrame } = require("electron");
 
 //Our app's version for comparison below
@@ -10,7 +12,7 @@ const myData = require("../mydata");
 //This is the array with information about our collections in an array
 const initialState = myData.collections;
 
-//Set up variables to hold the current state of our two windows
+//Set up variables to hold the current state of our two windows and other important bits
 let currentStateMainWindow = [];
 let currentStateSecWindow = [];
 let displayLang;
@@ -25,6 +27,7 @@ if (localStorage.getItem("lastOpenedVersion") === null) {
   //set things up for first run: set a variable in local storage equal to current app version and continue.
   //You don't need to set up lastKnownStateMainWin now, the app will do that as you change panes
   localStorage.setItem("lastOpenedVersion", JSON.stringify(thisAppVersion));
+
   //This is in case of a first run, this populates the session memory with the array for the folders and pages.
   currentStateMainWindow = initialState;
   currentStateSecWindow = initialState;
@@ -36,12 +39,15 @@ if (localStorage.getItem("lastOpenedVersion") === null) {
     "lastKnownStateSecWin",
     JSON.stringify(currentStateSecWindow)
   );
+
   //This gets us our default interface lang from myData.
   displayLang = myData.otherText.defaultLang;
   localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(displayLang));
+
   //when we open search for the first time, build the index
   let rebuildIndex = true;
   localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
+
   //Let the main process know the displayLang
   ipcRenderer.send("set-display-lang", displayLang);
 }
@@ -58,15 +64,18 @@ else if (
     localStorage.getItem("lastKnownStateSecWin")
   );
   displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+
   //Let the main process know the displayLang
   ipcRenderer.send("set-display-lang", displayLang);
 }
+
 //Or if we've upgraded, chances are we've added pages or collections, so reinitialize - that is:
 else if (
   !(JSON.parse(localStorage.getItem("lastOpenedVersion")) === thisAppVersion)
 ) {
   //save our new version number
   localStorage.setItem("lastOpenedVersion", JSON.stringify(thisAppVersion));
+
   //and throw away the old lastKnownStateMainWin and use the initialState values from mydata.js.
   localStorage.removeItem("lastKnownStateMainWin");
   localStorage.removeItem("lastKnownStateSecWin");
@@ -80,32 +89,35 @@ else if (
     "lastKnownStateSecWin",
     JSON.stringify(currentStateSecWindow)
   );
+
   //when we open search for the first time, build the index
   let rebuildIndex = true;
   localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
+
   //Let the main process know the displayLang
   displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
   ipcRenderer.send("set-display-lang", displayLang);
 }
 
 //Get text for the other translations from myTranslations array; the app's invitation to open and close second window and to give feedback.
-const appInvToOpen = myData.myTranslations.invToOpen[displayLang];
-const appSearchText = myData.myTranslations.menuSearch[displayLang];
-const appInvToClose = myData.myTranslations.invToClose[displayLang];
-const appFeedback = myData.myTranslations.giveFeedback[displayLang];
-const appFeedbackemail = myData.otherText.giveFeedbackemail;
-const appFeedbacksubject =
-  myData.myTranslations.giveFeedbacksubject[displayLang];
-const thisAppName = myData.otherText.thisAppName;
-const appMenuWebsite = myData.myTranslations.menuWebsite[displayLang];
-const appMenuWebURL = myData.otherText.menuWebURL;
-//Housekeeping:
+const appInvToOpen = myData.myTranslations.invToOpen[displayLang],
+  appSearchText = myData.myTranslations.menuSearch[displayLang],
+  appInvToClose = myData.myTranslations.invToClose[displayLang],
+  appFeedback = myData.myTranslations.giveFeedback[displayLang],
+  appFeedbackemail = myData.otherText.giveFeedbackemail,
+  appFeedbacksubject = myData.myTranslations.giveFeedbacksubject[displayLang],
+  thisAppName = myData.otherText.thisAppName,
+  appMenuWebsite = myData.myTranslations.menuWebsite[displayLang],
+  appMenuWebURL = myData.otherText.menuWebURL;
+
+//Housekeeping for the app builder; end users will not see these messages:
 //Give the app builder a message if they have put feedback message but no email or subject
 if (!(appFeedback === "") && appFeedbackemail === "") {
   alert(
     `Menu item for app feedback is enabled but no email address is entered. Check out otherText section of mydata.js.`
   );
 }
+
 //Give app builder a msg if they have a 'visit our website' message but not website set
 if (!(appMenuWebsite === "") && appMenuWebURL === "") {
   alert(
@@ -113,6 +125,7 @@ if (!(appMenuWebsite === "") && appMenuWebURL === "") {
   );
 }
 
+//---------------------------------------------
 //** Navigation and saving lastKnownStateMainWin
 
 //set up the click handler that we'll use below when one of the sidemenu items are clicked.
@@ -127,6 +140,7 @@ const sideBarClick = (e) => {
   //.pop returns the last item in an array and simultaneously eliminates it from the array.
   //So here is the last element in the array, the page, split out from the path
   pageToSave = iframeInfotoSave.pop();
+
   //And here is the folder name split out from the path
   folderToSave = iframeInfotoSave.pop();
 
@@ -169,7 +183,7 @@ const sideBarClick = (e) => {
     );
   } else if (e.currentTarget.dataset.windowName === "secWin") {
     //This is the same as above and it would be nicer to have it in one function rather than an if
-    //but I'm afraid it would render it much harder to understand
+    //but I'm afraid it would render it much harder to understand -- for me anyway
     var i = currentStateSecWindow.findIndex(
       (obj) => obj.folder === folderToSave
     );
@@ -192,6 +206,7 @@ const sideBarClick = (e) => {
   }
 };
 
+//------------------------------
 //***Sidebar construction on load***
 //This is a variable we'll use as a shortcut to refer to the place to put the new sidebarMenuItem.
 let sidebarMenu = document.getElementById("mySidebar");
@@ -200,7 +215,6 @@ let sidebarMenu = document.getElementById("mySidebar");
 //Set up the loop to do for each item in the array 'collections'
 myData.collections.forEach((item) => {
   //set up the sidebarMenuItem, which will be used for each of the items in the array "collections" exported from mydata.js above.
-
   //It's a link <a>
   let sidebarMenuItem = document.createElement("a");
 
@@ -208,8 +222,8 @@ myData.collections.forEach((item) => {
   sidebarMenuItem.setAttribute("href", "#");
 
   //These next two set arbitrary text in the 'dataset' array.
-  //The syntax is "data-" >> "dataset." and item-thing to itemThing - in other words
-  //so data-url >> dataset.url when we call it.
+  //The syntax is "data-" >> "dataset" when setting and then calling it and item-thing to itemThing - in other words
+  // data-url >> dataset.url when we call it.
   //We are setting here the value to the value in our array, e.g. item.folder and then
   //data-first-file >> dataset.firstFile when we call it
   //For more: https://www.w3schools.com/tags/att_global_data.asp
@@ -225,10 +239,10 @@ myData.collections.forEach((item) => {
     sidebarMenuItem.setAttribute("data-window-name", "secWin");
   }
 
-  //text with variables that goes inside the <a></a> tag. Remember this loops for each collection so each in its turn will get
-  //its information included in a separate entry
+  //text with variables that goes inside the <a></a> tag.
+  //Remember this loops for each collection so each in its turn will get its information included in a separate entry
   sidebarMenuItem.innerHTML = `<span><i class="material-icons">${item.icon}</i><span style="font-family:${defaultFontName}" class="icon-text">${item.name}</span>`;
-  //sidebarMenuItem.style = `font-family:${defaultFontName}`;
+
   // Append new node to "sidebarMenu" div
   //remember 'sidebarMenu' is document.getElementById('mySidebar') in index.htm.
   //sidebarMenuItem is the new a with the icon, text, and initial URL that we have set up.
@@ -245,7 +259,7 @@ myData.collections.forEach((item) => {
     sidebarMenu.appendChild(document.createElement("br"));
   }
 
-  //To finish, set the iframe source to be the first collection, but the lastKnownState file.
+  //To finish, set the iframe source to be the first collection, but the lastKnownState file on open.
   if (remote.getGlobal("sharedObj").loadingMain === true) {
     document.getElementById(
       "mainFrame"
@@ -315,7 +329,6 @@ if (document.getElementById("mainFrame")) {
 }
 
 //the menu and its associated accelerators only work on Mac, so we have to manually add accelerators for non-Mac platforms
-
 function getAccelerators() {
   if (
     (event.ctrlKey && event.key === "c") ||
@@ -355,10 +368,12 @@ function getAccelerators() {
     webFrame.setZoomFactor(1);
   }
 }
+
 //Safety with nodeintegration:
 //Our index.html has no outside links so they can be normally handled. But often an HTML collection will have
 //an outside link, perhaps for a copyright page or other information. Here we want to parse for relative hyperlinks
 //and let those go, but open all others in the user's default browser.
+
 //Wrapping the onclick event in the onload event is important because you have to reload this code each time the iframe reloads
 //as the onclick event is really applied to the iframe's contents. When the contents chagnes (onload) you have to reapply the handler.
 document.getElementById("mainFrame").onload = () => {
@@ -369,7 +384,7 @@ document.getElementById("mainFrame").onload = () => {
     }
   };
 
-  //You have to run getAccelerators() both here on the mainFrame in the onload event and on the document (see below) for them to
+  //You have to run getAccelerators() both here on the mainFrame (the iframe) in the onload event and on the document (see below) for them to
   //work in all cases when not on Mac. If only in one, when the other has focus doesn't work.
   if (!remote.process.platform === "darwin") {
     document.getElementById(
@@ -419,6 +434,7 @@ function openOrCloseNewWindow(displayLang) {
   }
 }
 
+//Send a message to main.js to open the search window
 function openSearch() {
   ipcRenderer.send("open-search", displayLang);
 }
@@ -480,6 +496,7 @@ ipcRenderer.on("mainWin-closing-save-data", (e) => {
   saveDataMainWindow();
 });
 
+//Fired when the user changes interface language. It has two parts, changing lang in renderer (via a message that comes back from ipcMAin) and main processes for the menu.
 ipcRenderer.on("language-switch", (e, lang) => {
   //Call this function from above to save the page
   saveDataMainWindow();
@@ -489,11 +506,11 @@ ipcRenderer.on("language-switch", (e, lang) => {
   ipcRenderer.send("lang-changed-reload-pages");
 });
 
+//This is the message that is received here in the mainWindow from main process with the message to open the chosen search result's page.
 ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
   console.log("openthis in script.js " + openthis);
 
   //open the search result
-
   //Here is the current path on the iframe
   var iframeSource = document.getElementById("mainFrame").contentDocument.URL;
 
@@ -522,9 +539,7 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
   //That's the page we're leaving, now this is the page we are going to.
 
   //Set the iframe to the new destination, our search result:
-
   var linkToOpen = `./${openthis.folder}/${openthis.file}`;
-
   document.getElementById("mainFrame").src = linkToOpen;
 
   //When we open the target chapter in the iframe scroll to content and mark the result
@@ -537,7 +552,6 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
 
     //Now include the styles definition necessary for the fading highlight animation
-
     var cssToAdd = `@keyframes animationCode {
         from {background-color: gold;}
         to {background-color: transparent;}
@@ -586,5 +600,3 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     document.getElementById("mainFrame").onload = () => {};
   }, 500);
 });
-
-//
