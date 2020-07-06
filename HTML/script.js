@@ -612,21 +612,27 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     //now add the textToAnimate class on the verse
     var iframeContent = iframe.contentWindow.document.getElementById("content");
     iframeContentStr = iframeContent.innerHTML.toString();
+    console.log("set the frame");
 
-    var start = iframeContentStr.indexOf(
-      `<span class="v">${openthis.verseNumber}`
-    );
+    console.log("there");
+    var startTarget = `<span class="v">\\D*${openthis.verseNumber}`;
+    console.log(startTarget);
+
+    var start = iframeContentStr.match(startTarget);
+    console.log(start.index);
 
     var end =
       iframeContentStr.indexOf(
         `<span id="bookmarks${openthis.verseNumber}"></span>`
       ) - 1;
 
+    console.log(end);
+
     var str = iframeContent.innerHTML;
     str =
-      str.substr(0, start) +
+      str.substr(0, start.index) +
       '<span class="textToAnimate">' +
-      str.substr(start, end - start + 1) +
+      str.substr(start.index, end - start.index + 1) +
       "</span>" +
       str.substr(end + 1);
     iframeContent.innerHTML = str;
