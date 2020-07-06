@@ -21,6 +21,18 @@ defaultFontName = myData.otherText.defaultFont.substr(
   myData.otherText.defaultFont.indexOf(".")
 );
 
+//Include the style definition necessary for the default font the sidebar is displayed in
+var cssToAdd = `
+  @font-face {
+    font-family: "${defaultFontName}";
+    font-style: normal;
+    src: 
+      url(./${myData.otherText.defaultFont}) format("truetype");
+  }
+  `;
+//css insert https://www.electronjs.org/docs/api/web-frame#webframeinsertcsscss
+webFrame.insertCSS(cssToAdd);
+
 //Check the if the app has been previously run and if version is same as last run.
 //If lastOpenedVersion is null, then it's a new open.
 if (localStorage.getItem("lastOpenedVersion") === null) {
@@ -44,12 +56,12 @@ if (localStorage.getItem("lastOpenedVersion") === null) {
   displayLang = myData.otherText.defaultLang;
   localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(displayLang));
 
+  //Let the main process know the displayLang
+  ipcRenderer.send("set-display-lang", displayLang);
+
   //when we open search for the first time, build the index
   let rebuildIndex = true;
   localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
-
-  //Let the main process know the displayLang
-  ipcRenderer.send("set-display-lang", displayLang);
 }
 
 //Or if the last version opened is the same as this one,
@@ -63,7 +75,23 @@ else if (
   currentStateSecWindow = JSON.parse(
     localStorage.getItem("lastKnownStateSecWin")
   );
+
+  if (localStorage.getItem("displayLang") === null) {
+    displayLang = myData.otherText.defaultLang;
+    localStorage.setItem(
+      "lastKnownDisplayLanguage",
+      JSON.stringify(displayLang)
+    );
+  } else {
+    displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+    localStorage.setItem(
+      "lastKnownDisplayLanguage",
+      JSON.stringify(displayLang)
+    );
+  }
+  //Set display language to default language
   displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+  localStorage.setItem("lastKnownDisplayLanguage", JSON.stringify(displayLang));
 
   //Let the main process know the displayLang
   ipcRenderer.send("set-display-lang", displayLang);
@@ -95,7 +123,20 @@ else if (
   localStorage.setItem("rebuildIndex", JSON.stringify(rebuildIndex));
 
   //Let the main process know the displayLang
-  displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+  //This gets us our default interface lang from myData.
+  if (localStorage.getItem("displayLang") === null) {
+    displayLang = myData.otherText.defaultLang;
+    localStorage.setItem(
+      "lastKnownDisplayLanguage",
+      JSON.stringify(displayLang)
+    );
+  } else {
+    displayLang = JSON.parse(localStorage.getItem("lastKnownDisplayLanguage"));
+    localStorage.setItem(
+      "lastKnownDisplayLanguage",
+      JSON.stringify(displayLang)
+    );
+  }
   ipcRenderer.send("set-display-lang", displayLang);
 }
 
@@ -444,9 +485,9 @@ function openSearch() {
 function toggleButtonIcon() {
   let twoPaneButton = document.getElementById("twoPaneButton");
   if (twoPaneButton.innerText === "library_add" + appInvToOpen) {
-    twoPaneButton.innerHTML = `<span><i class="material-icons" id="two-window-icon">indeterminate_check_box</i><span class='icon-text'>${appInvToClose}</span>`;
+    twoPaneButton.innerHTML = `<span><i class="material-icons" id="two-window-icon">indeterminate_check_box</i><span style="font-family:${defaultFontName}" class="icon-text">${appInvToClose}</span>`;
   } else {
-    twoPaneButton.innerHTML = `<span><i class="material-icons" id="two-window-icon">library_add</i><span class='icon-text'>${appInvToOpen}</span>`;
+    twoPaneButton.innerHTML = `<span><i class="material-icons" id="two-window-icon">library_add</i><span style="font-family:${defaultFontName}" class="icon-text">${appInvToOpen}</span>`;
   }
 }
 
@@ -572,7 +613,9 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     var iframeContent = iframe.contentWindow.document.getElementById("content");
     iframeContentStr = iframeContent.innerHTML.toString();
 
-    var start = iframeContentStr.indexOf(`<a id="v${openthis.verseNumber}`);
+    var start = iframeContentStr.indexOf(
+      `<span class="v">${openthis.verseNumber}`
+    );
 
     var end =
       iframeContentStr.indexOf(
@@ -582,7 +625,6 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     var str = iframeContent.innerHTML;
     str =
       str.substr(0, start) +
-      //'<span style="background-color:gold">' +
       '<span class="textToAnimate">' +
       str.substr(start, end - start + 1) +
       "</span>" +
@@ -600,3 +642,7 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     document.getElementById("mainFrame").onload = () => {};
   }, 500);
 });
+
+//Check for update
+
+ipcRenderer.send("check-for-update", displayLang);

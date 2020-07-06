@@ -27,11 +27,29 @@ defaultFontName = myData.otherText.defaultFont.substr(
   myData.otherText.defaultFont.indexOf(".")
 );
 
+//Include the style definition necessary for the default font the sidebar is displayed in
+var cssToAdd = `
+  @font-face {
+    font-family: "${defaultFontName}";
+    font-style: normal;
+    src: 
+      url(./${myData.otherText.defaultFont}) format("truetype");
+  }
+  `;
+//css insert https://www.electronjs.org/docs/api/web-frame#webframeinsertcsscss
+webFrame.insertCSS(cssToAdd);
+
 //Build the search settings panel
 document.getElementById("fuzzyLabel").innerHTML = fuzzyLabel;
-document.getElementById("fuzzyLabel").style = `font-family:${defaultFontName}`;
+document.getElementById(
+  "fuzzyLabel"
+).style = `font-family:${defaultFontName}; user-select: none;`;
+
 document.getElementById("strictLabel").innerHTML = strictLabel;
-document.getElementById("strictLabel").style = `font-family:${defaultFontName}`;
+document.getElementById(
+  "strictLabel"
+).style = `font-family:${defaultFontName}; user-select: none;`;
+
 searchText.style = `font-family:${defaultFontName}`;
 
 let searchWhichCollections = document.getElementById("searchWhichCollections");
@@ -55,7 +73,7 @@ myData.collections.forEach((collection) => {
   let collectionLabel = document.createElement("label");
   collectionLabel.setAttribute("for", collectionFolder);
   collectionLabel.innerHTML = ` ${collection.name}`;
-  collectionLabel.style = `font-family:${defaultFontName}`;
+  collectionLabel.style = `font-family:${defaultFontName}; user-select: none;`;
   searchWhichCollections.appendChild(collectionLabel);
   searchWhichCollections.appendChild(document.createElement("br"));
 

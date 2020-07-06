@@ -6,14 +6,6 @@
     url(../MaterialIcons-Regular.ttf) format("truetype");
 }
 
-@font-face {
-  font-family: "Harmattan";
-  font-style: normal;
-  font-weight: 22;
-  src: local("Harmattan"), local("Harmattan-Regular"),
-    url(../Harmattan-Regular.ttf) format("truetype");
-}
-
 .material-icons,
 .material-icons-large {
   font-family: "Material Icons";
@@ -85,7 +77,6 @@ header {
 }
 
 #searchSettingsPanel {
-  /* font-family: "Harmattan"; */
   font-size: 26px;
   color: #818181;
   position: absolute;

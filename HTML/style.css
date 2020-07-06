@@ -6,14 +6,6 @@
     url(./MaterialIcons-Regular.ttf) format("truetype");
 }
 
-@font-face {
-  font-family: "Harmattan";
-  font-style: normal;
-  font-weight: 22;
-  src: local("Harmattan"), local("Harmattan-Regular"),
-    url(./Harmattan-Regular.ttf) format("truetype");
-}
-
 hr.new1 {
   margin-bottom: 0.5em;
   border-color: #818181;
@@ -49,10 +41,6 @@ body {
   overflow: hidden; /* Hide scrollbars */
   background-color: #111111;
 }
-/* .icon-text-arabic {
-  font-family: "Harmattan";
-  font-size: 30;
-} */
 
 .sidebar {
   height: 90vh;

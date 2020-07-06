@@ -146,11 +146,13 @@ app.on("ready", () => {
 ipcMain.on("set-display-lang", (e, displayLang) => {
   //Create Menus with the displayLang coming from the mainWindow
   createMenus(displayLang);
-  // Check for update after x seconds
+});
+
+//Wait for mainWindow to signal that the displayLang is set before checking for update.
+ipcMain.on("check-for-update", (e, displayLang) => {
   const updater = require("./updater");
   setTimeout(updater.check, 5000, displayLang);
 });
-
 //In this app we have one menu that displays both from menu bar and as context menu.
 //Here we build the menu in pieces depending on which we need for this app and then wrap it in
 //such a way that we can use it in both places.
@@ -555,7 +557,7 @@ ipcMain.on("build-search-index", (e) => {
   //for each collection in the collection list from mydata.js
   for (const collection of myData.collections) {
     //joining path of HTML directory with the collection directory again from mydata.js
-    const directoryPath = path.join("HTML", collection.folder);
+    const directoryPath = path.join(__dirname, "HTML", collection.folder);
 
     //Get all the html and htm files in our path
     files = fs.readdirSync(directoryPath);

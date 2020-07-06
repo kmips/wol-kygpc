@@ -22,76 +22,72 @@ function check(displayLang) {
     let downloadProgress = 0;
 
     // Prompt user to update
-    dialog.showMessageBox(
-      {
+    dialog
+      .showMessageBox({
         type: "info",
         title: myData.myTranslations.updaterTitle[displayLang],
         message: myData.myTranslations.updaterInvToDownload[displayLang],
         buttons: ["✓", "✕"],
-      },
+      })
+      .then((buttonIndex) => {
+        if (buttonIndex.response === 0) {
+          // Start download and show download progress in new window
+          autoUpdater.downloadUpdate();
 
-      (buttonIndex) => {
-        // If not 'Update' button, return
-        console.log(buttonIndex);
+          // Create progress window
+          let progressWin = new BrowserWindow({
+            width: 350,
+            height: 70,
+            useContentSize: true,
+            autoHideMenuBar: true,
+            maximizable: false,
+            fullscreen: false,
+            fullscreenable: false,
+            resizable: false,
+          });
 
-        if (buttonIndex !== 0) return;
+          // Load progress HTML
 
-        // Else start download and show download progress in new window
-        autoUpdater.downloadUpdate();
+          progressWin.loadFile("renderer/progress.html");
 
-        // Create progress window
-        let progressWin = new BrowserWindow({
-          width: 350,
-          height: 70,
-          useContentSize: true,
-          autoHideMenuBar: true,
-          maximizable: false,
-          fullscreen: false,
-          fullscreenable: false,
-          resizable: false,
-        });
+          // Handle win close
+          progressWin.on("closed", () => {
+            progressWin = null;
+          });
 
-        // Load progress HTML
+          // Listen for preogress request from progressWin
+          ipcMain.on("download-progress-request", (e) => {
+            e.returnValue = downloadProgress;
+          });
 
-        progressWin.loadFile("renderer/progress.html");
+          // Track download progress on autoUpdater
+          autoUpdater.on("download-progress", (d) => {
+            downloadProgress = d.percent;
+          });
 
-        // Handle win close
-        progressWin.on("closed", () => {
-          progressWin = null;
-        });
+          // Listen for completed update download
+          autoUpdater.on("update-downloaded", () => {
+            // Close progressWin
+            if (progressWin) progressWin.close();
 
-        // Listen for preogress request from progressWin
-        ipcMain.on("download-progress-request", (e) => {
-          e.returnValue = downloadProgress;
-        });
-
-        // Track download progress on autoUpdater
-        autoUpdater.on("download-progress", (d) => {
-          downloadProgress = d.percent;
-        });
-
-        // Listen for completed update download
-        autoUpdater.on("update-downloaded", () => {
-          // Close progressWin
-          if (progressWin) progressWin.close();
-
-          // Prompt user to quit and install update
-          dialog.showMessageBox(
-            {
-              type: "info",
-              title: myData.myTranslations.updaterTitle[displayLang],
-              message:
-                "Une nouvelle version de cette application est prête. Quitter et installer maintenant ?",
-              buttons: ["✓", "✕"],
-            },
-            (buttonIndex) => {
-              // Update if 'Yes'
-              if (buttonIndex === 0) autoUpdater.quitAndInstall();
-            }
-          );
-        });
-      }
-    );
+            // Prompt user to quit and install update
+            dialog.showMessageBox(
+              {
+                type: "info",
+                title: myData.myTranslations.updaterTitle[displayLang],
+                message: myData.myTranslations.updaterInvToInstall[displayLang],
+                buttons: ["✓", "✕"],
+              }.then((buttonIndex) => {
+                if (buttonIndex.response === 0) {
+                  autoUpdater.quitAndInstall();
+                }
+              })
+            );
+          });
+        } else {
+          return;
+        }
+      });
   });
 }
 
