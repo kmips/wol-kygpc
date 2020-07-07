@@ -112,11 +112,11 @@ function openAboutWindow() {
 
   copyrightWindow.once("ready-to-show", () => {
     copyrightWindow.show();
-    //copyrightWindow.webContents.openDevTools()
+    copyrightWindow.webContents.openDevTools();
   });
 
   copyrightWindow.once("blur", () => {
-    copyrightWindow.close();
+    // copyrightWindow.close();
   });
 
   copyrightWindow.on("closed", function () {

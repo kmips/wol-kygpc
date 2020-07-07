@@ -199,6 +199,11 @@ const sideBarClick = (e) => {
       "mainFrame"
     ).src = `./${e.currentTarget.dataset.folder}/${currentStateMainWindow[i].fileToView}`;
 
+    //This loads the nodeintegration safety for hyperlinks
+    document.getElementById("mainFrame").onload = () => {
+      loadHTTPHandlerInIframe();
+    };
+
     //To help the user keep track of where they are, set the collection name in the title bar
     remote
       .getCurrentWindow()
@@ -401,24 +406,37 @@ function getAccelerators() {
 
 //Wrapping the onclick event in the onload event is important because you have to reload this code each time the iframe reloads
 //as the onclick event is really applied to the iframe's contents. When the contents chagnes (onload) you have to reapply the handler.
-document.getElementById("mainFrame").onload = () => {
-  document.getElementById("mainFrame").contentWindow.document.onclick = () => {
-    if (event.target.tagName === "A" && event.target.href.startsWith("http")) {
-      event.preventDefault();
-      shell.openExternal(event.target.href);
-    }
-  };
+//Define it as a function
+function loadHTTPHandlerInIframe() {
+  document
+    .getElementById("mainFrame")
+    .contentWindow.document.addEventListener("click", (event) => {
+      addEventListener;
 
-  //You have to run getAccelerators() both here on the mainFrame (the iframe) in the onload event and on the document (see below) for them to
-  //work in all cases when not on Mac. If only in one, when the other has focus doesn't work.
-  if (!remote.process.platform === "darwin") {
-    document.getElementById(
-      "mainFrame"
-    ).contentWindow.document.onkeydown = () => {
-      getAccelerators();
-    };
-  }
+      if (
+        event.target.tagName === "A" &&
+        event.target.href.startsWith("http")
+      ) {
+        event.preventDefault();
+        shell.openExternal(event.target.href);
+      }
+    });
+}
+
+//This loads with thie initial load - it has to get refired with each iframe change on sidebarclick and search result open.
+document.getElementById("mainFrame").onload = () => {
+  loadHTTPHandlerInIframe();
 };
+
+//You have to run getAccelerators() both here on the mainFrame (the iframe) in the onload event and on the document (see below) for them to
+//work in all cases when not on Mac. If only in one, when the other has focus doesn't work.
+if (!remote.process.platform === "darwin") {
+  document.getElementById(
+    "mainFrame"
+  ).contentWindow.document.onkeydown = () => {
+    getAccelerators();
+  };
+}
 
 //See right above in the mainFrame onload - this loads the accelerators for the rest of the window when not on Mac
 if (!remote.process.platform === "darwin") {
@@ -613,16 +631,14 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
       str.substr(end + 1);
     iframeContent.innerHTML = str;
     //end of iframe onload
+
+    loadHTTPHandlerInIframe();
   };
 
   //set title to current collection
   remote
     .getCurrentWindow()
     .setTitle(thisAppName + "   ||   " + openthis.collectionName);
-  //reset the onload script to empty so it doesn't go to verse j on subsequent navigations in the session
-  setTimeout(function () {
-    document.getElementById("mainFrame").onload = () => {};
-  }, 500);
 });
 
 //Check for update
