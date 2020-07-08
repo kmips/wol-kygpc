@@ -94,7 +94,13 @@
       "uninstallerIcon": "build/icon.ico",
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "runAfterFinish": false
+      "runAfterFinish": false,
+      "perMachine": true,
+      "displayLanguageSelector": true,
+      "installerLanguages": [
+        "fr_FR",
+        "en_US"
+      ]
     }
   },
   "devDependencies": {

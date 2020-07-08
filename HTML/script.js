@@ -549,11 +549,14 @@ ipcRenderer.on("language-switch", (e, lang) => {
   ipcRenderer.send("lang-changed-reload-pages");
 });
 
+//******************************
 //This is the message that is received here in the mainWindow from main process with the message to open the chosen search result's page.
 ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
-  //open the search result
+  //Get a reference to the iframe
+  var iframe = document.getElementById("mainFrame");
+
   //Here is the current path on the iframe
-  var iframeSource = document.getElementById("mainFrame").contentDocument.URL;
+  var iframeSource = iframe.contentDocument.URL;
 
   // .split() takes a string and splits it into an array by the character in the parentheses,
   // so here we make the array with the info about what the window is currently showing in the iframe
@@ -579,59 +582,171 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
   );
   //That's the page we're leaving, now this is the page we are going to.
 
+  //Preparation for the incoming page.
+
   //Set the iframe to the new destination, our search result:
   var linkToOpen = `./${openthis.folder}/${openthis.file}`;
-  document.getElementById("mainFrame").src = linkToOpen;
+  iframe.src = linkToOpen;
 
-  //When we open the target chapter in the iframe scroll to content and mark the result
-  document.getElementById("mainFrame").onload = () => {
-    //scroll to content
-    var scrollTarget = `v${openthis.verseNumber}`;
-    var iframe = document.getElementById("mainFrame");
-    var elmnt = iframe.contentWindow.document.getElementById(scrollTarget)
-      .offsetTop;
-    iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
+  //******************************
 
-    //Now include the styles definition necessary for the fading highlight animation
+  //******************** */
+
+  // iFrameReady(iframe, function () {
+  //   console.log("Dom content loaded");
+
+  //   //now add the textToAnimate class on the verse
+
+  //   var iframeContent = iframe.contentWindow.document.getElementById("content");
+
+  //   iframeContentStr = iframeContent.innerHTML.toString();
+  //   console.log(iframeContentStr);
+
+  //   var startTarget = `<span class="v">\\D*${openthis.verseNumber}`;
+
+  //   var start = iframeContentStr.match(startTarget);
+
+  //   var end =
+  //     iframeContentStr.indexOf(
+  //       `<span id="bookmarks${openthis.verseNumber}"></span>`
+  //     ) - 1;
+
+  //   var str = iframeContent.innerHTML;
+  //   str =
+  //     str.substr(0, start.index) +
+  //     '<span class="textToAnimate">' +
+  //     str.substr(start.index, end - start.index + 1) +
+  //     "</span>" +
+  //     str.substr(end + 1);
+
+  //   iframeContent.innerHTML = str;
+  //   console.log(str);
+  // });
+
+  // iframe.contentWindow.document.DOMContentLoaded = () => {
+  //   console.log("Dom content loaded");
+
+  //   //now add the textToAnimate class on the verse
+
+  //   var iframeContent = iframe.contentWindow.document.getElementById("content");
+
+  //   iframeContentStr = iframeContent.innerHTML.toString();
+
+  //   var startTarget = `<span class="v">\\D*${openthis.verseNumber}`;
+
+  //   var start = iframeContentStr.match(startTarget);
+
+  //   var end =
+  //     iframeContentStr.indexOf(
+  //       `<span id="bookmarks${openthis.verseNumber}"></span>`
+  //     ) - 1;
+
+  //   var str = iframeContent.innerHTML;
+  //   str =
+  //     str.substr(0, start.index) +
+  //     '<span class="textToAnimate">' +
+  //     str.substr(start.index, end - start.index + 1) +
+  //     "</span>" +
+  //     str.substr(end + 1);
+
+  //   iframeContent.innerHTML = str;
+  // };
+  //******************************
+
+  iframe.onload = () => {
+    //Include the styles definition necessary for the fading highlight animation
     var cssToAdd = `@keyframes animationCode {
-        from {background-color: gold;}
-        to {background-color: transparent;}
-      }
-      .textToAnimate {
-        background-color: transparent;
-        animation-name: animationCode;
-        animation-duration: 4s;
-      }
-      
-      body {margin: 100px;}`;
+      from {background-color: gold;}
+      to {background-color: transparent;}
+    }
+    .textToAnimate {
+      background-color: transparent;
+      animation-name: animationCode;
+      animation-duration: 4s;
+    }
+    
+    body {margin: 100px;}`;
 
     //css insert https://www.electronjs.org/docs/api/web-frame#webframeinsertcsscss
     //Here firstChild refers to the iframe - you have to get the css into the frame, not into the webFrame.
     webFrame.firstChild.insertCSS(cssToAdd);
 
-    //now add the textToAnimate class on the verse
-    var iframeContent = iframe.contentWindow.document.getElementById("content");
-    iframeContentStr = iframeContent.innerHTML.toString();
+    // let verseEnd = iframe.contentWindow.document.getElementById(
+    //   `bookmarks${openthis.verseNumber}`
+    // );
+    // console.log(verseEnd);
 
-    var startTarget = `<span class="v">\\D*${openthis.verseNumber}`;
+    // var spanToInsertEnd = `</span ngaretou>`;
+    // console.log(spanToInsertEnd);
 
-    var start = iframeContentStr.match(startTarget);
+    // verseEnd.insertAdjacentHTML("afterend", spanToInsertEnd);
 
-    var end =
-      iframeContentStr.indexOf(
-        `<span id="bookmarks${openthis.verseNumber}"></span>`
-      ) - 1;
+    //When we open the target chapter in the iframe scroll to content
+    var scrollTarget = `v${openthis.verseNumber}`;
+    var elmnt = iframe.contentWindow.document.getElementById(scrollTarget)
+      .offsetTop;
+    iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
+    console.log("openthis");
 
-    var str = iframeContent.innerHTML;
-    str =
-      str.substr(0, start.index) +
-      '<span class="textToAnimate">' +
-      str.substr(start.index, end - start.index + 1) +
-      "</span>" +
-      str.substr(end + 1);
-    iframeContent.innerHTML = str;
+    console.log(openthis);
+
     //end of iframe onload
+    //insert styling
+    let verseArray = iframe.contentWindow.document.getElementsByClassName("v");
+    for (var i = 0, len = verseArray.length | 0; i < len; i = (i + 1) | 0) {
+      if (verseArray[i].innerText === openthis.verseNumber) {
+        console.log(verseArray[i].parentNode);
+        thisParagraph = verseArray[i].parentNode.innerHTML;
+        thisParagraphStr = thisParagraph.toString();
+        console.log(thisParagraphStr);
+        var firstPartIndex = thisParagraphStr.indexOf(verseArray[i].outerHTML);
+        var firstPart = thisParagraphStr.substr(0, firstPartIndex);
+        // console.log(firstPartIndex);
+        // console.log(firstPart);
 
+        var searchFor = `<span id="bookmarks${openthis.verseNumber}"></span>`;
+        var versePartEndIndex = thisParagraphStr.indexOf(searchFor);
+
+        var versePart = thisParagraphStr.substr(
+          firstPartIndex,
+          versePartEndIndex - firstPartIndex
+        );
+
+        var endPart = thisParagraphStr.substr(
+          versePartEndIndex + searchFor.length
+        );
+
+        var newParagraph =
+          firstPart +
+          `<span class="textToAnimate">` +
+          versePart +
+          "</span>" +
+          endPart;
+        // console.log(newParagraph);
+        // newParagraph = "Corey";
+        verseArray[i].parentNode.innerHTML = newParagraph;
+        console.log(firstPartIndex);
+        console.log(versePartEndIndex);
+
+        console.log(firstPart);
+        console.log(versePart);
+        console.log(endPart);
+
+        // verseArray[i].outerHTML = verseArray[i].outerHTML.replace(
+        //   `<span class="v">`,
+        //   `<span class="textToAnimate"><span class="v">`
+        // );
+
+        // var verseEnd = iframe.contentWindow.document.getElementById(
+        //   `bookmarks${openthis.verseNumber}`
+        // );
+        // verseEnd.outerHTML = verseEnd.outerHTML.replace(
+        //   `</span>` + `</span></span>`
+        // );
+
+        break;
+      }
+    }
     loadHTTPHandlerInIframe();
   };
 
@@ -639,6 +754,12 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
   remote
     .getCurrentWindow()
     .setTitle(thisAppName + "   ||   " + openthis.collectionName);
+
+  setTimeout(() => {
+    iframe.onload = () => {
+      loadHTTPHandlerInIframe();
+    };
+  }, 500);
 });
 
 //Check for update

@@ -74,6 +74,9 @@ function createWindow() {
     if (secWindow) {
       secWindow.close();
     }
+    if (searchWindow) {
+      searchWindow.close();
+    }
   });
 
   //On close clear the variable
@@ -484,9 +487,14 @@ ipcMain.on("secondary-window", (e, message) => {
 //------------------------
 //Search Window
 ipcMain.on("open-search", (e, displayLang) => {
+  if (searchWindow) {
+    searchWindow.focus;
+    return;
+  }
+
   searchWindow = new BrowserWindow({
     width: 350,
-    height: 650,
+    height: 685,
     minWidth: 350,
     maxWidth: 650,
     minHeight: 300,
