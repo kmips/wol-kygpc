@@ -460,18 +460,16 @@ function openOrCloseNewWindow(displayLang) {
   //Get the main process to open the secondary window
   //This checks if the invitation to open is showing:
   if (twoPaneButton.dataset.openCloseState === "InvToOpen") {
-    //see this function lower down a bit - changes icon and text for the new window button
+    //see this function lower down a bit - changes icon and text for the new window button as well as the dataset marker
     toggleButtonIcon();
-    //This changes our marker back to Invitation to Close showing so we can check whether to open or close
-    twoPaneButton.dataset.openCloseState = "InvToClose";
     //Send via ipcRenderer to the main process on channel 'secondary-window' the message
     //'open-sec' or 'close-sec' the secondary window.
     ipcRenderer.send("secondary-window", "open-sec");
-  } else {
+  } else if (twoPaneButton.dataset.openCloseState === "InvToClose") {
     //here the toggle button was not set to library_add so we know the secondary window is open - close it
     ipcRenderer.send("secondary-window", "close-sec");
     //Change the marker so we know what state we're in, invitation to open or to close showing.
-    twoPaneButton.dataset.openCloseState = "InvToOpen";
+
     //One expects toggleButtonIcon() here, but it is called from sec-window-is-closed-main-window-actions below
     //so that it gets triggered no matter how the user closes SecWindow (via x or via the sidebarmenu).
   }
@@ -486,9 +484,11 @@ function openSearch() {
 //The options just go back and forth when this is triggered.
 function toggleButtonIcon() {
   let twoPaneButton = document.getElementById("twoPaneButton");
-  if (twoPaneButton.innerText === "library_add" + appInvToOpen) {
+  if (twoPaneButton.dataset.openCloseState === "InvToOpen") {
+    twoPaneButton.dataset.openCloseState = "InvToClose";
     twoPaneButton.innerHTML = `<span><i class="material-icons" id="two-window-icon">indeterminate_check_box</i><span style="font-family:${defaultFontName}" class="icon-text">${appInvToClose}</span>`;
-  } else {
+  } else if (twoPaneButton.dataset.openCloseState === "InvToClose") {
+    twoPaneButton.dataset.openCloseState = "InvToOpen";
     twoPaneButton.innerHTML = `<span><i class="material-icons" id="two-window-icon">library_add</i><span style="font-family:${defaultFontName}" class="icon-text">${appInvToOpen}</span>`;
   }
 }
@@ -582,76 +582,9 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
   );
   //That's the page we're leaving, now this is the page we are going to.
 
-  //Preparation for the incoming page.
-
   //Set the iframe to the new destination, our search result:
   var linkToOpen = `./${openthis.folder}/${openthis.file}`;
   iframe.src = linkToOpen;
-
-  //******************************
-
-  //******************** */
-
-  // iFrameReady(iframe, function () {
-  //   console.log("Dom content loaded");
-
-  //   //now add the textToAnimate class on the verse
-
-  //   var iframeContent = iframe.contentWindow.document.getElementById("content");
-
-  //   iframeContentStr = iframeContent.innerHTML.toString();
-  //   console.log(iframeContentStr);
-
-  //   var startTarget = `<span class="v">\\D*${openthis.verseNumber}`;
-
-  //   var start = iframeContentStr.match(startTarget);
-
-  //   var end =
-  //     iframeContentStr.indexOf(
-  //       `<span id="bookmarks${openthis.verseNumber}"></span>`
-  //     ) - 1;
-
-  //   var str = iframeContent.innerHTML;
-  //   str =
-  //     str.substr(0, start.index) +
-  //     '<span class="textToAnimate">' +
-  //     str.substr(start.index, end - start.index + 1) +
-  //     "</span>" +
-  //     str.substr(end + 1);
-
-  //   iframeContent.innerHTML = str;
-  //   console.log(str);
-  // });
-
-  // iframe.contentWindow.document.DOMContentLoaded = () => {
-  //   console.log("Dom content loaded");
-
-  //   //now add the textToAnimate class on the verse
-
-  //   var iframeContent = iframe.contentWindow.document.getElementById("content");
-
-  //   iframeContentStr = iframeContent.innerHTML.toString();
-
-  //   var startTarget = `<span class="v">\\D*${openthis.verseNumber}`;
-
-  //   var start = iframeContentStr.match(startTarget);
-
-  //   var end =
-  //     iframeContentStr.indexOf(
-  //       `<span id="bookmarks${openthis.verseNumber}"></span>`
-  //     ) - 1;
-
-  //   var str = iframeContent.innerHTML;
-  //   str =
-  //     str.substr(0, start.index) +
-  //     '<span class="textToAnimate">' +
-  //     str.substr(start.index, end - start.index + 1) +
-  //     "</span>" +
-  //     str.substr(end + 1);
-
-  //   iframeContent.innerHTML = str;
-  // };
-  //******************************
 
   iframe.onload = () => {
     //Include the styles definition necessary for the fading highlight animation
@@ -671,38 +604,30 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     //Here firstChild refers to the iframe - you have to get the css into the frame, not into the webFrame.
     webFrame.firstChild.insertCSS(cssToAdd);
 
-    // let verseEnd = iframe.contentWindow.document.getElementById(
-    //   `bookmarks${openthis.verseNumber}`
-    // );
-    // console.log(verseEnd);
-
-    // var spanToInsertEnd = `</span ngaretou>`;
-    // console.log(spanToInsertEnd);
-
-    // verseEnd.insertAdjacentHTML("afterend", spanToInsertEnd);
-
     //When we open the target chapter in the iframe scroll to content
     var scrollTarget = `v${openthis.verseNumber}`;
     var elmnt = iframe.contentWindow.document.getElementById(scrollTarget)
       .offsetTop;
     iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
-    console.log("openthis");
 
-    console.log(openthis);
-
-    //end of iframe onload
     //insert styling
     let verseArray = iframe.contentWindow.document.getElementsByClassName("v");
     for (var i = 0, len = verseArray.length | 0; i < len; i = (i + 1) | 0) {
-      if (verseArray[i].innerText === openthis.verseNumber) {
-        console.log(verseArray[i].parentNode);
+      console.log(verseArray[i].innerText);
+      var currentVerseNumber = verseArray[i].innerText.match(/\s*(\d+)/);
+      console.log(currentVerseNumber[0]);
+      console.log(openthis.verseNumber);
+      console.log(currentVerseNumber[0] == openthis.verseNumber);
+      console.log(currentVerseNumber[0] === openthis.verseNumber);
+
+      if (currentVerseNumber[0] == openthis.verseNumber) {
+        console.log("hit");
+
         thisParagraph = verseArray[i].parentNode.innerHTML;
         thisParagraphStr = thisParagraph.toString();
-        console.log(thisParagraphStr);
+
         var firstPartIndex = thisParagraphStr.indexOf(verseArray[i].outerHTML);
         var firstPart = thisParagraphStr.substr(0, firstPartIndex);
-        // console.log(firstPartIndex);
-        // console.log(firstPart);
 
         var searchFor = `<span id="bookmarks${openthis.verseNumber}"></span>`;
         var versePartEndIndex = thisParagraphStr.indexOf(searchFor);
@@ -722,27 +647,8 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
           versePart +
           "</span>" +
           endPart;
-        // console.log(newParagraph);
-        // newParagraph = "Corey";
+
         verseArray[i].parentNode.innerHTML = newParagraph;
-        console.log(firstPartIndex);
-        console.log(versePartEndIndex);
-
-        console.log(firstPart);
-        console.log(versePart);
-        console.log(endPart);
-
-        // verseArray[i].outerHTML = verseArray[i].outerHTML.replace(
-        //   `<span class="v">`,
-        //   `<span class="textToAnimate"><span class="v">`
-        // );
-
-        // var verseEnd = iframe.contentWindow.document.getElementById(
-        //   `bookmarks${openthis.verseNumber}`
-        // );
-        // verseEnd.outerHTML = verseEnd.outerHTML.replace(
-        //   `</span>` + `</span></span>`
-        // );
 
         break;
       }
