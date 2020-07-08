@@ -56,7 +56,7 @@ function createWindow() {
   mainWindow.loadFile("HTML/index.htm");
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   //When ready, show
   mainWindow.on("ready-to-show", () => {
@@ -115,7 +115,7 @@ function openAboutWindow() {
 
   copyrightWindow.once("ready-to-show", () => {
     copyrightWindow.show();
-    copyrightWindow.webContents.openDevTools();
+    // copyrightWindow.webContents.openDevTools();
   });
 
   copyrightWindow.once("blur", () => {
@@ -533,7 +533,7 @@ ipcMain.on("open-search", (e, displayLang) => {
   });
   searchWindow.once("ready-to-show", () => {
     searchWindow.show();
-    searchWindow.webContents.openDevTools();
+    // searchWindow.webContents.openDevTools();
   });
 
   // Listen for window being closed

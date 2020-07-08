@@ -611,21 +611,20 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
 
     //insert styling
+    //Get an array of all class = v elements
     let verseArray = iframe.contentWindow.document.getElementsByClassName("v");
+    // Check the index of the one that we want
     for (var i = 0, len = verseArray.length | 0; i < len; i = (i + 1) | 0) {
-      console.log(verseArray[i].innerText);
+      //For RTL you have to filter out for the RLM before the number with regex
       var currentVerseNumber = verseArray[i].innerText.match(/\s*(\d+)/);
-      console.log(currentVerseNumber[0]);
-      console.log(openthis.verseNumber);
-      console.log(currentVerseNumber[0] == openthis.verseNumber);
-      console.log(currentVerseNumber[0] === openthis.verseNumber);
-
+      //get the first match: [0]
       if (currentVerseNumber[0] == openthis.verseNumber) {
-        console.log("hit");
-
+        //When there's a match, get the whole parent paragraph/element
         thisParagraph = verseArray[i].parentNode.innerHTML;
+        //Get it to a string so we can work with it
         thisParagraphStr = thisParagraph.toString();
 
+        //Split it up into the parts we need...
         var firstPartIndex = thisParagraphStr.indexOf(verseArray[i].outerHTML);
         var firstPart = thisParagraphStr.substr(0, firstPartIndex);
 
@@ -640,19 +639,20 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
         var endPart = thisParagraphStr.substr(
           versePartEndIndex + searchFor.length
         );
-
+        //...then put them back together with our style
         var newParagraph =
           firstPart +
           `<span class="textToAnimate">` +
           versePart +
           "</span>" +
           endPart;
-
+        //And insert into the page
         verseArray[i].parentNode.innerHTML = newParagraph;
-
+        //if we found our verse, we don't need to search anymore so break out of the loop
         break;
       }
     }
+    //Load in the nodeintegration safey
     loadHTTPHandlerInIframe();
   };
 
@@ -661,6 +661,7 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
     .getCurrentWindow()
     .setTitle(thisAppName + "   ||   " + openthis.collectionName);
 
+  //To avoid successive loads of the iframe from going to the previous serach result verse number, clear out the onload event leaving only the nodeintegration safety.
   setTimeout(() => {
     iframe.onload = () => {
       loadHTTPHandlerInIframe();
@@ -668,6 +669,6 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
   }, 500);
 });
 
-//Check for update
+//Check for update once on open
 
 ipcRenderer.send("check-for-update", displayLang);
