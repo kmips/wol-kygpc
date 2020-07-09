@@ -549,6 +549,16 @@ ipcRenderer.on("language-switch", (e, lang) => {
   ipcRenderer.send("lang-changed-reload-pages");
 });
 
+function getChildren(n, skipMe) {
+  var r = [];
+  for (; n; n = n.nextSibling) if (n.nodeType == 1 && n != skipMe) r.push(n);
+  return r;
+}
+
+function getSiblings(n) {
+  return getChildren(n.parentNode.firstChild, n);
+}
+
 //******************************
 //This is the message that is received here in the mainWindow from main process with the message to open the chosen search result's page.
 ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
@@ -610,63 +620,110 @@ ipcRenderer.on("open-search-result-main-to-mainWindow", (e, openthis) => {
       .offsetTop;
     iframe.contentWindow.scrollTo({ top: elmnt - 70, behavior: "smooth" });
 
-    //insert styling
-    //Get an array of all class = v elements
+    //**Insert highlighting style:
+    //Get an array of the verses in the chapter
     let verseArray = iframe.contentWindow.document.getElementsByClassName("v");
-    // Check the index of the one that we want
+
+    //Get the index of the one that we want
     for (var i = 0, len = verseArray.length | 0; i < len; i = (i + 1) | 0) {
+      //This var we'll use later to tell how far to keep highlighting
+      var foundIt = false;
       //For RTL you have to filter out for the RLM before the number with regex
       var currentVerseNumber = verseArray[i].innerText.match(/\s*(\d+)/);
-      //get the first match: [0]
+      //get the first match: index[0]
       if (currentVerseNumber[0] == openthis.verseNumber) {
-        //When there's a match, get the whole parent paragraph/element
-        thisParagraph = verseArray[i].parentNode.innerHTML;
-        //Get it to a string so we can work with it
-        thisParagraphStr = thisParagraph.toString();
+        //Set up the loop that will do the highlighting
+        var el = verseArray[i].nextSibling;
+        var j = 1;
+        //we want to go til we get to this text:
+        var endAt = `<span id="bookmarks${openthis.verseNumber}"></span>`;
 
-        //Split it up into the parts we need...
-        var firstPartIndex = thisParagraphStr.indexOf(verseArray[i].outerHTML);
-        var firstPart = thisParagraphStr.substr(0, firstPartIndex);
+        //Here is the function as a separate unit:
+        function highlightTextSpans(el) {
+          while (el) {
+            // debugger;
+            //Nodetype 3 is the text node type, and our verses are in that type
+            if (el.nodeType === 3) {
+              //Here is the string
+              var animationSpanTextOnly = `<span class="textToAnimate">${el.data}</span>`;
+              //Now insert that string after the previous element and the one we're intersted in.
+              //Text nodes have fewer methods and you can't insert HTML or appendChild or many of those useful things so have to key on the previous element.
+              el.previousSibling.insertAdjacentHTML(
+                "afterend",
+                animationSpanTextOnly
+              );
+              //Now zero out the text of the element itself - on of the few things we can do.
+              el.data = "";
+            }
+            //The next case is if it's not text type, but it is a inline footnote, apply the style there too
+            else if (el.nodeType !== 3 && el.className.includes("footnote")) {
+              el.classList.add("textToAnimate");
+            }
+            //We're looking for the end of the verse, bookmarksVERSENO - so end there.
+            else if (el.nodeType === 1 && el.outerHTML.toString() == endAt) {
+              foundIt = true;
+              break;
+            }
 
-        var searchFor = `<span id="bookmarks${openthis.verseNumber}"></span>`;
-        var versePartEndIndex = thisParagraphStr.indexOf(searchFor);
+            //In case of runaway cases just for safety's sake, hopefully not used
+            if (j === 100) {
+              console.log("over 100");
+              break;
+            }
+            //Go to the next sibling and increment our counter
+            el = el.nextSibling;
+            j++;
+          }
+        }
+        //this is the usual case, where a verse does not span a paragraph break.
+        highlightTextSpans(el);
 
-        var versePart = thisParagraphStr.substr(
-          firstPartIndex,
-          versePartEndIndex - firstPartIndex
-        );
+        //the other case is where the verse is broken up into several paragraphs
+        var currentDiv = verseArray[i].parentNode;
 
-        var endPart = thisParagraphStr.substr(
-          versePartEndIndex + searchFor.length
-        );
-        //...then put them back together with our style
-        var newParagraph =
-          firstPart +
-          `<span class="textToAnimate">` +
-          versePart +
-          "</span>" +
-          endPart;
-        //And insert into the page
-        verseArray[i].parentNode.innerHTML = newParagraph;
-        //if we found our verse, we don't need to search anymore so break out of the loop
-        break;
+        //Again here we use foundIt to tell in a couple cases when to stop highlighting.
+        while (!(foundIt === true)) {
+          //Starting from the paragraph we already highlighted, go on to the next units.
+          currentDiv = currentDiv.nextSibling;
+          //These are in all cases we've seen so far poetry, so not prose type paragraphs with the text type of node so the logic here is different.
+          if (
+            //If currentnode is an element and it's not the verse-ending text we're looking for, endAt:
+            (currentDiv.nodeType === 1 &&
+              currentDiv.outerHTML.toString() == endAt) ||
+            // Or if we come to a section break that's far enough
+            currentDiv.className === "s" ||
+            currentDiv.className === "ms" ||
+            currentDiv.className === "footer"
+          ) {
+            //We're good, close it up.
+            foundIt = true;
+            break;
+          }
+          //Or if it's not where we should end and not a textnode, then add the class
+          else if (currentDiv.nodeType !== 3) {
+            currentDiv.classList.add("textToAnimate");
+          } else {
+            //This is just here for troubleshooting
+            console.log("Search highlighting has encountered an unusual case.");
+          }
+        }
       }
-    }
-    //Load in the nodeintegration safey
-    loadHTTPHandlerInIframe();
-  };
-
-  //set title to current collection
-  remote
-    .getCurrentWindow()
-    .setTitle(thisAppName + "   ||   " + openthis.collectionName);
-
-  //To avoid successive loads of the iframe from going to the previous serach result verse number, clear out the onload event leaving only the nodeintegration safety.
-  setTimeout(() => {
-    iframe.onload = () => {
+      //Nodeintegration safety
       loadHTTPHandlerInIframe();
-    };
-  }, 500);
+    }
+
+    //set title to current collection
+    remote
+      .getCurrentWindow()
+      .setTitle(thisAppName + "   ||   " + openthis.collectionName);
+
+    //To avoid successive loads of the iframe from going to the previous serach result verse number, clear out the onload event leaving only the nodeintegration safety.
+    setTimeout(() => {
+      iframe.onload = () => {
+        loadHTTPHandlerInIframe();
+      };
+    }, 500);
+  };
 });
 
 //Check for update once on open
