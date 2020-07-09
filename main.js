@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain } = require("electron");
+const { app, BrowserWindow, Menu, ipcMain, shell } = require("electron");
 const { screen } = require("electron");
 
 //Get the app name from mydata.js - rather than in package.json
@@ -56,7 +56,7 @@ function createWindow() {
   mainWindow.loadFile("HTML/index.htm");
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   //When ready, show
   mainWindow.on("ready-to-show", () => {
@@ -118,8 +118,8 @@ function openAboutWindow() {
     // copyrightWindow.webContents.openDevTools();
   });
 
-  copyrightWindow.once("blur", () => {
-    // copyrightWindow.close();
+  copyrightWindow.on("blur", () => {
+    copyrightWindow.close();
   });
 
   copyrightWindow.on("closed", function () {
@@ -135,7 +135,6 @@ function openAboutWindow() {
 app.on("ready", () => {
   // Create main window
   createWindow();
-  //createMenus();
 });
 
 //------------------------
@@ -533,7 +532,7 @@ ipcMain.on("open-search", (e, displayLang) => {
   });
   searchWindow.once("ready-to-show", () => {
     searchWindow.show();
-    searchWindow.webContents.openDevTools();
+    // searchWindow.webContents.openDevTools();
   });
 
   // Listen for window being closed
