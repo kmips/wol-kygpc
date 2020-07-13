@@ -1,7 +1,7 @@
-To configure the SAB HTML output to have transparent toolbar, just
-paste the following at the bottom of sab-stylesheet.css in the css folder
-of each of your collections. 
-
+To configure the SAB HTML output to have transparent toolbar, styled scrollbars, and some other nice things, just
+paste the following *at the bottom* of sab-stylesheet.css in the css folder
+of each of your collections. Change at will! 
+----------------------------
 
 body {
 
@@ -12,9 +12,6 @@ body {
 .browser {
 Margin-left: 0px;
 }
-
-/*this is to hide footer for BUILDER app - not necessary for normal HTML*/
-/*div.footer {display: none;}*/
 
 #toolbar-top {
     background: rgba(61, 61, 61, 0.40);
@@ -45,8 +42,6 @@ Margin-left: 0px;
 
 /* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
 ::-webkit-scrollbar-thumb:vertical {
-  /* This is the EXACT color of Mac OS scrollbars.
-       Yes, I pulled out digital color meter */
   background: rgba(0, 0, 0, 0.5);
   -webkit-border-radius: 100px;
   border-radius: 100px;
